@@ -1,0 +1,28 @@
+{
+  "name": "jmap-app",
+  "version": "0.0.1",
+  "description": "JMap Application",
+  "main": "src/app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pub": "export NODE_ENV='production'; gulp publish --gulpfile build/gulpfile.js;",
+    "commit-doc": "export NODE_ENV='production'; gulp commit-doc --gulpfile build/gulpfile.js;",
+    "doc-test": "export DOC_DIR='./docs/current'; gulp typedoc --gulpfile build/gulpfile.js;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k2geospatial/jmap-app.git"
+  },
+  "author": "Laurent Mignonat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k2geospatial/jmap-app/issues"
+  },
+  "homepage": "https://github.com/k2geospatial/jmap-app#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-typedoc": "^2.2.2",
+    "jmap-api-ng": "^0.2.5",
+    "typedoc": "^0.14.2"
+  }
+}

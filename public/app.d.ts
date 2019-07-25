@@ -78,41 +78,6 @@ declare namespace JMap {
     function getDomContainerId(): string
 
     /**
-     * **JMap.Application.start**
-     * 
-     * Start the JMap application.
-     * 
-     * The container div need to exist in the DOM before calling this method.
-     * 
-     * @throws Error if app has already been started or if container not found in the DOM
-     * @param containerId The id of the div in the DOM where app will be inserted.
-     * @example ```ts
-     * 
-     * // Start the JMap application and mount it in div id="my-div"
-     * JMap.Application.start("my-div")
-     * ```
-     */
-    function start(containerId?: string): void
-
-    /**
-     * **JMap.Application.startIfNeeded**
-     * 
-     * You should not need to use this function.
-     * 
-     * This function is called by the API in order to check if the application need to start.
-     * 
-     * If yes it call the function *JMap.Application.start*.
-     * 
-     * @param containerId The id of the div in the DOM where app will be inserted.
-     * @example ```ts
-     * 
-     * // Start the JMap application if it is set to true in the startup options
-     * JMap.Application.startIfNeeded()
-     * ```
-     */
-    function startIfNeeded(): void
-
-    /**
      * **JMap.Application.UI**
      * 
      * You can manage the application UI components here.

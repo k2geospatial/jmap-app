@@ -11,8 +11,6 @@ export interface JAPIApplication {
   getMode(): API_MODE
   getAllModes(): API_MODE[]
   getDomContainerId(): string
-  startIfNeeded(): void
-  start(containerId?: string): void
   UI: {
     SidePanel: JSidePanelController
   }

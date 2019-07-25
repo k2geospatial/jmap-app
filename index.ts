@@ -4,12 +4,12 @@ export interface JAppState {
   sidePanelOpen: boolean
 }
 
-export interface JAPIApplication {
+export interface JApplicationService {
   getVersion(): string
   openDocumentation(): void
-  setMode(mode: API_MODE): void
   getMode(): API_MODE
   getAllModes(): API_MODE[]
+  setMode(mode: API_MODE): void
   getDomContainerId(): string
   UI: {
     SidePanel: JSidePanelController

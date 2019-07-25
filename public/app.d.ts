@@ -23,6 +23,32 @@ declare namespace JMap {
   namespace Application {
 
     /**
+     * **JMap.Application.getVersion**
+     * 
+     * Returns the application build version.
+     * 
+     * @example ```ts
+     * 
+     * // returns the build version, for example "1.0.1"
+     * JMap.Application.getVersion()
+     * ```
+     */
+    function getVersion(): string
+    
+    /**
+     * **JMap.Application.openDocumentation**
+     * 
+     * Open JMap Application online documentation, in a new tab.
+     * 
+     * @example ```ts
+     * 
+     * // open JMap Application online documentation, in a new tab
+     * JMap.Application.openDocumentation()
+     * ```
+     */
+    function openDocumentation(): void
+
+    /**
      * **JMap.Application.getMode**
      * 
      * Returns the current application mode state.

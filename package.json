@@ -22,7 +22,7 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-typedoc": "^2.2.2",
-    "jmap-api-ng": "^0.2.5",
+    "jmap-api-ng": "0.3.0",
     "typedoc": "^0.14.2"
   }
 }

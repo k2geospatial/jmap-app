@@ -135,18 +135,36 @@ declare namespace JMap {
         function setVisible(open: boolean): void
   
         /**
-         * **JMap.Application.UI.SidePanel.isOpen**
+         * **JMap.Application.UI.SidePanel.isVisible**
          * 
          * Returns true if the JMAP application main panel on the left is opened.
          * 
          * @example ```ts
          * 
          * // returns true if side panel is opened
-         * JMap.Application.UI.SidePanel.isOpen()
+         * JMap.Application.UI.SidePanel.isVisible()
          * ```
          */
-        function isOpen(): boolean
+        function isVisible(): boolean
   
+        /**
+         * **JMap.Application.UI.SidePanel.toggleVisibility**
+         * 
+         * Change the JMAP application main panel on the left visibility.
+         * 
+         * If the panel is open, it will close.
+         * 
+         * If the panel is closed, it will open.
+         * 
+         * @example ```ts
+         * 
+         * // change the side panel visibility
+         * JMap.Application.UI.SidePanel.toggleVisibility()
+         * ```
+         */
+        function toggleVisibility(): void
+        
+
         /**
          * **JMap.Application.UI.Sidepanel.open**
          * 
@@ -173,6 +191,99 @@ declare namespace JMap {
          * 
          * // Close the application left side panel
          * JMap.Application.UI.Sidepanel.close()
+         * ```
+         */
+        function close(): void
+      }
+
+      /**
+       * **JMap.Application.UI.UserPanel**
+       * 
+       * You can manage the user panel from here.
+       * 
+       * This panel is hidden by default.
+       * 
+       * It appears after clicking the user icon
+       * in the bottom of the left side panel.
+       * 
+       * User login/logout is done from this panel.
+       */
+      namespace UserPanel {
+  
+        /**
+         * **JMap.Application.UI.UserPanel.setVisible**
+         * 
+         * Set the user panel visibility.
+         * 
+         * @param open if true show the panel, else hide it
+         * @example ```ts
+         * 
+         * // Show the user panel
+         * JMap.Application.UI.UserPanel.setVisible(true)
+         * 
+         * // Hide the left side panel
+         * JMap.Application.UI.UserPanel.setVisible(false)
+         * ```
+         */
+        function setVisible(open: boolean): void
+  
+        /**
+         * **JMap.Application.UI.UserPanel.isVisible**
+         * 
+         * Returns true if the user panel is opened.
+         * 
+         * @example ```ts
+         * 
+         * // returns true if user panel is opened
+         * JMap.Application.UI.UserPanel.isVisible()
+         * ```
+         */
+        function isVisible(): boolean
+  
+        /**
+         * **JMap.Application.UI.UserPanel.toggleVisibility**
+         * 
+         * Change the user panel visibility.
+         * 
+         * If the panel is open, it will close.
+         * 
+         * If the panel is closed, it will open.
+         * 
+         * @example ```ts
+         * 
+         * // change the user panel visibility
+         * JMap.Application.UI.UserPanel.toggleVisibility()
+         * ```
+         */
+        function toggleVisibility(): void
+        
+
+        /**
+         * **JMap.Application.UI.UserPanel.open**
+         * 
+         * Display the user panel, if not visible.
+         * 
+         * Do nothing if it's already visible.
+         * 
+         * @example ```ts
+         * 
+         * // Open the user panel
+         * JMap.Application.UI.UserPanel.open()
+         * ```
+         */
+        function open(): void
+  
+        /**
+         * **JMap.Application.UI.UserPanel.open**
+         * 
+         * Hide the user panel if visible.
+         * 
+         * Do nothing if it's already not visible.
+         * 
+         * @example ```ts
+         * 
+         * // Close the user panel
+         * JMap.Application.UI.UserPanel.close()
          * ```
          */
         function close(): void

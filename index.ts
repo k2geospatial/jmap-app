@@ -1,7 +1,8 @@
 export interface JAppState {
   mode: API_MODE,
   allMode: API_MODE[]
-  sidePanelOpen: boolean
+  sidePanelVisible: boolean
+  userPanelVisible: boolean
 }
 
 export interface JApplicationService {
@@ -11,15 +12,25 @@ export interface JApplicationService {
   getAllModes(): API_MODE[]
   setMode(mode: API_MODE): void
   getDomContainerId(): string
-  UI: {
-    SidePanel: JSidePanelController
-  }
+  UI: JUIController
 }
 
-// UI -> SIDE_PANEL
-export interface JSidePanelController {
+export interface JUIController {
+  SidePanel: JSidePanelController
+  UserPanel: JUserPanelController
+}
+
+export interface JHideablePanel {
   setVisible(open: boolean): void
-  isOpen(): boolean
+  isVisible(): boolean
+  toggleVisibility(): void
   open(): void
   close(): void
 }
+
+// UI CTRL -> SIDE PANEL
+export interface JSidePanelController extends JHideablePanel {}
+
+// UI CTRL -> USER PANEL
+export interface JUserPanelController extends JHideablePanel {}
+

@@ -1,4 +1,4 @@
-export interface JAppState {
+export interface JGeneralState {
   mode: API_MODE,
   allMode: API_MODE[]
   sidePanelVisible: boolean

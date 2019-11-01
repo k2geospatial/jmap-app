@@ -1,9 +1,28 @@
 export interface JAppState {
+  main: JMainState
+  measure: JMeasureState
+  ui: JUiState
+  
+}
+
+export interface JMainState {
   mode: API_MODE,
   allMode: API_MODE[]
+}
+export interface JUiState {
   sidePanelVisible: boolean
   userPanelVisible: boolean
 }
+
+export interface JMeasureState {
+  measureType: JMeasureType,
+  isNewElement: boolean,
+  isDeletingMeasure: boolean,
+  totalLength: number,
+  totalArea: number
+}
+
+export type JMeasureType = "circleArea" | "length" | "polygonArea" | ""
 
 export interface JApplicationService {
   getVersion(): string

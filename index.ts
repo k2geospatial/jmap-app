@@ -1,37 +1,54 @@
 export interface JAppState {
-  main: JMainState
-  measure: JMeasureState
-  ui: JUiState
-  
+  mode: JAppModeState
+  measure: JAppMeasureState
+  selection: JAppSelectionState
+  ui: JAppUiState
 }
 
-export interface JMainState {
-  mode: API_MODE,
-  allMode: API_MODE[]
+export interface JAppModeState {
+  currentMode: JAppMode,
+  allModes: JAppMode[]
 }
-export interface JUiState {
+export interface JAppUiState {
   sidePanelVisible: boolean
-  userPanelVisible: boolean
 }
 
-export interface JMeasureState {
-  measureType: JMeasureType,
+export interface JAppMeasureState {
+  measureType: JAppMeasureType,
   isNewElement: boolean,
   isDeletingMeasure: boolean,
   totalLength: number,
   totalArea: number
 }
 
-export type JMeasureType = "circleArea" | "length" | "polygonArea" | ""
+export interface JAppSelectionState {
+  selectionType: JAppSelectionType,
+  isNewElement: boolean
+}
 
 export interface JApplicationService {
+  Mode: JAppModeService
+  Measure: JAppMeasureService
+  Selection: JAppSelectionService
   getVersion(): string
   openDocumentation(): void
-  getMode(): API_MODE
-  getAllModes(): API_MODE[]
-  setMode(mode: API_MODE): void
   getDomContainerId(): string
-  UI: JUIController
+}
+
+export interface JAppSelectionService {
+  changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
+}
+
+export interface JAppMeasureService {
+  changeCurrentMeasureType(newMeasureType: JAppMeasureType): void
+  activateIsDeleting(): void
+  deleteAllMeasures(): void
+}
+
+export interface JAppModeService {
+  getMode(): JAppMode
+  getAllModes(): JAppMode[]
+  setMode(modeId: string): void
 }
 
 export interface JUIController {
@@ -48,8 +65,7 @@ export interface JHideablePanel {
 }
 
 // UI CTRL -> SIDE PANEL
-export interface JSidePanelController extends JHideablePanel {}
+export interface JSidePanelController extends JHideablePanel { }
 
 // UI CTRL -> USER PANEL
-export interface JUserPanelController extends JHideablePanel {}
-
+export interface JUserPanelController extends JHideablePanel { }

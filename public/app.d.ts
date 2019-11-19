@@ -21,7 +21,105 @@ declare namespace JMap {
    * But from this section you will be able to manage the full JMap Web Application.
    */
   namespace Application {
+    namespace Mode {
 
+      /**
+       * **JMap.Application.Mode.getMode**
+       * 
+       * Returns the current application mode state.
+       * 
+       * This mode is mainly used for the JMap application.
+       * 
+       * @example ```ts
+       * 
+       * // returns the currently activated API mode
+       * JMap.Application.getMode()
+       * ```
+       */
+      function getMode(): JAppMode
+
+      /**
+       * **JMap.Application.Mode.getAllModes**
+       * 
+       * Returns all available application modes (see [[API_MODE]]).
+       * 
+       * @example ```ts
+       * 
+       * // returns all available API modes
+       * JMap.Application.getAllModes()
+       * ```
+       */
+      function getAllModes(): JAppMode[]
+      
+      /**
+       * **JMap.Application.Mode.setMode**
+       * 
+       * Change the JMap application mode.
+       * 
+       * @param modeId The new application mode to apply
+       * @example ```ts
+       * 
+       * // set the JMAp application mode to "layer"
+       * JMap.Application.setMode("layer")
+       * ```
+       */
+      function setMode(modeId: string): void
+    }
+
+    namespace Measure {
+        /**
+       * **JMap.Application.Measure.changeCurrentMeasureType**
+       * 
+       * Change the current type of measure for the drawing measurement tool.
+       * @param newMeasureType The new measure type to apply
+       * @example ```ts
+       * 
+       * // change the measure type to length
+       * JMap.Application.Measure.changeCurrentMeasureType("length")
+       * ```
+       */
+      function changeCurrentMeasureType(newMeasureType: JAppMeasureType): void
+
+      /**
+       * **JMap.Application.Measure.activateDeleting**
+       * 
+       * Activate the measurement deleting tool to delete a measure when we click on it.
+       * 
+       * @example ```ts
+       * 
+       * // activate deleting measure mode
+       * JMap.Application.Measure.activateDeleting()
+       * ```
+       */
+      function activateDeleting(): void
+
+      /**
+       * **JMap.Application.Measure.deleteAllMeasures**
+       * 
+       * Delete all measures on the map.
+       * 
+       * @example ```ts
+       * 
+       * // Delete all measures on the map
+       * JMap.Application.Measure.deleteAllMeasures()
+       * ```
+       */
+      function deleteAllMeasures(): void
+    }
+    namespace Selection {
+        /**
+       * **JMap.Application.Selection.changeCurrentSelectionType**
+       * 
+       * Change the current type of selection
+       * @param newSelectionType The new selection type to apply
+       * @example ```ts
+       * 
+       * // change the selection type to rectangle
+       * JMap.Application.Measure.changeCurrentSelectionType("rectangle")
+       * ```
+       */
+      function changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
+    }
     /**
      * **JMap.Application.getVersion**
      * 
@@ -47,49 +145,6 @@ declare namespace JMap {
      * ```
      */
     function openDocumentation(): void
-
-    /**
-     * **JMap.Application.getMode**
-     * 
-     * Returns the current application mode state.
-     * 
-     * This mode is mainly used for the JMap application.
-     * 
-     * @example ```ts
-     * 
-     * // returns the currently activated API mode
-     * JMap.Application.getMode()
-     * ```
-     */
-    function getMode(): API_MODE
-
-    /**
-     * **JMap.Application.getAllModes**
-     * 
-     * Returns all available application modes (see [[API_MODE]]).
-     * 
-     * @example ```ts
-     * 
-     * // returns all available API modes
-     * JMap.Application.getAllModes()
-     * ```
-     */
-    function getAllModes(): API_MODE[]
-    
-    /**
-     * **JMap.Application.setMode**
-     * 
-     * Change the JMap application mode.
-     * 
-     * @param mode The new application mode to apply
-     * @example ```ts
-     * 
-     * // set the JMAp application mode to "layer"
-     * JMap.Application.setMode("layer")
-     * ```
-     */
-    function setMode(mode: API_MODE): void
-
     /**
      * **JMap.Application.getDomContainerId**
      * 

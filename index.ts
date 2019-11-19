@@ -41,7 +41,7 @@ export interface JAppSelectionService {
 
 export interface JAppMeasureService {
   changeCurrentMeasureType(newMeasureType: JAppMeasureType): void
-  activateIsDeleting(): void
+  activateDeleting(): void
   deleteAllMeasures(): void
 }
 

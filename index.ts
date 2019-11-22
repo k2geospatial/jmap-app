@@ -37,6 +37,11 @@ export interface JApplicationService {
 
 export interface JAppSelectionService {
   changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
+  cancelSelection(): void
+  getCurrentDrawnSelectionContent(): void
+  removeLastDrawnSelectionCoordinate(): void
+  moveLastDrawnSelectionCoordinate(location: number[]): void
+  addLastDrawnSelectionCoordinate(location: number[]): void
 }
 
 export interface JAppMeasureService {

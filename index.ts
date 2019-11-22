@@ -1,3 +1,5 @@
+import { Point } from "mapbox-gl"
+
 export interface JAppState {
   mode: JAppModeState
   measure: JAppMeasureState
@@ -38,16 +40,17 @@ export interface JApplicationService {
 export interface JAppSelectionService {
   changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
   cancelSelection(): void
-  getCurrentDrawnSelectionContent(): void
+  getCurrentDrawnSelectionContent(): JMapSelection
   removeLastDrawnSelectionCoordinate(): void
-  moveLastDrawnSelectionCoordinate(location: number[]): void
-  addLastDrawnSelectionCoordinate(location: number[]): void
 }
 
 export interface JAppMeasureService {
   changeCurrentMeasureType(newMeasureType: JAppMeasureType): void
   activateDeleting(): void
   deleteAllMeasures(): void
+  cancelCurrentMeasure(): void
+  deleteMeasureAtLocation(mapboxPoint: Point): void
+  finalizeMeasure(): void
 }
 
 export interface JAppModeService {

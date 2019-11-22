@@ -78,8 +78,11 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.measure.html#activatedeleting" class="tsd-kind-icon">activate<wbr>Deleting</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.measure.html#cancelcurrentmeasure" class="tsd-kind-icon">cancel<wbr>Current<wbr>Measure</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.measure.html#changecurrentmeasuretype" class="tsd-kind-icon">change<wbr>Current<wbr>Measure<wbr>Type</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.measure.html#deleteallmeasures" class="tsd-kind-icon">delete<wbr>All<wbr>Measures</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.measure.html#deletemeasureatlocation" class="tsd-kind-icon">delete<wbr>Measure<wbr>AtLocation</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.measure.html#finalizemeasure" class="tsd-kind-icon">finalize<wbr>Measure</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,7 +100,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/a8e4550/public/app.d.ts#L94">public/app.d.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L94">public/app.d.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -118,6 +121,36 @@ JMap.Application.Measure.activateDeleting()</code></pre>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="cancelcurrentmeasure" class="tsd-anchor"></a>
+					<h3>cancel<wbr>Current<wbr>Measure</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">cancel<wbr>Current<wbr>Measure<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L119">public/app.d.ts:119</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Measure.cancelCurrentMeasure</strong></p>
+								</div>
+								<p>Cancel the current drawn measure</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// Remove current measure from the map</span>
+JMap.Application.Measure.cancelCurrentMeasure()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="changecurrentmeasuretype" class="tsd-anchor"></a>
 					<h3>change<wbr>Current<wbr>Measure<wbr>Type</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -127,7 +160,7 @@ JMap.Application.Measure.activateDeleting()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/a8e4550/public/app.d.ts#L81">public/app.d.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L81">public/app.d.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -166,7 +199,7 @@ JMap.Application.Measure.changeCurrentMeasureType(<span class="hljs-string">"len
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/a8e4550/public/app.d.ts#L107">public/app.d.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L107">public/app.d.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -179,6 +212,75 @@ JMap.Application.Measure.changeCurrentMeasureType(<span class="hljs-string">"len
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// Delete all measures on the map</span>
 JMap.Application.Measure.deleteAllMeasures()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="deletemeasureatlocation" class="tsd-anchor"></a>
+					<h3>delete<wbr>Measure<wbr>AtLocation</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Measure<wbr>AtLocation<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><a href="../interfaces/jlocation.html" class="tsd-signature-type">JLocation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L131">public/app.d.ts:131</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Measure.deleteMeasureAtLocation</strong></p>
+								</div>
+								<p>Delete a measure at a specific location</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// Delete measure at location x = 20, y = 30</span>
+JMap.Application.Measure.deleteMeasureAtLocation({x: <span class="hljs-number">20</span>, y: <span class="hljs-number">30</span>})</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>location: <a href="../interfaces/jlocation.html" class="tsd-signature-type">JLocation</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The mapbox location on the map in x, y</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="finalizemeasure" class="tsd-anchor"></a>
+					<h3>finalize<wbr>Measure</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">finalize<wbr>Measure<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L143">public/app.d.ts:143</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Measure.finalizeMeasure</strong></p>
+								</div>
+								<p>Finalize drawing the current measure</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// Finalize drawing the current measure</span>
+JMap.Application.Measure.finalizeMeasure()</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -239,10 +341,19 @@ JMap.Application.Measure.deleteAllMeasures()</code></pre>
 						<a href="jmap.application.measure.html#activatedeleting" class="tsd-kind-icon">activate<wbr>Deleting</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.measure.html#cancelcurrentmeasure" class="tsd-kind-icon">cancel<wbr>Current<wbr>Measure</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.application.measure.html#changecurrentmeasuretype" class="tsd-kind-icon">change<wbr>Current<wbr>Measure<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.application.measure.html#deleteallmeasures" class="tsd-kind-icon">delete<wbr>All<wbr>Measures</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.measure.html#deletemeasureatlocation" class="tsd-kind-icon">delete<wbr>Measure<wbr>AtLocation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.measure.html#finalizemeasure" class="tsd-kind-icon">finalize<wbr>Measure</a>
 					</li>
 				</ul>
 			</nav>

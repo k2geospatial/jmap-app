@@ -49,7 +49,7 @@ export interface JAppMeasureService {
   activateDeleting(): void
   deleteAllMeasures(): void
   cancelCurrentMeasure(): void
-  deleteMeasureAtLocation(mapboxPoint: Point): void
+  deleteMeasureAtLocation(location: JLocation): void
   finalizeMeasure(): void
 }
 

@@ -77,7 +77,10 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.selection.html#cancelselection" class="tsd-kind-icon">cancel<wbr>Selection</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.selection.html#changecurrentselectiontype" class="tsd-kind-icon">change<wbr>Current<wbr>Selection<wbr>Type</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.selection.html#getcurrentdrawnselectioncontent" class="tsd-kind-icon">get<wbr>Current<wbr>Drawn<wbr>Selection<wbr>Content</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.selection.html#removelastdrawnselectioncoordinate" class="tsd-kind-icon">remove<wbr>Last<wbr>Drawn<wbr>Selection<wbr>Coordinate</a></li>
 							</ul>
 						</section>
 					</div>
@@ -85,6 +88,35 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="cancelselection" class="tsd-anchor"></a>
+					<h3>cancel<wbr>Selection</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">cancel<wbr>Selection<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L167">public/app.d.ts:167</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Selection.cancelSelection</strong></p>
+								</div>
+								<p>Cancel the current drawn selection</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span class="hljs-comment">// Cancel the current drawn selection</span>
+JMap.Application.Measure.cancelSelection()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="changecurrentselectiontype" class="tsd-anchor"></a>
 					<h3>change<wbr>Current<wbr>Selection<wbr>Type</h3>
@@ -95,7 +127,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/a8e4550/public/app.d.ts#L121">public/app.d.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L157">public/app.d.ts:157</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -120,6 +152,64 @@ JMap.Application.Measure.changeCurrentSelectionType(<span class="hljs-string">"r
 									</div>
 								</li>
 							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getcurrentdrawnselectioncontent" class="tsd-anchor"></a>
+					<h3>get<wbr>Current<wbr>Drawn<wbr>Selection<wbr>Content</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Current<wbr>Drawn<wbr>Selection<wbr>Content<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/jmapselection.html" class="tsd-signature-type">JMapSelection</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L177">public/app.d.ts:177</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Selection.getCurrentDrawnSelectionContent</strong></p>
+								</div>
+								<p>Returns the current selection data for the drawn selection and add it to the store</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span class="hljs-comment">// Get the selection data for the drawn selection</span>
+JMap.Application.Measure.getCurrentDrawnSelectionContent()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/jmapselection.html" class="tsd-signature-type">JMapSelection</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="removelastdrawnselectioncoordinate" class="tsd-anchor"></a>
+					<h3>remove<wbr>Last<wbr>Drawn<wbr>Selection<wbr>Coordinate</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Last<wbr>Drawn<wbr>Selection<wbr>Coordinate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/c610f1b/public/app.d.ts#L188">public/app.d.ts:188</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Selection.removeLastDrawnSelectionCoordinate</strong></p>
+								</div>
+								<p>Remove the last drawn point for the current selection</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span class="hljs-comment">// Remove the last drawn point for the current selection</span>
+JMap.Application.Measure.removeLastDrawnSelectionCoordinate()</code></pre>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -174,7 +264,16 @@ JMap.Application.Measure.changeCurrentSelectionType(<span class="hljs-string">"r
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.selection.html#cancelselection" class="tsd-kind-icon">cancel<wbr>Selection</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.application.selection.html#changecurrentselectiontype" class="tsd-kind-icon">change<wbr>Current<wbr>Selection<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.selection.html#getcurrentdrawnselectioncontent" class="tsd-kind-icon">get<wbr>Current<wbr>Drawn<wbr>Selection<wbr>Content</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.selection.html#removelastdrawnselectioncoordinate" class="tsd-kind-icon">remove<wbr>Last<wbr>Drawn<wbr>Selection<wbr>Coordinate</a>
 					</li>
 				</ul>
 			</nav>

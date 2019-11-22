@@ -105,6 +105,42 @@ declare namespace JMap {
        * ```
        */
       function deleteAllMeasures(): void
+      /**
+       * **JMap.Application.Measure.cancelCurrentMeasure**
+       * 
+       * Cancel the current drawn measure
+       * 
+       * @example ```ts
+       * 
+       * // Remove current measure from the map
+       * JMap.Application.Measure.cancelCurrentMeasure()
+       * ```
+       */
+      function cancelCurrentMeasure(): void
+      /**
+       * **JMap.Application.Measure.deleteMeasureAtLocation**
+       * 
+       * Delete a measure at a specific location
+       * @param location The mapbox location on the map in x, y
+       * @example ```ts
+       * 
+       * // Delete measure at location x = 20, y = 30
+       * JMap.Application.Measure.deleteMeasureAtLocation({x: 20, y: 30})
+       * ```
+       */
+      function deleteMeasureAtLocation(location: JLocation): void
+      /**
+       * **JMap.Application.Measure.finalizeMeasure**
+       * 
+       * Finalize drawing the current measure
+       * 
+       * @example ```ts
+       * 
+       * // Finalize drawing the current measure
+       * JMap.Application.Measure.finalizeMeasure()
+       * ```
+       */
+      function finalizeMeasure(): void
     }
     namespace Selection {
         /**
@@ -119,6 +155,37 @@ declare namespace JMap {
        * ```
        */
       function changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
+       /**
+       * **JMap.Application.Selection.cancelSelection**
+       * 
+       * Cancel the current drawn selection
+       * @example ```ts
+       * // Cancel the current drawn selection
+       * JMap.Application.Measure.cancelSelection()
+       * ```
+       */
+      function cancelSelection(): void
+      /**
+       * **JMap.Application.Selection.getCurrentDrawnSelectionContent**
+       * 
+       * Returns the current selection data for the drawn selection and add it to the store
+       * @example ```ts
+       * // Get the selection data for the drawn selection
+       * JMap.Application.Measure.getCurrentDrawnSelectionContent()
+       * ```
+       */
+      function getCurrentDrawnSelectionContent(): JMapSelection
+      /**
+       * **JMap.Application.Selection.removeLastDrawnSelectionCoordinate**
+       * 
+       * Remove the last drawn point for the current selection
+       * 
+       * @example ```ts
+       * // Remove the last drawn point for the current selection
+       * JMap.Application.Measure.removeLastDrawnSelectionCoordinate()
+       * ```
+       */
+      function removeLastDrawnSelectionCoordinate(): void
     }
     /**
      * **JMap.Application.getVersion**

@@ -3,4 +3,5 @@ declare interface JAppMode {
     interactorId?: string
     iconBase64?: String
     iconName?: string
+    tooltip?: { [language: string]: string }
 }

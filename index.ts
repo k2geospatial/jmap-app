@@ -25,7 +25,8 @@ export interface JAppMeasureState {
 
 export interface JAppSelectionState {
   selectionType: JAppSelectionType,
-  isNewElement: boolean
+  isNewElement: boolean,
+  tableLayerId?: number
 }
 
 export interface JApplicationService {

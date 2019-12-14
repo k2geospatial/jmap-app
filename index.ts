@@ -13,7 +13,7 @@ export interface JAppModeState {
 }
 export interface JAppUiState {
   sidePanelVisible: boolean
-  theme: { [Key: string]: string }
+  theme: { [Key: string]: string | boolean | number }
 }
 
 export interface JAppMeasureState {

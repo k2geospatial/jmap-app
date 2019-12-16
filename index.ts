@@ -1,4 +1,4 @@
-import { Point } from "mapbox-gl"
+import { Point, Feature, Popup } from "mapbox-gl"
 
 export interface JAppState {
   mode: JAppModeState
@@ -22,8 +22,17 @@ export interface JAppMeasureState {
   isDeletingMeasure: boolean,
   totalLength: number,
   totalArea: number
+  drawnMeasures: JDrawnMeasureItem[]
 }
 
+export interface JDrawnMeasureItem {
+  point: Feature
+  line: Feature
+  fill?: Feature
+  popups: Popup[]
+  id: number
+  type: JAppMeasureType
+}
 export interface JAppSelectionState {
   selectionType: JAppSelectionType,
   isNewElement: boolean,

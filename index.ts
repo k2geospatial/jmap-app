@@ -1,4 +1,5 @@
-
+import { Point } from "mapbox-gl"
+import { JMapSelection } from "jmap-api-ng"
 export interface JAppState {
   mode: JAppModeState
   measure: JAppMeasureState
@@ -23,6 +24,29 @@ export interface JAppMeasureState {
   totalArea: number
 }
 
+interface JAppPrintState {
+  currentTab: "content" | "format"
+  paperFormat: JPaperFormat
+  fileType: "png" | "jpeg" | "pdf"
+  isPortrait: boolean
+  marginRatio: number
+  imagePPI: number
+  base64Image: string
+  pageTitle: string
+  pageSubTitle: string
+  isDate: boolean
+  mapRotation: number
+  mapTilt: number
+  isNorthArrow: boolean
+  isScale: boolean
+  scale: number
+  isLegend: boolean
+  legendTitle: string
+  legendSubTitle: string
+  legendPosition: "top-right" | "top-left"
+  filterList: any[]
+}
+
 export interface JAppSelectionState {
   selectionType: JAppSelectionType,
   isNewElement: boolean,
@@ -36,6 +60,13 @@ export interface JApplicationService {
   getVersion(): string
   openDocumentation(): void
   getDomContainerId(): string
+}
+
+export interface JPaperFormat {
+  type: string,
+  width: number
+  height: number
+  ratio: number
 }
 
 export interface JAppSelectionService {

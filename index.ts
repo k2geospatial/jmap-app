@@ -5,6 +5,7 @@ export interface JAppState {
   measure: JAppMeasureState
   selection: JAppSelectionState
   ui: JAppUiState
+  print: JAppPrintState
 }
 
 export interface JAppModeState {

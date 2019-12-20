@@ -24,7 +24,7 @@ export interface JAppMeasureState {
   totalArea: number
 }
 
-interface JAppPrintState {
+export interface JAppPrintState {
   currentTab: "content" | "format"
   paperFormat: JPaperFormat
   fileType: "png" | "jpeg" | "pdf"

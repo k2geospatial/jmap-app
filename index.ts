@@ -1,5 +1,3 @@
-import { Point } from "mapbox-gl"
-import { JMapSelection } from "jmap-api-ng"
 export interface JAppState {
   mode: JAppModeState
   measure: JAppMeasureState
@@ -92,11 +90,6 @@ export interface JAppModeService {
   setMode(modeId: string): void
 }
 
-export interface JUIController {
-  SidePanel: JSidePanelController
-  UserPanel: JUserPanelController
-}
-
 export interface JHideablePanel {
   setVisible(open: boolean): void
   isVisible(): boolean
@@ -104,9 +97,3 @@ export interface JHideablePanel {
   open(): void
   close(): void
 }
-
-// UI CTRL -> SIDE PANEL
-export interface JSidePanelController extends JHideablePanel { }
-
-// UI CTRL -> USER PANEL
-export interface JUserPanelController extends JHideablePanel { }

@@ -34,8 +34,6 @@ export interface JAppPrintState {
   pageTitle: string
   pageSubTitle: string
   isDate: boolean
-  mapRotation: number
-  mapTilt: number
   isNorthArrow: boolean
   isScale: boolean
   scale: number

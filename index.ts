@@ -1,7 +1,9 @@
+import { Feature } from "geojson"
 export interface JAppState {
   mode: JAppModeState
   measure: JAppMeasureState
   selection: JAppSelectionState
+  mapContext: JAppMapContextState
   ui: JAppUiState
   print: JAppPrintState
 }
@@ -13,6 +15,12 @@ export interface JAppModeState {
 export interface JAppUiState {
   sidePanelVisible: boolean
   theme: { [Key: string]: string | boolean | number }
+}
+
+export interface JAppMapContextState {
+  contexts: JMapContext[]
+  selectedContextId?: string
+  defaultContext?: JMapContext
 }
 
 export interface JAppMeasureState {
@@ -66,6 +74,37 @@ export interface JPaperFormat {
   ratio: number
 }
 
+export interface JMapContext {
+  id?: number,
+  title: string,
+  description: string,
+  shared: boolean,
+  origin: "web-ng",
+  uuid: string,
+  author?: string
+  creationDate?: string
+  modificationDate?: string
+  projectId?: string
+  data: {
+    mapCenter: { x: number, y: number }
+    mapZoom: number
+    mapPitch: number
+    mapBearing: number
+    baseMap: string
+    selection: {[ layerId: number ]: any[]}
+    measure: JExternalMeasureItem[]
+    thumbnail: string
+  }
+}
+
+export interface JExternalMeasureItem {
+  point: Feature
+  line: Feature
+  fill?: Feature
+  popups: Array<{ coordinates: [number, number], html: string }>
+  id: number
+  type: JAppMeasureType
+}
 export interface JAppSelectionService {
   changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
   cancelSelection(): void

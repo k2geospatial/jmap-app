@@ -9,6 +9,21 @@ const gulp = require('gulp')
 const execSync = require('child_process').execSync
 const typedoc = require("gulp-typedoc")
 
+const existEnvConfigFile = fs.existsSync("env-config.js")
+if (existEnvConfigFile) {
+  // we'll use variables defined in this file instead of the ones defined by sys. env.
+  const toCheckVariables = [ 'NODE_ENV', "BUILD_DIR", "COPY_DIR" ]
+  const envConfig = require('./env-config.js')
+  
+  toCheckVariables.forEach(variable => {
+    if (envConfig.hasOwnProperty(variable)) {
+      process.env[variable] = envConfig[variable]
+      console.log(`"env-config.js" defined "${variable}" as "${process.env[variable]}"`)
+    }
+  })
+  console.log('')
+}
+
 // __dirname is the directory witch contains the gulpfile.js file
 const ROOT_DIR = join(__dirname, '..')
 const DOC_ROOT_DIR = join(__dirname, '../docs')
@@ -20,6 +35,36 @@ const DOC_DIR = process.env.DOC_DIR ? join(ROOT_DIR, process.env.DOC_DIR) : join
 console.log('Directories :')
 console.log(`  Doc dir  => ${DOC_ROOT_DIR}`)
 console.log(`  Src dir => ${SRC_DIR}`)
+
+/************************************** COPY **************************************/
+
+gulp.task('copy', cb => {
+  if (!process.env.COPY_DIR) {
+    throw Error("Missing COPY_DIR env variable. Ex : set COPY_DIR='/K2/JMap/7.0/web_ng/'")
+  }
+  
+  gulp.src([ join(ROOT_DIR, 'public/**/*') ])
+      .pipe(gulp.dest(join(process.env.COPY_DIR, "api/node_modules/jmap-app/public")))
+  gulp.src([ join(ROOT_DIR, 'index.ts') ])
+      .pipe(gulp.dest(join(process.env.COPY_DIR, "api/node_modules/jmap-app")))
+  
+  gulp.src([ join(ROOT_DIR, 'public/**/*') ])
+      .pipe(gulp.dest(join(process.env.COPY_DIR, "app/node_modules/jmap-app/public")))
+  gulp.src([ join(ROOT_DIR, 'index.ts') ])
+      .pipe(gulp.dest(join(process.env.COPY_DIR, "app/node_modules/jmap-app")))
+  
+  gulp.src([ join(ROOT_DIR, 'public/**/*') ])
+      .pipe(gulp.dest(join(process.env.COPY_DIR, "view/node_modules/jmap-app/public")))
+  gulp.src([ join(ROOT_DIR, 'index.ts') ])
+      .pipe(gulp.dest(join(process.env.COPY_DIR, "view/node_modules/jmap-app")))
+  
+  gulp.src([ join(ROOT_DIR, 'public/**/*') ])
+      .pipe(gulp.dest(join(process.env.COPY_DIR, "shared/node_modules/jmap-app/public")))
+  gulp.src([ join(ROOT_DIR, 'index.ts') ])
+      .pipe(gulp.dest(join(process.env.COPY_DIR, "shared/node_modules/jmap-app")))
+
+  cb()
+})
 
 /************************************* PUBLISH ************************************/
 
@@ -51,7 +96,7 @@ gulp.task("typedoc", cb => {
   return gulp
       .src([
         "../public/**/*.ts",
-        "../node_modules/jmap-api-ng/public/**/*.ts",
+        "../node_modules/jmap-app/public/**/*.ts",
       ])
       .pipe(typedoc({
           readme: "./public-doc-readme.md",

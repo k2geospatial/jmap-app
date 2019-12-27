@@ -1,4 +1,5 @@
 import { Feature } from "geojson"
+
 export interface JAppState {
   mode: JAppModeState
   measure: JAppMeasureState
@@ -12,6 +13,7 @@ export interface JAppModeState {
   currentMode: JAppMode,
   allModes: JAppMode[]
 }
+
 export interface JAppUiState {
   sidePanelVisible: boolean
   theme: { [Key: string]: string | boolean | number }
@@ -32,23 +34,23 @@ export interface JAppMeasureState {
 }
 
 export interface JAppPrintState {
-  currentTab: "content" | "format"
+  currentTab: JPrintTabName
   paperFormat: JPaperFormat
-  fileType: "png" | "jpeg" | "pdf"
-  isPortrait: boolean
+  fileType: JPrintFileType
+  isOrientationPortrait: boolean
   marginRatio: number
   imagePPI: number
   base64Image: string
   pageTitle: string
   pageSubTitle: string
-  isDate: boolean
-  isNorthArrow: boolean
-  isScale: boolean
+  isDateVisible: boolean
+  isNorthArrowVisible: boolean
+  isScaleVisible: boolean
   scale: number
   isLegend: boolean
   legendTitle: string
   legendSubTitle: string
-  legendPosition: "top-right" | "top-left"
+  legendPosition: JPrintLegendPosition
   filterList: any[]
 }
 
@@ -62,6 +64,7 @@ export interface JApplicationService {
   Mode: JAppModeService
   Measure: JAppMeasureService
   Selection: JAppSelectionService
+  Print: JAppPrintService
   getVersion(): string
   openDocumentation(): void
   getDomContainerId(): string
@@ -105,6 +108,7 @@ export interface JExternalMeasureItem {
   id: number
   type: JAppMeasureType
 }
+
 export interface JAppSelectionService {
   changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
   cancelSelection(): void
@@ -133,4 +137,36 @@ export interface JHideablePanel {
   toggleVisibility(): void
   open(): void
   close(): void
+}
+
+export interface JAppPrintService {
+  toggleTab(): void
+  setCurrentTab(tabName: JPrintTabName): void
+  getCurrentTab(): JPrintTabName
+  getAllTabNames(): JPrintTabName[]
+  refreshScaleForCurrentZoom(): void
+  setScaleControlVisibility(isVisible: boolean): void
+  isScaleControlVisible(): boolean
+  setPageTitle(title: string): void
+  getPageTitle(): string
+  setPageSubTitle(subTitle: string): void
+  getPageSubTitle(): string
+  setDateVisibility(isVisible: boolean): void
+  isDateVisibile(): boolean
+  setNorthArrowVisibility(isVisible: boolean): void
+  isNorthArrowVisible(): boolean
+  getAllPaperFormats(): JPaperFormat[]
+  setPaperFormat(format: JPaperFormat): void
+  getPaperFormat(): JPaperFormat
+  setImagePPI(imagePPI: number): void
+  getImagePPI(): number
+  setOrientation(isPortrait: boolean): void
+  isOrientationPortrait(): boolean
+  setFileType(fileType: JPrintFileType): void
+  getFileType(): JPrintFileType
+  setMarginRatio(marginRatio: number): void
+  getMarginRatio(): number
+  getScale(): number
+  setZoomFromScale(scale: number): void
+  takeCapture(): void
 }

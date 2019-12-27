@@ -1,2 +1,3 @@
 node_modules
 docs/current
+build/env-config.js

@@ -87,7 +87,7 @@ export interface JMapContext {
   description: string,
   shared: boolean,
   origin: "web-ng",
-  uuid: string,
+  uuid?: string,
   author?: string
   creationDate?: string
   modificationDate?: string

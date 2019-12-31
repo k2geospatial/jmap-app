@@ -22,7 +22,11 @@ export interface JAppUiState {
 export interface JAppMapContextState {
   contexts: JMapContext[]
   selectedContextId?: string
-  defaultContext?: JMapContext
+  defaultContextId?: number
+  draftContextTitle: string
+  draftContextDescription: string
+  draftContextId?: number
+  currentSection: JContextSectionName
 }
 
 export interface JAppMeasureState {

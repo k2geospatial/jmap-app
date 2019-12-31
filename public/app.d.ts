@@ -128,7 +128,7 @@ declare namespace JMap {
        * JMap.Application.Measure.deleteMeasureAtLocation({x: 20, y: 30})
        * ```
        */
-      function deleteMeasureAtLocation(location: JLocation): void
+      function deleteMeasureAtLocation(location: {x: number, y: number}): void
       /**
        * **JMap.Application.Measure.finalizeMeasure**
        * 
@@ -174,7 +174,7 @@ declare namespace JMap {
        * JMap.Application.Measure.getCurrentDrawnSelectionContent()
        * ```
        */
-      function getCurrentDrawnSelectionContent(): JMapSelection
+      function getCurrentDrawnSelectionContent(): {[ layerId: number ]: any[]}
       /**
        * **JMap.Application.Selection.removeLastDrawnSelectionCoordinate**
        * 

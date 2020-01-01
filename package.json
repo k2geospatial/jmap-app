@@ -1,6 +1,6 @@
 {
   "name": "jmap-app",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "JMap Application",
   "main": "src/app.ts",
   "scripts": {

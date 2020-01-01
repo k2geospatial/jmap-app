@@ -1,3 +1,4 @@
+import { JMapContext } from "../index"
 /**
  * JMap API application.
  * 
@@ -187,6 +188,204 @@ declare namespace JMap {
        */
       function removeLastDrawnSelectionCoordinate(): void
     }
+    namespace MapContext {
+      /**
+     * **JMap.Application.MapContext.toggleMapContextSharing**
+     * 
+     * returns the current draft context id
+     * @example ```ts
+     * 
+     * // returns the current draft context id
+     * JMap.Application.MapContext.getDraftContextId()
+     * ```
+     */
+    function getDraftContextId(): number | undefined
+    /**
+     * **JMap.Application.MapContext.getDraftContextTitle**
+     * 
+     * returns the current draft context title
+     * @example ```ts
+     * 
+     * // returns the current draft context title
+     * JMap.Application.MapContext.getDraftContextTitle()
+     * ```
+     */
+    function getDraftContextTitle(): string
+    /**
+     * **JMap.Application.MapContext.getDraftContextDescription**
+     * 
+     * returns the current draft context description
+     * @example ```ts
+     * 
+     * // returns the current draft context description
+     * JMap.Application.MapContext.getDraftContextDescription()
+     * ```
+     */
+    function getDraftContextDescription(): string
+    /**
+     * **JMap.Application.MapContext.getAllContexts**
+     * 
+     * returns all loaded map contexts for the current project
+     * @example ```ts
+     * 
+     * // returns all loaded map contexts for the current project
+     * JMap.Application.MapContext.getAllContexts()
+     * ```
+     */
+    function getAllContexts(): JMapContext[]
+    /**
+     * **JMap.Application.MapContext.getDefaultContextId**
+     * 
+     * returns the default map context id for the current project
+     * @example ```ts
+     * 
+     * // returns the default map context id for the current project
+     * JMap.Application.MapContext.getDefaultContextId()
+     * ```
+     */
+    function getDefaultContextId(): number | undefined
+    /**
+     * **JMap.Application.MapContext.getSelectedContextId**
+     * 
+     * returns the selected map context id for the current project
+     * @example ```ts
+     * 
+     * // returns the selected map context id for the current project
+     * JMap.Application.MapContext.getSelectedContextId()
+     * ```
+     */
+    function getSelectedContextId(): number | undefined
+    /**
+     * **JMap.Application.MapContext.getCurrentSection**
+     * 
+     * returns the current context side panel section name
+     * @example ```ts
+     * 
+     * // returns the current context side panel section name
+     * JMap.Application.MapContext.getCurrentSection()
+     * ```
+     */
+    function getCurrentSection(): JContextSectionName
+      /**
+     * **JMap.Application.MapContext.setDefaultMapContext**
+     * 
+     * Set a map context to be default
+     * @param mapContextId The map context id to apply
+     * @example ```ts
+     * 
+     * // change the default map context for the id 1304358411192
+     * JMap.Application.MapContext.setDefaultMapContext(1304358411192)
+     * ```
+     */
+    function setDefaultMapContext(contextId?: number): void
+    /**
+     * **JMap.Application.MapContext.setDraftContextId**
+     * 
+     * Set a map context to be in draft mode
+     * @param mapContextId The map context id to apply
+     * @example ```ts
+     * 
+     * // Set the map context to be in draft mode for the id 1304358411192
+     * JMap.Application.MapContext.setDraftContextId(1304358411192)
+     * ```
+     */
+    function setDraftContextId(mapContextId?: number): void
+    /**
+     * **JMap.Application.MapContext.setDraftContextTitle**
+     * 
+     * Set a title to the map context currently in draft
+     * @param title The title to apply
+     * @example ```ts
+     * 
+     * // Set the title "Montreal" to the map context currently in draft
+     * JMap.Application.MapContext.setDraftContextTitle("Montreal")
+     * ```
+     */
+    function setDraftContextTitle(title: string): void
+    /**
+     * **JMap.Application.MapContext.setDraftContextDescription**
+     * 
+     * Set a description to the map context currently in draft
+     * @param title The description to apply
+     * @example ```ts
+     * 
+     * // Set the description "Measures on new buildings" to the map context currently in draft
+     * JMap.Application.MapContext.setDraftContextDescription("Measures on new buildings")
+     * ```
+     */
+    function setDraftContextDescription(description: string): void
+    /**
+     * **JMap.Application.MapContext.setCurrentSection**
+     * 
+     * Go to a map context side panel section
+     * @param mapContextSection The ui section to go to
+     * @example ```ts
+     * // Go to the map context side panel section "draft"
+     * JMap.Application.MapContext.setCurrentSection("draft")
+     * ```
+     */
+    function setCurrentSection(mapContextSection: JContextSectionName): void
+     /**
+     * **JMap.Application.MapContext.selectMapContext**
+     * 
+     * Select a mapContext
+     * @param mapContextId The context id to select
+     * @example ```ts
+     * 
+     * // select the context for the id 1304358411192
+     * JMap.Application.MapContext.selectMapContext(1304358411192)
+     * ```
+     */
+    function selectMapContext(mapContextId: number): void
+     /**
+     * **JMap.Application.MapContext.saveDraftContext**
+     * 
+     * Save the current draft map context
+     * @example ```ts
+     * 
+     * // Save the current draft context
+     * JMap.Application.MapContext.saveDraftContext()
+     * ```
+     */
+    function saveDraftContext(): void
+     /**
+     * **JMap.Application.MapContext.requestMapContexts**
+     * 
+     * Get all map contexts for the current projectId
+     * @example ```ts
+     * 
+     * // Get all mapContexts for the current projectId
+     * JMap.Application.MapContext.requestMapContexts()
+     * ```
+     */
+    function requestMapContexts(): void
+     
+     /**
+     * **JMap.Application.MapContext.deleteMapContext**
+     * 
+     * Delete a map context
+     * @param mapContextId The context id to delete
+     * @example ```ts
+     * 
+     * // Delete the context for the id 1304358411192
+     * JMap.Application.MapContext.deleteMapContext(1304358411192)
+     * ```
+     */
+    function deleteMapContext(mapContextId: number | number[]): void
+
+     /**
+     * **JMap.Application.MapContext.toggleMapContextSharing**
+     * 
+     * Toggle sharing for a map context
+     * @param mapContextId The context id to toggle sharing
+     * @example ```ts
+     * 
+     * // toggle sharing for the map context id 1304358411192
+     * JMap.Application.MapContext.toggleMapContextSharing(1304358411192)
+     * ```
+     */
+    function toggleMapContextSharing(mapContextId: number): void
+  }
     /**
      * **JMap.Application.getVersion**
      * 

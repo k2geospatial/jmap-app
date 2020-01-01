@@ -1,5 +1,6 @@
 import { Feature } from "geojson"
-
+import "jmap-api-ng/public/jmap/map"
+import "jmap-api-ng/public/jmap/geometry"
 export interface JAppState {
   mode: JAppModeState
   measure: JAppMeasureState
@@ -21,11 +22,11 @@ export interface JAppUiState {
 
 export interface JAppMapContextState {
   contexts: JMapContext[]
-  selectedContextId?: string
+  selectedContextId?: number
   defaultContextId?: number
+  draftContextId?: number
   draftContextTitle: string
   draftContextDescription: string
-  draftContextId?: number
   currentSection: JContextSectionName
 }
 
@@ -98,7 +99,7 @@ export interface JMapContext {
     mapPitch: number
     mapBearing: number
     baseMap: string
-    selection: {[ layerId: number ]: any[]}
+    selection: JMapSelection
     measure: JExternalMeasureItem[]
     thumbnail: string
   }
@@ -173,4 +174,24 @@ export interface JAppPrintService {
   getScale(): number
   setZoomFromScale(scale: number): void
   takeCapture(): void
+}
+
+export interface JMapContextPublicService {
+  setDefaultMapContext(mapContextId?: number): void
+  selectMapContext(mapContextId: number): void
+  saveDraftContext(): void
+  requestMapContexts(): void
+  deleteMapContext(mapContextId: number | number[]): void
+  toggleMapContextSharing(mapContextId: number): void
+  getDraftContextId(): number | undefined
+  setDraftContextId(mapContextId?: number): void
+  getDraftContextTitle(): string
+  setDraftContextTitle(title: string): void
+  getDraftContextDescription(): string
+  setDraftContextDescription(description: string): void
+  getAllContexts(): JMapContext[]
+  getDefaultContextId(): number | undefined
+  getSelectedContextId(): number | undefined
+  getCurrentSection(): JContextSectionName
+  setCurrentSection(mapContextSection: JContextSectionName): void
 }

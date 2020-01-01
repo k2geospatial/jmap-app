@@ -70,6 +70,7 @@ export interface JApplicationService {
   Measure: JAppMeasureService
   Selection: JAppSelectionService
   Print: JAppPrintService
+  MapContext: JMapContextPublicService
   getVersion(): string
   openDocumentation(): void
   getDomContainerId(): string

@@ -1,2 +1,2 @@
 declare type JMapContextSectionName = "all-contexts" | "draft"
-declare type JMapContextSortByOptions = "alphabetic" | "lastUse" | "lastUpdate"
+declare type JMapContextSortByOption = "alphabetic" | "lastUse" | "lastUpdate"

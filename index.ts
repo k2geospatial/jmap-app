@@ -29,7 +29,7 @@ export interface JAppMapContextState {
   draftContextDescription: string
   currentSection: JMapContextSectionName
   filter: string
-  sortBy: JMapContextSortByOptions
+  sortBy: JMapContextSortByOption
 }
 
 export interface JAppMeasureState {

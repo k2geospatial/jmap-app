@@ -27,7 +27,9 @@ export interface JAppMapContextState {
   draftContextId?: number
   draftContextTitle: string
   draftContextDescription: string
-  currentSection: JContextSectionName
+  currentSection: JMapContextSectionName
+  filter: string
+  sortBy: JMapContextSortByOptions
 }
 
 export interface JAppMeasureState {
@@ -193,6 +195,6 @@ export interface JMapContextPublicService {
   getAllContexts(): JMapContext[]
   getDefaultContextId(): number | undefined
   getSelectedContextId(): number | undefined
-  getCurrentSection(): JContextSectionName
-  setCurrentSection(mapContextSection: JContextSectionName): void
+  getCurrentSection(): JMapContextSectionName
+  setCurrentSection(mapContextSection: JMapContextSectionName): void
 }

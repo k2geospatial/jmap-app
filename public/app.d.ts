@@ -265,7 +265,7 @@ declare namespace JMap {
      * JMap.Application.MapContext.getCurrentSection()
      * ```
      */
-    function getCurrentSection(): JContextSectionName
+    function getCurrentSection(): JMapContextSectionName
       /**
      * **JMap.Application.MapContext.setDefaultMapContext**
      * 
@@ -324,7 +324,7 @@ declare namespace JMap {
      * JMap.Application.MapContext.setCurrentSection("draft")
      * ```
      */
-    function setCurrentSection(mapContextSection: JContextSectionName): void
+    function setCurrentSection(mapContextSection: JMapContextSectionName): void
      /**
      * **JMap.Application.MapContext.selectMapContext**
      * 

@@ -105,6 +105,7 @@ export interface JMapContext {
     selection: JMapSelection
     measure: JExternalMeasureItem[]
     thumbnail: string
+    lastUseDate?: string
   }
 }
 

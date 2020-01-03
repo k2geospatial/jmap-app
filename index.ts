@@ -15,6 +15,9 @@ export interface JAppModeState {
   allModes: JAppMode[]
 }
 
+export interface JAppLayerState {
+  currentTab: JLayerTabName
+}
 export interface JAppUiState {
   sidePanelVisible: boolean
   theme: { [Key: string]: string | boolean | number }

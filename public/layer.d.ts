@@ -1,0 +1,1 @@
+declare type JLayerTabName = "layers" | "base-map"

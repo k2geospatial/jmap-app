@@ -6,6 +6,7 @@ export interface JAppState {
   measure: JAppMeasureState
   selection: JAppSelectionState
   mapContext: JAppMapContextState
+  layer: JAppLayerState
   ui: JAppUiState
   print: JAppPrintState
 }

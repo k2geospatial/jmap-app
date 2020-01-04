@@ -1,6 +1,7 @@
 import { Feature } from "geojson"
 import "jmap-api-ng/public/jmap/map"
 import "jmap-api-ng/public/jmap/geometry"
+
 export interface JAppState {
   mode: JAppModeState
   measure: JAppMeasureState
@@ -35,6 +36,7 @@ export interface JAppMapContextState {
   filter: string
   sortBy: JMapContextSortByOption
 }
+
 
 export interface JAppMeasureState {
   measureType: JAppMeasureType,
@@ -122,6 +124,14 @@ export interface JExternalMeasureItem {
   type: JAppMeasureType
 }
 
+export interface JHideablePanel {
+  setVisible(open: boolean): void
+  isVisible(): boolean
+  toggleVisibility(): void
+  open(): void
+  close(): void
+}
+
 export interface JAppSelectionService {
   changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
   cancelSelection(): void
@@ -142,14 +152,6 @@ export interface JAppModeService {
   getMode(): JAppMode
   getAllModes(): JAppMode[]
   setMode(modeId: string): void
-}
-
-export interface JHideablePanel {
-  setVisible(open: boolean): void
-  isVisible(): boolean
-  toggleVisibility(): void
-  open(): void
-  close(): void
 }
 
 export interface JAppPrintService {
@@ -202,4 +204,9 @@ export interface JMapContextPublicService {
   getSelectedContextId(): number | undefined
   getCurrentSection(): JMapContextSectionName
   setCurrentSection(mapContextSection: JMapContextSectionName): void
+}
+
+export interface JLayerPublicService {
+  getCurrentTab(): JLayerTabName
+  setCurrentTab(newTab: JLayerTabName): void
 }

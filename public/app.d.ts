@@ -188,6 +188,33 @@ declare namespace JMap {
        */
       function removeLastDrawnSelectionCoordinate(): void
     }
+
+    namespace Layer {
+      /**
+       * **JMap.Application.MapContext.getCurrentTab**
+       * 
+       * returns the current tab for the layer layout
+       * @example ```ts
+       * 
+       * // returns the current tab for the layer layout
+       * JMap.Application.Layer.getCurrentTab()
+       * ```
+       */
+      function getCurrentTab(): JLayerTabName
+
+      /**
+       * **JMap.Application.Layer.setCurrentTab**
+       * 
+       * set the current tab for the layer layout
+       * @example ```ts
+       * 
+       * // set the current tab to "base-map" for the layer layout
+       * JMap.Application.Layer.setCurrentTab("base-map")
+       * ```
+       */
+      function setCurrentTab(newTab: JLayerTabName): void
+    }
+
     namespace MapContext {
       /**
      * **JMap.Application.MapContext.toggleMapContextSharing**

@@ -77,6 +77,7 @@ export interface JApplicationService {
   Mode: JAppModeService
   Measure: JAppMeasureService
   Selection: JAppSelectionService
+  Layer: JLayerPublicService
   Print: JAppPrintService
   MapContext: JMapContextPublicService
   getVersion(): string

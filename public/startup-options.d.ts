@@ -19,5 +19,19 @@ declare interface JAPIApplicationOptions {
    * 
    * Default is "jmap-app".
    */
-  containerId: string
+  containerId?: string
+  /**
+   * Panel (on the left) id that will be activated.
+   * 
+   * Standard panels ids are : "project", "layer", "selection", "measure", 
+   *                           "draw", "search", "add-feature", "print", "user"
+   */
+  activePanelId?: string
+  /**
+   * List of panels (on the left) ids that will be disabled.
+   * 
+   * Standard panels ids are : "project", "layer", "selection", "measure", 
+   *                           "draw", "search", "add-feature", "print", "user"
+   */
+  disabledPanelIds?: string[]
 }

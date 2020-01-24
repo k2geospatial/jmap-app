@@ -1,7 +1,7 @@
 import { Feature } from "geojson"
 
 export interface JAppState {
-  mode: JAppModeState
+  panel: JAppPanelState
   measure: JAppMeasureState
   selection: JAppSelectionState
   mapContext: JAppMapContextState
@@ -9,14 +9,18 @@ export interface JAppState {
   print: JAppPrintState
 }
 
-export interface JAppModeState {
-  currentMode: JAppMode,
-  allModes: JAppMode[]
+export interface JAppPanelState {
+  active: JAppPanel,
+  all: JAppPanel[]
 }
 
 export interface JAppUiState {
   sidePanelVisible: boolean
   theme: { [Key: string]: string | boolean | number }
+  container: {
+    width: number
+    height: number
+  }
 }
 
 export interface JAppMapContextState {
@@ -60,14 +64,29 @@ export interface JAppSelectionState {
   tableLayerId?: number
 }
 
-export interface JApplicationService {
-  Mode: JAppModeService
+export interface JApplicationMainService {
+  getVersion(): string
+  openDocumentation(): void
+}
+
+export interface JApplicationUIService {
+  Container: {
+    getId(): string
+    getWidth(): number
+    getHeight(): number
+  },
+  SidePanel: {
+    isVisible(): boolean
+    setVisible(isVisible: boolean): void
+  }
+}
+
+export interface JApplicationService extends JApplicationMainService {
+  Panel: JAppPanelService
   Measure: JAppMeasureService
   Selection: JAppSelectionService
   Print: JAppPrintService
-  getVersion(): string
-  openDocumentation(): void
-  getDomContainerId(): string
+  UI: JApplicationUIService
 }
 
 export interface JPaperFormat {
@@ -125,10 +144,10 @@ export interface JAppMeasureService {
   finalizeMeasure(): void
 }
 
-export interface JAppModeService {
-  getMode(): JAppMode
-  getAllModes(): JAppMode[]
-  setMode(modeId: string): void
+export interface JAppPanelService {
+  getActive(): JAppPanel
+  getAll(): JAppPanel[]
+  activate(panelId: string): void
 }
 
 export interface JHideablePanel {

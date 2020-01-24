@@ -21,51 +21,85 @@ declare namespace JMap {
    * But from this section you will be able to manage the full JMap Web Application.
    */
   namespace Application {
-    namespace Mode {
+    /**
+     * **JMap.Application.getVersion**
+     * 
+     * Returns the application build version.
+     * 
+     * @example ```ts
+     * 
+     * // returns the build version, for example "1.0.1"
+     * JMap.Application.getVersion()
+     * ```
+     */
+    function getVersion(): string
+    
+    /**
+     * **JMap.Application.openDocumentation**
+     * 
+     * Open JMap Application online documentation, in a new tab.
+     * 
+     * @example ```ts
+     * 
+     * // open JMap Application online documentation, in a new tab
+     * JMap.Application.openDocumentation()
+     * ```
+     */
+    function openDocumentation(): void
+    
+    /**
+     * **JMap.Application.Panel**
+     * 
+     * You can manage the application panels here.
+     */
+    namespace Panel {
 
       /**
-       * **JMap.Application.Mode.getMode**
+       * **JMap.Application.Panel.getActive**
        * 
-       * Returns the current application mode state.
-       * 
-       * This mode is mainly used for the JMap application.
+       * Returns the activated panel, displayed on the left.
        * 
        * @example ```ts
        * 
-       * // returns the currently activated API mode
-       * JMap.Application.getMode()
+       * // returns the currently activated panel
+       * JMap.Application.Panel.getActive()
        * ```
        */
-      function getMode(): JAppMode
+      function getActive(): JAppPanel
 
       /**
-       * **JMap.Application.Mode.getAllModes**
+       * **JMap.Application.Panel.getAll**
        * 
-       * Returns all available application modes (see [[API_MODE]]).
+       * Returns all application panels available.
        * 
        * @example ```ts
        * 
-       * // returns all available API modes
-       * JMap.Application.getAllModes()
+       * // returns all available API panels
+       * JMap.Application.Panel.getAll()
        * ```
        */
-      function getAllModes(): JAppMode[]
+      function getAll(): JAppPanel[]
       
       /**
-       * **JMap.Application.Mode.setMode**
+       * **JMap.Application.Panel.activate**
        * 
        * Change the JMap application mode.
        * 
-       * @param modeId The new application mode to apply
+       * @param panelId The new application panel to activate
        * @example ```ts
        * 
-       * // set the JMAp application mode to "layer"
-       * JMap.Application.setMode("layer")
+       * // will activate and display the "layer" panel
+       * JMap.Application.Panel.activate("layer")
        * ```
        */
-      function setMode(modeId: string): void
+      function activate(panelId: string): void
     }
 
+    /**
+     * **JMap.Application.Selection**
+     * 
+     * You can manage the application measure tools here.
+     */
     namespace Measure {
         /**
        * **JMap.Application.Measure.changeCurrentMeasureType**
@@ -105,6 +139,7 @@ declare namespace JMap {
        * ```
        */
       function deleteAllMeasures(): void
+      
       /**
        * **JMap.Application.Measure.cancelCurrentMeasure**
        * 
@@ -117,6 +152,7 @@ declare namespace JMap {
        * ```
        */
       function cancelCurrentMeasure(): void
+      
       /**
        * **JMap.Application.Measure.deleteMeasureAtLocation**
        * 
@@ -129,6 +165,7 @@ declare namespace JMap {
        * ```
        */
       function deleteMeasureAtLocation(location: JLocation): void
+      
       /**
        * **JMap.Application.Measure.finalizeMeasure**
        * 
@@ -142,8 +179,15 @@ declare namespace JMap {
        */
       function finalizeMeasure(): void
     }
+    
+    /**
+     * **JMap.Application.Selection**
+     * 
+     * You can manage the application selection tools here.
+     */
     namespace Selection {
-        /**
+
+      /**
        * **JMap.Application.Selection.changeCurrentSelectionType**
        * 
        * Change the current type of selection
@@ -155,7 +199,8 @@ declare namespace JMap {
        * ```
        */
       function changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
-       /**
+      
+      /**
        * **JMap.Application.Selection.cancelSelection**
        * 
        * Cancel the current drawn selection
@@ -165,6 +210,7 @@ declare namespace JMap {
        * ```
        */
       function cancelSelection(): void
+      
       /**
        * **JMap.Application.Selection.getCurrentDrawnSelectionContent**
        * 
@@ -187,43 +233,6 @@ declare namespace JMap {
        */
       function removeLastDrawnSelectionCoordinate(): void
     }
-    /**
-     * **JMap.Application.getVersion**
-     * 
-     * Returns the application build version.
-     * 
-     * @example ```ts
-     * 
-     * // returns the build version, for example "1.0.1"
-     * JMap.Application.getVersion()
-     * ```
-     */
-    function getVersion(): string
-    
-    /**
-     * **JMap.Application.openDocumentation**
-     * 
-     * Open JMap Application online documentation, in a new tab.
-     * 
-     * @example ```ts
-     * 
-     * // open JMap Application online documentation, in a new tab
-     * JMap.Application.openDocumentation()
-     * ```
-     */
-    function openDocumentation(): void
-    /**
-     * **JMap.Application.getDomContainerId**
-     * 
-     * Returns the DOM div element id where application UI has been inserted.
-     * 
-     * @example ```ts
-     * 
-     * // returns the application DOM container id
-     * JMap.Application.getDomContainerId()
-     * ```
-     */
-    function getDomContainerId(): string
 
     /**
      * **JMap.Application.UI**
@@ -231,6 +240,53 @@ declare namespace JMap {
      * You can manage the application UI components here.
      */
     namespace UI {
+      
+      /**
+       * **JMap.Application.UI.Container**
+       * 
+       * You can access the info of the application dom container div.
+       */
+      namespace Container {
+
+        /**
+         * **JMap.Application.UI.Container.getId**
+         * 
+         * Returns the DOM div element id where application UI has been inserted.
+         * 
+         * @example ```ts
+         * 
+         * // returns the dom container id, ex : "jmap-app"
+         * JMap.Application.UI.Container.getId()
+         * ```
+         */
+        function getId(): string
+
+        /**
+         * **JMap.Application.UI.Container.getWidth**
+         * 
+         * Returns the dom container width in pixel.
+         * 
+         * @example ```ts
+         * 
+         * // returns the dom container width, ex : 1230
+         * JMap.Application.UI.Container.getWidth()
+         * ```
+         */
+        function getWidth(): number
+
+        /**
+         * **JMap.Application.UI.Container.getHeight**
+         * 
+         * Returns the dom container height in pixel.
+         * 
+         * @example ```ts
+         * 
+         * // returns the dom container height, ex : 966
+         * JMap.Application.UI.Container.getHeight()
+         * ```
+         */
+        function getHeight(): number
+      }
 
       /**
        * **JMap.Application.UI.SidePanel**
@@ -286,7 +342,6 @@ declare namespace JMap {
          */
         function toggleVisibility(): void
         
-
         /**
          * **JMap.Application.UI.Sidepanel.open**
          * 
@@ -379,7 +434,6 @@ declare namespace JMap {
          */
         function toggleVisibility(): void
         
-
         /**
          * **JMap.Application.UI.UserPanel.open**
          * 

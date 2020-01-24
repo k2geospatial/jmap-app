@@ -1,3 +1,3 @@
-declare type JPrintTabName = "content" | "format"
-declare type JPrintFileType = "png" | "jpeg" | "pdf"
-declare type JPrintLegendPosition = "top-right" | "top-left"
+declare type JAppPrintTab = "content" | "format"
+declare type JAppPrintFileType = "png" | "jpeg" | "pdf"
+declare type JAppPrintLegendPosition = "top-right" | "top-left"

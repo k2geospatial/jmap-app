@@ -5,6 +5,7 @@ export interface JAppState {
   measure: JAppMeasureState
   selection: JAppSelectionState
   mapContext: JAppMapContextState
+  layer: JAppLayerState
   ui: JAppUiState
   print: JAppPrintState
 }
@@ -12,6 +13,10 @@ export interface JAppState {
 export interface JAppPanelState {
   active: JAppPanel,
   all: JAppPanel[]
+}
+
+export interface JAppLayerState {
+  activeTab: JAppLayerTab
 }
 
 export interface JAppUiState {
@@ -25,8 +30,14 @@ export interface JAppUiState {
 
 export interface JAppMapContextState {
   contexts: JMapContext[]
-  selectedContextId?: string
-  defaultContext?: JMapContext
+  selectedContextId?: number
+  defaultContextId?: number
+  draftContextId?: number
+  draftContextTitle: string
+  draftContextDescription: string
+  section: JMapContextSection
+  filter: string
+  sortBy: JMapContextSortOption
 }
 
 export interface JAppMeasureState {
@@ -38,9 +49,9 @@ export interface JAppMeasureState {
 }
 
 export interface JAppPrintState {
-  currentTab: JPrintTabName
-  paperFormat: JPaperFormat
-  fileType: JPrintFileType
+  activeTab: JAppPrintTab
+  paperFormat: JAppPaperFormat
+  fileType: JAppPrintFileType
   isOrientationPortrait: boolean
   marginRatio: number
   imagePPI: number
@@ -54,7 +65,7 @@ export interface JAppPrintState {
   isLegend: boolean
   legendTitle: string
   legendSubTitle: string
-  legendPosition: JPrintLegendPosition
+  legendPosition: JAppPrintLegendPosition
   filterList: any[]
 }
 
@@ -85,11 +96,13 @@ export interface JApplicationService extends JApplicationMainService {
   Panel: JAppPanelService
   Measure: JAppMeasureService
   Selection: JAppSelectionService
+  Layer: JAppLayerService
   Print: JAppPrintService
   UI: JApplicationUIService
+  MapContext: JAppMapContextService
 }
 
-export interface JPaperFormat {
+export interface JAppPaperFormat {
   type: string,
   width: number
   height: number
@@ -102,7 +115,7 @@ export interface JMapContext {
   description: string,
   shared: boolean,
   origin: "web-ng",
-  uuid: string,
+  uuid?: string,
   author?: string
   creationDate?: string
   modificationDate?: string
@@ -113,9 +126,10 @@ export interface JMapContext {
     mapPitch: number
     mapBearing: number
     baseMap: string
-    selection: {[ layerId: number ]: any[]}
+    selection: JMapSelection
     measure: JExternalMeasureItem[]
     thumbnail: string
+    lastUseDate?: number
   }
 }
 
@@ -128,15 +142,23 @@ export interface JExternalMeasureItem {
   type: JAppMeasureType
 }
 
+export interface JHideablePanel {
+  setVisible(open: boolean): void
+  isVisible(): boolean
+  toggleVisibility(): void
+  open(): void
+  close(): void
+}
+
 export interface JAppSelectionService {
-  changeCurrentSelectionType(newSelectionType: JAppSelectionType): void
+  activateSelectionType(selectionType: JAppSelectionType): void
   cancelSelection(): void
   getCurrentDrawnSelectionContent(): JMapSelection
   removeLastDrawnSelectionCoordinate(): void
 }
 
 export interface JAppMeasureService {
-  changeCurrentMeasureType(newMeasureType: JAppMeasureType): void
+  activateMeasureType(measureType: JAppMeasureType): void
   activateDeleting(): void
   deleteAllMeasures(): void
   cancelCurrentMeasure(): void
@@ -150,19 +172,11 @@ export interface JAppPanelService {
   activate(panelId: string): void
 }
 
-export interface JHideablePanel {
-  setVisible(open: boolean): void
-  isVisible(): boolean
-  toggleVisibility(): void
-  open(): void
-  close(): void
-}
-
 export interface JAppPrintService {
   toggleTab(): void
-  setCurrentTab(tabName: JPrintTabName): void
-  getCurrentTab(): JPrintTabName
-  getAllTabNames(): JPrintTabName[]
+  activateTab(tab: JAppPrintTab): void
+  getActiveTab(): JAppPrintTab
+  getAllTabs(): JAppPrintTab[]
   refreshScaleForCurrentZoom(): void
   setScaleControlVisibility(isVisible: boolean): void
   isScaleControlVisible(): boolean
@@ -174,18 +188,43 @@ export interface JAppPrintService {
   isDateVisibile(): boolean
   setNorthArrowVisibility(isVisible: boolean): void
   isNorthArrowVisible(): boolean
-  getAllPaperFormats(): JPaperFormat[]
-  setPaperFormat(format: JPaperFormat): void
-  getPaperFormat(): JPaperFormat
+  getAllPaperFormats(): JAppPaperFormat[]
+  setPaperFormat(format: JAppPaperFormat): void
+  getPaperFormat(): JAppPaperFormat
   setImagePPI(imagePPI: number): void
   getImagePPI(): number
   setOrientation(isPortrait: boolean): void
   isOrientationPortrait(): boolean
-  setFileType(fileType: JPrintFileType): void
-  getFileType(): JPrintFileType
+  setFileType(fileType: JAppPrintFileType): void
+  getFileType(): JAppPrintFileType
   setMarginRatio(marginRatio: number): void
   getMarginRatio(): number
   getScale(): number
   setZoomFromScale(scale: number): void
   takeCapture(): void
+}
+
+export interface JAppMapContextService {
+  setDefaultMapContext(mapContextId?: number): void
+  selectMapContext(mapContextId: number): void
+  saveDraftContext(): void
+  requestMapContexts(): void
+  deleteMapContext(mapContextId: number | number[]): void
+  toggleMapContextSharing(mapContextId: number): void
+  getDraftContextId(): number | undefined
+  setDraftContextId(mapContextId?: number): void
+  getDraftContextTitle(): string
+  setDraftContextTitle(title: string): void
+  getDraftContextDescription(): string
+  setDraftContextDescription(description: string): void
+  getAllContexts(): JMapContext[]
+  getDefaultContextId(): number | undefined
+  getSelectedContextId(): number | undefined
+  getActiveSection(): JMapContextSection
+  activateSection(mapContextSection: JMapContextSection): void
+}
+
+export interface JAppLayerService {
+  getActiveTab(): JAppLayerTab
+  activateTab(newTab: JAppLayerTab): void
 }

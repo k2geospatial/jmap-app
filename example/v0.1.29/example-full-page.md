@@ -11,7 +11,7 @@ This example is simple and the user is authenticated as an anonymous user.
 Notice :
 
   - A css style tag has been added to resize the ***HTML*** and ***BODY*** tags, it is required.
-  - The HTML page that contains this code has to be served by a server, it will not works if you copy/paste it in a browser and open the html file locally due to browser security check. 
+  - The HTML page that contains this code has to be served by a server, it will not works if you copy/paste it in a browser and open the html file locally due to browser security check.
 
 Bellow the example :
 

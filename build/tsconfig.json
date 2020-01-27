@@ -18,7 +18,6 @@
   },
   "include": [
     "../src/**/*",
-    "../node_modules/jmap-api-ng/**/*",
-    "../node_modules/ol/**/*"
+    "../node_modules/jmap-api-ng/**/*"
   ]
 }

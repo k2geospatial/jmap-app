@@ -96,7 +96,7 @@ gulp.task("typedoc", cb => {
   return gulp
       .src([
         "../public/**/*.ts",
-        "../node_modules/jmap-app/public/**/*.ts",
+        "../node_modules/jmap-api-ng/public/**/*.ts",
       ])
       .pipe(typedoc({
           readme: "./public-doc-readme.md",

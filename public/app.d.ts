@@ -1,27 +1,21 @@
-import { JMapContext } from "../index"
-/**
- * JMap API application.
- * 
- * All references to JMAP API application will start by ***JMap,Application***.
- * 
- * For example :
- * ```ts
- * // returns the API build version.
- * JMap.Application
- * ```
- */
 declare namespace JMap {
 
   /**
    * **JMap.Application**
    * 
-   * Here are JMap application related method.
+   * In this section you will find everything related to the **JMap Application**.
    * 
-   * JMap API can be started with only the map in the div of your choice, and you can start some JMap component too.
+   * To configure the **JMap library** in your web page, you can consult the [[JMap]] namespace page.
    * 
-   * But from this section you will be able to manage the full JMap Web Application.
+   * To configure the **JMap application** in your web page, you can consult the demo pages :
+   * 
+   *   - [An application embedded in a div in a page of your website](https://github.com/k2geospatial/jmap-app/blob/master/example/v0.1.29/example-embedded.md)
+   *   - [An application displayed full screen](https://github.com/k2geospatial/jmap-app/blob/master/example/v0.1.29/example-full-page.md)
+   * 
+   * You can also consult the application startup options [[JAPIApplicationOptions]], in order to customize it for you needs.
    */
   namespace Application {
+
     /**
      * **JMap.Application.getVersion**
      * 
@@ -102,7 +96,8 @@ declare namespace JMap {
      * You can manage the application measure tools here.
      */
     namespace Measure {
-        /**
+
+      /**
        * **JMap.Application.Measure.activateMeasureType**
        * 
        * Activate a measure type for the drawing measurement tool.

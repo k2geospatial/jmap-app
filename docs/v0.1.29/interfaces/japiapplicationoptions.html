@@ -95,15 +95,30 @@
 					<div class="tsd-signature tsd-kind-icon">active<wbr>Panel<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/a8a702c/public/startup-options.d.ts#L29">public/startup-options.d.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/202f6dc/public/startup-options.d.ts#L96">public/startup-options.d.ts:96</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Panel (on the left) id that will be activated.</p>
+							<p>By default the active panel (the one displayed), is the &quot;layer&quot; panel.</p>
 						</div>
-						<p>Standard panels ids are : &quot;project&quot;, &quot;layer&quot;, &quot;selection&quot;, &quot;measure&quot;,
-						&quot;draw&quot;, &quot;search&quot;, &quot;add-feature&quot;, &quot;print&quot;, &quot;user&quot;</p>
+						<p>Standard application panels ids are : &quot;project&quot;, &quot;layer&quot;, &quot;selection&quot;, &quot;measure&quot;, &quot;draw&quot;, &quot;search&quot;, &quot;add-feature&quot;, &quot;print&quot;, &quot;user&quot;</p>
+						<p>But if <strong><em>activePanelId</em></strong> is defined, it will display the corresponding panel on the screen.</p>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+      <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
+        ...
+        application: {
+          <span class="hljs-attr">activePanelId</span>: <span class="hljs-string">"project"</span>,
+          ...
+        }
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
@@ -112,14 +127,32 @@
 					<div class="tsd-signature tsd-kind-icon">container<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/a8a702c/public/startup-options.d.ts#L22">public/startup-options.d.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/202f6dc/public/startup-options.d.ts#L64">public/startup-options.d.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The JMap application DOM div container id.</p>
+							<p>When the application start it will create or use an existing div container in which the app will be inserted into.</p>
 						</div>
-						<p>Default is &quot;jmap-app&quot;.</p>
+						<p>All application dom elements will be inserted inside this div.</p>
+						<p>By default the div container id is &quot;<strong><em>jmap-app</em></strong>&quot;, but you can set the id of your choice like that :</p>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"my-custom-container-id"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+      <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
+        ...
+        application: {
+          <span class="hljs-attr">containerId</span>: <span class="hljs-string">"my-custom-container-id"</span>
+        }
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    ...
+ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+						<p>In the above example the application will be inserted in the div having &quot;my-custom-container-id&quot; as id. You need to set the width and the height of this div by yourself.</p>
+						<p>If no container is found in the DOM with the specified id, JMap API will create and append it automatically in the body element of the web page.</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
@@ -128,15 +161,30 @@
 					<div class="tsd-signature tsd-kind-icon">disabled<wbr>Panel<wbr>Ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/a8a702c/public/startup-options.d.ts#L36">public/startup-options.d.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/202f6dc/public/startup-options.d.ts#L122">public/startup-options.d.ts:122</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>List of panels (on the left) ids that will be disabled.</p>
+							<p>The application have multiple panels available by default : &quot;project&quot;, &quot;layer&quot;, &quot;selection&quot;, &quot;measure&quot;, &quot;draw&quot;, &quot;search&quot;, &quot;add-feature&quot;, &quot;print&quot;, &quot;user&quot;</p>
 						</div>
-						<p>Standard panels ids are : &quot;project&quot;, &quot;layer&quot;, &quot;selection&quot;, &quot;measure&quot;,
-						&quot;draw&quot;, &quot;search&quot;, &quot;add-feature&quot;, &quot;print&quot;, &quot;user&quot;</p>
+						<p>But you can tell the JMap application to disabled some panels. If a panel is disabled it will disappear on the left menu.</p>
+						<p>The <strong><em>disabledPanelIds</em></strong> parameter is an array with the panel ids you want to be disabled.</p>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+      <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
+        ...
+        application: {
+          <span class="hljs-attr">disabledPanelIds</span>: [ <span class="hljs-string">"measure"</span>, <span class="hljs-string">"print"</span> ],
+          ...
+        }
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					</div>
 				</section>
 			</section>

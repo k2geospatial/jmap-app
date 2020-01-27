@@ -1,5 +1,3 @@
-import { Feature } from "geojson"
-
 export interface JAppState {
   panel: JAppPanelState
   measure: JAppMeasureState
@@ -107,39 +105,6 @@ export interface JAppPaperFormat {
   width: number
   height: number
   ratio: number
-}
-
-export interface JMapContext {
-  id?: number,
-  title: string,
-  description: string,
-  shared: boolean,
-  origin: "web-ng",
-  uuid?: string,
-  author?: string
-  creationDate?: string
-  modificationDate?: string
-  projectId?: string
-  data: {
-    mapCenter: { x: number, y: number }
-    mapZoom: number
-    mapPitch: number
-    mapBearing: number
-    baseMap: string
-    selection: JMapSelection
-    measure: JExternalMeasureItem[]
-    thumbnail: string
-    lastUseDate?: number
-  }
-}
-
-export interface JExternalMeasureItem {
-  point: Feature
-  line: Feature
-  fill?: Feature
-  popups: Array<{ coordinates: [number, number], html: string }>
-  id: number
-  type: JAppMeasureType
 }
 
 export interface JHideablePanel {

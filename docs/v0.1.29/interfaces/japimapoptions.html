@@ -100,15 +100,15 @@
 					<div class="tsd-signature tsd-kind-icon">center<span class="tsd-signature-symbol">:</span> <a href="jlocation.html" class="tsd-signature-type">JLocation</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:353</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:448</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>You can set the location of the center of the map by setting the <strong><em>center</em></strong> parameter. By exemple if you want to center the map on the city of Ottawa :</p>
 						</div>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -132,7 +132,7 @@
 					<div class="tsd-signature tsd-kind-icon">container<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:234</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:329</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -140,8 +140,8 @@
 							<p>When the API start it will create or use an existing div container in which the map will be inserted into.</p>
 						</div>
 						<p>By default the div container id is &quot;<strong><em>jmap-map</em></strong>&quot;, but you can set the id of your choice like that :</p>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -164,7 +164,7 @@
 					<div class="tsd-signature tsd-kind-icon">mapbox<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:262</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:357</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -176,8 +176,8 @@
 						like displaying a nice base map by example.</p>
 						<p>But if no token is set in the JMap administration, or if you want to use
 						the mapbox token of your choice, you have to set the &quot;<strong><em>mapboxToken</em></strong>&quot; parameter :</p>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -198,7 +198,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Startup<wbr>Map<wbr>Ready<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:401</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:496</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -208,8 +208,8 @@
 						</div>
 						<p>For that you have to set the &quot;<strong><em>onStartupMapReadyFn</em></strong>&quot; parameter which is a function.
 						Here an example that will display a message &quot;Hello the map is ready !&quot; in the console :</p>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -232,7 +232,7 @@
 					<div class="tsd-signature tsd-kind-icon">scale<wbr>Control<wbr>Position<span class="tsd-signature-symbol">:</span> <a href="../globals.html#jmapposition" class="tsd-signature-type">JMapPosition</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:308</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:403</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -240,8 +240,8 @@
 							<p>You can choose the position of the scale control on the map.</p>
 						</div>
 						<p>Use a value in : &quot;<strong>top-left</strong>&quot;, &quot;<strong>top-right</strong>&quot;, &quot;<strong>bottom-left</strong>&quot;, or &quot;<strong>bottom-right</strong>&quot;</p>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -262,15 +262,15 @@
 					<div class="tsd-signature tsd-kind-icon">scale<wbr>Control<wbr>Unit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"imperial"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"metric"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"nautical"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:329</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:424</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>This is the unit in which the scale control panel will display the data.</p>
 						</div>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -291,7 +291,7 @@
 					<div class="tsd-signature tsd-kind-icon">scale<wbr>Control<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:285</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:380</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -299,8 +299,8 @@
 							<p>By default the scale control panel it is not visible.</p>
 						</div>
 						<p>But if <strong><em>scaleControlVisible</em></strong> is true, it will be displayed on the map.</p>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -321,15 +321,15 @@
 					<div class="tsd-signature tsd-kind-icon">zoom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:374</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:469</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>You can zoom to a custom level by setting the &quot;<strong><em>zoom</em></strong>&quot; variable. Here an example :</p>
 						</div>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {

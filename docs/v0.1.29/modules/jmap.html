@@ -67,16 +67,21 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The API entry point, in the javascript console, is <strong><em>JMap</em></strong>.</p>
+						<p>To configure the JMap library in your web page, you can consult the demo pages :</p>
 					</div>
-					<p>All references to JMAP Web API will start by <strong><em>JMap</em></strong>.</p>
+					<ul>
+						<li><a href="https://github.com/k2geospatial/jmap-api-ng/blob/master/examples/v0.3.34/example-embedded.md">A map embedded in a div in a page of your website</a></li>
+						<li><a href="https://github.com/k2geospatial/jmap-api-ng/blob/master/examples/v0.3.34/example-full-page.md">A map displayed full screen</a></li>
+					</ul>
+					<p>You can also consult the library startup options <a href="../interfaces/japioptions.html">JAPIOptions</a>, in order to customize it for you needs.</p>
+					<p>After been loaded, the JMap library is accessible through the nampespace <strong>JMap</strong> in the javascript console.</p>
 					<p>For example :</p>
 					<pre><code class="language-ts"><span class="hljs-comment">// returns the API build version.</span>
 JMap.Api.getVersion()</code></pre>
-					<p>The API is organized in modules, some of them can have sub-modules :</p>
+					<p>The library is organized in modules, and sub-modules :</p>
 					<ul>
 						<li><a href="jmap.api.html">JMap.Api</a> : Get API information (version, documentation)</li>
-						<li><a href="jmap.service.html">JMap.Service</a> : Get and manage API state</li>
+						<li><a href="jmap.service.html">JMap.Service</a> : Get and manage the library states</li>
 						<li><a href="jmap.component.html">JMap.Component</a> : Create and destroy your JMap API Component instances</li>
 						<li><a href="jmap.event.html">JMap.Event</a> : Create, activate, deactivate and remove your own listeners, reacting to JMAP API events</li>
 						<li><a href="jmap.external.html">JMap.External</a> : Fully integrate your own plugin to JMAP API</li>

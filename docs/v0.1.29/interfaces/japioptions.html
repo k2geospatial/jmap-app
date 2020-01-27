@@ -67,20 +67,20 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The JMAP JS Library startup options.</p>
+						<p>This section is about the JMAP Library startup options.</p>
 					</div>
-					<p>JMap API JS exexutables are available through a CDN url.</p>
+					<p>JMap library executable is available through a CDN url.</p>
 					<p>The URL is like &quot;<a href="https://cdn.jsdelivr.net/npm/jmap-js-api@0.3.5/public/&quot;">https://cdn.jsdelivr.net/npm/jmap-js-api@0.3.5/public/&quot;</a>,
-					but it depends on the version you want to use.</p>
+					but it depends on the version you want to use (here version 0.3.5).</p>
 					<p>First you need to import our JS file in your http file, in order to load our JS API.
-					It&#39;s better to place the CDN import at the end of the body tag, like that :</p>
+					It&#39;s recommended to put the CDN import at the end of the body tag, like that :</p>
 					<pre><code class="language-html">...
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     ...
     <span class="hljs-comment">&lt;!-- !!! Insert the import at the end of the body tag !!! --&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-api@0.3.5/public/"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-api@x.x.x/public/"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					<p>To make the API working you need to provide some required information like :</p>
@@ -90,8 +90,7 @@
 						<li>A valid JMap user session token, <strong>or</strong> set the API to log as &quot;anonymous&quot;</li>
 					</ul>
 					<p>It can be passed by setting a global JS variable named &quot;JMAP_API_OPTIONS&quot; :</p>
-					<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+					<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -106,13 +105,11 @@
         ... <span class="hljs-comment">// other optional JMAP params</span>
       }
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-
     ... your web page
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-api@0.3.5/public/"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-api@x.x.x/public/"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
-					<p>Below a full example of how to start the JMap librairy in a web page,
+					<p>Below a full example of how to start the JMap library in a web page,
 					where parameters <strong><em>token</em></strong> and <strong><em>projectId</em></strong> are get from the url :</p>
 					<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
@@ -138,22 +135,16 @@
             <span class="hljs-attr">fullName</span>: <span class="hljs-string">"John do"</span>,
             <span class="hljs-attr">admin</span>: <span class="hljs-literal">false</span>
           }
-        },
-        <span class="hljs-attr">map</span>: {
-          <span class="hljs-attr">mapboxToken</span>: <span class="hljs-string">"xx.xxx.xx"</span>,
-          <span class="hljs-attr">onStartupMapReadyFn</span>: <span class="hljs-function"><span class="hljs-params">map</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"JMap is ready !"</span>)
         }
       }
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span>
-            <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>
-            <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-api-ng@x.x.x/public/index.js"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-api-ng@x.x.x/public/index.js"</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					<p>For example, you can pass this parameters like that :</p>
 					<ul>
-						<li><strong>http:// my-company/my-custom-page-using-jmap?sessionId=95423672742&amp;projectId=10</strong>.</li>
+						<li><strong>http:// my-company/my-custom-page-using-jmap?token=95423672742&amp;projectId=10</strong>.</li>
 					</ul>
 					<p>When JMAP API starts, if the <strong>JMap token &quot;<em>95423672742</em>&quot;</strong> is valid, it will automatically load
 					the <strong>JMap project id=<em>10</em></strong>, then load the map in the <strong>div id=&quot;<em>jmap-map</em>&quot;</strong>.</p>
@@ -194,7 +185,7 @@
 					<div class="tsd-signature tsd-kind-icon">anonymous<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:176</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:200</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -204,8 +195,8 @@
 								to explicitly tell the JMap library to log as an anonymous
 							user by setting the &quot;<strong><em>anonymous</em></strong>&quot; parameter like that :</p>
 						</div>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -221,7 +212,7 @@
 
     ... your web page
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-api@0.3.5/public/"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-api@x.x.x/public/"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					</div>
@@ -232,20 +223,39 @@
 					<div class="tsd-signature tsd-kind-icon">application<span class="tsd-signature-symbol">:</span> <a href="japiapplicationoptions.html" class="tsd-signature-type">JAPIApplicationOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/a8a702c/public/startup-options.d.ts#L13">public/startup-options.d.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/202f6dc/public/startup-options.d.ts#L32">public/startup-options.d.ts:32</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Contains all JMap application options.</p>
+							<p>This section is about the JMap application startup options.</p>
 						</div>
+						<p>An example of how to configure the application startup options :</p>
 						<dl class="tsd-comment-tags">
 							<dt>example</dt>
-							<dd><pre><code class="language-ts">
-application: {
- <span class="hljs-comment">// will create the application in the div id="custom-app"</span>
- containerId: <span class="hljs-string">"custom-app"</span>
-}</code></pre>
+							<dd><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"custom-app"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+     <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
+       <span class="hljs-attr">projectId</span>: <span class="hljs-number">10</span>,
+       <span class="hljs-attr">restBaseUrl</span>: <span class="hljs-string">"http://my-jmap-server/services/rest/v2.0"</span>,
+       <span class="hljs-attr">session</span>: {
+         <span class="hljs-attr">token</span>: <span class="hljs-number">2345677654</span>
+       },
+       <span class="hljs-attr">application</span>: {
+         <span class="hljs-comment">// will create the application in the div id="custom-app"</span>
+         <span class="hljs-attr">containerId</span>: <span class="hljs-string">"custom-app"</span>
+       }
+     }
+   </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   ...
+   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-api@0.3.6/public/index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-app@0.0.2/public/index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
 							</dd>
 						</dl>
 					</div>
@@ -256,23 +266,14 @@ application: {
 					<div class="tsd-signature tsd-kind-icon">map<span class="tsd-signature-symbol">:</span> <a href="japimapoptions.html" class="tsd-signature-type">JAPIMapOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:205</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:300</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The JMap map options.</p>
+							<p>All map related options.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-ts">
-map: {
-  containerId: <span class="hljs-string">"jmap-map"</span>,
-  mapboxToken: <span class="hljs-string">"xx.xxx.xx"</span>,
-  onStartupMapReadyFn: <span class="hljs-function"><span class="hljs-params">map</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"JMap is ready and map loaded !"</span>)
-}</code></pre>
-							</dd>
-						</dl>
+						<p>Click on <a href="japimapoptions.html">JAPIMapOptions</a> to get details.</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
@@ -281,7 +282,7 @@ map: {
 					<div class="tsd-signature tsd-kind-icon">no<wbr>Session<wbr>Expiration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:146</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:170</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -291,8 +292,8 @@ map: {
 							is done in order to keep the session alive.</p>
 						</div>
 						<p>To activate the option, use the &quot;<strong><em>noSessionExpiration</em></strong>&quot; parameter :</p>
-						<pre><code class="language-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
       <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
@@ -311,14 +312,28 @@ map: {
 					<div class="tsd-signature tsd-kind-icon">project<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:115</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:124</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The JMap project id.</p>
 						</div>
-						<p>If not set the API will do noting, you will have a blank page.</p>
+						<p>If the project id is not set, the library will do noting, you will have a blank page.</p>
+						<p>So if you want the library to load the project automatically, you need to set the project id.</p>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+      <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
+        ...
+        <span class="hljs-comment">// a valid project id</span>
+        <span class="hljs-attr">projectId</span>: <span class="hljs-number">12</span>
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
@@ -327,15 +342,28 @@ map: {
 					<div class="tsd-signature tsd-kind-icon">rest<wbr>Base<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:123</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:147</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The JMAp server Rest API url.</p>
+							<p>The JMap server Rest API url.</p>
 						</div>
-						<p>Must be provided if you are a K2 customer.</p>
-						<p>Default value is : <a href="http://localhost:8080/services/rest/v2.0">http://localhost:8080/services/rest/v2.0</a></p>
+						<p>Default value is : <a href="http://localhost:8080/services/rest/v2.0">http://localhost:8080/services/rest/v2.0</a> (for test only).</p>
+						<p>If your are not testing you must provide the url of your JMap REST API :</p>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+      <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
+        ...
+        <span class="hljs-comment">// a valid JMap REST Api url</span>
+        <span class="hljs-attr">restBaseUrl</span>: <span class="hljs-string">"http://my-custom-jmap-server-url/services/rest/v2.0"</span>
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
@@ -344,26 +372,84 @@ map: {
 					<div class="tsd-signature tsd-kind-icon">session<span class="tsd-signature-symbol">:</span> <a href="jsessiondata.html" class="tsd-signature-type">JSessionData</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:192</li>
+							<li>Defined in node_modules/jmap-api-ng/public/jmap/startup-options.d.ts:294</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The JMap user session data</p>
+							<p>The JMap user session data.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-ts">
-session: {
- token: <span class="hljs-string">"67464654674"</span>
- user: {
-   username: <span class="hljs-string">"jdo@company.com"</span>,
-   fullName: <span class="hljs-string">"John Do"</span>,
-   admin: <span class="hljs-literal">false</span>
- }
+						<p>If you don&#39;t use the api logged as an anonymous user (see the <strong><em>anonymous</em></strong> parameter in this section),
+						you must provide the JMap session id to the JMap library.</p>
+						<p>To get a session id and the user informations, you can use the JMap Rest API on your JMap server. By exemple if your server url is &quot;<a href="https://my-jmap-server/&quot;">https://my-jmap-server/&quot;</a>, With the <a href="https://curl.haxx.se/docs/">curl tool</a> you can get for the user &quot;<a href="mailto:jdo@company.com">jdo@company.com</a>&quot; a token like that (adapt the username and password ...) :</p>
+						<pre><code class="language-sh">curl -X POST <span class="hljs-string">"https://my-jmap-server/services/rest/v2.0/session"</span> -H <span class="hljs-string">"accept: application/json"</span> -H <span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">"{ \"username\": \"jdo@company.com\", \"password\": \"xxx\", \"type\": \"WEB\"}"</span></code></pre>
+						<p>If the request is successfull, the response is like that :</p>
+						<pre><code class="language-js">{
+  <span class="hljs-string">"message"</span>: <span class="hljs-string">"The result is a WEB session info"</span>,
+  <span class="hljs-string">"status"</span>: <span class="hljs-string">"OK"</span>,
+  <span class="hljs-string">"result"</span>: {
+    <span class="hljs-string">"sessionId"</span>: <span class="hljs-number">1246413767</span>,
+    <span class="hljs-string">"userFullName"</span>: <span class="hljs-string">"John Do"</span>,
+    ...
+  }
 }</code></pre>
-							</dd>
-						</dl>
+						<p>The library &quot;<strong>token</strong>&quot; is the parameter &quot;<strong>sessionId</strong>&quot; in REST the response.</p>
+						<p>The library &quot;<strong>fullName</strong>&quot; is the parameter &quot;<strong>userFullName</strong>&quot; in REST the response.</p>
+						<p>So to start the library you can pass the information like that :</p>
+						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  ...
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+      <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
+        <span class="hljs-attr">session</span>: {
+          <span class="hljs-attr">token</span>: <span class="hljs-string">"1246413767"</span>
+          <span class="hljs-attr">user</span>: {
+            <span class="hljs-attr">username</span>: <span class="hljs-string">"jdo@company.com"</span>,
+            <span class="hljs-attr">fullName</span>: <span class="hljs-string">"John Do"</span>
+          }
+        }
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    ...
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-api@x.x.x/public/"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+						<p>If you don&#39;t want to use the REST API, you can use the API to login (and make the AJAX call to the rest API).</p>
+						<p>But you have to wait for the lib to be loaded.</p>
+						<p>To know if the lib has been loaded you can check if the JMAp namespace exist or not. Bellow the example :</p>
+						<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    ...
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"jmap_wrapper"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"JMap"</span>, <span class="hljs-built_in">window</span>.JMap)
+        <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
+          <span class="hljs-attr">projectId</span>: <span class="hljs-number">35</span>,
+          <span class="hljs-attr">restBaseUrl</span>: <span class="hljs-string">"https://jmap7dev.jmaponline.net/services/rest/v2.0"</span>,
+          <span class="hljs-attr">noSessionExpiration</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">map</span>: {
+            <span class="hljs-attr">zoom</span>: <span class="hljs-number">9.757829447748511</span>,
+            <span class="hljs-attr">center</span>: {
+              <span class="hljs-attr">x</span>: <span class="hljs-number">-73.66415865898597</span>,
+              <span class="hljs-attr">y</span>: <span class="hljs-number">45.53583011032552</span>
+            }
+          }
+        }
+      </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+      ...
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jmap-js-api@x.x.x/public/index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jmapLogin</span>(<span class="hljs-params"></span>) </span>{
+          <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.hasOwnProperty(<span class="hljs-string">"JMap"</span>)) {
+            JMap.Service.User.login(<span class="hljs-string">"jdo@company.com"</span>, <span class="hljs-string">"xxx"</span>)
+          } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Waiting for the JMap lib to be loaded ..."</span>)
+            setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> jmapLogin(), <span class="hljs-number">150</span>) <span class="hljs-comment">// check every 150 milliseconds</span>
+          }
+        })()
+      </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					</div>
 				</section>
 			</section>

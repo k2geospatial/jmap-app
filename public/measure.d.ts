@@ -1,8 +1,9 @@
 declare interface JAppMeasure {
-  point: any // Feature
-  line: any // Feature
-  fill?: any //Feature
-  popups: Array<{ coordinates: [number, number], html: string }>
   id: number
   type: JAppMeasureType
+  total: number
+  popups: Array<{ coordinates: [number, number], html: string }>
+  multiPointFeature: any // Feature<MultiPoint>
+  lineFeature: any // Feature<LineString>
+  fillFeature: any //Feature<LineString>
 }

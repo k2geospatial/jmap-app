@@ -27,27 +27,25 @@ export interface JAppUiState {
 }
 
 export interface JAppMapContextState {
+  activeTab: JMapContextTab
   contexts: JMapContext[]
-  selectedContextId?: number
-  defaultContextId?: number
-  draftContextId?: number
-  draftContextTitle: string
-  draftContextDescription: string
-  section: JMapContextSection
+  defaultContextId: number | undefined
   filter: string
-  sortBy: JMapContextSortOption
+  sortBy: JMapContextSortByOption
+  sortByDirection: JMapContextSortByDirection
+  createTitle: string
+  createDescription: string
+  createTitleError: boolean
 }
 
 export interface JAppMeasureState {
   measureType: JAppMeasureType,
+  measures: JAppMeasure[]
   isNewElement: boolean,
-  isDeletingMeasure: boolean,
-  totalLength: number,
-  totalArea: number
+  isDeleting: boolean
 }
 
 export interface JAppPrintState {
-  activeTab: JAppPrintTab
   paperFormat: JAppPaperFormat
   fileType: JAppPrintFileType
   isOrientationPortrait: boolean
@@ -68,9 +66,10 @@ export interface JAppPrintState {
 }
 
 export interface JAppSelectionState {
-  selectionType: JAppSelectionType,
-  isNewElement: boolean,
-  tableLayerId?: number
+  selectionType: JAppSelectionType
+  displayedLayerId: number
+  isNewElement: boolean
+  tableVisibility: boolean
 }
 
 export interface JApplicationMainService {
@@ -86,7 +85,12 @@ export interface JApplicationUIService {
   },
   SidePanel: {
     isVisible(): boolean
+    toggleVisibility(): void
     setVisible(isVisible: boolean): void
+  },
+  Theme: {
+    setDark(isDark: boolean): void
+    isDark(): boolean
   }
 }
 
@@ -116,19 +120,26 @@ export interface JHideablePanel {
 }
 
 export interface JAppSelectionService {
+  getDisplayedLayerId(): number
+  setDisplayedLayerId(layerId: number): void
   activateSelectionType(selectionType: JAppSelectionType): void
-  cancelSelection(): void
-  getCurrentDrawnSelectionContent(): JMapSelection
+  getTableVisibility(): boolean
+  setTableVisibility(tableVisibility: boolean): void
+  clearSelectionForLayer(layerId: number): void
+  clearSelection(): void
+  applyDrawnSelection(): void
+  exportAsExcelFile(): void
+  fitMapToDisplayLayerSelection(): void
   removeLastDrawnSelectionCoordinate(): void
 }
 
 export interface JAppMeasureService {
   activateMeasureType(measureType: JAppMeasureType): void
-  activateDeleting(): void
-  deleteAllMeasures(): void
-  cancelCurrentMeasure(): void
+  setDeletingMode(isDeleting: boolean): void
+  deleteAllMeasures(measureType?: JAppMeasureType): void
   deleteMeasureAtLocation(location: JLocation): void
   finalizeMeasure(): void
+  resetState(): void
 }
 
 export interface JAppPanelService {
@@ -138,15 +149,11 @@ export interface JAppPanelService {
 }
 
 export interface JAppPrintService {
-  toggleTab(): void
-  activateTab(tab: JAppPrintTab): void
-  getActiveTab(): JAppPrintTab
-  getAllTabs(): JAppPrintTab[]
   refreshScaleForCurrentZoom(): void
   setScaleControlVisibility(isVisible: boolean): void
   isScaleControlVisible(): boolean
   setPageTitle(title: string): void
-  getPageTitle(): string
+  getPageTitle(type?: string): string
   setPageSubTitle(subTitle: string): void
   getPageSubTitle(): string
   setDateVisibility(isVisible: boolean): void
@@ -154,7 +161,7 @@ export interface JAppPrintService {
   setNorthArrowVisibility(isVisible: boolean): void
   isNorthArrowVisible(): boolean
   getAllPaperFormats(): JAppPaperFormat[]
-  setPaperFormat(format: JAppPaperFormat): void
+  setPaperFormat(format: JAppPaperFormat | string): void
   getPaperFormat(): JAppPaperFormat
   setImagePPI(imagePPI: number): void
   getImagePPI(): number
@@ -169,27 +176,44 @@ export interface JAppPrintService {
   takeCapture(): void
 }
 
+export interface JMapContextMetaData {
+  title: string
+  shareLink: boolean
+  description?: string
+}
+
 export interface JAppMapContextService {
-  setDefaultMapContext(mapContextId?: number): void
-  selectMapContext(mapContextId: number): void
-  saveDraftContext(): void
-  requestMapContexts(): void
-  deleteMapContext(mapContextId: number | number[]): void
-  toggleMapContextSharing(mapContextId: number): void
-  getDraftContextId(): number | undefined
-  setDraftContextId(mapContextId?: number): void
-  getDraftContextTitle(): string
-  setDraftContextTitle(title: string): void
-  getDraftContextDescription(): string
-  setDraftContextDescription(description: string): void
-  getAllContexts(): JMapContext[]
-  getDefaultContextId(): number | undefined
-  getSelectedContextId(): number | undefined
-  getActiveSection(): JMapContextSection
-  activateSection(mapContextSection: JMapContextSection): void
+  startCreation(): void
+  cancelCreation(): void
+  getAll(): JMapContext[]
+  getById(contextId: number): JMapContext
+  applyContextById(contextId: number): void
+  deleteContextById(contextId: number | number[]): Promise<void>
+  create(params?: JMapContextMetaData): Promise<JMapContext>
+  update(contextId: number, params?: Partial<JMapContextMetaData>): Promise<JMapContext>
+  setContextMetaData(contextId: number, data: Partial<JMapContextMetaData>): Promise<void>
+  getContextTitle(contextId: number): string
+  setContextTitle(contextId: number, title: string): Promise<void>
+  getContextDescription(contextId: number): string
+  setContextDescription(contextId: number, description: string): Promise<void>
+  isLinkShared(contextId: number): boolean
+  setLinkShare(contextId: number, isShared: boolean): Promise<void>
+  getDefaultContext(): JMapContext | undefined
+  isDefaultContext(contextId: number): boolean
+  setDefaultContext(contextId?: number): Promise<void>
+  sortListBy(sortBy: JMapContextSortByOption): void
+  getListSortBy(): JMapContextSortByOption
+  getAllListSortBy(): JMapContextSortByOption[]
+  setListSortDirection(sortByDirection: JMapContextSortByDirection): void
+  getListSortDirection(): JMapContextSortByDirection
+  getAllListSortDirection(): JMapContextSortByDirection[]
+  filterList(filter: string): void
+  getListFilter(): string
+  clearListFilter(filter: string): void
 }
 
 export interface JAppLayerService {
-  getActiveTab(): JAppLayerTab
   activateTab(newTab: JAppLayerTab): void
+  getAllTabs(): JAppLayerTab[]
+  getActiveTab(): JAppLayerTab
 }

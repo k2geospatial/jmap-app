@@ -344,18 +344,6 @@ declare namespace JMap {
       function getSelectedContextId(): number | undefined
 
       /**
-       * **JMap.Application.MapContext.getActiveSection**
-       * 
-       * Returns the active section name in the context panel
-       * @example ```ts
-       * 
-       * // returns the current context side panel section name
-       * JMap.Application.MapContext.getActiveSection()
-       * ```
-       */
-      function getActiveSection(): JMapContextSection
-
-      /**
        * **JMap.Application.MapContext.setDefaultMapContext**
        * 
        * Set a map context to be default
@@ -406,19 +394,6 @@ declare namespace JMap {
        * ```
        */
       function setDraftContextDescription(description: string): void
-
-      /**
-       * **JMap.Application.MapContext.activateSection**
-       * 
-       * Go to a map context side panel section
-       * 
-       * @param mapContextSection The ui section to go to
-       * @example ```ts
-       * // Go to the map context side panel section "draft"
-       * JMap.Application.MapContext.activateSection("draft")
-       * ```
-       */
-      function activateSection(mapContextSection: JMapContextSection): void
 
       /**
        * **JMap.Application.MapContext.selectMapContext**
@@ -591,128 +566,47 @@ declare namespace JMap {
          * ```
          */
         function toggleVisibility(): void
-        
-        /**
-         * **JMap.Application.UI.Sidepanel.open**
-         * 
-         * Display the left application panel if not visible.
-         * 
-         * Do nothing if it's already visible.
-         * 
-         * @example ```ts
-         * 
-         * // Open the application left side panel
-         * JMap.Application.UI.Sidepanel.open()
-         * ```
-         */
-        function open(): void
-  
-        /**
-         * **JMap.Application.UI.Sidepanel.open**
-         * 
-         * Hide the left application panel if visible.
-         * 
-         * Do nothing if it's already not visible.
-         * 
-         * @example ```ts
-         * 
-         * // Close the application left side panel
-         * JMap.Application.UI.Sidepanel.close()
-         * ```
-         */
-        function close(): void
       }
 
       /**
-       * **JMap.Application.UI.UserPanel**
+       * **JMap.Application.UI.Theme**
        * 
-       * You can manage the user panel from here.
-       * 
-       * This panel is hidden by default.
-       * 
-       * It appears after clicking the user icon
-       * in the bottom of the left side panel.
-       * 
-       * User login/logout is done from this panel.
+       * You can manage the UI theme here.
        */
-      namespace UserPanel {
+      namespace Theme {
   
         /**
-         * **JMap.Application.UI.UserPanel.setVisible**
+         * **JMap.Application.UI.Theme.isDark**
          * 
-         * Set the user panel visibility.
+         * Returns true if the theme is currently dark.
          * 
-         * @param open if true show the panel, else hide it
          * @example ```ts
          * 
-         * // Show the user panel
-         * JMap.Application.UI.UserPanel.setVisible(true)
-         * 
-         * // Hide the left side panel
-         * JMap.Application.UI.UserPanel.setVisible(false)
+         * // true or false
+         * JMap.Application.UI.Theme.isDark()
          * ```
          */
-        function setVisible(open: boolean): void
+        function isDark(): boolean
   
         /**
-         * **JMap.Application.UI.UserPanel.isVisible**
+         * **JMap.Application.UI.Theme.setDark**
          * 
-         * Returns true if the user panel is opened.
+         * Change the UI color theme in dark or light.
          * 
+         * @param isDark if true make the theme dark, else light
          * @example ```ts
          * 
-         * // returns true if user panel is opened
-         * JMap.Application.UI.UserPanel.isVisible()
+         * // make the theme dark
+         * JMap.Application.UI.Theme.setDark()
+         * 
+         * // make the theme dark
+         * JMap.Application.UI.Theme.setDark(true)
+         * 
+         * // make the theme light
+         * JMap.Application.UI.Theme.setDark(false)
          * ```
          */
-        function isVisible(): boolean
-  
-        /**
-         * **JMap.Application.UI.UserPanel.toggleVisibility**
-         * 
-         * Change the user panel visibility.
-         * 
-         * If the panel is open, it will close.
-         * 
-         * If the panel is closed, it will open.
-         * 
-         * @example ```ts
-         * 
-         * // change the user panel visibility
-         * JMap.Application.UI.UserPanel.toggleVisibility()
-         * ```
-         */
-        function toggleVisibility(): void
-        
-        /**
-         * **JMap.Application.UI.UserPanel.open**
-         * 
-         * Display the user panel, if not visible.
-         * 
-         * Do nothing if it's already visible.
-         * 
-         * @example ```ts
-         * 
-         * // Open the user panel
-         * JMap.Application.UI.UserPanel.open()
-         * ```
-         */
-        function open(): void
-  
-        /**
-         * **JMap.Application.UI.UserPanel.open**
-         * 
-         * Hide the user panel if visible.
-         * 
-         * Do nothing if it's already not visible.
-         * 
-         * @example ```ts
-         * 
-         * // Close the user panel
-         * JMap.Application.UI.UserPanel.close()
-         * ```
-         */
-        function close(): void
+        function setDark(isDark: boolean): void
       }
     }
   }

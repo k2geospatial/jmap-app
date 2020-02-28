@@ -1,5 +1,39 @@
-declare type JMapContextSection = "all-contexts" | "draft"
-declare type JMapContextSortOption = "alphabetic" | "lastUse" | "lastUpdate"
+declare type JMapContextTab = "list" | "create"
+declare type JMapContextSortByOption = "alphabetic" | "lastUpdate" //  | "lastUse"
+declare type JMapContextSortByDirection = "asc" | "desc"
+
+declare interface JMapContextEditResponse {
+  id: number
+  uuid: string
+  modificationDate: string
+}
+
+declare interface JMapContextData {
+  layerElements: JMapContextDataLayerElement[]
+  mapCenter: { x: number, y: number }
+  mapZoom: number
+  mapPitch: number
+  mapBearing: number
+  baseMap: string
+  selection: JMapSelection
+  measures: JAppMeasure[]
+  thumbnail: string
+}
+
+declare interface JMapContextDataLayerElement {
+  id: number
+  isGroup: boolean
+  isVisible: boolean
+}
+
+declare interface JMapContextDataLayer extends JMapContextDataLayerElement{
+  thematics: JMapContextDataThematic[]
+}
+
+declare interface JMapContextDataThematic {
+  id: number
+  isVisible: boolean
+}
 
 declare interface JMapContext {
   id?: number,
@@ -12,15 +46,5 @@ declare interface JMapContext {
   creationDate?: string
   modificationDate?: string
   projectId?: string
-  data: {
-    mapCenter: { x: number, y: number }
-    mapZoom: number
-    mapPitch: number
-    mapBearing: number
-    baseMap: string
-    selection: JMapSelection
-    measures: JAppMeasure[]
-    thumbnail: string
-    lastUseDate?: number
-  }
+  data: JMapContextData
 }

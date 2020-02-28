@@ -74,6 +74,7 @@ export interface JAppSelectionState {
 
 export interface JApplicationMainService {
   getVersion(): string
+  getImplVersion(): string
   openDocumentation(): void
 }
 

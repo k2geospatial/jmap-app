@@ -1,3 +1,5 @@
+import { JEventModule } from "jmap-api-ng"
+
 export interface JAppState {
   panel: JAppPanelState
   measure: JAppMeasureState
@@ -95,7 +97,16 @@ export interface JApplicationUIService {
   }
 }
 
-export interface JApplicationService extends JApplicationMainService {
+export interface JApplication extends JApplicationMainService {
+  Event: JAppEventModules
+  Service: JApplicationService
+}
+
+export interface JAppEventModules {
+  UI: JAppEventUIModule
+}
+
+export interface JApplicationService {
   Panel: JAppPanelService
   Measure: JAppMeasureService
   Selection: JAppSelectionService
@@ -217,4 +228,15 @@ export interface JAppLayerService {
   activateTab(newTab: JAppLayerTab): void
   getAllTabs(): JAppLayerTab[]
   getActiveTab(): JAppLayerTab
+}
+
+export interface JAppEventSizeParams {
+  width: number
+  height: number
+}
+
+export interface JAppEventUIModule extends JEventModule {
+  on: {
+    sizeChanged(listenerId: string, fn: (params: JAppEventSizeParams) => void): void
+  }
 }

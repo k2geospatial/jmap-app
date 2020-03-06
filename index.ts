@@ -139,6 +139,9 @@ export interface JAppSelectionService {
   setTableVisibility(tableVisibility: boolean): void
   clearSelectionForLayer(layerId: number): void
   clearSelection(): void
+  doubleClick(): void
+  onKeyDown(keyCode: string): void
+  onKeyUp(keyCode: string): void
   applyDrawnSelection(): void
   exportAsExcelFile(): void
   fitMapToDisplayLayerSelection(): void

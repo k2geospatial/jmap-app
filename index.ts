@@ -51,8 +51,6 @@ export interface JAppPrintState {
   paperFormat: JAppPaperFormat
   fileType: JAppPrintFileType
   isOrientationPortrait: boolean
-  marginRatio: number
-  imagePPI: number
   base64Image: string
   pageTitle: string
   pageSubTitle: string
@@ -178,14 +176,10 @@ export interface JAppPrintService {
   getAllPaperFormats(): JAppPaperFormat[]
   setPaperFormat(format: JAppPaperFormat | string): void
   getPaperFormat(): JAppPaperFormat
-  setImagePPI(imagePPI: number): void
-  getImagePPI(): number
   setOrientation(isPortrait: boolean): void
   isOrientationPortrait(): boolean
   setFileType(fileType: JAppPrintFileType): void
   getFileType(): JAppPrintFileType
-  setMarginRatio(marginRatio: number): void
-  getMarginRatio(): number
   getScale(): number
   setZoomFromScale(scale: number): void
   takeCapture(): void

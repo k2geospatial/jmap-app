@@ -8,7 +8,7 @@
     "pub": "export NODE_ENV='production'; gulp publish --gulpfile build/gulpfile.js;",
     "copy": "export NODE_ENV='production'; gulp copy --gulpfile build/gulpfile.js;",
     "commit-doc": "export NODE_ENV='production'; gulp commit-doc --gulpfile build/gulpfile.js;",
-    "doc-test": "export DOC_DIR='./docs/current'; gulp typedoc --gulpfile build/gulpfile.js;"
+    "doc-test": "export DOC_DIR='./docs/latest'; gulp typedoc --gulpfile build/gulpfile.js;"
   },
   "repository": {
     "type": "git",

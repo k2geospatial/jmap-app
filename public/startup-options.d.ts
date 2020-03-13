@@ -63,6 +63,28 @@ declare interface JAPIApplicationOptions {
    */
   containerId?: string
   /**
+   * Set the UI theme as dark or light.
+   * 
+   * ```html
+   * <html>
+   *   ...
+   *   <body>
+   *     <script type="text/javascript">
+   *       window.JMAP_API_OPTIONS = {
+   *         ...
+   *         application: {
+   *           theme: "dark",
+   *           ...
+   *         }
+   *       }
+   *     </script>
+   *     ...
+   *   </body>
+   * </html>
+   * ```
+   */
+  theme?: "dark" | "light"
+  /**
    * Panel (on the left) id that will be activated.
    * 
    * Standard panels ids are : "project", "layer", "selection", "measure", 

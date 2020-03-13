@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Layer | jmap-api</title>
+	<title>Selection | jmap-api</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -60,10 +60,10 @@
 					<a href="jmap.application.html">Application</a>
 				</li>
 				<li>
-					<a href="jmap.application.layer.html">Layer</a>
+					<a href="jmap.application.selection.html">Selection</a>
 				</li>
 			</ul>
-			<h1>Module Layer</h1>
+			<h1>Module Selection</h1>
 		</div>
 	</div>
 </header>
@@ -73,9 +73,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p><strong>JMap.Application.Layer</strong></p>
+						<p><strong>JMap.Application.Selection</strong></p>
 					</div>
-					<p>You can manage the layer panel here.</p>
+					<p>You can manage the application selection tools here.</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -85,8 +85,10 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.html#activatetab" class="tsd-kind-icon">activate<wbr>Tab</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.html#getactivetab" class="tsd-kind-icon">get<wbr>Active<wbr>Tab</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.selection.html#activateselectiontype" class="tsd-kind-icon">activate<wbr>Selection<wbr>Type</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.selection.html#cancelselection" class="tsd-kind-icon">cancel<wbr>Selection</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.selection.html#getcurrentdrawnselectioncontent" class="tsd-kind-icon">get<wbr>Current<wbr>Drawn<wbr>Selection<wbr>Content</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.selection.html#removelastdrawnselectioncoordinate" class="tsd-kind-icon">remove<wbr>Last<wbr>Drawn<wbr>Selection<wbr>Coordinate</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,37 +97,37 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="activatetab" class="tsd-anchor"></a>
-					<h3>activate<wbr>Tab</h3>
+					<a name="activateselectiontype" class="tsd-anchor"></a>
+					<h3>activate<wbr>Selection<wbr>Type</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">activate<wbr>Tab<span class="tsd-signature-symbol">(</span>tab<span class="tsd-signature-symbol">: </span><a href="../globals.html#japplayertab" class="tsd-signature-type">JAppLayerTab</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">activate<wbr>Selection<wbr>Type<span class="tsd-signature-symbol">(</span>selectionType<span class="tsd-signature-symbol">: </span><a href="../globals.html#jappselectiontype" class="tsd-signature-type">JAppSelectionType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/app.d.ts#L263">public/app.d.ts:263</a></li>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/app.d.ts#L197">public/app.d.ts:197</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p><strong>JMap.Application.Layer.activateTab</strong></p>
+									<p><strong>JMap.Application.Selection.activateSelectionType</strong></p>
 								</div>
-								<p>Activate the provided tab in the layer panel.</p>
+								<p>Change the current type of selection</p>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// activate the "base-map" tab in the layer tab</span>
-JMap.Application.Layer.activateTab(<span class="hljs-string">"base-map"</span>)</code></pre>
+<span class="hljs-comment">// change the selection type to rectangle</span>
+JMap.Application.Measure.activateSelectionType(<span class="hljs-string">"rectangle"</span>)</code></pre>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>tab: <a href="../globals.html#japplayertab" class="tsd-signature-type">JAppLayerTab</a></h5>
+									<h5>selectionType: <a href="../globals.html#jappselectiontype" class="tsd-signature-type">JAppSelectionType</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the tab id to activate</p>
+										<p>The new selection type to apply</p>
 									</div>
 								</li>
 							</ul>
@@ -134,32 +136,94 @@ JMap.Application.Layer.activateTab(<span class="hljs-string">"base-map"</span>)<
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="getactivetab" class="tsd-anchor"></a>
-					<h3>get<wbr>Active<wbr>Tab</h3>
+					<a name="cancelselection" class="tsd-anchor"></a>
+					<h3>cancel<wbr>Selection</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Active<wbr>Tab<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#japplayertab" class="tsd-signature-type">JAppLayerTab</a></li>
+						<li class="tsd-signature tsd-kind-icon">cancel<wbr>Selection<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/app.d.ts#L250">public/app.d.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/app.d.ts#L208">public/app.d.ts:208</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p><strong>JMap.Application.Layer.getActiveTab</strong></p>
+									<p><strong>JMap.Application.Selection.cancelSelection</strong></p>
 								</div>
-								<p>Returns layer panel active tab id.</p>
+								<p>Cancel the current drawn selection</p>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// returns the active tab for the layer layout</span>
-JMap.Application.Layer.getActiveTab()</code></pre>
+									<dd><pre><code class="language-ts"><span class="hljs-comment">// Cancel the current drawn selection</span>
+JMap.Application.Measure.cancelSelection()</code></pre>
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../globals.html#japplayertab" class="tsd-signature-type">JAppLayerTab</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getcurrentdrawnselectioncontent" class="tsd-anchor"></a>
+					<h3>get<wbr>Current<wbr>Drawn<wbr>Selection<wbr>Content</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Current<wbr>Drawn<wbr>Selection<wbr>Content<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/app.d.ts#L219">public/app.d.ts:219</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Selection.getCurrentDrawnSelectionContent</strong></p>
+								</div>
+								<p>Returns the current selection data for the drawn selection and add it to the store</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span class="hljs-comment">// Get the selection data for the drawn selection</span>
+JMap.Application.Measure.getCurrentDrawnSelectionContent()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-index-signature">
+									<h5><span class="tsd-signature-symbol">[</span>layerId: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="removelastdrawnselectioncoordinate" class="tsd-anchor"></a>
+					<h3>remove<wbr>Last<wbr>Drawn<wbr>Selection<wbr>Coordinate</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Last<wbr>Drawn<wbr>Selection<wbr>Coordinate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/app.d.ts#L230">public/app.d.ts:230</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Selection.removeLastDrawnSelectionCoordinate</strong></p>
+								</div>
+								<p>Remove the last drawn point for the current selection</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span class="hljs-comment">// Remove the last drawn point for the current selection</span>
+JMap.Application.Measure.removeLastDrawnSelectionCoordinate()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -180,7 +244,7 @@ JMap.Application.Layer.getActiveTab()</code></pre>
 							<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.application.html">Application</a>
 								<ul>
-									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 										<a href="jmap.application.layer.html">Layer</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -192,7 +256,7 @@ JMap.Application.Layer.getActiveTab()</code></pre>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 										<a href="jmap.application.panel.html">Panel</a>
 									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 										<a href="jmap.application.selection.html">Selection</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -219,10 +283,16 @@ JMap.Application.Layer.getActiveTab()</code></pre>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="jmap.application.layer.html#activatetab" class="tsd-kind-icon">activate<wbr>Tab</a>
+						<a href="jmap.application.selection.html#activateselectiontype" class="tsd-kind-icon">activate<wbr>Selection<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="jmap.application.layer.html#getactivetab" class="tsd-kind-icon">get<wbr>Active<wbr>Tab</a>
+						<a href="jmap.application.selection.html#cancelselection" class="tsd-kind-icon">cancel<wbr>Selection</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.selection.html#getcurrentdrawnselectioncontent" class="tsd-kind-icon">get<wbr>Current<wbr>Drawn<wbr>Selection<wbr>Content</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.selection.html#removelastdrawnselectioncoordinate" class="tsd-kind-icon">remove<wbr>Last<wbr>Drawn<wbr>Selection<wbr>Coordinate</a>
 					</li>
 				</ul>
 			</nav>

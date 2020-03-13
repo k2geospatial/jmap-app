@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JAPIApplicationOptions | jmap-api</title>
+	<title>JAppPanel | jmap-api</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="japiapplicationoptions.html">JAPIApplicationOptions</a>
+					<a href="japppanel.html">JAppPanel</a>
 				</li>
 			</ul>
-			<h1>Interface JAPIApplicationOptions</h1>
+			<h1>Interface JAppPanel</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">JAPIApplicationOptions</span>
+						<span class="target">JAppPanel</span>
 					</li>
 				</ul>
 			</section>
@@ -79,9 +79,11 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="japiapplicationoptions.html#activepanelid" class="tsd-kind-icon">active<wbr>Panel<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="japiapplicationoptions.html#containerid" class="tsd-kind-icon">container<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="japiapplicationoptions.html#disabledpanelids" class="tsd-kind-icon">disabled<wbr>Panel<wbr>Ids</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="japppanel.html#iconbase64" class="tsd-kind-icon">icon<wbr>Base64</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="japppanel.html#iconname" class="tsd-kind-icon">icon<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="japppanel.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="japppanel.html#interactorid" class="tsd-kind-icon">interactor<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="japppanel.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,102 +92,54 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="activepanelid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> active<wbr>Panel<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">active<wbr>Panel<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="iconbase64" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> icon<wbr>Base64</h3>
+					<div class="tsd-signature tsd-kind-icon">icon<wbr>Base64<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/startup-options.d.ts#L96">public/startup-options.d.ts:96</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/panel.d.ts#L4">public/panel.d.ts:4</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>By default the active panel (the one displayed), is the &quot;layer&quot; panel.</p>
-						</div>
-						<p>Standard application panels ids are : &quot;project&quot;, &quot;layer&quot;, &quot;selection&quot;, &quot;measure&quot;, &quot;draw&quot;, &quot;search&quot;, &quot;add-feature&quot;, &quot;print&quot;, &quot;user&quot;</p>
-						<p>But if <strong><em>activePanelId</em></strong> is defined, it will display the corresponding panel on the screen.</p>
-						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-  ...
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
-      <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
-        ...
-        application: {
-          <span class="hljs-attr">activePanelId</span>: <span class="hljs-string">"project"</span>,
-          ...
-        }
-      }
-    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    ...
-  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="containerid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> container<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">container<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="iconname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> icon<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">icon<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/startup-options.d.ts#L64">public/startup-options.d.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/panel.d.ts#L5">public/panel.d.ts:5</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>When the application start it will create or use an existing div container in which the app will be inserted into.</p>
-						</div>
-						<p>All application dom elements will be inserted inside this div.</p>
-						<p>By default the div container id is &quot;<strong><em>jmap-app</em></strong>&quot;, but you can set the id of your choice like that :</p>
-						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-  ...
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"my-custom-container-id"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
-      <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
-        ...
-        application: {
-          <span class="hljs-attr">containerId</span>: <span class="hljs-string">"my-custom-container-id"</span>
-        }
-      }
-    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    ...
- <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
-						<p>In the above example the application will be inserted in the div having &quot;my-custom-container-id&quot; as id. You need to set the width and the height of this div by yourself.</p>
-						<p>If no container is found in the DOM with the specified id, JMap API will create and append it automatically in the body element of the web page.</p>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="disabledpanelids" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disabled<wbr>Panel<wbr>Ids</h3>
-					<div class="tsd-signature tsd-kind-icon">disabled<wbr>Panel<wbr>Ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/startup-options.d.ts#L122">public/startup-options.d.ts:122</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/panel.d.ts#L2">public/panel.d.ts:2</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The application have multiple panels available by default : &quot;project&quot;, &quot;layer&quot;, &quot;selection&quot;, &quot;measure&quot;, &quot;draw&quot;, &quot;search&quot;, &quot;add-feature&quot;, &quot;print&quot;, &quot;user&quot;</p>
-						</div>
-						<p>But you can tell the JMap application to disabled some panels. If a panel is disabled it will disappear on the left menu.</p>
-						<p>The <strong><em>disabledPanelIds</em></strong> parameter is an array with the panel ids you want to be disabled.</p>
-						<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-  ...
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
-      <span class="hljs-built_in">window</span>.JMAP_API_OPTIONS = {
-        ...
-        application: {
-          <span class="hljs-attr">disabledPanelIds</span>: [ <span class="hljs-string">"measure"</span>, <span class="hljs-string">"print"</span> ],
-          ...
-        }
-      }
-    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    ...
-  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
-					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="interactorid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> interactor<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">interactor<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/panel.d.ts#L3">public/panel.d.ts:3</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="tooltip" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tooltip</h3>
+					<div class="tsd-signature tsd-kind-icon">tooltip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/panel.d.ts#L6">public/panel.d.ts:6</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -202,16 +156,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-is-not-exported">
-						<a href="japiapplicationoptions.html" class="tsd-kind-icon">JAPIApplication<wbr>Options</a>
+						<a href="japppanel.html" class="tsd-kind-icon">JApp<wbr>Panel</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="japiapplicationoptions.html#activepanelid" class="tsd-kind-icon">active<wbr>Panel<wbr>Id</a>
+								<a href="japppanel.html#iconbase64" class="tsd-kind-icon">icon<wbr>Base64</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="japiapplicationoptions.html#containerid" class="tsd-kind-icon">container<wbr>Id</a>
+								<a href="japppanel.html#iconname" class="tsd-kind-icon">icon<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="japiapplicationoptions.html#disabledpanelids" class="tsd-kind-icon">disabled<wbr>Panel<wbr>Ids</a>
+								<a href="japppanel.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="japppanel.html#interactorid" class="tsd-kind-icon">interactor<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="japppanel.html#tooltip" class="tsd-kind-icon">tooltip</a>
 							</li>
 						</ul>
 					</li>

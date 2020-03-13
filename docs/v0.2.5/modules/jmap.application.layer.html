@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JMapContextDataLayer | jmap-api</title>
+	<title>Layer | jmap-api</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,89 +54,114 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="jmapcontextdatalayer.html">JMapContextDataLayer</a>
+					<a href="jmap.html">JMap</a>
+				</li>
+				<li>
+					<a href="jmap.application.html">Application</a>
+				</li>
+				<li>
+					<a href="jmap.application.layer.html">Layer</a>
 				</li>
 			</ul>
-			<h1>Interface JMapContextDataLayer</h1>
+			<h1>Module Layer</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<a href="jmapcontextdatalayerelement.html" class="tsd-signature-type">JMapContextDataLayerElement</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">JMapContextDataLayer</span>
-							</li>
-						</ul>
-					</li>
-				</ul>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p><strong>JMap.Application.Layer</strong></p>
+					</div>
+					<p>You can manage the layer panel here.</p>
+				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Properties</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="jmapcontextdatalayer.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="jmapcontextdatalayer.html#isgroup" class="tsd-kind-icon">is<wbr>Group</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="jmapcontextdatalayer.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontextdatalayer.html#thematics" class="tsd-kind-icon">thematics</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.html#activatetab" class="tsd-kind-icon">activate<wbr>Tab</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.html#getactivetab" class="tsd-kind-icon">get<wbr>Active<wbr>Tab</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="jmapcontextdatalayerelement.html">JMapContextDataLayerElement</a>.<a href="jmapcontextdatalayerelement.html#id">id</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/map-context.d.ts#L24">public/map-context.d.ts:24</a></li>
-						</ul>
-					</aside>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="activatetab" class="tsd-anchor"></a>
+					<h3>activate<wbr>Tab</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">activate<wbr>Tab<span class="tsd-signature-symbol">(</span>tab<span class="tsd-signature-symbol">: </span><a href="../globals.html#japplayertab" class="tsd-signature-type">JAppLayerTab</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/app.d.ts#L263">public/app.d.ts:263</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.activateTab</strong></p>
+								</div>
+								<p>Activate the provided tab in the layer panel.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// activate the "base-map" tab in the layer tab</span>
+JMap.Application.Layer.activateTab(<span class="hljs-string">"base-map"</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tab: <a href="../globals.html#japplayertab" class="tsd-signature-type">JAppLayerTab</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the tab id to activate</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
-					<a name="isgroup" class="tsd-anchor"></a>
-					<h3>is<wbr>Group</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Group<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="jmapcontextdatalayerelement.html">JMapContextDataLayerElement</a>.<a href="jmapcontextdatalayerelement.html#isgroup">isGroup</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/map-context.d.ts#L25">public/map-context.d.ts:25</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
-					<a name="isvisible" class="tsd-anchor"></a>
-					<h3>is<wbr>Visible</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="jmapcontextdatalayerelement.html">JMapContextDataLayerElement</a>.<a href="jmapcontextdatalayerelement.html#isvisible">isVisible</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/map-context.d.ts#L26">public/map-context.d.ts:26</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="thematics" class="tsd-anchor"></a>
-					<h3>thematics</h3>
-					<div class="tsd-signature tsd-kind-icon">thematics<span class="tsd-signature-symbol">:</span> <a href="jmapcontextdatathematic.html" class="tsd-signature-type">JMapContextDataThematic</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/map-context.d.ts#L30">public/map-context.d.ts:30</a></li>
-						</ul>
-					</aside>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getactivetab" class="tsd-anchor"></a>
+					<h3>get<wbr>Active<wbr>Tab</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Active<wbr>Tab<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#japplayertab" class="tsd-signature-type">JAppLayerTab</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/app.d.ts#L250">public/app.d.ts:250</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.getActiveTab</strong></p>
+								</div>
+								<p>Returns layer panel active tab id.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// returns the active tab for the layer layout</span>
+JMap.Application.Layer.getActiveTab()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#japplayertab" class="tsd-signature-type">JAppLayerTab</a></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -146,31 +171,59 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-is-not-exported">
-						<a href="jmapcontextdatalayer.html" class="tsd-kind-icon">JMap<wbr>Context<wbr>Data<wbr>Layer</a>
+					<li class="current tsd-kind-module tsd-is-not-exported">
+						<a href="jmap.html">JMap</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
-								<a href="jmapcontextdatalayer.html#id" class="tsd-kind-icon">id</a>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.api.html">Api</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
-								<a href="jmapcontextdatalayer.html#isgroup" class="tsd-kind-icon">is<wbr>Group</a>
+							<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.application.html">Application</a>
+								<ul>
+									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.layer.html">Layer</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.mapcontext.html">Map<wbr>Context</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.measure.html">Measure</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.panel.html">Panel</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.selection.html">Selection</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.ui.html">UI</a>
+									</li>
+								</ul>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
-								<a href="jmapcontextdatalayer.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.component.html">Component</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jmapcontextdatalayer.html#thematics" class="tsd-kind-icon">thematics</a>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.event.html">Event</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.external.html">External</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="jmap.service.html">Service</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
-				<ul class="after-current">
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.html#activatetab" class="tsd-kind-icon">activate<wbr>Tab</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.html#getactivetab" class="tsd-kind-icon">get<wbr>Active<wbr>Tab</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

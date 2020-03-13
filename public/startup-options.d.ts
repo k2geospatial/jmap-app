@@ -62,6 +62,54 @@ declare interface JAPIApplicationOptions {
    * If no container is found in the DOM with the specified id, JMap API will create and append it automatically in the body element of the web page.
    */
   containerId?: string
+
+  /**
+   * Set a custom application background image, by default the JMap background is displayed.
+   * Background image is used for login screen, project selection, or when loading a project.
+   * 
+   * ```html
+   * <html>
+   *   ...
+   *   <body>
+   *     <script type="text/javascript">
+   *       window.JMAP_API_OPTIONS = {
+   *         ...
+   *         application: {
+   *           backgroundImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+   *           ...
+   *         }
+   *       }
+   *     </script>
+   *     ...
+   *   </body>
+   * </html>
+   * ```
+   */
+  backgroundImageUrl?: string
+
+  /**
+   * Set a custom application logo, by default the JMap logo is displayed.
+   * 
+   * ```html
+   * <html>
+   *   ...
+   *   <body>
+   *     <script type="text/javascript">
+   *       window.JMAP_API_OPTIONS = {
+   *         ...
+   *         application: {
+   *           backgroundImageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Atari_logo.svg/640px-Atari_logo.svg.png",
+   *           ...
+   *         }
+   *       }
+   *     </script>
+   *     ...
+   *   </body>
+   * </html>
+   * ```
+   */
+  logoImageUrl?: string
+
   /**
    * Set the UI theme as dark or light.
    * 
@@ -84,16 +132,11 @@ declare interface JAPIApplicationOptions {
    * ```
    */
   theme?: "dark" | "light"
-  /**
-   * Panel (on the left) id that will be activated.
-   * 
-   * Standard panels ids are : "project", "layer", "selection", "measure", 
-   *                           "draw", "search", "add-feature", "print", "user"
-   */
+
   /**
    * By default the active panel (the one displayed), is the "layer" panel.
    * 
-   * Standard application panels ids are : "project", "layer", "selection", "measure", "draw", "search", "add-feature", "print", "user"
+   * Standard application panels ids are : "project", "layer", "selection", "measure", "mapcontext", "print", "user".
    * 
    * But if ***activePanelId*** is defined, it will display the corresponding panel on the screen.
    * 
@@ -116,6 +159,7 @@ declare interface JAPIApplicationOptions {
    * ```
    */
   activePanelId?: string
+
   /**
    * The application have multiple panels available by default : "project", "layer", "selection", "measure", "draw", "search", "add-feature", "print", "user"
    * 

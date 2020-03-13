@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JAppMeasure | jmap-api</title>
+	<title>JMapContext | jmap-api</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="jappmeasure.html">JAppMeasure</a>
+					<a href="jmapcontext.html">JMapContext</a>
 				</li>
 			</ul>
-			<h1>Interface JAppMeasure</h1>
+			<h1>Interface JMapContext</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">JAppMeasure</span>
+						<span class="target">JMapContext</span>
 					</li>
 				</ul>
 			</section>
@@ -79,13 +79,17 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jappmeasure.html#fillfeature" class="tsd-kind-icon">fill<wbr>Feature</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jappmeasure.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jappmeasure.html#linefeature" class="tsd-kind-icon">line<wbr>Feature</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jappmeasure.html#multipointfeature" class="tsd-kind-icon">multi<wbr>Point<wbr>Feature</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jappmeasure.html#popups" class="tsd-kind-icon">popups</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jappmeasure.html#total" class="tsd-kind-icon">total</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jappmeasure.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#author" class="tsd-kind-icon">author</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#creationdate" class="tsd-kind-icon">creation<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#modificationdate" class="tsd-kind-icon">modification<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#origin" class="tsd-kind-icon">origin</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#projectid" class="tsd-kind-icon">project<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#shared" class="tsd-kind-icon">shared</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jmapcontext.html#uuid" class="tsd-kind-icon">uuid</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,72 +98,112 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="fillfeature" class="tsd-anchor"></a>
-					<h3>fill<wbr>Feature</h3>
-					<div class="tsd-signature tsd-kind-icon">fill<wbr>Feature<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="author" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> author</h3>
+					<div class="tsd-signature tsd-kind-icon">author<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/measure.d.ts#L8">public/measure.d.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L45">public/map-context.d.ts:45</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="creationdate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> creation<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">creation<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L46">public/map-context.d.ts:46</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="jmapcontextdata.html" class="tsd-signature-type">JMapContextData</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L49">public/map-context.d.ts:49</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="description" class="tsd-anchor"></a>
+					<h3>description</h3>
+					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L41">public/map-context.d.ts:41</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/measure.d.ts#L2">public/measure.d.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L39">public/map-context.d.ts:39</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="linefeature" class="tsd-anchor"></a>
-					<h3>line<wbr>Feature</h3>
-					<div class="tsd-signature tsd-kind-icon">line<wbr>Feature<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="modificationdate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> modification<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">modification<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/measure.d.ts#L7">public/measure.d.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L47">public/map-context.d.ts:47</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="multipointfeature" class="tsd-anchor"></a>
-					<h3>multi<wbr>Point<wbr>Feature</h3>
-					<div class="tsd-signature tsd-kind-icon">multi<wbr>Point<wbr>Feature<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="origin" class="tsd-anchor"></a>
+					<h3>origin</h3>
+					<div class="tsd-signature tsd-kind-icon">origin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"web-ng"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/measure.d.ts#L6">public/measure.d.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L43">public/map-context.d.ts:43</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="popups" class="tsd-anchor"></a>
-					<h3>popups</h3>
-					<div class="tsd-signature tsd-kind-icon">popups<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="projectid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> project<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">project<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/measure.d.ts#L5">public/measure.d.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L48">public/map-context.d.ts:48</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="total" class="tsd-anchor"></a>
-					<h3>total</h3>
-					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="shared" class="tsd-anchor"></a>
+					<h3>shared</h3>
+					<div class="tsd-signature tsd-kind-icon">shared<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/measure.d.ts#L4">public/measure.d.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L42">public/map-context.d.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../globals.html#jappmeasuretype" class="tsd-signature-type">JAppMeasureType</a></div>
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/measure.d.ts#L3">public/measure.d.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L40">public/map-context.d.ts:40</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="uuid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> uuid</h3>
+					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/map-context.d.ts#L44">public/map-context.d.ts:44</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -178,28 +222,40 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-is-not-exported">
-						<a href="jappmeasure.html" class="tsd-kind-icon">JApp<wbr>Measure</a>
+						<a href="jmapcontext.html" class="tsd-kind-icon">JMap<wbr>Context</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jappmeasure.html#fillfeature" class="tsd-kind-icon">fill<wbr>Feature</a>
+								<a href="jmapcontext.html#author" class="tsd-kind-icon">author</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jappmeasure.html#id" class="tsd-kind-icon">id</a>
+								<a href="jmapcontext.html#creationdate" class="tsd-kind-icon">creation<wbr>Date</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jappmeasure.html#linefeature" class="tsd-kind-icon">line<wbr>Feature</a>
+								<a href="jmapcontext.html#data" class="tsd-kind-icon">data</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jappmeasure.html#multipointfeature" class="tsd-kind-icon">multi<wbr>Point<wbr>Feature</a>
+								<a href="jmapcontext.html#description" class="tsd-kind-icon">description</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jappmeasure.html#popups" class="tsd-kind-icon">popups</a>
+								<a href="jmapcontext.html#id" class="tsd-kind-icon">id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jappmeasure.html#total" class="tsd-kind-icon">total</a>
+								<a href="jmapcontext.html#modificationdate" class="tsd-kind-icon">modification<wbr>Date</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jappmeasure.html#type" class="tsd-kind-icon">type</a>
+								<a href="jmapcontext.html#origin" class="tsd-kind-icon">origin</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jmapcontext.html#projectid" class="tsd-kind-icon">project<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jmapcontext.html#shared" class="tsd-kind-icon">shared</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jmapcontext.html#title" class="tsd-kind-icon">title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jmapcontext.html#uuid" class="tsd-kind-icon">uuid</a>
 							</li>
 						</ul>
 					</li>

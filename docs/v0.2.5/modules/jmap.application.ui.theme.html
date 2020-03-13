@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SidePanel | jmap-api</title>
+	<title>Theme | jmap-api</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -63,10 +63,10 @@
 					<a href="jmap.application.ui.html">UI</a>
 				</li>
 				<li>
-					<a href="jmap.application.ui.sidepanel.html">SidePanel</a>
+					<a href="jmap.application.ui.theme.html">Theme</a>
 				</li>
 			</ul>
-			<h1>Module SidePanel</h1>
+			<h1>Module Theme</h1>
 		</div>
 	</div>
 </header>
@@ -76,9 +76,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p><strong>JMap.Application.UI.SidePanel</strong></p>
+						<p><strong>JMap.Application.UI.Theme</strong></p>
 					</div>
-					<p>You can manage the application left side panel from here.</p>
+					<p>You can manage the UI theme here.</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -88,9 +88,8 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.ui.sidepanel.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.ui.sidepanel.html#setvisible" class="tsd-kind-icon">set<wbr>Visible</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.ui.sidepanel.html#togglevisibility" class="tsd-kind-icon">toggle<wbr>Visibility</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.ui.theme.html#isdark" class="tsd-kind-icon">is<wbr>Dark</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.ui.theme.html#setdark" class="tsd-kind-icon">set<wbr>Dark</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,28 +98,28 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="isvisible" class="tsd-anchor"></a>
-					<h3>is<wbr>Visible</h3>
+					<a name="isdark" class="tsd-anchor"></a>
+					<h3>is<wbr>Dark</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Visible<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Dark<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/app.d.ts#L551">public/app.d.ts:551</a></li>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/app.d.ts#L589">public/app.d.ts:589</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p><strong>JMap.Application.UI.SidePanel.isVisible</strong></p>
+									<p><strong>JMap.Application.UI.Theme.isDark</strong></p>
 								</div>
-								<p>Returns true if the JMAP application main panel on the left is opened.</p>
+								<p>Returns true if the theme is currently dark.</p>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// returns true if side panel is opened</span>
-JMap.Application.UI.SidePanel.isVisible()</code></pre>
+<span class="hljs-comment">// true or false</span>
+JMap.Application.UI.Theme.isDark()</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -129,75 +128,46 @@ JMap.Application.UI.SidePanel.isVisible()</code></pre>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="setvisible" class="tsd-anchor"></a>
-					<h3>set<wbr>Visible</h3>
+					<a name="setdark" class="tsd-anchor"></a>
+					<h3>set<wbr>Dark</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Visible<span class="tsd-signature-symbol">(</span>open<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Dark<span class="tsd-signature-symbol">(</span>isDark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/app.d.ts#L538">public/app.d.ts:538</a></li>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/42f813d/public/app.d.ts#L609">public/app.d.ts:609</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p><strong>JMap.Application.UI.Sidepanel.setVisible</strong></p>
+									<p><strong>JMap.Application.UI.Theme.setDark</strong></p>
 								</div>
-								<p>Set the application left side panel visibility.</p>
+								<p>Change the UI color theme in dark or light.</p>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// Show the left side panel</span>
-JMap.Application.UI.Sidepanel.setVisible(<span class="hljs-literal">true</span>)
+<span class="hljs-comment">// make the theme dark</span>
+JMap.Application.UI.Theme.setDark()
 
-<span class="hljs-comment">// Hide the left side panel</span>
-JMap.Application.UI.Sidepanel.setVisible(<span class="hljs-literal">false</span>)</code></pre>
+<span class="hljs-comment">// make the theme dark</span>
+JMap.Application.UI.Theme.setDark(<span class="hljs-literal">true</span>)
+
+<span class="hljs-comment">// make the theme light</span>
+JMap.Application.UI.Theme.setDark(<span class="hljs-literal">false</span>)</code></pre>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>open: <span class="tsd-signature-type">boolean</span></h5>
+									<h5>isDark: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>if true show the panel, else hide it</p>
+										<p>if true make the theme dark, else light</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="togglevisibility" class="tsd-anchor"></a>
-					<h3>toggle<wbr>Visibility</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">toggle<wbr>Visibility<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/b8d5ef6/public/app.d.ts#L568">public/app.d.ts:568</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p><strong>JMap.Application.UI.SidePanel.toggleVisibility</strong></p>
-								</div>
-								<p>Change the JMAP application main panel on the left visibility.</p>
-								<p>If the panel is open, it will close.</p>
-								<p>If the panel is closed, it will open.</p>
-								<dl class="tsd-comment-tags">
-									<dt>example</dt>
-									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// change the side panel visibility</span>
-JMap.Application.UI.SidePanel.toggleVisibility()</code></pre>
-									</dd>
-								</dl>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -240,10 +210,10 @@ JMap.Application.UI.SidePanel.toggleVisibility()</code></pre>
 											<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 												<a href="jmap.application.ui.container.html">Container</a>
 											</li>
-											<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+											<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 												<a href="jmap.application.ui.sidepanel.html">Side<wbr>Panel</a>
 											</li>
-											<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+											<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 												<a href="jmap.application.ui.theme.html">Theme</a>
 											</li>
 										</ul>
@@ -269,13 +239,10 @@ JMap.Application.UI.SidePanel.toggleVisibility()</code></pre>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="jmap.application.ui.sidepanel.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a>
+						<a href="jmap.application.ui.theme.html#isdark" class="tsd-kind-icon">is<wbr>Dark</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="jmap.application.ui.sidepanel.html#setvisible" class="tsd-kind-icon">set<wbr>Visible</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="jmap.application.ui.sidepanel.html#togglevisibility" class="tsd-kind-icon">toggle<wbr>Visibility</a>
+						<a href="jmap.application.ui.theme.html#setdark" class="tsd-kind-icon">set<wbr>Dark</a>
 					</li>
 				</ul>
 			</nav>

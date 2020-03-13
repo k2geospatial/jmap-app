@@ -186,4 +186,59 @@ declare interface JAPIApplicationOptions {
    * ```
    */
   disabledPanelIds?: string[]
+
+  /**
+   * If provided this function will be processed each time the application is ready :
+   *  - A valid user session is set
+   *  - A project is selected
+   *  - The main menu is rendered
+   * 
+   * It could be called multiple times, if the user change the project, or the user logout and login.
+   * 
+   * ```html
+   * <html>
+   *   ...
+   *   <body>
+   *     <script type="text/javascript">
+   *       window.JMAP_API_OPTIONS = {
+   *         ...
+   *         application: {
+   *           onAppLoad: () => console.log("App is ready !"),
+   *           ...
+   *         }
+   *       }
+   *     </script>
+   *     ...
+   *   </body>
+   * </html>
+   * ```
+   */
+  onAppLoad?: () => void
+
+  /**
+   * If provided this function will be processed each time the application is not loaded anymore :
+   *  - User session token become invalid
+   *  - Project is changed and app is loading the new one
+   * 
+   * It could be called multiple times.
+   * 
+   * ```html
+   * <html>
+   *   ...
+   *   <body>
+   *     <script type="text/javascript">
+   *       window.JMAP_API_OPTIONS = {
+   *         ...
+   *         application: {
+   *           onAppUnload: () => console.log("App is not ready anymore !"),
+   *           ...
+   *         }
+   *       }
+   *     </script>
+   *     ...
+   *   </body>
+   * </html>
+   * ```
+   */
+  onAppUnload?: () => void
 }

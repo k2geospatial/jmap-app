@@ -2,7 +2,7 @@ This example below will show you how to start a JMap application in a custom div
 
 ![Embedded application](./images/embedded.png "Embedded application")
 
-For a live demo, click on this [link](http://jsfiddle.net/K2Geospatial/uaksoLm9/21/).
+For a live demo, click on this [link](http://jsfiddle.net/K2Geospatial/uaksoLm9/48/).
 
 This example will use one of our demo server, but you need to adapt the restBaseUrl parameter to reach your JMap server.
 
@@ -44,7 +44,7 @@ Bellow the example :
         map: {
           zoom: 9.757829447748511,
           center: {
-            x: -73.66415865898597,
+            x: -73.75415865898597,
             y: 45.53583011032552
           }
         },
@@ -53,7 +53,7 @@ Bellow the example :
         }
       }
     </script>
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-js-core@0.5.0/public/index.js"></script>
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-core-js@0.5.0/public/index.js"></script>
     <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-app-js@0.1.1/public/index.js"></script>
   </body>
 </html>

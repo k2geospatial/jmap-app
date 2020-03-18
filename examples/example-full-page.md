@@ -2,7 +2,7 @@ This example below will show you how to start the JMap application in full scree
 
 ![Full screen application](./images/full-screen.png "Full screen application")
 
-For a live demo, click on this [link](http://jsfiddle.net/K2Geospatial/uaksoLm9/19/).
+For a live demo, click on this [link](http://jsfiddle.net/K2Geospatial/uaksoLm9/54/).
 
 This example will use one of our demo server, but you need to adapt the restBaseUrl parameter to reach your JMap server.
 
@@ -40,7 +40,7 @@ Bellow the example :
         map: {
           zoom: 9.757829447748511,
           center: {
-            x: -73.66415865898597,
+            x: -73.76415865898597,
             y: 45.53583011032552
           }
         }

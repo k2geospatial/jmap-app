@@ -36,7 +36,7 @@ Bellow the example :
   <body>
   	<div id="my-custom-app"></div>
     <script type="text/javascript">
-      window.JMAP_API_OPTIONS = {
+      window.JMAP_OPTIONS = {
         projectId: 35,
         restBaseUrl: "https://jmap7dev.jmaponline.net/services/rest/v2.0",
         noSessionExpiration: true,
@@ -53,8 +53,8 @@ Bellow the example :
         }
       }
     </script>
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-js-api@0.3.6/public/index.js"></script>
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-js-app@0.0.2/public/index.js"></script>
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-js-core@0.5.0/public/index.js"></script>
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-app-js@0.1.1/public/index.js"></script>
   </body>
 </html>
 ```

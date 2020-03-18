@@ -1,7 +1,9 @@
 declare interface JAppPanel {
   id: string
+  icon: string // url or base64 or app name
+  tooltip: string
   interactorId?: string
-  iconBase64?: string
-  iconName?: string
-  tooltip?: { [language: string]: string }
+  title?: string
+  onPanelCreation?: (panelContainerId: string) => void
+  onPanelDestroy?: (panelContainerId: string) => void
 }

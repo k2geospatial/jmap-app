@@ -1,4 +1,4 @@
-import { JEventModule } from "jmap-api-ng"
+import { JEventModule } from "jmap-core"
 
 export interface JAppState {
   panel: JAppPanelState
@@ -72,6 +72,18 @@ export interface JAppSelectionState {
   tableVisibility: boolean
 }
 
+export interface JApplicationService extends JApplicationMainService {
+  Panel: JAppPanelService
+  Measure: JAppMeasureService
+  Selection: JAppSelectionService
+  Layer: JAppLayerService
+  Print: JAppPrintService
+  UI: JApplicationUIService
+  MapContext: JAppMapContextService
+  Event: JAppEventService
+  Extension: JAppExtensionService
+}
+
 export interface JApplicationMainService {
   getVersion(): string
   getImplVersion(): string
@@ -95,23 +107,8 @@ export interface JApplicationUIService {
   }
 }
 
-export interface JApplication extends JApplicationMainService {
-  Event: JAppEventModules
-  Service: JApplicationService
-}
-
-export interface JAppEventModules {
+export interface JAppEventService {
   UI: JAppEventUIModule
-}
-
-export interface JApplicationService {
-  Panel: JAppPanelService
-  Measure: JAppMeasureService
-  Selection: JAppSelectionService
-  Layer: JAppLayerService
-  Print: JAppPrintService
-  UI: JApplicationUIService
-  MapContext: JAppMapContextService
 }
 
 export interface JAppPaperFormat {
@@ -155,10 +152,18 @@ export interface JAppMeasureService {
   resetState(): void
 }
 
+export interface JAppExtensionService {
+  register(extension: JAppExtension): void
+  isRegistered(extensionId: string): boolean
+  getAllRegisteredIds(): string[]
+}
+
 export interface JAppPanelService {
   getActive(): JAppPanel
   getAll(): JAppPanel[]
-  activate(panelId: string): void
+  activate(panelId?: string): void
+  add(panel: JAppPanel): void
+  remove(panelId: string): void
 }
 
 export interface JAppPrintService {

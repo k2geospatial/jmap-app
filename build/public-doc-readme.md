@@ -1,2 +1,2 @@
-**JMap API Application documentation**
+**JMap Application documentation**
 

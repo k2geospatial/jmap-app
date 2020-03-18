@@ -18,6 +18,6 @@
   },
   "include": [
     "../src/**/*",
-    "../node_modules/jmap-api-ng/**/*"
+    "../node_modules/jmap-core/**/*"
   ]
 }

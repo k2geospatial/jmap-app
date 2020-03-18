@@ -1,4 +1,4 @@
-declare interface JAPIOptions {
+declare interface JCoreOptions {
   /**
    * This section is about the JMap application startup options.
    * 
@@ -9,7 +9,7 @@ declare interface JAPIOptions {
    *   <body>
    *    <div id="custom-app"></div>
    *    <script>
-   *      window.JMAP_API_OPTIONS = {
+   *      window.JMAP_OPTIONS = {
    *        projectId: 10,
    *        restBaseUrl: "http://my-jmap-server/services/rest/v2.0",
    *        session: {
@@ -22,17 +22,17 @@ declare interface JAPIOptions {
    *      }
    *    </script>
    *    ...
-   *    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-js-api@0.3.6/public/index.js"></script>
-   *    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-js-app@0.0.2/public/index.js"></script>
+   *    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-core-js@0.5.0/public/index.js"></script>
+   *    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/jmap-app-js@0.1.1/public/index.js"></script>
    *   </body>
    * </html>
    * 
    * ```
    */
-  application?: JAPIApplicationOptions
+  application?: JApplicationOptions
 }
 
-declare interface JAPIApplicationOptions {
+declare interface JApplicationOptions {
   /**
    * When the application start it will create or use an existing div container in which the app will be inserted into.
    * 
@@ -45,7 +45,7 @@ declare interface JAPIApplicationOptions {
    *   <body>
    *     <div id="my-custom-container-id"></div>
    *     <script type="text/javascript">
-   *       window.JMAP_API_OPTIONS = {
+   *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
    *           containerId: "my-custom-container-id"
@@ -59,7 +59,7 @@ declare interface JAPIApplicationOptions {
    *
    * In the above example the application will be inserted in the div having "my-custom-container-id" as id. You need to set the width and the height of this div by yourself.
    * 
-   * If no container is found in the DOM with the specified id, JMap API will create and append it automatically in the body element of the web page.
+   * If no container is found in the DOM with the specified id, JMap Application will create and append it automatically in the body element of the web page.
    */
   containerId?: string
 
@@ -72,7 +72,7 @@ declare interface JAPIApplicationOptions {
    *   ...
    *   <body>
    *     <script type="text/javascript">
-   *       window.JMAP_API_OPTIONS = {
+   *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
    *           backgroundImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
@@ -95,7 +95,7 @@ declare interface JAPIApplicationOptions {
    *   ...
    *   <body>
    *     <script type="text/javascript">
-   *       window.JMAP_API_OPTIONS = {
+   *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
    *           backgroundImageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Atari_logo.svg/640px-Atari_logo.svg.png",
@@ -118,7 +118,7 @@ declare interface JAPIApplicationOptions {
    *   ...
    *   <body>
    *     <script type="text/javascript">
-   *       window.JMAP_API_OPTIONS = {
+   *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
    *           theme: "dark",
@@ -145,7 +145,7 @@ declare interface JAPIApplicationOptions {
    *   ...
    *   <body>
    *     <script type="text/javascript">
-   *       window.JMAP_API_OPTIONS = {
+   *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
    *           activePanelId: "project",
@@ -172,7 +172,7 @@ declare interface JAPIApplicationOptions {
    *   ...
    *   <body>
    *     <script type="text/javascript">
-   *       window.JMAP_API_OPTIONS = {
+   *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
    *           disabledPanelIds: [ "measure", "print" ],
@@ -200,7 +200,7 @@ declare interface JAPIApplicationOptions {
    *   ...
    *   <body>
    *     <script type="text/javascript">
-   *       window.JMAP_API_OPTIONS = {
+   *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
    *           onAppLoad: () => console.log("App is ready !"),
@@ -227,7 +227,7 @@ declare interface JAPIApplicationOptions {
    *   ...
    *   <body>
    *     <script type="text/javascript">
-   *       window.JMAP_API_OPTIONS = {
+   *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
    *           onAppUnload: () => console.log("App is not ready anymore !"),
@@ -241,4 +241,13 @@ declare interface JAPIApplicationOptions {
    * ```
    */
   onAppUnload?: () => void
+
+  /**
+   * You can provide your own application extensions.
+   * 
+   * This mechanism offer a way to add your own panel, map interactor, redux store data, etc ...
+   * 
+   * You can fully customize the JMap application with your own code, written with your favourite dev tools.
+   */
+  extensions?: JAppExtension[]
 }

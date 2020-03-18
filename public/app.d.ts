@@ -9,10 +9,10 @@ declare namespace JMap {
    * 
    * To configure the **JMap application** in your web page, you can consult the demo pages :
    * 
-   *   - [An application embedded in a div in a page of your website](https://github.com/k2geospatial/jmap-app/blob/master/example/v0.1.29/example-embedded.md)
-   *   - [An application displayed full screen](https://github.com/k2geospatial/jmap-app/blob/master/example/v0.1.29/example-full-page.md)
+   *   - [An application embedded in a div in a page of your website](https://github.com/k2geospatial/jmap-app/blob/master/examples/example-embedded.md)
+   *   - [An application displayed full screen](https://github.com/k2geospatial/jmap-app/blob/master/examples/example-full-page.md)
    * 
-   * You can also consult the application startup options [[JAPIApplicationOptions]], in order to customize it for you needs.
+   * You can also consult the application startup options [[JApplicationOptions]], in order to customize it for you needs.
    */
   namespace Application {
 
@@ -28,7 +28,7 @@ declare namespace JMap {
      * ```
      */
     function getVersion(): string
-    
+
     /**
      * **JMap.Application.openDocumentation**
      * 
@@ -69,7 +69,7 @@ declare namespace JMap {
        * 
        * @example ```ts
        * 
-       * // returns all available API panels
+       * // returns all available application panels
        * JMap.Application.Panel.getAll()
        * ```
        */
@@ -78,7 +78,10 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.activate**
        * 
-       * Change the JMap application mode.
+       * Change the JMap application panel.
+       * 
+       * If no panelId is provided, will activate the "layer" panel by default, if the 
+       * "layer" panel is disabled will activate the first available panel.
        * 
        * @param panelId The new application panel to activate
        * @example ```ts
@@ -87,7 +90,7 @@ declare namespace JMap {
        * JMap.Application.Panel.activate("layer")
        * ```
        */
-      function activate(panelId: string): void
+      function activate(panelId?: string): void
     }
 
     /**
@@ -117,7 +120,7 @@ declare namespace JMap {
        * 
        * @example ```ts
        * 
-       * // activate deleting measure mode
+       * // activate deleting measure
        * JMap.Application.Measure.activateDeleting()
        * ```
        */

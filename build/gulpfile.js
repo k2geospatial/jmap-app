@@ -45,24 +45,9 @@ gulp.task('copy', cb => {
   }
   
   gulp.src([ join(ROOT_DIR, 'public/**/*') ])
-      .pipe(gulp.dest(join(process.env.COPY_DIR, "api/node_modules/jmap-app/public")))
-  gulp.src([ join(ROOT_DIR, 'index.ts') ])
-      .pipe(gulp.dest(join(process.env.COPY_DIR, "api/node_modules/jmap-app")))
-  
-  gulp.src([ join(ROOT_DIR, 'public/**/*') ])
       .pipe(gulp.dest(join(process.env.COPY_DIR, "app/node_modules/jmap-app/public")))
   gulp.src([ join(ROOT_DIR, 'index.ts') ])
       .pipe(gulp.dest(join(process.env.COPY_DIR, "app/node_modules/jmap-app")))
-  
-  gulp.src([ join(ROOT_DIR, 'public/**/*') ])
-      .pipe(gulp.dest(join(process.env.COPY_DIR, "view/node_modules/jmap-app/public")))
-  gulp.src([ join(ROOT_DIR, 'index.ts') ])
-      .pipe(gulp.dest(join(process.env.COPY_DIR, "view/node_modules/jmap-app")))
-  
-  gulp.src([ join(ROOT_DIR, 'public/**/*') ])
-      .pipe(gulp.dest(join(process.env.COPY_DIR, "shared/node_modules/jmap-app/public")))
-  gulp.src([ join(ROOT_DIR, 'index.ts') ])
-      .pipe(gulp.dest(join(process.env.COPY_DIR, "shared/node_modules/jmap-app")))
 
   cb()
 })
@@ -102,7 +87,7 @@ gulp.task("typedoc", cb => {
   return gulp
       .src([
         "../public/**/*.ts",
-        "../node_modules/jmap-api-ng/public/**/*.ts",
+        "../node_modules/jmap-core/public/**/*.ts",
       ])
       .pipe(typedoc({
           readme: "./public-doc-readme.md",
@@ -112,7 +97,7 @@ gulp.task("typedoc", cb => {
           tsconfig: "./tsconfig.json",
           includeDeclarations: true,
           out: DOC_DIR,
-          name: "jmap-api",
+          name: "jmap-core",
           hideGenerator: true,
           version: false,
           ignoreCompilerErrors: false,

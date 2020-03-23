@@ -3,16 +3,13 @@ declare namespace JMap {
   /**
    * **JMap.Application**
    * 
-   * In this section you will find everything related to the **JMap Application**.
+   * This is the JMap Web App API documentation.
    * 
-   * To configure the **JMap library** in your web page, you can consult the [[JMap]] namespace page.
+   * JMap Web App depends on the JMap Web Core library ([[JMap]]).
    * 
-   * To configure the **JMap application** in your web page, you can consult the demo pages :
+   * Examples are availables <a href="https://doc.k2geospatial.com/jmap/doc/ng_dev/examples/app_start.html" target="_blank">here</a>.
    * 
-   *   - [An application embedded in a div in a page of your website](https://github.com/k2geospatial/jmap-app/blob/master/examples/example-embedded.md)
-   *   - [An application displayed full screen](https://github.com/k2geospatial/jmap-app/blob/master/examples/example-full-page.md)
-   * 
-   * You can also consult the application startup options [[JApplicationOptions]], in order to customize it for you needs.
+   * You can customize JMap Web App by providing startup options ([[JApplicationOptions]]).
    */
   namespace Application {
 
@@ -32,11 +29,11 @@ declare namespace JMap {
     /**
      * **JMap.Application.openDocumentation**
      * 
-     * Open JMap Application online documentation, in a new tab.
+     * Open JMap Web App online documentation, in a new tab.
      * 
      * @example ```ts
      * 
-     * // open JMap Application online documentation, in a new tab
+     * // open JMap Web App online documentation, in a new tab
      * JMap.Application.openDocumentation()
      * ```
      */
@@ -78,7 +75,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.activate**
        * 
-       * Change the JMap application panel.
+       * Change the JMap Web App panel.
        * 
        * If no panelId is provided, will activate the "layer" panel by default, if the 
        * "layer" panel is disabled will activate the first available panel.
@@ -543,7 +540,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.UI.SidePanel.isVisible**
          * 
-         * Returns true if the JMAP application main panel on the left is opened.
+         * Returns true if the JMap Web App main panel on the left is opened.
          * 
          * @example ```ts
          * 
@@ -556,7 +553,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.UI.SidePanel.toggleVisibility**
          * 
-         * Change the JMAP application main panel on the left visibility.
+         * Change the JMap Web App main panel on the left visibility.
          * 
          * If the panel is open, it will close.
          * 

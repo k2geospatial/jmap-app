@@ -3,6 +3,7 @@ import { JEventModule } from "jmap-core"
 export interface JAppState {
   panel: JAppPanelState
   measure: JAppMeasureState
+  annotation: JAppAnnotationState
   selection: JAppSelectionState
   mapContext: JAppMapContextState
   layer: JAppLayerState
@@ -11,7 +12,7 @@ export interface JAppState {
 }
 
 export interface JAppPanelState {
-  active: JAppPanel,
+  active: JAppPanel
   all: JAppPanel[]
 }
 
@@ -41,9 +42,16 @@ export interface JAppMapContextState {
 }
 
 export interface JAppMeasureState {
-  measureType: JAppMeasureType,
+  measureType: JAppMeasureType
   measures: JAppMeasure[]
-  isNewElement: boolean,
+  isNewElement: boolean
+  isDeleting: boolean
+}
+export interface JAppAnnotationState {
+  drawType: JAppDrawType
+  drawMode: JAppDrawMode
+  annotations: JAppAnnotation[]
+  isNewElement: boolean
   isDeleting: boolean
 }
 
@@ -95,12 +103,12 @@ export interface JApplicationUIService {
     getId(): string
     getWidth(): number
     getHeight(): number
-  },
+  }
   SidePanel: {
     isVisible(): boolean
     toggleVisibility(): void
     setVisible(isVisible: boolean): void
-  },
+  }
   Theme: {
     setDark(isDark: boolean): void
     isDark(): boolean
@@ -112,7 +120,7 @@ export interface JAppEventService {
 }
 
 export interface JAppPaperFormat {
-  type: string,
+  type: string
   width: number
   height: number
   ratio: number
@@ -204,8 +212,14 @@ export interface JAppMapContextService {
   applyContextById(contextId: number): void
   deleteContextById(contextId: number | number[]): Promise<void>
   create(params?: JMapContextMetaData): Promise<JMapContext>
-  update(contextId: number, params?: Partial<JMapContextMetaData>): Promise<JMapContext>
-  setContextMetaData(contextId: number, data: Partial<JMapContextMetaData>): Promise<void>
+  update(
+    contextId: number,
+    params?: Partial<JMapContextMetaData>
+  ): Promise<JMapContext>
+  setContextMetaData(
+    contextId: number,
+    data: Partial<JMapContextMetaData>
+  ): Promise<void>
   getContextTitle(contextId: number): string
   setContextTitle(contextId: number, title: string): Promise<void>
   getContextDescription(contextId: number): string
@@ -239,6 +253,9 @@ export interface JAppEventSizeParams {
 
 export interface JAppEventUIModule extends JEventModule {
   on: {
-    sizeChanged(listenerId: string, fn: (params: JAppEventSizeParams) => void): void
+    sizeChanged(
+      listenerId: string,
+      fn: (params: JAppEventSizeParams) => void
+    ): void
   }
 }

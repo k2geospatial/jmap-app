@@ -16,20 +16,35 @@ declare namespace JMap {
     /**
      * **JMap.Application.getVersion**
      * 
-     * Returns the application build version.
+     * Returns the application interface version.
      * 
      * @example ```ts
      * 
-     * // returns the build version, for example "1.0.1"
+     * // returns the interface version, for example "1.0.1"
      * JMap.Application.getVersion()
      * ```
      */
     function getVersion(): string
 
     /**
+     * **JMap.Application.getImplVersion**
+     * 
+     * Returns the application build version.
+     * 
+     * For the same interface version we can have multiple implementation version.
+     * 
+     * @example ```ts
+     * 
+     * // returns the build version, for example "1.0.1"
+     * JMap.Application.getImplVersion()
+     * ```
+     */
+    function getImplVersion(): string
+
+    /**
      * **JMap.Application.openDocumentation**
      * 
-     * Open JMap Web App online documentation, in a new tab.
+     * Open JMap Web App online JS API documentation, in a new tab.
      * 
      * @example ```ts
      * 
@@ -42,7 +57,9 @@ declare namespace JMap {
     /**
      * **JMap.Application.Panel**
      * 
-     * You can manage the application panels here.
+     * You can manage UI panels (on the left in the screen) here.
+     * 
+     * A panel is always displayed, so a panel is always active and there is at least one panel.
      */
     namespace Panel {
 
@@ -71,23 +88,78 @@ declare namespace JMap {
        * ```
        */
       function getAll(): JAppPanel[]
-      
+
       /**
-       * **JMap.Application.Panel.activate**
+       * **JMap.Application.Panel.existById**
+       * 
+       * Return true if the panel exists for a given panel id.
+       * 
+       * @param panelId The panel id to test
+       * @example ```ts
+       * 
+       * // return true if panel id="layer" exists
+       * JMap.Application.Panel.existById("custom-panel")
+       * ```
+       */
+      function existById(panelId: string): boolean
+
+      /**
+       * **JMap.Application.Panel.activateById**
        * 
        * Change the JMap Web App panel.
        * 
        * If no panelId is provided, will activate the "layer" panel by default, if the 
        * "layer" panel is disabled will activate the first available panel.
        * 
+       * @throws if panel is not found
        * @param panelId The new application panel to activate
        * @example ```ts
        * 
-       * // will activate and display the "layer" panel
-       * JMap.Application.Panel.activate("layer")
+       * // will activate and display the panel id="layer"
+       * JMap.Application.Panel.activateById("layer")
        * ```
        */
-      function activate(panelId?: string): void
+      function activateById(panelId?: string): void
+      
+      /**
+       * **JMap.Application.Panel.add**
+       * 
+       * Add a custom panel for a given panel definition to JMap Web App.
+       * 
+       * @throws if panel format is not correct
+       * @param panel an object that is the definition of the new panel
+       * @example ```ts
+       * 
+       * const customPanelId = "custom-panel"
+       * // will add the new panel, here en empty panel just for the example
+       * JMap.Application.Panel.add({
+       *   id: customPanelId,
+       *   icon: "http://url-to-my-image/custom-icon.png", // could be an image encoded as a base64 url
+       *   tooltip: "My custom panel tooltip display when mouse is hover the icon",
+       *   title: "Custon panel"
+       * })
+       * // The panel has been created but not displayed, if you want to display it :
+       * JMap.Applcation.activate(customPanelId)
+       * ```
+       */
+      function add(panel: JAppPanel): void
+      
+      /**
+       * **JMap.Application.Panel.removeById**
+       * 
+       * Remove a panel for a given panel id from JMap Web App.
+       * 
+       * If the panel was active will activate the first panel the application found.
+       * 
+       * @throws if panel is not found or if this is the last panel
+       * @param panelId The application panel id to remove
+       * @example ```ts
+       * 
+       * // will remove the "custom-panel" panel
+       * JMap.Application.Panel.removeById("custom-panel")
+       * ```
+       */
+      function removeById(panelId: string): void
     }
 
     /**
@@ -111,69 +183,87 @@ declare namespace JMap {
       function activateMeasureType(measureType: JAppMeasureType): void
 
       /**
-       * **JMap.Application.Measure.activateDeleting**
+       * **JMap.Application.Measure.setDeletingMode**
        * 
-       * Activate the measurement deleting tool to delete a measure when we click on it.
+       * Activate or deactivate the measurement deleting tool.
        * 
+       * If active, measures are deleted when we click on it.
+       * 
+       * @param isDeleting true to activate deleting mode, else false
        * @example ```ts
        * 
        * // activate deleting measure
-       * JMap.Application.Measure.activateDeleting()
+       * JMap.Application.Measure.setDeletingMode(true)
+       * 
+       * // deactivate deleting measure
+       * JMap.Application.Measure.setDeletingMode(false)
        * ```
        */
-      function activateDeleting(): void
+      function setDeletingMode(isDeleting: boolean): void
 
       /**
        * **JMap.Application.Measure.deleteAllMeasures**
        * 
-       * Delete all measures on the map.
+       * Delete all measures.
        * 
+       * @param measureType if provided will delete only measures of the given type
        * @example ```ts
        * 
-       * // Delete all measures on the map
+       * // Delete all measures (distance + circle area + polygon area)
        * JMap.Application.Measure.deleteAllMeasures()
+       * 
+       * // Delete all distance measures
+       * JMap.Application.Measure.deleteAllMeasures("distance")
+       * 
+       * // Delete all circle measures
+       * JMap.Application.Measure.deleteAllMeasures("circleArea")
+       * 
+       * // Delete all polygon measures
+       * JMap.Application.Measure.deleteAllMeasures("polygonArea")
        * ```
        */
-      function deleteAllMeasures(): void
-      
-      /**
-       * **JMap.Application.Measure.cancelCurrentMeasure**
-       * 
-       * Cancel the current drawn measure
-       * 
-       * @example ```ts
-       * 
-       * // Remove current measure from the map
-       * JMap.Application.Measure.cancelCurrentMeasure()
-       * ```
-       */
-      function cancelCurrentMeasure(): void
+      function deleteAllMeasures(measureType?: JAppMeasureType): void
       
       /**
        * **JMap.Application.Measure.deleteMeasureAtLocation**
        * 
-       * Delete a measure at a specific location
+       * Delete measures at a specific location
        * @param location The mapbox location on the map in x, y
        * @example ```ts
        * 
-       * // Delete measure at location x = 20, y = 30
+       * // Delete measures at location x = 20, y = 30
        * JMap.Application.Measure.deleteMeasureAtLocation({x: 20, y: 30})
        * ```
        */
       function deleteMeasureAtLocation(location: JLocation): void
-      
+    
       /**
        * **JMap.Application.Measure.finalizeMeasure**
        * 
-       * Finalize drawing the current measure
+       * Finalize the measure that is currently drawn.
        * 
        * @example ```ts
        * 
-       * // Finalize drawing the current measure
+       * // Finalize the measure curremtly drawn
        * JMap.Application.Measure.finalizeMeasure()
        * ```
        */
       function finalizeMeasure(): void
+    
+      /**
+       * **JMap.Application.Measure.resetState**
+       * 
+       * Delete current drawing measure and reset all measurement data.
+       * 
+       * After calling this function, measure tool is initialized like it was at startup.
+       * 
+       * @example ```ts
+       * 
+       * // Reset the measure tool
+       * JMap.Application.Measure.resetState()
+       * ```
+       */
+      function resetState(): void
     }
     
     /**
@@ -182,6 +272,37 @@ declare namespace JMap {
      * You can manage the application selection tools here.
      */
     namespace Selection {
+
+      /**
+       * **JMap.Application.Selection.getDisplayedLayerId**
+       * 
+       * The selection of only one layer is diplayed at the same time.
+       * 
+       * This function returns the id of the layer which selection is displayed.
+       * 
+       * @example ```ts
+       * 
+       * // return the layer id of the displayed selection
+       * JMap.Application.Measure.getDisplayedLayerId()
+       * ```
+       */
+      function getDisplayedLayerId(): number
+
+      /**
+       * **JMap.Application.Selection.setDisplayedLayerId**
+       * 
+       * Display the selection of the layer.
+       * 
+       * If layer selection has no selection unselect the layer selection list.
+       * 
+       * @throws if layer not found for the given layer id
+       * @example ```ts
+       * 
+       * // display the layer id=2 selection
+       * JMap.Application.Measure.setDisplayedLayerId(2)
+       * ```
+       */
+      function setDisplayedLayerId(layerId: number): void
 
       /**
        * **JMap.Application.Selection.activateSelectionType**
@@ -197,26 +318,134 @@ declare namespace JMap {
       function activateSelectionType(selectionType: JAppSelectionType): void
       
       /**
-       * **JMap.Application.Selection.cancelSelection**
+       * **JMap.Application.Selection.getTableVisibility**
        * 
-       * Cancel the current drawn selection
+       * Return true if the selection data table is diaplayed.
+       * 
        * @example ```ts
-       * // Cancel the current drawn selection
-       * JMap.Application.Measure.cancelSelection()
+       * 
+       * // return true if the selection data table is visible
+       * JMap.Application.Measure.getTableVisibility()
        * ```
        */
-      function cancelSelection(): void
+      function getTableVisibility(): boolean
       
       /**
-       * **JMap.Application.Selection.getCurrentDrawnSelectionContent**
+       * **JMap.Application.Selection.getTableVisibility**
        * 
-       * Returns the current selection data for the drawn selection and add it to the store
+       * Hide or show the selection data table.
+       * 
        * @example ```ts
-       * // Get the selection data for the drawn selection
-       * JMap.Application.Measure.getCurrentDrawnSelectionContent()
+       * 
+       * // make selection data table visible
+       * JMap.Application.Measure.setTableVisibility(true)
+       *
+       * // make selection data table not visible
+       * JMap.Application.Measure.setTableVisibility(false)
        * ```
        */
-      function getCurrentDrawnSelectionContent(): {[ layerId: number ]: any[]}
+      function setTableVisibility(tableVisibility: boolean): void
+      
+      /**
+       * **JMap.Application.Selection.clearSelectionForLayer**
+       * 
+       * Unselect all features for a given layer id.
+       * 
+       * @param layerId the JMap layer id
+       * @example ```ts
+       * 
+       * // clear the layer id=2 selection
+       * JMap.Application.Measure.clearSelectionForLayer(2)
+       * ```
+       */
+      function clearSelectionForLayer(layerId: number): void
+
+      /**
+       * **JMap.Application.Selection.clearSelection**
+       * 
+       * Clear the current selection
+       * 
+       * @example ```ts
+       * // Clear the current selection
+       * JMap.Application.Measure.clearSelection()
+       * ```
+       */
+      function clearSelection(): void
+
+      /**
+       * **JMap.Application.Selection.doubleClick**
+       * 
+       * Make selection tool react to a double-click action.
+       * 
+       * @example ```ts
+       * // double click action
+       * JMap.Application.Measure.doubleClick()
+       * ```
+       */
+      function doubleClick(): void
+
+      /**
+       * **JMap.Application.Selection.onKeyDown**
+       * 
+       * Make selection tool react to a onKeyDown action.
+       * 
+       * @example ```ts
+       * // on key down action
+       * JMap.Application.Measure.onKeyDown(event.code)
+       * ```
+       */
+      function onKeyDown(keyCode: string): void
+
+      /**
+       * **JMap.Application.Selection.onKeyUp**
+       * 
+       * Make selection tool react to a onKeyUp action.
+       * 
+       * @example ```ts
+       * // on key up action
+       * JMap.Application.Measure.onKeyUp(event.code)
+       * ```
+       */
+      function onKeyUp(keyCode: string): void
+
+      /**
+       * **JMap.Application.Selection.onKeyUp**
+       * 
+       * Finish the current drawing selection and select features on the map.
+       * 
+       * @example ```ts
+       * // on key up action
+       * JMap.Application.Measure.onKeyUp(event.code)
+       * ```
+       */
+      function applyDrawnSelection(): void
+
+      /**
+       * **JMap.Application.Selection.exportAsExcelFile**
+       * 
+       * Export the current selection as an excel file.
+       * 
+       * If no selection, export an empty file.
+       * 
+       * @example ```ts
+       * // download the current selection as an excel file
+       * JMap.Application.Measure.exportAsExcelFile()
+       * ```
+       */
+      function exportAsExcelFile(): void
+
+      /**
+       * **JMap.Application.Selection.fitMapToDisplayLayerSelection**
+       * 
+       * Pan and zoom the map to display the current selection.
+       * 
+       * @example ```ts
+       * // fit the map to display selected features
+       * JMap.Application.Measure.fitMapToDisplayLayerSelection()
+       * ```
+       */
+      function fitMapToDisplayLayerSelection(): void
+      
       /**
        * **JMap.Application.Selection.removeLastDrawnSelectionCoordinate**
        * 
@@ -238,21 +467,10 @@ declare namespace JMap {
     namespace Layer {
 
       /**
-       * **JMap.Application.Layer.getActiveTab**
-       * 
-       * Returns layer panel active tab id.
-       * @example ```ts
-       * 
-       * // returns the active tab for the layer layout
-       * JMap.Application.Layer.getActiveTab()
-       * ```
-       */
-      function getActiveTab(): JAppLayerTab
-
-      /**
        * **JMap.Application.Layer.activateTab**
        * 
        * Activate the provided tab in the layer panel.
+       * 
        * @param tab the tab id to activate
        * @example ```ts
        * 
@@ -261,6 +479,34 @@ declare namespace JMap {
        * ```
        */
       function activateTab(tab: JAppLayerTab): void
+
+      /**
+       * **JMap.Application.Layer.getAllTabs**
+       * 
+       * Returns all layer tool tab ids.
+       * 
+       * Currently tabs are : "layers" or "basemap"
+       * 
+       * @example ```ts
+       * 
+       * // get all available layer tabs
+       * JMap.Application.Layer.getAllTabs()
+       * ```
+       */
+      function getAllTabs(): JAppLayerTab[]
+
+      /**
+       * **JMap.Application.Layer.getActiveTab**
+       * 
+       * Returns layer panel active tab id.
+       * 
+       * @example ```ts
+       * 
+       * // returns the active tab for the layer layout
+       * JMap.Application.Layer.getActiveTab()
+       * ```
+       */
+      function getActiveTab(): JAppLayerTab
     }
 
     /**
@@ -271,192 +517,486 @@ declare namespace JMap {
     namespace MapContext {
 
       /**
-       * **JMap.Application.MapContext.toggleMapContextSharing**
+       * **JMap.Application.MapContext.startCreation**
        * 
-       * returns the current draft context id
+       * Display the new map-context tab on screen.
+       * 
        * @example ```ts
        * 
-       * // returns the current draft context id
-       * JMap.Application.MapContext.getDraftContextId()
+       * // display the new map-context tab on screen
+       * JMap.Application.MapContext.startCreation()
        * ```
        */
-      function getDraftContextId(): number | undefined
+      function startCreation(): void
 
       /**
-       * **JMap.Application.MapContext.getDraftContextTitle**
+       * **JMap.Application.MapContext.cancelCreation**
        * 
-       * returns the current draft context title
+       * Hide the creation tab, input are cleared, and list of map-context are displayed.
+       * 
        * @example ```ts
        * 
-       * // returns the current draft context title
-       * JMap.Application.MapContext.getDraftContextTitle()
+       * // hide the new map-context tab
+       * JMap.Application.MapContext.cancelCreation()
        * ```
        */
-      function getDraftContextTitle(): string
+      function cancelCreation(): void
 
       /**
-       * **JMap.Application.MapContext.getDraftContextDescription**
+       * **JMap.Application.MapContext.getAll**
        * 
-       * returns the current draft context description
+       * Returns all map contexts fetched from server, for the given project.
        * @example ```ts
        * 
-       * // returns the current draft context description
-       * JMap.Application.MapContext.getDraftContextDescription()
+       * // returns all map contexts for the current project
+       * JMap.Application.MapContext.getAll()
        * ```
        */
-      function getDraftContextDescription(): string
+      function getAll(): JMapContext[]
 
       /**
-       * **JMap.Application.MapContext.getAllContexts**
+       * **JMap.Application.MapContext.getById**
        * 
-       * returns all loaded map contexts for the current project
+       * Returns the map context for a given id.
+       * 
+       * @throws if map-context not found
+       * @param contextId the JMap map context id
        * @example ```ts
        * 
-       * // returns all loaded map contexts for the current project
-       * JMap.Application.MapContext.getAllContexts()
+       * // returns the map-context id=3
+       * JMap.Application.MapContext.getById(3)
        * ```
        */
-
-      function getAllContexts(): JMapContext[]
-
-      /**
-       * **JMap.Application.MapContext.getDefaultContextId**
-       * 
-       * returns the default map context id for the current project
-       * @example ```ts
-       * 
-       * // returns the default map context id for the current project
-       * JMap.Application.MapContext.getDefaultContextId()
-       * ```
-       */
-      function getDefaultContextId(): number | undefined
+      function getById(contextId: number): JMapContext
 
       /**
-       * **JMap.Application.MapContext.getSelectedContextId**
+       * **JMap.Application.MapContext.applyContextById**
        * 
-       * returns the selected map context id for the current project
+       * Apply the map context for a given id.
+       * 
+       * @throws if map-context not found
+       * @param contextId the JMap map context id
        * @example ```ts
        * 
-       * // returns the selected map context id for the current project
-       * JMap.Application.MapContext.getSelectedContextId()
+       * // load the map-context id=3 on screen
+       * JMap.Application.MapContext.applyContextById(3)
        * ```
        */
-      function getSelectedContextId(): number | undefined
+      function applyContextById(contextId: number): void
 
       /**
-       * **JMap.Application.MapContext.setDefaultMapContext**
+       * **JMap.Application.MapContext.applyContextById**
        * 
-       * Set a map context to be default
-       * @param mapContextId The map context id to apply
+       * Delete the map context for a given id.
+       * 
+       * The map-context deletion is persisted server-side.
+       * 
+       * This is a full delete.
+       * 
+       * @throws if map-context not found, or server request error
+       * @param contextId the JMap map context id or an array of map context ids
        * @example ```ts
        * 
-       * // change the default map context for the id 1304358411192
-       * JMap.Application.MapContext.setDefaultMapContext(1304358411192)
+       * // delete the map-context id=5
+       * JMap.Application.MapContext
+       *    .deleteContextById(5)
+       *    .then(() => console.info("Context 5 deleted !"))
+       *    .catch(error => console.error(error))
+       * 
+       * // delete map-contexts id in [ 3, 5, 12 ]
+       * JMap.Application.MapContext
+       *    .deleteContextById([ 3, 5, 12 ])
+       *    .then(() => console.info("Three map contexts have been deleted !"))
+       *    .catch(error => console.error(error))
        * ```
        */
-      function setDefaultMapContext(contextId?: number): void
+      function deleteContextById(contextId: number | number[]): Promise<void>
 
       /**
-       * **JMap.Application.MapContext.setDraftContextId**
+       * **JMap.Application.MapContext.create**
        * 
-       * Set a map context to be in draft mode
-       * @param mapContextId The map context id to apply
+       * Create a map context. The map-context creation is persisted server-side.
+       * 
+       * You just need to provide the context meta-data (= data that describe the context).
+       * 
+       * The current map context will be saved.
+       * 
+       * @throws if invalid map context data provided, or server request error
+       * @param params the complete map context meta-data
+       * @returns the created map context, with it's id
        * @example ```ts
        * 
-       * // Set the map context to be in draft mode for the id 1304358411192
-       * JMap.Application.MapContext.setDraftContextId(1304358411192)
+       * // create a new map-context
+       * JMap.Application.MapContext
+       *    .create({
+       *      title: "My city",
+       *      description: "My city description",
+       *      shareLink: false
+       *    })
+       *    .then(mapContext => console.info(`Map context id={mapContext.id} created !`))
+       *    .catch(error => console.error(error))
        * ```
        */
-      function setDraftContextId(mapContextId?: number): void
+      function create(params?: JMapContextMetaData): Promise<JMapContext>
 
       /**
-       * **JMap.Application.MapContext.setDraftContextTitle**
+       * **JMap.Application.MapContext.update**
        * 
-       * Set a title to the map context currently in draft
-       * @param title The title to apply
+       * Update a map context, save the current map context data.
+       * 
+       * The map-context update is persisted server-side.
+       * 
+       * You can provide partial meta-data (= data that describe the context),
+       * if a meta-data is not provided it will not be changed.
+       * 
+       * @throws if context not found, or empty or invalid meta-data, or server request error
+       * @param contextId the JMap map context id
+       * @param params partial map context meta-data, only data provided will be updated
+       * @returns the updated map context
        * @example ```ts
        * 
-       * // Set the title "Montreal" to the map context currently in draft
-       * JMap.Application.MapContext.setDraftContextTitle("Montreal")
+       * // update the map-context id=3
+       * JMap.Application.MapContext
+       *    .update(3, { title: "My new title" }) // only "title" meta-data will be changed, "description" and "shareLink" keep the same
+       *    .then(mapContext => console.info(`Map context id=3 meta-data and map data updated.`, mapContext))
+       *    .catch(error => console.error(error))
        * ```
        */
-      function setDraftContextTitle(title: string): void
+      function update(contextId: number, params?: Partial<JMapContextMetaData>): Promise<JMapContext>
 
       /**
-       * **JMap.Application.MapContext.setDraftContextDescription**
+       * **JMap.Application.MapContext.updateMetaData**
        * 
-       * Set a description to the map context currently in draft
-       * @param title The description to apply
+       * Update a map context meta-data (= data that describe the context), without changing the map data.
+       * 
+       * The map context map's data will not be changed, for that use [[JMap.Application.MapContext.update]] function.
+       * 
+       * The map-context meta-data are persisted server-side.
+       * 
+       * You can provide partial meta-data, if a meta-data is not provided it will not be changed.
+       * 
+       * @throws if context not found, or empty or invalid meta-data, or server request error
+       * @param contextId the JMap map context id
+       * @param params partial map context meta-data, only data provided will be updated
+       * @returns the updated map context
        * @example ```ts
        * 
-       * // Set the description "Measures on new buildings" to the map context currently in draft
-       * JMap.Application.MapContext.setDraftContextDescription("Measures on new buildings")
+       * // update the map-context id=3 meta-data
+       * JMap.Application.MapContext
+       *    .updateMetaData(3, { // only "title" and "description" meta-data will be changed, "shareLink" keep the same
+       *      title: "My new title",
+       *      descritpion: "My new description"
+       *    })
+       *    .then(mapContext => console.info(`Map context id=3 "title" and "description" updated.`, mapContext))
+       *    .catch(error => console.error(error))
        * ```
        */
-      function setDraftContextDescription(description: string): void
+      function updateMetaData(contextId: number, data: Partial<JMapContextMetaData>): Promise<void>
 
       /**
-       * **JMap.Application.MapContext.selectMapContext**
+       * **JMap.Application.MapContext.getContextTitle**
        * 
-       * Select a mapContext
-       * @param mapContextId The context id to select
+       * Returns the map context title for a given map context id.
+       * 
+       * @throws if map-context not found
+       * @param contextId the JMap map context id
        * @example ```ts
        * 
-       * // select the context for the id 1304358411192
-       * JMap.Application.MapContext.selectMapContext(1304358411192)
+       * // returns the map-context id=3 title
+       * JMap.Application.MapContext.getContextTitle(3)
        * ```
        */
-      function selectMapContext(mapContextId: number): void
+      function getContextTitle(contextId: number): string
 
       /**
-       * **JMap.Application.MapContext.saveDraftContext**
+       * **JMap.Application.MapContext.setContextTitle**
        * 
-       * Save the current draft map context
+       * Update a map context title, without changing the map data.
+       * 
+       * The map-context title is persisted server-side.
+       * 
+       * @throws if context not found, or empty title, or server request error
+       * @param contextId the JMap map context id
+       * @param title the new title
        * @example ```ts
        * 
-       * // Save the current draft context
-       * JMap.Application.MapContext.saveDraftContext()
+       * // update the map-context id=3 title
+       * JMap.Application.MapContext
+       *    .setContextTitle(3, "My new title")
+       *    .then(() => console.info(`Map context id=3 "title" updated`))
+       *    .catch(error => console.error(error))
        * ```
        */
-      function saveDraftContext(): void
-      
-      /**
-       * **JMap.Application.MapContext.requestMapContexts**
-       * 
-       * Get all map contexts for the current projectId
-       * @example ```ts
-       * 
-       * // Get all mapContexts for the current projectId
-       * JMap.Application.MapContext.requestMapContexts()
-       * ```
-       */
-      function requestMapContexts(): void
-      
-      /**
-       * **JMap.Application.MapContext.deleteMapContext**
-       * 
-       * Delete a map context
-       * @param mapContextId The context id to delete
-       * @example ```ts
-       * 
-       * // Delete the context for the id 1304358411192
-       * JMap.Application.MapContext.deleteMapContext(1304358411192)
-       * ```
-       */
-      function deleteMapContext(mapContextId: number | number[]): void
+      function setContextTitle(contextId: number, title: string): Promise<void>
 
       /**
-       * **JMap.Application.MapContext.toggleMapContextSharing**
+       * **JMap.Application.MapContext.getContextDescription**
        * 
-       * Toggle sharing for a map context
-       * @param mapContextId The context id to toggle sharing
+       * Returns the map context description for a given map context id.
+       * 
+       * @throws if map-context not found
+       * @param contextId the JMap map context id
        * @example ```ts
        * 
-       * // toggle sharing for the map context id 1304358411192
-       * JMap.Application.MapContext.toggleMapContextSharing(1304358411192)
+       * // returns the map-context id=3 description
+       * JMap.Application.MapContext.getContextDescription(3)
        * ```
        */
-      function toggleMapContextSharing(mapContextId: number): void
+      function getContextDescription(contextId: number): string
+
+      /**
+       * **JMap.Application.MapContext.setContextDescription**
+       * 
+       * Update a map context description, without changing the map data.
+       * 
+       * The map-context description is persisted server-side.
+       * 
+       * @throws if context not found, or empty title, or server request error
+       * @param contextId the JMap map context id
+       * @param description the new description
+       * @example ```ts
+       * 
+       * // update the map-context id=3 description
+       * JMap.Application.MapContext
+       *    .setContextDescription(3, "My new description")
+       *    .then(() => console.info(`Map context id=3 "description" updated`))
+       *    .catch(error => console.error(error))
+       * ```
+       */
+      function setContextDescription(contextId: number, description: string): Promise<void>
+
+      /**
+       * **JMap.Application.MapContext.isLinkShared**
+       * 
+       * Returns true if the map context is shared, for a given map context id.
+       * 
+       * @throws if map-context not found
+       * @param contextId the JMap map context id
+       * @example ```ts
+       * 
+       * // returns true if the map-context id=3 is shared
+       * JMap.Application.MapContext.isLinkShared(3)
+       * ```
+       */
+      function isLinkShared(contextId: number): boolean
+
+      /**
+       * **JMap.Application.MapContext.setLinkShare**
+       * 
+       * Update a map context link share state, without changing the map data.
+       * 
+       * The map-context link share state is persisted server-side.
+       * 
+       * @throws if context not found, or empty title, or server request error
+       * @param contextId the JMap map context id
+       * @param isShared true if the link is shared, else false
+       * @example ```ts
+       * 
+       * // update the map-context id=3 link share state to true
+       * JMap.Application.MapContext
+       *    .setLinkShare(3, true)
+       *    .then(() => console.info(`Map context id=3 is now shared`))
+       *    .catch(error => console.error(error))
+       * ```
+       */
+      function setLinkShare(contextId: number, isShared: boolean): Promise<void>
+
+      /**
+       * **JMap.Application.MapContext.getDefaultContext**
+       * 
+       * Returns the default map context if one has been set as default, else undefined.
+       * 
+       * The default map context is loaded automatically at startup.
+       * 
+       * @example ```ts
+       * 
+       * // returns the default map context if one has been set
+       * JMap.Application.MapContext.getDefaultContext()
+       * ```
+       */
+      function getDefaultContext(): JMapContext | undefined
+
+      /**
+       * **JMap.Application.MapContext.isDefaultContext**
+       * 
+       * Returns true if the map context is the default one, given the id.
+       * 
+       * The default map context is loaded automatically at startup.
+       * 
+       * @throws if map-context not found
+       * @param contextId the JMap map context id
+       * @example ```ts
+       * 
+       * // returns true if the map context id=3 is the default one.
+       * JMap.Application.MapContext.isDefaultContext(3)
+       * ```
+       */
+      function isDefaultContext(contextId: number): boolean
+
+      /**
+       * **JMap.Application.MapContext.setDefaultContext**
+       * 
+       * Set or unset default map context, the change is persited server side.
+       * 
+       * If a contextId is provided, set the map context as the default one.
+       * 
+       * If no context id is provided, unset the current default context.
+       * 
+       * @throws if context provided but not found, or server request error
+       * @param contextId the JMap map context id
+       * @example ```ts
+       * 
+       * // set the map-context id=3 as the default one
+       * JMap.Application.MapContext
+       *    .setDefaultContext(3)
+       *    .then(() => console.info(`Map context id=3 is now the default one`))
+       *    .catch(error => console.error(error))
+       * ```
+       * 
+       * // make no map-context as default
+       * JMap.Application.MapContext
+       *    .setDefaultContext()
+       *    .then(() => console.info(`No map context are default now`))
+       *    .catch(error => console.error(error))
+       * ```
+       */
+      function setDefaultContext(contextId?: number): Promise<void>
+
+      /**
+       * **JMap.Application.MapContext.sortListBy**
+       * 
+       * Change the map-context list sort. The change is persited in local storage.
+       * 
+       * "alphabetic" : list following map context title string
+       * "lastUpdate" : list following map context last update
+       * 
+       * @throws if sortBy param is not correct
+       * @param sortBy "alphabetic" or "lastUpdate"
+       * @example ```ts
+       * 
+       * // sort the list alphabetically
+       * JMap.Application.MapContext.sortListBy("alphabetic")
+       * 
+       * // sort the list with the last upadte date
+       * JMap.Application.MapContext.sortListBy("lastUpdate")
+       * ```
+       */
+      function sortListBy(sortBy: JMapContextSortByOption): void
+
+      /**
+       * **JMap.Application.MapContext.getListSortBy**
+       * 
+       * Returns the map-context list sort.
+       * 
+       * @example ```ts
+       * 
+       * // returns the list sort
+       * JMap.Application.MapContext.getListSortBy()
+       * ```
+       */
+      function getListSortBy(): JMapContextSortByOption
+
+      /**
+       * **JMap.Application.MapContext.getAllListSortBy**
+       * 
+       * Returns all available map context list sort : [ "alphabetic", "lastUpdate" ]
+       * 
+       * @example ```ts
+       * 
+       * // returns all available list sort
+       * JMap.Application.MapContext.getAllListSortBy()
+       * ```
+       */
+      function getAllListSortBy(): JMapContextSortByOption[]
+
+      /**
+       * **JMap.Application.MapContext.setListSortDirection**
+       * 
+       * Change the map-context list sort direction. The change is persited in local storage.
+       * 
+       * "asc" : ascendant sort
+       * "desc" : descendant sort
+       * 
+       * @throws if sortByDirection param is not correct
+       * @param sortByDirection "asc" or "desc"
+       * @example ```ts
+       * 
+       * // make the sort ascendant
+       * JMap.Application.MapContext.setListSortDirection("asc")
+       * 
+       * // make the sort descendant
+       * JMap.Application.MapContext.setListSortDirection("desc")
+       * ```
+       */
+      function setListSortDirection(sortByDirection: JMapContextSortByDirection): void
+
+      /**
+       * **JMap.Application.MapContext.getListSortDirection**
+       * 
+       * Returns the map-context list sort direction.
+       * 
+       * @example ```ts
+       * 
+       * // returns the list sort direction
+       * JMap.Application.MapContext.getListSortDirection()
+       * ```
+       */
+      function getListSortDirection(): JMapContextSortByDirection
+
+      /**
+       * **JMap.Application.MapContext.getAllListSortDirection**
+       * 
+       * Returns all available map context list sort directions : [ "asc", "desc" ]
+       * 
+       * @example ```ts
+       * 
+       * // returns all available list sort directions
+       * JMap.Application.MapContext.getAllListSortDirection()
+       * ```
+       */
+      function getAllListSortDirection(): JMapContextSortByDirection[]
+
+      /**
+       * **JMap.Application.MapContext.filterList**
+       * 
+       * Filter the map context list.
+       * 
+       * The filter is done on "title" and/or "description".
+       * 
+       * @param filter a string
+       * @example ```ts
+       * 
+       * // only map context having "ab" in title and/or description will be displayed
+       * JMap.Application.MapContext.filterList("ab")
+       * ```
+       */
+      function filterList(filter: string): void
+
+      /**
+       * **JMap.Application.MapContext.getListFilter**
+       * 
+       * Returns the current applied filter on the map context list, or an empty string if no filter applied.
+       * 
+       * @example ```ts
+       * 
+       * // return the current filter
+       * JMap.Application.MapContext.getListFilter()
+       * ```
+       */
+      function getListFilter(): string
+
+      /**
+       * **JMap.Application.MapContext.getListFilter**
+       * 
+       * If a filter is applied on the map context list, this function clears it.
+       * 
+       * @example ```ts
+       * 
+       * // clear the current filter if exists
+       * JMap.Application.MapContext.getListFilter()
+       * ```
+       */
+      function clearListFilter(): void
     }
 
     /**
@@ -525,7 +1065,7 @@ declare namespace JMap {
          * 
          * Set the application left side panel visibility.
          * 
-         * @param open if true show the panel, else hide it
+         * @param isVisible if true show the panel, else hide it
          * @example ```ts
          * 
          * // Show the left side panel
@@ -535,7 +1075,7 @@ declare namespace JMap {
          * JMap.Application.UI.Sidepanel.setVisible(false)
          * ```
          */
-        function setVisible(open: boolean): void
+        function setVisible(isVisible: boolean): void
   
         /**
          * **JMap.Application.UI.SidePanel.isVisible**
@@ -608,6 +1148,54 @@ declare namespace JMap {
          */
         function setDark(isDark: boolean): void
       }
+    }
+
+    namespace Print {
+      function refreshScaleForCurrentZoom(): void
+      function setScaleControlVisibility(isVisible: boolean): void
+      function isScaleControlVisible(): boolean
+      function setPageTitle(title: string): void
+      function getPageTitle(type?: string): string
+      function setPageSubTitle(subTitle: string): void
+      function getPageSubTitle(): string
+      function setDateVisibility(isVisible: boolean): void
+      function isDateVisibile(): boolean
+      function setNorthArrowVisibility(isVisible: boolean): void
+      function isNorthArrowVisible(): boolean
+      function getAllPaperFormats(): JAppPaperFormat[]
+      function setPaperFormat(format: JAppPaperFormat | string): void
+      function getPaperFormat(): JAppPaperFormat
+      function setOrientation(isPortrait: boolean): void
+      function isOrientationPortrait(): boolean
+      function setFileType(fileType: JAppPrintFileType): void
+      function getFileType(): JAppPrintFileType
+      function getScale(): number
+      function setZoomFromScale(scale: number): void
+      function takeCapture(): void
+    }
+
+    namespace Query {
+      function activateQuery(groupId: number, queryId: number): void
+      function deactivateQuery(): void
+      function setDefaultData(values: any): void
+      function getDefaultData(): { [ id: string ]: any }
+      function clearDefaultData(): void
+      function displayInDialog(isVisibleInDialog: boolean): void
+      function processQuery(values: any): Promise<void>
+    }
+
+    namespace Event {
+      namespace UI {
+        namespace on {
+          function sizeChanged(listenerId: string, fn: (params: JAppEventSizeParams) => void): void
+        }
+      }
+    }
+
+    namespace Extension {
+      function register(extension: JAppExtension): void
+      function isRegistered(extensionId: string): boolean
+      function getAllRegisteredIds(): string[]
     }
   }
 }

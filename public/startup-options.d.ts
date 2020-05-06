@@ -138,7 +138,7 @@ declare interface JApplicationOptions {
    * 
    * Standard application panels ids are : "project", "layer", "selection", "measure", "mapcontext", "print", "user".
    * 
-   * But if ***activePanelId*** is defined, it will display the corresponding panel on the screen.
+   * But if ***panel*** is defined, it will display the corresponding panel on the screen.
    * 
    * ```html
    * <html>
@@ -148,7 +148,7 @@ declare interface JApplicationOptions {
    *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
-   *           activePanelId: "project",
+   *           panel: "project",
    *           ...
    *         }
    *       }
@@ -158,14 +158,14 @@ declare interface JApplicationOptions {
    * </html>
    * ```
    */
-  activePanelId?: string
+  panel?: string
 
   /**
    * The application have multiple panels available by default : "project", "layer", "selection", "measure", "draw", "search", "add-feature", "print", "user"
    * 
    * But you can tell the JMap application to disabled some panels. If a panel is disabled it will disappear on the left menu.
    * 
-   * The ***disabledPanelIds*** parameter is an array with the panel ids you want to be disabled.
+   * The ***disabledPanels*** parameter is an array with the panel ids you want to be disabled.
    * 
    * ```html
    * <html>
@@ -175,7 +175,7 @@ declare interface JApplicationOptions {
    *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
-   *           disabledPanelIds: [ "measure", "print" ],
+   *           disabledPanels: [ "measure", "print" ],
    *           ...
    *         }
    *       }
@@ -185,7 +185,7 @@ declare interface JApplicationOptions {
    * </html>
    * ```
    */
-  disabledPanelIds?: string[]
+  disabledPanels?: string[]
 
   /**
    * If provided this function will be processed each time the application is ready :

@@ -7,7 +7,19 @@ export interface JAppState {
   mapContext: JAppMapContextState
   layer: JAppLayerState
   ui: JAppUiState
+  query: JAppQueryState
   print: JAppPrintState
+  project: JAppProjectState
+}
+
+export interface JAppProjectState {
+  urlExist: boolean
+}
+
+export interface JAppQueryState {
+  activeQuery: JQuery | undefined
+  defaultValueById: { [id: string]: any } | undefined
+  displayInDialog: boolean
 }
 
 export interface JAppPanelState {
@@ -80,8 +92,19 @@ export interface JApplicationService extends JApplicationMainService {
   Print: JAppPrintService
   UI: JApplicationUIService
   MapContext: JAppMapContextService
+  Query: JAppQueryService
   Event: JAppEventService
   Extension: JAppExtensionService
+}
+
+export interface JAppQueryService {
+  activateQuery(groupId: number, queryId: number): void
+  deactivateQuery(): void
+  setDefaultData(values: any): void
+  getDefaultData(): { [ id: string ]: any }
+  clearDefaultData(): void
+  displayInDialog(isVisibleInDialog: boolean): void
+  processQuery(values: any): Promise<void>
 }
 
 export interface JApplicationMainService {
@@ -109,21 +132,6 @@ export interface JApplicationUIService {
 
 export interface JAppEventService {
   UI: JAppEventUIModule
-}
-
-export interface JAppPaperFormat {
-  type: string,
-  width: number
-  height: number
-  ratio: number
-}
-
-export interface JHideablePanel {
-  setVisible(open: boolean): void
-  isVisible(): boolean
-  toggleVisibility(): void
-  open(): void
-  close(): void
 }
 
 export interface JAppSelectionService {
@@ -161,9 +169,10 @@ export interface JAppExtensionService {
 export interface JAppPanelService {
   getActive(): JAppPanel
   getAll(): JAppPanel[]
-  activate(panelId?: string): void
+  existById(panelId: string): boolean
+  activateById(panelId?: string): void
   add(panel: JAppPanel): void
-  remove(panelId: string): void
+  removeById(panelId: string): void
 }
 
 export interface JAppPrintService {
@@ -190,12 +199,6 @@ export interface JAppPrintService {
   takeCapture(): void
 }
 
-export interface JMapContextMetaData {
-  title: string
-  shareLink: boolean
-  description?: string
-}
-
 export interface JAppMapContextService {
   startCreation(): void
   cancelCreation(): void
@@ -205,7 +208,7 @@ export interface JAppMapContextService {
   deleteContextById(contextId: number | number[]): Promise<void>
   create(params?: JMapContextMetaData): Promise<JMapContext>
   update(contextId: number, params?: Partial<JMapContextMetaData>): Promise<JMapContext>
-  setContextMetaData(contextId: number, data: Partial<JMapContextMetaData>): Promise<void>
+  updateMetaData(contextId: number, params: Partial<JMapContextMetaData>): Promise<void>
   getContextTitle(contextId: number): string
   setContextTitle(contextId: number, title: string): Promise<void>
   getContextDescription(contextId: number): string
@@ -223,18 +226,13 @@ export interface JAppMapContextService {
   getAllListSortDirection(): JMapContextSortByDirection[]
   filterList(filter: string): void
   getListFilter(): string
-  clearListFilter(filter: string): void
+  clearListFilter(): void
 }
 
 export interface JAppLayerService {
   activateTab(newTab: JAppLayerTab): void
   getAllTabs(): JAppLayerTab[]
   getActiveTab(): JAppLayerTab
-}
-
-export interface JAppEventSizeParams {
-  width: number
-  height: number
 }
 
 export interface JAppEventUIModule extends JEventModule {

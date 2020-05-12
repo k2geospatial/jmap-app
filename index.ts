@@ -3,6 +3,7 @@ import { JEventModule } from "jmap-core"
 export interface JAppState {
   panel: JAppPanelState
   measure: JAppMeasureState
+  annotation: JAppAnnotationState
   selection: JAppSelectionState
   mapContext: JAppMapContextState
   layer: JAppLayerState
@@ -23,7 +24,7 @@ export interface JAppQueryState {
 }
 
 export interface JAppPanelState {
-  active: JAppPanel,
+  active: JAppPanel
   all: JAppPanel[]
 }
 
@@ -53,9 +54,17 @@ export interface JAppMapContextState {
 }
 
 export interface JAppMeasureState {
-  measureType: JAppMeasureType,
+  measureType: JAppMeasureType
   measures: JAppMeasure[]
-  isNewElement: boolean,
+  isNewElement: boolean
+  isDeleting: boolean
+}
+
+export interface JAppAnnotationState {
+  drawType: JAppDrawType
+  drawMode: JAppDrawMode
+  annotations: JAppAnnotation[]
+  isNewElement: boolean
   isDeleting: boolean
 }
 
@@ -118,12 +127,12 @@ export interface JApplicationUIService {
     getId(): string
     getWidth(): number
     getHeight(): number
-  },
+  }
   SidePanel: {
     isVisible(): boolean
     toggleVisibility(): void
     setVisible(isVisible: boolean): void
-  },
+  }
   Theme: {
     setDark(isDark: boolean): void
     isDark(): boolean

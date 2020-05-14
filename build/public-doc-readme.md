@@ -1,2 +1,1 @@
 **JMap Application documentation**
-

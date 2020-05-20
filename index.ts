@@ -3,7 +3,6 @@ import { JEventModule } from "jmap-core"
 export interface JAppState {
   panel: JAppPanelState
   measure: JAppMeasureState
-  annotation: JAppAnnotationState
   selection: JAppSelectionState
   mapContext: JAppMapContextState
   layer: JAppLayerState
@@ -11,6 +10,7 @@ export interface JAppState {
   query: JAppQueryState
   print: JAppPrintState
   project: JAppProjectState
+  annotation: JAppAnnotationState
 }
 
 export interface JAppProjectState {
@@ -60,12 +60,16 @@ export interface JAppMeasureState {
   isDeleting: boolean
 }
 
-export interface JAppAnnotationState {
-  drawType: JAppDrawType
-  drawMode: JAppDrawMode
-  annotations: JAppAnnotation[]
+export interface JAppDrawState {
+  type: JAppDrawType
+  mode: JAppDrawMode
   isNewElement: boolean
   isDeleting: boolean
+}
+
+export interface JAppAnnotationState {
+  annotations: JAppAnnotation[]
+  draw: JAppDrawState
 }
 
 export interface JAppPrintState {
@@ -103,7 +107,17 @@ export interface JApplicationService extends JApplicationMainService {
   MapContext: JAppMapContextService
   Query: JAppQueryService
   Event: JAppEventService
+  Annotation: JAppAnnotationService
   Extension: JAppExtensionService
+}
+
+export interface JAppAnnotationService {
+  setDrawMode(drawMode: JAppDrawMode): void
+  setDrawType(drawType: JAppDrawType): void
+  saveAnnotation(annotation: JAppAnnotation): void
+  deleteAnnotations(annotationIds: string[]): void
+  updateAnnotations(annotations: JAppAnnotation[]): void
+  setIsDeleting(isDeleting: boolean): void
 }
 
 export interface JAppQueryService {

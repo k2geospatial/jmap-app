@@ -11,6 +11,11 @@ export interface JAppState {
   query: JAppQueryState
   print: JAppPrintState
   project: JAppProjectState
+  note: JAppNoteState
+}
+
+export interface JAppNoteState {
+  notes: JAppNote[]
 }
 
 export interface JAppProjectState {
@@ -104,6 +109,7 @@ export interface JApplicationService extends JApplicationMainService {
   Query: JAppQueryService
   Event: JAppEventService
   Extension: JAppExtensionService
+  Note: JAppNoteService
 }
 
 export interface JAppQueryService {
@@ -158,6 +164,10 @@ export interface JAppSelectionService {
   exportAsExcelFile(): void
   fitMapToDisplayLayerSelection(): void
   removeLastDrawnSelectionCoordinate(): void
+}
+
+export interface JAppNoteService {
+  resetState(): void
 }
 
 export interface JAppMeasureService {

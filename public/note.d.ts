@@ -1,5 +1,5 @@
 declare interface JAppNote {
-    id: number
+    id: string
     title?: string
     text?: string
   }

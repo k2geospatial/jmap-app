@@ -3,7 +3,7 @@ import { JEventModule } from "jmap-core"
 export interface JAppState {
   panel: JAppPanelState
   measure: JAppMeasureState
-  // annotation: JAppAnnotationState
+  annotation: JAppAnnotationState
   selection: JAppSelectionState
   mapContext: JAppMapContextState
   layer: JAppLayerState

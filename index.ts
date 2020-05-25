@@ -15,7 +15,8 @@ export interface JAppState {
 }
 
 export interface JAppNoteState {
-  notes: JAppNote[]
+  notes: JAppNote[],
+  newNoteText: string
 }
 
 export interface JAppProjectState {
@@ -168,8 +169,9 @@ export interface JAppSelectionService {
 
 export interface JAppNoteService {
   getAll(): JAppNote[]
-  add(note: JAppNote): void
+  add(newNoteText?: string): JAppNote
   removeById(noteId: string): void
+  setNewNoteText(newNoteText: string): void
 }
 
 export interface JAppMeasureService {

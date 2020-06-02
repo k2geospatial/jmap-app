@@ -1,6 +1,4 @@
 declare type JAppMeasureType = "circleArea" | "distance" | "polygonArea"
-
-declare type JDistanceUnits = "millimeters" | "centimeters" | "meters" | "kilometers" | "inches" | "feet" | "yards" | "miles" | "nauticalmiles"
 declare interface JAppMeasure {
   id: number
   type: JAppMeasureType

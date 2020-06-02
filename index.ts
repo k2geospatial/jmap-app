@@ -58,6 +58,7 @@ export interface JAppMeasureState {
   measures: JAppMeasure[]
   isNewElement: boolean
   isDeleting: boolean
+  displayUnit: JDisplayUnits
 }
 
 export interface JAppDrawState {

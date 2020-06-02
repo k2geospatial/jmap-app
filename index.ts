@@ -53,12 +53,14 @@ export interface JAppMapContextState {
   createTitleError: boolean
 }
 
+export type JDistanceUnits = "millimeters" | "centimeters" | "meters" | "kilometers" | "inches" | "feet" | "yards" | "miles" | "nauticalmiles"
+
 export interface JAppMeasureState {
   measureType: JAppMeasureType
   measures: JAppMeasure[]
   isNewElement: boolean
   isDeleting: boolean
-  displayUnit: JDisplayUnits
+  distanceUnit: JDistanceUnits
 }
 
 export interface JAppDrawState {

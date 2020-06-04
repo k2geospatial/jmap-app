@@ -260,9 +260,9 @@ export interface JAppMapContextService {
 }
 
 export interface JAppPocketCalculatorService{
-    pushStack():void
-    operateStack(operator: JAppPocketCalculatorStackOperation): void
-    enterDigit(digit: JAppPocketCalculatorDigit):void
+  pushStack(): void
+  operateStack(operator: JAppPocketCalculatorStackOperation): void
+  enterDigit(digit: JAppPocketCalculatorDigit): void
 }
 
 export interface JAppLayerService {

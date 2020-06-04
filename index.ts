@@ -11,6 +11,7 @@ export interface JAppState {
   print: JAppPrintState
   project: JAppProjectState
   annotation: JAppAnnotationState
+  pocketCalculator: JAppPocketCalculatorState
 }
 
 export interface JAppProjectState {
@@ -70,6 +71,12 @@ export interface JAppDrawState {
 export interface JAppAnnotationState {
   annotations: JAppAnnotation[]
   draw: JAppDrawState
+}
+
+export interface JAppPocketCalculatorState {
+  stack: number[]
+  lastOperationType: JAppPocketCalculatorOperationType
+  lastDigitTyped: JAppPocketCalculatorDigit | null
 }
 
 export interface JAppPrintState {
@@ -250,6 +257,12 @@ export interface JAppMapContextService {
   filterList(filter: string): void
   getListFilter(): string
   clearListFilter(): void
+}
+
+export interface JAppPocketCalculatorService{
+    pushStack():void
+    operateStack(operator: JAppPocketCalculatorStackOperation): void
+    enterDigit(digit: JAppPocketCalculatorDigit):void
 }
 
 export interface JAppLayerService {

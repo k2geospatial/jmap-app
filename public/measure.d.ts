@@ -1,3 +1,5 @@
+declare type JAppMeasureType = "circleArea" | "distance" | "polygonArea"
+
 declare interface JAppMeasure {
   id: number
   type: JAppMeasureType

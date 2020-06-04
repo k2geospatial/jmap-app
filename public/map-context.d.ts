@@ -8,6 +8,12 @@ declare interface JMapContextEditResponse {
   modificationDate: string
 }
 
+declare interface JMapContextMetaData {
+  title: string
+  shareLink: boolean
+  description?: string
+}
+
 declare interface JMapContextData {
   layerElements: JMapContextDataLayerElement[]
   mapCenter: { x: number, y: number }

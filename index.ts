@@ -121,7 +121,7 @@ export interface JAppAnnotationService {
 }
 
 export interface JAppQueryService {
-  activateQuery(groupId: number, queryId: number): void
+  activateQuery(groupId: number, queryId: string): void
   deactivateQuery(): void
   setDefaultData(values: any): void
   getDefaultData(): { [ id: string ]: any }

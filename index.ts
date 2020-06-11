@@ -63,8 +63,11 @@ export interface JAppMeasureState {
 export interface JAppDrawState {
   type: JAppDrawType
   mode: JAppDrawMode
+  featuresSelected: JAppDrawFeaturesSelected
   isNewElement: boolean
   isDeleting: boolean
+  isStyling: boolean
+  style: JAppDrawStyle
 }
 
 export interface JAppAnnotationState {
@@ -118,13 +121,17 @@ export interface JAppAnnotationService {
   deleteAnnotations(annotationIds: string[]): void
   updateAnnotations(annotations: JAppAnnotation[]): void
   setIsDeleting(isDeleting: boolean): void
+  syncStyles(): void
+  setDrawFeaturesSelected(featuresSelected: JAppDrawFeaturesSelected): void
+  setStyle(style: JAppDrawStyle): void
+  setAnnotationsStyle(annotationIds: string[], style: JAppDrawStyle): void
 }
 
 export interface JAppQueryService {
   activateQuery(groupId: number, queryId: string): void
   deactivateQuery(): void
   setDefaultData(values: any): void
-  getDefaultData(): { [ id: string ]: any }
+  getDefaultData(): { [id: string]: any }
   clearDefaultData(): void
   displayInDialog(isVisibleInDialog: boolean): void
   processQuery(values: any): Promise<void>
@@ -230,8 +237,14 @@ export interface JAppMapContextService {
   applyContextById(contextId: number): void
   deleteContextById(contextId: number | number[]): Promise<void>
   create(params?: JMapContextMetaData): Promise<JMapContext>
-  update(contextId: number, params?: Partial<JMapContextMetaData>): Promise<JMapContext>
-  updateMetaData(contextId: number, params: Partial<JMapContextMetaData>): Promise<void>
+  update(
+    contextId: number,
+    params?: Partial<JMapContextMetaData>
+  ): Promise<JMapContext>
+  updateMetaData(
+    contextId: number,
+    params: Partial<JMapContextMetaData>
+  ): Promise<void>
   getContextTitle(contextId: number): string
   setContextTitle(contextId: number, title: string): Promise<void>
   getContextDescription(contextId: number): string
@@ -260,6 +273,9 @@ export interface JAppLayerService {
 
 export interface JAppEventUIModule extends JEventModule {
   on: {
-    sizeChanged(listenerId: string, fn: (params: JAppEventSizeParams) => void): void
+    sizeChanged(
+      listenerId: string,
+      fn: (params: JAppEventSizeParams) => void
+    ): void
   }
 }

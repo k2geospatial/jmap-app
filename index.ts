@@ -120,7 +120,7 @@ export interface JAppAnnotationService {
   saveAnnotation(annotation: JAppAnnotation): void
   deleteAnnotations(annotationIds: string[]): void
   updateAnnotations(annotations: JAppAnnotation[]): void
-  setIsDeleting(isDeleting: boolean): void
+  syncDelete(): void
   syncStyles(): void
   setDrawFeaturesSelected(featuresSelected: JAppDrawFeaturesSelected): void
   setStyle(style: JAppDrawStyle): void

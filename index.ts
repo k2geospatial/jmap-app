@@ -63,8 +63,7 @@ export interface JAppMeasureState {
 export interface JAppDrawState {
   type: JAppDrawType
   mode: JAppDrawMode
-  featuresSelected: JAppDrawFeaturesSelected
-  isNewElement: boolean
+  featuresSelected: JAppDrawFeature[]
   isDeleting: boolean
   isStyling: boolean
   style: JAppDrawStyle
@@ -120,9 +119,9 @@ export interface JAppAnnotationService {
   saveAnnotation(annotation: JAppAnnotation): void
   deleteAnnotations(annotationIds: string[]): void
   updateAnnotations(annotations: JAppAnnotation[]): void
-  syncDelete(): void
-  syncStyles(): void
-  setDrawFeaturesSelected(featuresSelected: JAppDrawFeaturesSelected): void
+  setIsDeleting(isDeleting: boolean): void
+  setIsStyling(isStyling: boolean): void
+  setDrawFeaturesSelected(featuresSelected: JAppDrawFeature[]): void
   setStyle(style: JAppDrawStyle): void
   setAnnotationsStyle(annotationIds: string[], style: JAppDrawStyle): void
 }

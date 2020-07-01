@@ -5,7 +5,7 @@ declare interface JAppMeasure {
   type: JAppMeasureType
   total: number
   popups: Array<{ coordinates: [number, number], html: string }>
-  multiPointFeature: any // Feature<MultiPoint>
-  lineFeature: any // Feature<LineString>
-  fillFeature: any //Feature<LineString>
+  multiPointFeature: GeoJSON.Feature<GeoJSON.MultiPoint>
+  lineFeature: GeoJSON.Feature<GeoJSON.LineString>
+  fillFeature: GeoJSON.Feature<GeoJSON.LineString>
 }

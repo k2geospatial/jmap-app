@@ -1,10 +1,13 @@
 declare type JAppDrawType = "point" | "polygon" | "line_string" | "rectangle" | "circle" | "text"
-declare type JAppDrawMode = "draw" | "select"
+declare type JAppDrawMode = "draw" | "select" | "delete"
+
+declare type JAppDrawFeaturesFn = (features: JAppDrawFeature[]) => void
+
 declare interface JAppDrawFeature extends GeoJSON.Feature {
   id: string
   properties: JAppDrawStyle
 }
-declare type JAppDrawFeaturesFn = (features: JAppDrawFeature[]) => void
+
 declare interface JAppDrawStyle {
   fillColor?: string
   fillOpacity?: number

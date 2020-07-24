@@ -65,6 +65,7 @@ export interface JAppDrawState {
   mode: JAppDrawMode
   featuresSelected: JAppDrawFeature[]
   isDeleting: boolean
+  isNewElement: boolean
   isStyling: boolean
   style: JAppDrawStyle
 }

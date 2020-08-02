@@ -161,7 +161,8 @@ export interface JApplicationUIService {
 }
 
 export interface JAppEventService {
-  UI: JAppEventUIModule
+  UI: JAppUIEventModule
+  App: JAppAppEventModule
 }
 
 export interface JAppSelectionService {
@@ -271,11 +272,20 @@ export interface JAppLayerService {
   getActiveTab(): JAppLayerTab
 }
 
-export interface JAppEventUIModule extends JEventModule {
+export interface JAppUIEventModule extends JEventModule {
   on: {
     sizeChanged(
       listenerId: string,
       fn: (params: JAppEventSizeParams) => void
+    ): void
+  }
+}
+
+export interface JAppAppEventModule extends JEventModule {
+  on: {
+    appReady(
+      listenerId: string,
+      fn: () => void
     ): void
   }
 }

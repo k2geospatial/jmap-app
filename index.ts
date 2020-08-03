@@ -161,8 +161,8 @@ export interface JApplicationUIService {
 }
 
 export interface JAppEventService {
+  Main: JAppAppEventModule
   UI: JAppUIEventModule
-  App: JAppAppEventModule
 }
 
 export interface JAppSelectionService {

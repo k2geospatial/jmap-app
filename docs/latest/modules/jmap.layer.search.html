@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Project | jmap-core</title>
+	<title>Search | jmap-core</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,19 +57,27 @@
 					<a href="jmap.html">JMap</a>
 				</li>
 				<li>
-					<a href="jmap.service.html">Service</a>
+					<a href="jmap.layer.html">Layer</a>
 				</li>
 				<li>
-					<a href="jmap.service.project.html">Project</a>
+					<a href="jmap.layer.search.html">Search</a>
 				</li>
 			</ul>
-			<h1>Module Project</h1>
+			<h1>Module Search</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p> <strong>JMap.Layer.Search</strong></p>
+					</div>
+					<p>Methods used to search features for a layer.</p>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -77,7 +85,7 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.service.project.html#setid" class="tsd-kind-icon">set<wbr>Id</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.search.html#byattribute" class="tsd-kind-icon">by<wbr>Attribute</a></li>
 							</ul>
 						</section>
 					</div>
@@ -86,25 +94,52 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="setid" class="tsd-anchor"></a>
-					<h3>set<wbr>Id</h3>
+					<a name="byattribute" class="tsd-anchor"></a>
+					<h3>by<wbr>Attribute</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Id<span class="tsd-signature-symbol">(</span>projectId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">by<wbr>Attribute<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/jlayersearchbyattributesparams.html" class="tsd-signature-type">JLayerSearchByAttributesParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/jmap/project.d.ts:2</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:393</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Layer.Search.byAttribute</strong></p>
+								</div>
+								<p>Returns features, for a given layer, having attribute value equals to the given value(s).</p>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>Error if promise fails</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// returns all features that have the attribute "E"</span>
+JMap.Layer.Search
+  .byAttribute({
+     layerId: <span class="hljs-number">99</span>,
+     attributeName: <span class="hljs-string">"TREE"</span>,
+     attributeValue: [ <span class="hljs-string">"Cherry"</span>, <span class="hljs-string">"Birch"</span> ] <span class="hljs-comment">// here an array for multipe values, but could be a single value like a string</span>
+  })
+  .then(<span class="hljs-function"><span class="hljs-params">features</span> =&gt;</span> <span class="hljs-built_in">console</span>.info(<span class="hljs-string">`Total <span class="hljs-subst">${features.length}</span> feature(s) found`</span>, features))
+  .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(error))</code></pre>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>projectId: <span class="tsd-signature-type">string</span></h5>
+									<h5>params: <a href="../interfaces/jlayersearchbyattributesparams.html" class="tsd-signature-type">JLayerSearchByAttributesParams</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>search parameters</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>a promise that will return all the features of the Layer corresponding to the search criteria</p>
 						</li>
 					</ul>
 				</section>
@@ -129,13 +164,24 @@
 								<a href="jmap.extension.html">Extension</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.form.html">Form</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.geolocation.html">Geolocation</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.geometry.html">Geometry</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.history.html">History</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+							<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.layer.html">Layer</a>
+								<ul>
+									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.layer.search.html">Search</a>
+									</li>
+								</ul>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.map.html">Map</a>
@@ -146,13 +192,8 @@
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.project.html">Project</a>
 							</li>
-							<li class="current tsd-kind-module tsd-parent-kind-module">
-								<a href="jmap.service.html">Service</a>
-								<ul>
-									<li class="current tsd-kind-module tsd-parent-kind-module">
-										<a href="jmap.service.project.html">Project</a>
-									</li>
-								</ul>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.query.html">Query</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.user.html">User</a>
@@ -164,7 +205,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="jmap.service.project.html#setid" class="tsd-kind-icon">set<wbr>Id</a>
+						<a href="jmap.layer.search.html#byattribute" class="tsd-kind-icon">by<wbr>Attribute</a>
 					</li>
 				</ul>
 			</nav>

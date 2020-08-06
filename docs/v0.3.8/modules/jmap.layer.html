@@ -80,8 +80,15 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Modules</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.search.html" class="tsd-kind-icon">Search</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#deletelayer" class="tsd-kind-icon">delete<wbr>Layer</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#exists" class="tsd-kind-icon">exists</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#getallthematicsforlayer" class="tsd-kind-icon">get<wbr>All<wbr>Thematics<wbr>For<wbr>Layer</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a></li>
@@ -101,7 +108,6 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#hasvisiblethematics" class="tsd-kind-icon">has<wbr>Visible<wbr>Thematics</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#isalllayerparentsvisible" class="tsd-kind-icon">is<wbr>All<wbr>Layer<wbr>Parents<wbr>Visible</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#removelayer" class="tsd-kind-icon">remove<wbr>Layer</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#setlayergroupexpansion" class="tsd-kind-icon">set<wbr>Layer<wbr>Group<wbr>Expansion</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#setthematicvisibility" class="tsd-kind-icon">set<wbr>Thematic<wbr>Visibility</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html#setvisible" class="tsd-kind-icon">set<wbr>Visible</a></li>
@@ -113,6 +119,50 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="deletelayer" class="tsd-anchor"></a>
+					<h3>delete<wbr>Layer</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Layer<span class="tsd-signature-symbol">(</span>layerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:785</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Layer.deleteLayer</strong></p>
+								</div>
+								<p>Delete the layer in the data store and in the map.</p>
+								<p>The layer is not deleted server side, but only in the browser.</p>
+								<p>Use this function if you want to dynamically remove a layer.</p>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>Error if layer is not found</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// Remove layer 4 (only client side)</span>
+JMap.Layer.deleteLayer(<span class="hljs-number">4</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>layerId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The JMap layer id</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="exists" class="tsd-anchor"></a>
 					<h3>exists</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -122,7 +172,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:404</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:507</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -161,7 +211,7 @@ JMap.Layer.exists(<span class="hljs-number">3</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:572</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:675</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -203,7 +253,7 @@ JMap.Layer.getAllThematicsForLayer(<span class="hljs-number">4</span>)</code></p
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:419</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:522</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -245,7 +295,7 @@ JMap.Layer.getById(<span class="hljs-number">3</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:468</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:571</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -287,7 +337,7 @@ JMap.Layer.getDescription(<span class="hljs-number">3</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:390</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:493</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -328,7 +378,7 @@ JMap.Layer.getDescription(<span class="hljs-number">3</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:376</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:479</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -362,7 +412,7 @@ JMap.Layer.getLayerIds()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:314</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:417</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -397,7 +447,7 @@ JMap.Layer.getLayerTree()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:337</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:440</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -440,7 +490,7 @@ JMap.Layer.getLayerTreeElementsById()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:354</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:457</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -472,7 +522,7 @@ JMap.Layer.getLayers()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:453</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:556</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -514,7 +564,7 @@ JMap.Layer.getName(<span class="hljs-number">3</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:557</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:660</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -559,7 +609,7 @@ JMap.Layer.getSelectionStyle(<span class="hljs-number">3</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:438</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:541</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -604,7 +654,7 @@ JMap.Layer.getSelfOrChildren(<span class="hljs-number">3</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:542</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:645</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -648,7 +698,7 @@ JMap.Layer.getSimpleSelectionStyle(<span class="hljs-number">3</span>)</code></p
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:524</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:627</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -690,7 +740,7 @@ JMap.Layer.getStyle(<span class="hljs-number">3</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:588</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:691</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -738,7 +788,7 @@ JMap.Layer.getThematicById(<span class="hljs-number">4</span>, <span class="hljs
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:618</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:721</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -780,7 +830,7 @@ JMap.Layer.getVisibleThematics(<span class="hljs-number">4</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:603</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:706</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -822,7 +872,7 @@ JMap.Layer.hasVisibleThematics(<span class="hljs-number">4</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:509</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:612</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -865,7 +915,7 @@ JMap.Layer.isAllLayerParentsVisible(<span class="hljs-number">3</span>)</code></
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:492</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:595</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -874,7 +924,7 @@ JMap.Layer.isAllLayerParentsVisible(<span class="hljs-number">3</span>)</code></
 								</div>
 								<p>Returns the tree element visibility property.</p>
 								<p>The visibility property is initialy defined on the project, and can be
-								changed by the user through the JMap Core library.</p>
+								changed by the user through the JMap Web Core library.</p>
 								<p>If this property is false, the layer cannot be displayed on the map.</p>
 								<p>If it&#39;s true, the layer can be rendered on the map. The layer is rendered depending
 								on the current map scale of the map, and the min / max scale defined for this layer.</p>
@@ -909,49 +959,6 @@ JMap.Layer.isVisible(<span class="hljs-number">3</span>)</code></pre>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="removelayer" class="tsd-anchor"></a>
-					<h3>remove<wbr>Layer</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Layer<span class="tsd-signature-symbol">(</span>layerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:679</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p><strong>JMap.Layer.removeLayer</strong></p>
-								</div>
-								<p>Remove the layer in the data store and in the map.
-								It is not deleted server side, only in the browser.</p>
-								<dl class="tsd-comment-tags">
-									<dt>throws</dt>
-									<dd><p>Error if layer is not found</p>
-									</dd>
-									<dt>example</dt>
-									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// Remove layer 4 (only client side)</span>
-JMap.Layer.removeLayer(<span class="hljs-number">4</span>)</code></pre>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>layerId: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The JMap layer id</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="setlayergroupexpansion" class="tsd-anchor"></a>
 					<h3>set<wbr>Layer<wbr>Group<wbr>Expansion</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -961,7 +968,7 @@ JMap.Layer.removeLayer(<span class="hljs-number">4</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:663</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:766</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1009,7 +1016,7 @@ JMap.Layer.setLayerGroupExpansion(<span class="hljs-number">4</span>, <span clas
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:699</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:805</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1066,7 +1073,7 @@ JMap.Layer.Thematic.setThematicVisibility(<span class="hljs-number">7</span>, <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:647</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:750</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1076,7 +1083,7 @@ JMap.Layer.Thematic.setThematicVisibility(<span class="hljs-number">7</span>, <s
 								<p>Set the visibility property of the layer.</p>
 								<p>If it&#39;s a JMap layer, it apply the visibility to it.</p>
 								<p>The visibility property is initialy defined on the project, and can be
-								changed by the user through the JMap Core library.</p>
+								changed by the user through the JMap Web Core library.</p>
 								<p>If this property is false, the layer cannot be displayed on the map.</p>
 								<p>If it&#39;s true, the layer can be rendered on the map. The layer is rendered depending
 								on the current map scale of the map, and the min / max scale defined for this layer.</p>
@@ -1134,6 +1141,12 @@ JMap.Layer.setVisible(<span class="hljs-number">3</span>, <span class="hljs-lite
 								<a href="jmap.extension.html">Extension</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.form.html">Form</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.geolocation.html">Geolocation</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.geometry.html">Geometry</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -1141,6 +1154,11 @@ JMap.Layer.setVisible(<span class="hljs-number">3</span>, <span class="hljs-lite
 							</li>
 							<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.layer.html">Layer</a>
+								<ul>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.layer.search.html">Search</a>
+									</li>
+								</ul>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.map.html">Map</a>
@@ -1151,8 +1169,8 @@ JMap.Layer.setVisible(<span class="hljs-number">3</span>, <span class="hljs-lite
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.project.html">Project</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module">
-								<a href="jmap.service.html">Service</a>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.query.html">Query</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.user.html">User</a>
@@ -1163,6 +1181,9 @@ JMap.Layer.setVisible(<span class="hljs-number">3</span>, <span class="hljs-lite
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.layer.html#deletelayer" class="tsd-kind-icon">delete<wbr>Layer</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.layer.html#exists" class="tsd-kind-icon">exists</a>
 					</li>
@@ -1219,9 +1240,6 @@ JMap.Layer.setVisible(<span class="hljs-number">3</span>, <span class="hljs-lite
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.layer.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="jmap.layer.html#removelayer" class="tsd-kind-icon">remove<wbr>Layer</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.layer.html#setlayergroupexpansion" class="tsd-kind-icon">set<wbr>Layer<wbr>Group<wbr>Expansion</a>

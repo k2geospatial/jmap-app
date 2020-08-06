@@ -92,7 +92,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.user.html#logout" class="tsd-kind-icon">logout</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.user.html#removepreference" class="tsd-kind-icon">remove<wbr>Preference</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.user.html#setpreference" class="tsd-kind-icon">set<wbr>Preference</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.user.html#setsession" class="tsd-kind-icon">set<wbr>Session</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.user.html#settoken" class="tsd-kind-icon">set<wbr>Token</a></li>
 							</ul>
 						</section>
 					</div>
@@ -110,7 +110,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2932</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3238</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -140,7 +140,7 @@ JMap.User.getFullName()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2958</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3264</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -170,7 +170,7 @@ JMap.User.getLocale()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2971</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3277</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -212,7 +212,7 @@ JMap.User.getPreference(<span class="hljs-string">"theme"</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2919</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3225</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -243,7 +243,7 @@ JMap.User.getToken()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2945</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3251</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -273,7 +273,7 @@ JMap.User.getUsername()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2984</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3290</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -312,7 +312,7 @@ JMap.User.hasPreference(<span class="hljs-string">"theme"</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3047</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3353</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -371,7 +371,7 @@ JMap.User
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3068</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3374</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -410,7 +410,7 @@ JMap.User
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2997</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3303</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -452,7 +452,7 @@ JMap.User.removePreference(<span class="hljs-string">"theme"</span>)</code></pre
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3016</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3322</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -492,53 +492,62 @@ JMap.User.setPreference(<span class="hljs-string">"theme"</span>)</code></pre>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="setsession" class="tsd-anchor"></a>
-					<h3>set<wbr>Session</h3>
+					<a name="settoken" class="tsd-anchor"></a>
+					<h3>set<wbr>Token</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Session<span class="tsd-signature-symbol">(</span>session<span class="tsd-signature-symbol">: </span><a href="../interfaces/jsessiondata.html" class="tsd-signature-type">JSessionData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Token<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/jsessiondata.html" class="tsd-signature-type">JSessionData</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3092</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3417</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p><strong>JMap.User.setSession</strong></p>
+									<p><strong>JMap.User.setToken</strong></p>
 								</div>
 								<p>Set the user session data. Usefull if you have made a call to our Rest API and get by yourself
-								the session data.</p>
+								the session token.</p>
 								<dl class="tsd-comment-tags">
-									<dt>throws</dt>
-									<dd><p>Error if session data are not good</p>
-									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// Set the user session data</span>
-JMap.User.setSession({
- token: <span class="hljs-string">"2355810917"</span>,
- user: {
-   login: <span class="hljs-string">"jdo@mycompany.com"</span>,
-   firstname: <span class="hljs-string">"John"</span>,
-   lastname: <span class="hljs-string">"Do"</span>,
-   admin: <span class="hljs-literal">false</span>
- }
-})</code></pre>
-									</dd>
+To <span class="hljs-keyword">get</span> a JMap session token, you can use the JMap Rest API on your JMap Server. By exemple <span class="hljs-keyword">if</span> your server url is <span class="hljs-string">"https://my-jmap-server/"</span>, With the [curl tool](https:<span class="hljs-comment">//curl.haxx.se/docs/) you can get for the user "jdo@company.com" his token like that (adapt the username and password ...) :</span>
+<span class="hljs-string">``</span><span class="hljs-string">`sh
+curl -X POST "https://my-jmap-server/services/rest/v2.0/session" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"username\": \"jdo@company.com\", \"password\": \"xxx\", \"type\": \"WEB\"}"</span></code></pre>
+										<p>If the request is successfull, the response is like that :</p>
+										<pre><code class="language-js">{
+  <span class="hljs-string">"message"</span>: <span class="hljs-string">"The result is a WEB session info"</span>,
+  <span class="hljs-string">"status"</span>: <span class="hljs-string">"OK"</span>,
+  <span class="hljs-string">"result"</span>: {
+    <span class="hljs-string">"sessionId"</span>: <span class="hljs-number">23558109</span>, <span class="hljs-comment">// session id in the Rest API response is the session token.</span>
+    ...
+  }
+}</code></pre>
+										<p>// Set the user session token
+											JMap.User.setToken(&quot;23558109&quot;)
+											.then(userData =&gt; {
+											console.log(<code>Session token = &quot;${userData.token}&quot;&quot;</code>)
+											console.log(<code>The session belongs to ${userData.user.fullName}</code>)
+											})
+											.then(error =&gt; {
+											if (error === &quot;user.token.invalid&quot;) {
+											console.log(<code>Invalid token</code>)
+											} else {
+											console.log(<code>Server error</code>)
+											}
+										})</p>
+									<pre><code></code></pre></dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>session: <a href="../interfaces/jsessiondata.html" class="tsd-signature-type">JSessionData</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The user session data</p>
-									</div>
+									<h5>token: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/jsessiondata.html" class="tsd-signature-type">JSessionData</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -563,6 +572,12 @@ JMap.User.setSession({
 								<a href="jmap.extension.html">Extension</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.form.html">Form</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.geolocation.html">Geolocation</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.geometry.html">Geometry</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -580,8 +595,8 @@ JMap.User.setSession({
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.project.html">Project</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module">
-								<a href="jmap.service.html">Service</a>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.query.html">Query</a>
 							</li>
 							<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.user.html">User</a>
@@ -623,7 +638,7 @@ JMap.User.setSession({
 						<a href="jmap.user.html#setpreference" class="tsd-kind-icon">set<wbr>Preference</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="jmap.user.html#setsession" class="tsd-kind-icon">set<wbr>Session</a>
+						<a href="jmap.user.html#settoken" class="tsd-kind-icon">set<wbr>Token</a>
 					</li>
 				</ul>
 			</nav>

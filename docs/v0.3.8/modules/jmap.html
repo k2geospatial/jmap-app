@@ -80,19 +80,21 @@ JMap.getVersion()</code></pre>
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Modules</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.html" class="tsd-kind-icon">Application</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.event.html" class="tsd-kind-icon">Event</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.extension.html" class="tsd-kind-icon">Extension</a></li>
+								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.form.html" class="tsd-kind-icon">Form</a></li>
+								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.geolocation.html" class="tsd-kind-icon">Geolocation</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.geometry.html" class="tsd-kind-icon">Geometry</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.history.html" class="tsd-kind-icon">History</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html" class="tsd-kind-icon">Layer</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.map.html" class="tsd-kind-icon">Map</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.mouseover.html" class="tsd-kind-icon">Mouse<wbr>Over</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html" class="tsd-kind-icon">Project</a></li>
-								<li class="tsd-kind-module tsd-parent-kind-module"><a href="jmap.service.html" class="tsd-kind-icon">Service</a></li>
+								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.query.html" class="tsd-kind-icon">Query</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.user.html" class="tsd-kind-icon">User</a></li>
 							</ul>
 						</section>
@@ -122,7 +124,7 @@ JMap.getVersion()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:54</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:56</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -133,7 +135,7 @@ JMap.getVersion()</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// returns the JMap Core library Redux store</span>
+<span class="hljs-comment">// returns the JMap Web Core library Redux store</span>
 <span class="hljs-keyword">const</span> reduxStore = JMap.getDataStore()
 reduxStore.dispatch(...)</code></pre>
 									</dd>
@@ -156,14 +158,15 @@ reduxStore.dispatch(...)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:40</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:42</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.getImplVersion</strong></p>
 								</div>
-								<p>Returns the JMap Core library build version.</p>
+								<p>Returns the JMap Web Core library build version.</p>
+								<p>For the same interface version we can have multiple implementation version.</p>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
@@ -186,14 +189,14 @@ JMap.getImplVersion()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:97</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:99</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.getOS</strong></p>
 								</div>
-								<p>Return the operating system on witch JMap Core library is running client side.</p>
+								<p>Return the operating system on witch JMap Web Core library is running client side.</p>
 								<p>Possible values returned are defined here <a href="../globals.html#joperatingsystem">JOperatingSystem</a>.</p>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
@@ -217,7 +220,7 @@ JMap.getOS()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:69</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:71</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -225,7 +228,7 @@ JMap.getOS()</code></pre>
 									<p><strong>JMap.getRestUrl</strong></p>
 								</div>
 								<p>Returns the in use JMap server Rest API url.</p>
-								<p>This is the url on which the JMap Core library makes all of its ajax calls.</p>
+								<p>This is the url on which the JMap Web Core library makes all of its ajax calls.</p>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
@@ -255,7 +258,7 @@ JMap.getRestUrl()</code></pre>
 								<div class="lead">
 									<p><strong>JMap.getVersion</strong></p>
 								</div>
-								<p>Returns the JMap Core library interface version.</p>
+								<p>Returns the JMap Web Core library interface version.</p>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
@@ -278,18 +281,18 @@ JMap.getVersion()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:82</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:84</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.openDocumentation</strong></p>
 								</div>
-								<p>Open JMap Core library interface online documentation, in a new tab.</p>
+								<p>Open JMap Web Core library interface online documentation, in a new tab.</p>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// open JMap Core library online documentation, in a new tab</span>
+<span class="hljs-comment">// open JMap Web Core library online JS API documentation, in a new tab</span>
 JMap.openDocumentation()</code></pre>
 									</dd>
 								</dl>
@@ -319,6 +322,12 @@ JMap.openDocumentation()</code></pre>
 								<a href="jmap.extension.html">Extension</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.form.html">Form</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.geolocation.html">Geolocation</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.geometry.html">Geometry</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -336,8 +345,8 @@ JMap.openDocumentation()</code></pre>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.project.html">Project</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module">
-								<a href="jmap.service.html">Service</a>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.query.html">Query</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.user.html">User</a>

@@ -72,7 +72,7 @@
 					<div class="lead">
 						<p><strong>JMap.Project</strong></p>
 					</div>
-					<p>From this section you can manage the project that is in use in the JMap Core library.</p>
+					<p>From this section you can manage the project that is in use in the JMap Web Core library.</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -82,8 +82,12 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#existproject" class="tsd-kind-icon">exist<wbr>Project</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getallprojects" class="tsd-kind-icon">get<wbr>All<wbr>Projects</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getbackgroundcolor" class="tsd-kind-icon">get<wbr>Background<wbr>Color</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getbase64imagethumbnail" class="tsd-kind-icon">get<wbr>Base64<wbr>Image<wbr>Thumbnail</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getdefaultdistanceunit" class="tsd-kind-icon">get<wbr>Default<wbr>Distance<wbr>Unit</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getdescription" class="tsd-kind-icon">get<wbr>Description</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getid" class="tsd-kind-icon">get<wbr>Id</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getinitialextent" class="tsd-kind-icon">get<wbr>Initial<wbr>Extent</a></li>
@@ -94,6 +98,8 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getprojection" class="tsd-kind-icon">get<wbr>Projection</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#getselectioncolor" class="tsd-kind-icon">get<wbr>Selection<wbr>Color</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#load" class="tsd-kind-icon">load</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#loadallprojectthumbnails" class="tsd-kind-icon">load<wbr>All<wbr>Project<wbr>Thumbnails</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#projectisloaded" class="tsd-kind-icon">project<wbr>IsLoaded</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html#unload" class="tsd-kind-icon">unload</a></li>
 							</ul>
 						</section>
@@ -102,6 +108,45 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="existproject" class="tsd-anchor"></a>
+					<h3>exist<wbr>Project</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">exist<wbr>Project<span class="tsd-signature-symbol">(</span>projectId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:2909</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Project.existProject</strong></p>
+								</div>
+								<p>Returns true if project exist for the given project id.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// returns true if the project id = 2 exists, else false</span>
+JMap.Project.existProject(<span class="hljs-number">2</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>projectId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The JMap project id</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="getallprojects" class="tsd-anchor"></a>
 					<h3>get<wbr>All<wbr>Projects</h3>
@@ -112,7 +157,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2700</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:2895</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -149,17 +194,19 @@ JMap.Project
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2843</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3087</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getBackgroundColor</strong></p>
 								</div>
-								<p>Returns selected JMap project background color in html hexa format.
+								<p>Returns loaded JMap project background color in html hexa format.
 								This color is used as the background of the map.</p>
-								<p>If no project is selected, returns &quot;#ffe4c4&quot;.</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the project background color as a html hexa color</span>
@@ -168,6 +215,118 @@ JMap.Project.getBackgroundColor()</code></pre>
 								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getbase64imagethumbnail" class="tsd-anchor"></a>
+					<h3>get<wbr>Base64<wbr>Image<wbr>Thumbnail</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Base64<wbr>Image<wbr>Thumbnail<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3121</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Project.getBase64ImageThumbnail</strong></p>
+								</div>
+								<p>Returns loaded JMap project base64 image thumbnail.</p>
+								<p>When JMap Web Core lib is started, it doesn&#39;t load projects thumbnails, but you can load it
+								by setting the startup option &quot;loadAllProjectThumbnails&quot; as true.</p>
+								<p>If no thumbnail has been loaded it returns an empty string.</p>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// returns the project initial extent if exists</span>
+JMap.Project.getInitialExtent()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getbyid" class="tsd-anchor"></a>
+					<h3>get<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ById<span class="tsd-signature-symbol">(</span>projectId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/jproject.html" class="tsd-signature-type">JProject</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:2926</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Project.getById</strong></p>
+								</div>
+								<p>Returns the project for the given project id.</p>
+								<p>Throws an error if no project found.</p>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>error if the project doesn&#39;t exists</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// returns true if the project id = 2 exists</span>
+JMap.Project.getById(<span class="hljs-number">2</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>projectId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The JMap project id</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/jproject.html" class="tsd-signature-type">JProject</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getdefaultdistanceunit" class="tsd-anchor"></a>
+					<h3>get<wbr>Default<wbr>Distance<wbr>Unit</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Default<wbr>Distance<wbr>Unit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#jdistanceunit" class="tsd-signature-type">JDistanceUnit</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:2981</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Project.getDefaultDistanceUnit</strong></p>
+								</div>
+								<p>Returns the project distance unit, or &quot;meters&quot; if no distance unit is set on the project.</p>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>if no project is loaded</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// return "meters", or "kilometers", or "miles", or "yards"...</span>
+JMap.Project.getDefaultDistanceUnit()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#jdistanceunit" class="tsd-signature-type">JDistanceUnit</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -181,16 +340,18 @@ JMap.Project.getBackgroundColor()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2745</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:2995</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getDescription</strong></p>
 								</div>
-								<p>Returns selected JMap project description.</p>
-								<p>If no project is loaded, returns &quot;&quot;.</p>
+								<p>Returns loaded JMap project description.</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the currently loaded project description</span>
@@ -212,16 +373,18 @@ JMap.Project.getDescription()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2715</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:2953</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getId</strong></p>
 								</div>
-								<p>Returns selected JMap project id.</p>
-								<p>If no project is loaded, returns -1.</p>
+								<p>Returns loaded JMap project id.</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the currently loaded project id</span>
@@ -243,17 +406,19 @@ JMap.Project.getId()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2859</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3102</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getInitialExtent</strong></p>
 								</div>
-								<p>Returns selected JMap project initial extent.
+								<p>Returns loaded JMap project initial extent.
 								This is the extent that is automatically displayed when the project is opened.</p>
-								<p>If no project is selected, returns null.</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the project initial extent if exists</span>
@@ -278,17 +443,19 @@ JMap.Project.getInitialExtent()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2779</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3027</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getInitialRotation</strong></p>
 								</div>
-								<p>Returns selected JMap project initial map rotation.
+								<p>Returns loaded JMap project initial map rotation.
 								This rotation is the one applied when the project is opened.</p>
-								<p>If no project is selected, returns 0.</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the project initial rotation</span>
@@ -310,16 +477,18 @@ JMap.Project.getInitialRotation()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2809</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3055</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getMaxScale</strong></p>
 								</div>
-								<p>Returns selected JMap project max scale.</p>
-								<p>If no project is selected, returns 0.</p>
+								<p>Returns loaded JMap project max scale.</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the project max scale</span>
@@ -341,16 +510,18 @@ JMap.Project.getMaxScale()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2794</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3041</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getMinScale</strong></p>
 								</div>
-								<p>Returns selected JMap project min scale.</p>
-								<p>If no project is selected, returns 0.</p>
+								<p>Returns loaded JMap project min scale.</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the project min scale</span>
@@ -372,16 +543,18 @@ JMap.Project.getMinScale()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2730</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:2967</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getName</strong></p>
 								</div>
-								<p>Returns selected JMap project name.</p>
-								<p>If no project is loaded, returns &quot;&quot;.</p>
+								<p>Returns loaded JMap project name.</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the currently loaded project name</span>
@@ -403,18 +576,20 @@ JMap.Project.getName()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2763</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3012</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getProjection</strong></p>
 								</div>
-								<p>Returns selected JMap project projection.</p>
-								<p>If no project is selected, returns an empty projection : { code: &quot;&quot;, name: &quot;&quot; }.</p>
+								<p>Returns loaded JMap project projection.</p>
 								<p>In MapBox, projection is always &quot;<strong><em>EPSG:3857</em></strong>&quot;, but that function returns the project
 								defined projection (so it can be different than <strong><em>ESPG:3857</em></strong>).</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the project projection</span>
@@ -436,18 +611,20 @@ JMap.Project.getProjection()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2827</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3072</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.getSelectionColor</strong></p>
 								</div>
-								<p>Returns selected JMap project selection color in html hexa format.</p>
+								<p>Returns loaded JMap project selection color in html hexa format.</p>
 								<p>This is the color that is used for selected features of layers that
 								don&#39;t have a specific selection style defined.</p>
-								<p>If no project is selected, returns &quot;#ffffff&quot;.</p>
 								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>If no project is loaded</p>
+									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
 <span class="hljs-comment">// returns the project selection color as a html hexa color</span>
@@ -463,46 +640,144 @@ JMap.Project.getSelectionColor()</code></pre>
 					<a name="load" class="tsd-anchor"></a>
 					<h3>load</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>projectId<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>projectIdOrName<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/jproject.html" class="tsd-signature-type">JProject</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2881</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3156</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Project.load</strong></p>
 								</div>
-								<p>You can display another project by calling this method.</p>
+								<p>Load and display a project data on the map.</p>
 								<p>User session rigths are checked server side and an error is thrown if user doesn&#39;t have
 								the access right for the project.</p>
-								<p>If no projectId is provided, the one defined in JMap Core options (<a href="../interfaces/jcoreoptions.html">JCoreOptions</a>) will be used.
-								If no project id has been defined, an error is thrown.</p>
+								<p>If no project id or name is provided : get the projectId or projectName in startup options or url parameters (<a href="../interfaces/jcoreoptions.html">JCoreOptions</a>)</p>
+								<p>If a project id or name is provided : try to load the project given the project id or name.</p>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
 									<dd><p>Error if project not found</p>
 									</dd>
 									<dt>example</dt>
 									<dd><pre><code class="language-ts">
-<span class="hljs-comment">// Load data and display map of project id=2</span>
-JMap.Project.load(<span class="hljs-number">2</span>)</code></pre>
+<span class="hljs-comment">// Load the project defined in stratup option or url parameter</span>
+JMap.Project.load()
+   .then(<span class="hljs-function"><span class="hljs-params">project</span> =&gt;</span> <span class="hljs-built_in">console</span>.info(<span class="hljs-string">`Project id=<span class="hljs-subst">${project.id}</span> has been loaded.`</span>, project)
+   .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`Cannot load the project : <span class="hljs-subst">${error}</span>`</span>)
+
+<span class="hljs-comment">// Load project id=2</span>
+JMap.Project.load(<span class="hljs-number">2</span>) <span class="hljs-comment">// project id=2</span>
+   .then(<span class="hljs-function"><span class="hljs-params">project</span> =&gt;</span> <span class="hljs-built_in">console</span>.info(<span class="hljs-string">"Project id=2 has been loaded."</span>, project)
+   .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`Cannot load the project : <span class="hljs-subst">${error}</span>`</span>)
+
+<span class="hljs-comment">// Load project name="My city"</span>
+JMap.Project.load(<span class="hljs-string">"My city"</span>) <span class="hljs-comment">// project name="My city"</span>
+   .then(<span class="hljs-function"><span class="hljs-params">project</span> =&gt;</span> <span class="hljs-built_in">console</span>.info(<span class="hljs-string">`Project id=<span class="hljs-subst">${project.id}</span> has been loaded.`</span>, project)
+   .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`Cannot load the project : <span class="hljs-subst">${error}</span>`</span>)</code></pre>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> projectId: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> projectIdOrName: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The JMap project id</p>
+										<p>The JMap project id or name</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/jproject.html" class="tsd-signature-type">JProject</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>a promise that is resolved when the project has been loaded successfully</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="loadallprojectthumbnails" class="tsd-anchor"></a>
+					<h3>load<wbr>All<wbr>Project<wbr>Thumbnails</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>All<wbr>Project<wbr>Thumbnails<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/jprojectloadthumbnailsparams.html" class="tsd-signature-type">JProjectLoadThumbnailsParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3202</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Project.loadAllProjectThumbnails</strong></p>
+								</div>
+								<p>Load all project thumbnails in the data store.</p>
+								<p>Default width is 348 and height 190.</p>
+								<p>Image is a base 64 formatted string.</p>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>if params are not correct</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// Will load all projects thumbnail images</span>
+JMap.Project
+   .loadAllProjectThumbnails({
+     width: <span class="hljs-number">200</span>,
+     height: <span class="hljs-number">200</span>
+   })
+   .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.info(<span class="hljs-string">"All project images has been loaded"</span>))
+   .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(<span class="hljs-string">"Cannot load project images"</span>))
+
+<span class="hljs-comment">// Then you can get current project thumnail like that</span>
+<span class="hljs-keyword">const</span> thumbnail = JMap.Project.getBase64ImageThumbnail()
+
+<span class="hljs-comment">// Or you can get the project id=3 thumbnail like this</span>
+<span class="hljs-keyword">const</span> otherThumbnail = JMap.Project.getById(<span class="hljs-number">3</span>).base64ImageThumbnail</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/jprojectloadthumbnailsparams.html" class="tsd-signature-type">JProjectLoadThumbnailsParams</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>width (0 &lt; width &lt; 1280) and height (0 &lt; height &lt; 720) for the thumbnails</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>a promise that is resolved when the project has been loaded successfully</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="projectisloaded" class="tsd-anchor"></a>
+					<h3>project<wbr>IsLoaded</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">project<wbr>IsLoaded<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:2939</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Project.projectIsLoaded</strong></p>
+								</div>
+								<p>Returns true if a JMap project is loaded, that means a project is selected and displayed on the map.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// returns true if a project is loaded</span>
+ JMap.Project.projectIsLoaded()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -516,12 +791,12 @@ JMap.Project.load(<span class="hljs-number">2</span>)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:2896</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3171</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p><strong>JMap.Project.load</strong></p>
+									<p><strong>JMap.Project.unload</strong></p>
 								</div>
 								<p>Unload the current displayed project.</p>
 								<p>The map is destroyed, and nothing is displayed on screen.</p>
@@ -558,6 +833,12 @@ JMap.Project.unload()</code></pre>
 								<a href="jmap.extension.html">Extension</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.form.html">Form</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.geolocation.html">Geolocation</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.geometry.html">Geometry</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -575,8 +856,8 @@ JMap.Project.unload()</code></pre>
 							<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.project.html">Project</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module">
-								<a href="jmap.service.html">Service</a>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.query.html">Query</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.user.html">User</a>
@@ -588,10 +869,22 @@ JMap.Project.unload()</code></pre>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.project.html#existproject" class="tsd-kind-icon">exist<wbr>Project</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.project.html#getallprojects" class="tsd-kind-icon">get<wbr>All<wbr>Projects</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.project.html#getbackgroundcolor" class="tsd-kind-icon">get<wbr>Background<wbr>Color</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.project.html#getbase64imagethumbnail" class="tsd-kind-icon">get<wbr>Base64<wbr>Image<wbr>Thumbnail</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.project.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.project.html#getdefaultdistanceunit" class="tsd-kind-icon">get<wbr>Default<wbr>Distance<wbr>Unit</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.project.html#getdescription" class="tsd-kind-icon">get<wbr>Description</a>
@@ -622,6 +915,12 @@ JMap.Project.unload()</code></pre>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.project.html#load" class="tsd-kind-icon">load</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.project.html#loadallprojectthumbnails" class="tsd-kind-icon">load<wbr>All<wbr>Project<wbr>Thumbnails</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.project.html#projectisloaded" class="tsd-kind-icon">project<wbr>IsLoaded</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.project.html#unload" class="tsd-kind-icon">unload</a>

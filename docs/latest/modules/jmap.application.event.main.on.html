@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Service | jmap-core</title>
+	<title>on | jmap-core</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,10 +57,19 @@
 					<a href="jmap.html">JMap</a>
 				</li>
 				<li>
-					<a href="jmap.service.html">Service</a>
+					<a href="jmap.application.html">Application</a>
+				</li>
+				<li>
+					<a href="jmap.application.event.html">Event</a>
+				</li>
+				<li>
+					<a href="jmap.application.event.main.html">Main</a>
+				</li>
+				<li>
+					<a href="jmap.application.event.main.on.html">on</a>
 				</li>
 			</ul>
-			<h1>Module Service</h1>
+			<h1>Module on</h1>
 		</div>
 	</div>
 </header>
@@ -71,13 +80,85 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Modules</h3>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-module tsd-parent-kind-module"><a href="jmap.service.project.html" class="tsd-kind-icon">Project</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.event.main.on.html#appready" class="tsd-kind-icon">app<wbr>Ready</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="appready" class="tsd-anchor"></a>
+					<h3>app<wbr>Ready</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">app<wbr>Ready<span class="tsd-signature-symbol">(</span>listenerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/2c79184/public/app.d.ts#L1213">public/app.d.ts:1213</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong><em>JMap.Application.Event.Main.on.appReady</em></strong></p>
+								</div>
+								<p>This event is triggered once:</p>
+								<ul>
+									<li>all of the application services are loaded,</li>
+									<li>the redux store and its reducers are also loaded</li>
+									<li>The initial session validation has been run. At thas point if the session has successfully been validated, the logged-in user will also be available</li>
+								</ul>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span class="hljs-comment">// log a message in the console once the application is loaded</span>
+JMap.Application.Event.Main.on.appReady(
+   <span class="hljs-string">"custom-app-ready"</span>,
+    <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+     <span class="hljs-keyword">if</span>(JMap.User.getToken() !== <span class="hljs-string">"-1"</span>){
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Logged in username is: "<span class="hljs-subst">${JMap.User.getUsername()}</span>"`</span>)
+     }<span class="hljs-keyword">else</span>{
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`No user logged in`</span>)
+     }
+})</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>listenerId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Your listener id (must be unique)</p>
+									</div>
+								</li>
+								<li>
+									<h5>fn: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Your listener function</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -90,43 +171,53 @@
 					<li class="current tsd-kind-module tsd-is-not-exported">
 						<a href="jmap.html">JMap</a>
 						<ul>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+							<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.application.html">Application</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-								<a href="jmap.event.html">Event</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-								<a href="jmap.extension.html">Extension</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-								<a href="jmap.geometry.html">Geometry</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-								<a href="jmap.history.html">History</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-								<a href="jmap.layer.html">Layer</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-								<a href="jmap.map.html">Map</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-								<a href="jmap.mouseover.html">Mouse<wbr>Over</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-								<a href="jmap.project.html">Project</a>
-							</li>
-							<li class="current tsd-kind-module tsd-parent-kind-module">
-								<a href="jmap.service.html">Service</a>
 								<ul>
-									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="jmap.service.project.html">Project</a>
+									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.event.html">Event</a>
+										<ul>
+											<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+												<a href="jmap.application.event.main.html">Main</a>
+												<ul>
+													<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+														<a href="jmap.application.event.main.on.html">on</a>
+													</li>
+												</ul>
+											</li>
+											<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+												<a href="jmap.application.event.ui.html">UI</a>
+											</li>
+										</ul>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.extension.html">Extension</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.layer.html">Layer</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.mapcontext.html">Map<wbr>Context</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.measure.html">Measure</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.panel.html">Panel</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.print.html">Print</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.query.html">Query</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.selection.html">Selection</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.ui.html">UI</a>
 									</li>
 								</ul>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-								<a href="jmap.user.html">User</a>
 							</li>
 						</ul>
 					</li>
@@ -134,6 +225,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.event.main.on.html#appready" class="tsd-kind-icon">app<wbr>Ready</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

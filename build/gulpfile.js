@@ -97,7 +97,7 @@ gulp.task("typedoc", cb => {
           tsconfig: "./tsconfig.json",
           includeDeclarations: true,
           out: DOC_DIR,
-          name: "jmap-core",
+          name: "jmap-app",
           hideGenerator: true,
           version: false,
           ignoreCompilerErrors: false,

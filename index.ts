@@ -34,6 +34,7 @@ export interface JAppLayerState {
 
 export interface JAppUiState {
   sidePanelVisible: boolean
+  sidePanelBasemapSectionOpened: boolean
   theme: { [Key: string]: string | boolean | number }
   container: {
     width: number

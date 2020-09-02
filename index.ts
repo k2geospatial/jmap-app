@@ -153,6 +153,14 @@ export interface JApplicationUIService {
     isVisible(): boolean
     toggleVisibility(): void
     setVisible(isVisible: boolean): void
+    getWidthOpenInRem(): string
+    getWidthOpenInPixel(): number
+    getWidthCloseInRem(): string
+    getWidthCloseInPixel(): number
+    getMainPanelWidthInRem(): string
+    getMainPanelWidthInPixel(): number
+    getHeaderMinHeightInRem(): string
+    getHeaderMinHeightInPixel(): number
   }
   Theme: {
     setDark(isDark: boolean): void

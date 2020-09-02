@@ -1106,6 +1106,110 @@ declare namespace JMap {
          * ```
          */
         function toggleVisibility(): void
+
+        /**
+         * **JMap.Application.UI.SidePanel.getWidthOpenInRem**
+         * 
+         * Returns the width of the opened side panel in rem.
+         * 
+         * @example ```ts
+         * 
+         * // returns "28.125rem"
+         * JMap.Application.UI.SidePanel.getWidthOpenInRem()
+         * ```
+         */
+        function getWidthOpenInRem(): string
+
+        /**
+         * **JMap.Application.UI.SidePanel.getWidthOpenInPixel**
+         * 
+         * Returns the width of the opened side panel in pixel.
+         * 
+         * @example ```ts
+         * 
+         * // returns 450
+         * JMap.Application.UI.SidePanel.getWidthOpenInPixel()
+         * ```
+         */
+        function getWidthOpenInPixel(): number
+
+        /**
+         * **JMap.Application.UI.SidePanel.getWidthCloseInRem**
+         * 
+         * Returns the width of the closed side panel in rem.
+         * 
+         * @example ```ts
+         * 
+         * // returns "3.75rem"
+         * JMap.Application.UI.SidePanel.getWidthCloseInRem()
+         * ```
+         */
+        function getWidthCloseInRem(): string
+
+        /**
+         * **JMap.Application.UI.SidePanel.getWidthCloseInPixel**
+         * 
+         * Returns the width of the closed side panel in pixel.
+         * 
+         * @example ```ts
+         * 
+         * // returns 60
+         * JMap.Application.UI.SidePanel.getWidthCloseInPixel()
+         * ```
+         */
+        function getWidthCloseInPixel(): number
+
+        /**
+         * **JMap.Application.UI.SidePanel.getMainPanelWidthInRem**
+         * 
+         * Returns the width of the main panel (side panel width minus menu width) in rem.
+         * 
+         * @example ```ts
+         * 
+         * // returns "24.375rem"
+         * JMap.Application.UI.SidePanel.getMainPanelWidthInRem()
+         * ```
+         */
+        function getMainPanelWidthInRem(): string
+
+        /**
+         * **JMap.Application.UI.SidePanel.getMainPanelWidthInPixel**
+         * 
+         * Returns the width of the main panel (side panel width minus menu width) in pixel.
+         * 
+         * @example ```ts
+         * 
+         * // returns 390
+         * JMap.Application.UI.SidePanel.getMainPanelWidthInPixel()
+         * ```
+         */
+        function getMainPanelWidthInPixel(): number
+
+        /**
+         * **JMap.Application.UI.SidePanel.getHeaderMinHeightInRem**
+         * 
+         * Returns the min height of the header (where title is included) in rem.
+         * 
+         * @example ```ts
+         * 
+         * // returns "5rem"
+         * JMap.Application.UI.SidePanel.getHeaderMinHeightInRem()
+         * ```
+         */
+        function getHeaderMinHeightInRem(): string
+
+        /**
+         * **JMap.Application.UI.SidePanel.getHeaderMinHeightInPixel**
+         * 
+         * Returns the min height of the header (where title is included) in rem.
+         * 
+         * @example ```ts
+         * 
+         * // returns 80
+         * JMap.Application.UI.SidePanel.getHeaderMinHeightInPixel()
+         * ```
+         */
+        function getHeaderMinHeightInPixel(): number
       }
 
       /**

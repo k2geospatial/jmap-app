@@ -11,6 +11,12 @@ export interface JAppState {
   print: JAppPrintState
   project: JAppProjectState
   annotation: JAppAnnotationState
+  note: JAppNoteState
+}
+
+export interface JAppNoteState {
+  notes: JAppNote[],
+  newNoteText: string
 }
 
 export interface JAppProjectState {
@@ -112,6 +118,7 @@ export interface JApplicationService extends JApplicationMainService {
   Event: JAppEventService
   Annotation: JAppAnnotationService
   Extension: JAppExtensionService
+  Note: JAppNoteService
 }
 
 export interface JAppAnnotationService {
@@ -188,6 +195,13 @@ export interface JAppSelectionService {
   exportAsExcelFile(): void
   fitMapToDisplayLayerSelection(): void
   removeLastDrawnSelectionCoordinate(): void
+}
+
+export interface JAppNoteService {
+  getAll(): JAppNote[]
+  add(newNoteText?: string): JAppNote
+  removeById(noteId: string): void
+  setNewNoteText(newNoteText: string): void
 }
 
 export interface JAppMeasureService {

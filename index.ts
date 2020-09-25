@@ -11,7 +11,11 @@ export interface JAppState {
   print: JAppPrintState
   project: JAppProjectState
   annotation: JAppAnnotationState
+<<<<<<< HEAD
   message: JAppMessageState
+=======
+  user: JAppUserState
+>>>>>>> JWNG-141 - add usaer action menu
 }
 
 export interface JAppProjectState {
@@ -101,11 +105,17 @@ export interface JAppSelectionState {
   tableVisibility: boolean
 }
 
+<<<<<<< HEAD
 export interface JAppMessageState {
   messages: JAppMessage[]
+=======
+export interface JAppUserState {
+  actions: JAppUserAction[]
+>>>>>>> JWNG-141 - add usaer action menu
 }
 
 export interface JApplicationService extends JApplicationMainService {
+  User: JApplicationUserService
   Panel: JAppPanelService
   Measure: JAppMeasureService
   Selection: JAppSelectionService
@@ -149,6 +159,10 @@ export interface JAppQueryService {
   clearDefaultData(): void
   displayInDialog(isVisibleInDialog: boolean): void
   processQuery(values: any): Promise<void>
+}
+
+export interface JApplicationUserService {
+  addPopupMenuAction(action: JAppUserAction, index?: number): void
 }
 
 export interface JApplicationMainService {

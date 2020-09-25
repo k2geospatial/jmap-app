@@ -1329,5 +1329,96 @@ declare namespace JMap {
       function isRegistered(extensionId: string): boolean
       function getAllRegisteredIds(): string[]
     }
+
+    /**
+     * **JMap.Application.Message**
+     * 
+     * You can manage the application Messages here.
+     */
+    namespace Message {
+
+      /**
+       * ***JMap.Message.error***
+       * 
+       * Adds an error message in the application's messages stack for the current session
+       * 
+       * @param message the text of the message
+       * @param options a JAppMessageOptions object
+       * @example ```ts
+       * 
+       * const message = "This operation is not allowed"
+       * JMap.Message.error(message, { duration: 5000 })
+       * ```
+       * 
+       */
+      function error(message: string, options?: JAppMessageOptions): void
+
+      /**
+       * ***JMap.Message.warning***
+       * 
+       * Adds an warning message in the application's messages stack for the current session
+       * 
+       * @param message the text of the message
+       * @param options a JAppMessageOptions object
+       * @example ```ts
+       * 
+       * const message = "This operation has no effect"
+       * JMap.Message.warning(message, { duration: 5000 })
+       * ```
+       * 
+       */
+      function warning(message: string, options?: JAppMessageOptions): void
+      
+      /**
+       * ***JMap.Message.info***
+       * 
+       * Adds an info message in the application's messages stack for the current session
+       * 
+       * @param message the text of the message
+       * @param options a JAppMessageOptions object
+       * @example ```ts
+       * 
+       * const message = "You are here"
+       * JMap.Message.info(message, { duration: 5000 })
+       * ```
+       * 
+       */
+      function info(message: string, options?: JAppMessageOptions): void
+      
+      /**
+       * ***JMap.Message.success***
+       * 
+       * Adds an success message in the application's messages stack for the current session
+       * 
+       * @param message the text of the message
+       * @param options a JAppMessageOptions object
+       * @example ```ts
+       * 
+       * const message = "The operation was successful"
+       * JMap.Message.success(message, { duration: 5000 })
+       * ```
+       * 
+       */
+      function success(message: string, options?: JAppMessageOptions): void
+      
+      /**
+       * ***JMap.Message.success***
+       * 
+       * Adds an generic message in the application's messages stack for the current session
+       * severity level should be passed (will default to "info")
+       * 
+       * @param message the text of the message
+       * @param options a JAppMessageOptions object
+       * @example ```ts
+       * 
+       * const message = "The operation has failed"
+       * const level:JAppMessageSeverity = "error"
+       * JMap.Message.genericMessage(message, { duration: 5000 , severity: level})
+       * ```
+       * 
+       */
+      function genericMessage(message: string, options?: JAppMessageOptions): void
+    
+    }
   }
 }

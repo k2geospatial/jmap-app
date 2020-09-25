@@ -11,11 +11,8 @@ export interface JAppState {
   print: JAppPrintState
   project: JAppProjectState
   annotation: JAppAnnotationState
-<<<<<<< HEAD
   message: JAppMessageState
-=======
   user: JAppUserState
->>>>>>> JWNG-141 - add usaer action menu
 }
 
 export interface JAppProjectState {
@@ -105,13 +102,12 @@ export interface JAppSelectionState {
   tableVisibility: boolean
 }
 
-<<<<<<< HEAD
 export interface JAppMessageState {
   messages: JAppMessage[]
-=======
+}
+
 export interface JAppUserState {
   actions: JAppUserAction[]
->>>>>>> JWNG-141 - add usaer action menu
 }
 
 export interface JApplicationService extends JApplicationMainService {

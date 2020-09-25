@@ -1,14 +1,14 @@
 
 declare type JAppMessageSeverity = "success" | "info" | "warning" | "error"
 declare interface JAppMessage {
-    id?: number
+    id: string
     text: string
     severity: JAppMessageSeverity
     expired: boolean
-    duration: number
+    duration: number | null
 }
 
 declare interface JAppMessageOptions{
     severity?: JAppMessageSeverity
-    duration?: number
+    duration?: number | null
 }

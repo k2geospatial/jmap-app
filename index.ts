@@ -11,6 +11,7 @@ export interface JAppState {
   print: JAppPrintState
   project: JAppProjectState
   annotation: JAppAnnotationState
+  message: JAppMessageState
 }
 
 export interface JAppProjectState {
@@ -100,6 +101,10 @@ export interface JAppSelectionState {
   tableVisibility: boolean
 }
 
+export interface JAppMessageState{
+  messages: JAppMessage[]
+}
+
 export interface JApplicationService extends JApplicationMainService {
   Panel: JAppPanelService
   Measure: JAppMeasureService
@@ -112,6 +117,15 @@ export interface JApplicationService extends JApplicationMainService {
   Event: JAppEventService
   Annotation: JAppAnnotationService
   Extension: JAppExtensionService
+  Message: JAppMessageService
+}
+
+export interface JAppMessageService{
+  error(message: string, options?: JAppMessageOptions): void
+  warning(message: string, options?: JAppMessageOptions): void
+  info(message: string, options?: JAppMessageOptions): void
+  success(message: string, options?: JAppMessageOptions): void
+  genericMessage(message: string, options?: JAppMessageOptions): void
 }
 
 export interface JAppAnnotationService {

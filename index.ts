@@ -101,7 +101,7 @@ export interface JAppSelectionState {
   tableVisibility: boolean
 }
 
-export interface JAppMessageState{
+export interface JAppMessageState {
   messages: JAppMessage[]
 }
 
@@ -120,12 +120,12 @@ export interface JApplicationService extends JApplicationMainService {
   Message: JAppMessageService
 }
 
-export interface JAppMessageService{
+export interface JAppMessageService {
   error(message: string, options?: JAppMessageOptions): void
   warning(message: string, options?: JAppMessageOptions): void
   info(message: string, options?: JAppMessageOptions): void
   success(message: string, options?: JAppMessageOptions): void
-  genericMessage(message: string, options?: JAppMessageOptions): void
+  display(message: string, options?: JAppMessageOptions): void
 }
 
 export interface JAppAnnotationService {

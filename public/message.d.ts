@@ -1,5 +1,6 @@
 
 declare type JAppMessageSeverity = "success" | "info" | "warning" | "error"
+
 declare interface JAppMessage {
     id: string
     text: string

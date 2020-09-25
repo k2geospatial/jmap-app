@@ -1402,7 +1402,7 @@ declare namespace JMap {
       function success(message: string, options?: JAppMessageOptions): void
       
       /**
-       * ***JMap.Message.success***
+       * ***JMap.Message.display***
        * 
        * Adds an generic message in the application's messages stack for the current session
        * severity level should be passed (will default to "info")
@@ -1413,11 +1413,11 @@ declare namespace JMap {
        * 
        * const message = "The operation has failed"
        * const level:JAppMessageSeverity = "error"
-       * JMap.Message.genericMessage(message, { duration: 5000 , severity: level})
+       * JMap.Message.display(message, { duration: 5000 , severity: level})
        * ```
        * 
        */
-      function genericMessage(message: string, options?: JAppMessageOptions): void
+      function display(message: string, options?: JAppMessageOptions): void
     
     }
   }

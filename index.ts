@@ -12,6 +12,7 @@ export interface JAppState {
   project: JAppProjectState
   annotation: JAppAnnotationState
   message: JAppMessageState
+  user: JAppUserState
 }
 
 export interface JAppProjectState {
@@ -105,7 +106,12 @@ export interface JAppMessageState {
   messages: JAppMessage[]
 }
 
+export interface JAppUserState {
+  actions: JAppUserAction[]
+}
+
 export interface JApplicationService extends JApplicationMainService {
+  User: JApplicationUserService
   Panel: JAppPanelService
   Measure: JAppMeasureService
   Selection: JAppSelectionService
@@ -149,6 +155,10 @@ export interface JAppQueryService {
   clearDefaultData(): void
   displayInDialog(isVisibleInDialog: boolean): void
   processQuery(values: any): Promise<void>
+}
+
+export interface JApplicationUserService {
+  addPopupMenuAction(action: JAppUserAction, index?: number): void
 }
 
 export interface JApplicationMainService {

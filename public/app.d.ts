@@ -1324,6 +1324,29 @@ declare namespace JMap {
       }
     }
 
+    namespace User {
+      /**
+       * **JMap.Application.User.addPopupMenuAction**
+       * 
+       * Add an action to the JMap User menu (visible in the project selection panel).
+       * 
+       * An action must set the "href" OR the "onCLick" methods, but not both.
+       * 
+       * @param action : the action to add
+       * @param index : will insert at a specific index in the menu. Start at 0. If index is not correct insert at the end
+       * @example ```ts
+       * 
+       * JMap.Application.User.addPopupMenuAction({
+       *   icon: "fas fa-info-circle",
+       *   label: "Custom documentation",
+       *   isHelp: true, // if true will be displayed in the JMap help menu
+       *   onClick: () => window.open("https://link-to-my-documentation", "_blanck")
+       * }, 2)
+       * ```
+       */
+      function addPopupMenuAction(action: JAppUserAction, index?: number): void
+    }
+
     namespace Extension {
       function register(extension: JAppExtension): void
       function isRegistered(extensionId: string): boolean

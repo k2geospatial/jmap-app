@@ -1337,6 +1337,7 @@ declare namespace JMap {
        * @example ```ts
        * 
        * JMap.Application.User.addPopupMenuAction({
+       *   id: "my-unique-id",
        *   icon: "fas fa-info-circle",
        *   label: "Custom documentation",
        *   isHelp: true, // if true will be displayed in the JMap help menu

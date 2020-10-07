@@ -7,7 +7,7 @@ declare namespace JMap {
    * 
    * JMap Web App depends on the JMap Web Core library ([[JMap]]).
    * 
-   * Examples are availables <a href="https://doc.k2geospatial.com/jmap/doc/ng_dev/examples/app_start.html" target="_blank">here</a>.
+   * Examples are availables <a href="https://doc.k2geospatial.com/jmap/doc/ng_dev/examples.html" target="_blank">here</a>.
    * 
    * You can customize JMap Web App by providing startup options ([[JApplicationOptions]]).
    */

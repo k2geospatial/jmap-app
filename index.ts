@@ -32,6 +32,9 @@ export interface JAppPanelState {
 
 export interface JAppLayerState {
   activeTab: JAppLayerTab
+  filter: string
+  matchedLayerPathsAndAncestorPaths: string[]
+  isFiltering: boolean
 }
 
 export interface JAppUiState {
@@ -302,6 +305,8 @@ export interface JAppLayerService {
   activateTab(newTab: JAppLayerTab): void
   getAllTabs(): JAppLayerTab[]
   getActiveTab(): JAppLayerTab
+  setFilter(filter: string): void
+  setIsFiltering(isFiltering: boolean): void
 }
 
 export interface JAppUIEventModule extends JEventModule {

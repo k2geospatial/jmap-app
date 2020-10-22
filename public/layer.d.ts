@@ -1,1 +1,1 @@
-declare type JAppLayerTab = "layers" | "basemap"
+declare type JAppLayerTab = "layers" | "layer"

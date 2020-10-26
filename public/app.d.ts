@@ -471,12 +471,12 @@ declare namespace JMap {
        * 
        * Filter on the name of the layer.
        * 
-       * Panel layer will show only layers whose name matches the filter.
+       * Panel layer will show only layers whose name matches the filter. The filter is case-insensitive
        * 
        * @param filter the filter to apply
        * @example ```ts
        * 
-       * // In the layer panel will display only layers whose name matches "pro"
+       * // In the layer panel will display only layers whose name matches "pro" (case-insensitive)
        * JMap.Application.Layer.setFilter("pro")
        * ```
        */

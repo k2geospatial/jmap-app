@@ -467,46 +467,48 @@ declare namespace JMap {
     namespace Layer {
 
       /**
-       * **JMap.Application.Layer.activateTab**
+       * **JMap.Application.Layer.setFilter**
        * 
-       * Activate the provided tab in the layer panel.
+       * Filter on the name of the layer.
        * 
-       * @param tab the tab id to activate
+       * Panel layer will show only layers whose name matches the filter.
+       * 
+       * @param filter the filter to apply
        * @example ```ts
        * 
-       * // activate the "base-map" tab in the layer tab
-       * JMap.Application.Layer.activateTab("base-map")
+       * // In the layer panel will display only layers whose name matches "pro"
+       * JMap.Application.Layer.setFilter("pro")
        * ```
        */
-      function activateTab(tab: JAppLayerTab): void
+      function setFilter(filter: string): void
 
       /**
-       * **JMap.Application.Layer.getAllTabs**
+       * **JMap.Application.Layer.startThematicEdition**
        * 
-       * Returns all layer tool tab ids.
+       * If layer has no thematic, do nothing, just log a warning message in the console.
        * 
-       * Currently tabs are : "layers" or "basemap"
-       * 
+       * @throws If layer is not found or layerId is correspond to a layer group
        * @example ```ts
        * 
-       * // get all available layer tabs
-       * JMap.Application.Layer.getAllTabs()
+       * // Will edit the layer's id="3" thematics
+       * JMap.Application.Layer.startThematicEdition(3)
        * ```
        */
-      function getAllTabs(): JAppLayerTab[]
+      function startThematicEdition(layerId: number): void
 
       /**
-       * **JMap.Application.Layer.getActiveTab**
+       * **JMap.Application.Layer.stopThematicEdition**
        * 
-       * Returns layer panel active tab id.
+       * If we are editing thematics of a layer, will stop edition and show the layer tree panel, 
+       * Else log a warning message to tell we are not editing thematics.
        * 
        * @example ```ts
        * 
-       * // returns the active tab for the layer layout
-       * JMap.Application.Layer.getActiveTab()
+       * // will return to the layer tree panel
+       * JMap.Application.Layer.stopThematicEdition()
        * ```
        */
-      function getActiveTab(): JAppLayerTab
+      function stopThematicEdition(): void
     }
 
     /**

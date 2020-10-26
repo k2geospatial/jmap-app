@@ -31,9 +31,9 @@ export interface JAppPanelState {
 }
 
 export interface JAppLayerState {
-  activeTab: JAppLayerTab
   filter: string
   matchedLayerPathsAndAncestorPaths: string[]
+  layerInEditionForThematic: JLayer | undefined
 }
 
 export interface JAppUiState {
@@ -301,10 +301,9 @@ export interface JAppMapContextService {
 }
 
 export interface JAppLayerService {
-  activateTab(newTab: JAppLayerTab): void
-  getAllTabs(): JAppLayerTab[]
-  getActiveTab(): JAppLayerTab
   setFilter(filter: string): void
+  startThematicEdition(layerId: number): void
+  stopThematicEdition(): void
 }
 
 export interface JAppUIEventModule extends JEventModule {

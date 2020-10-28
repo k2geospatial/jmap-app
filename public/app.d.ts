@@ -16,30 +16,30 @@ declare namespace JMap {
     /**
      * **JMap.Application.getVersion**
      * 
-     * Returns the application interface version.
+     * Returns the application build version.
      * 
      * @example ```ts
      * 
-     * // returns the interface version, for example "1.0.1"
+     * // returns the build version, for example "1.0.1"
      * JMap.Application.getVersion()
      * ```
      */
     function getVersion(): string
 
     /**
-     * **JMap.Application.getImplVersion**
+     * **JMap.Application.getApiVersion**
      * 
-     * Returns the application build version.
+     * Returns the application API (Typescript interfaces) version.
      * 
-     * For the same interface version we can have multiple implementation version.
+     * For the same API version, multiple implementation versions can exist.
      * 
      * @example ```ts
      * 
      * // returns the build version, for example "1.0.1"
-     * JMap.Application.getImplVersion()
+     * JMap.Application.getApiVersion()
      * ```
      */
-    function getImplVersion(): string
+    function getApiVersion(): string
 
     /**
      * **JMap.Application.openDocumentation**

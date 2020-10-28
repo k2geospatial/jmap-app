@@ -17,6 +17,7 @@ export interface JAppState {
 
 export interface JAppProjectState {
   urlExist: boolean
+  showProjectList: boolean
 }
 
 export interface JAppQueryState {
@@ -126,6 +127,12 @@ export interface JApplicationService extends JApplicationMainService {
   Annotation: JAppAnnotationService
   Extension: JAppExtensionService
   Message: JAppMessageService
+  Project: JAppProjectService
+}
+
+export interface JAppProjectService {
+  activateProjectById(projectId: number): void
+  setProjectListVisibility(isVisible: boolean): void
 }
 
 export interface JAppMessageService {

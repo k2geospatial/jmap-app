@@ -165,7 +165,7 @@ export interface JApplicationUserService {
 
 export interface JApplicationMainService {
   getVersion(): string
-  getImplVersion(): string
+  getApiVersion(): string
   openDocumentation(): void
 }
 

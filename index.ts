@@ -56,6 +56,7 @@ export interface JAppMapContextState {
   createTitle: string
   createDescription: string
   createTitleError: boolean
+  isAvailable: boolean
 }
 
 export interface JAppMeasureState {
@@ -272,6 +273,7 @@ export interface JAppPrintService {
 }
 
 export interface JAppMapContextService {
+  isAvailable(): boolean
   startCreation(): void
   cancelCreation(): void
   getAll(): JMapContext[]

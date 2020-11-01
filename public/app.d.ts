@@ -519,6 +519,23 @@ declare namespace JMap {
     namespace MapContext {
 
       /**
+       * **JMap.Application.MapContext.isAvailable**
+       * 
+       * Return false if the map context functionnality is not available for user.
+       * 
+       * Some users don't have access to map context, like the anonymous or system user.
+       * 
+       * If map context service is not avalable, user cannot access, create, update or delete context from the service.
+       * 
+       * @example ```ts
+       * 
+       * // true if user can use map contexts
+       * JMap.Application.MapContext.isAvailable()
+       * ```
+       */
+      function isAvailable(): boolean
+
+      /**
        * **JMap.Application.MapContext.startCreation**
        * 
        * Display the new map-context tab on screen.

@@ -33,7 +33,6 @@ export interface JAppPanelState {
 
 export interface JAppLayerState {
   filter: string
-  matchedLayerPathsAndAncestorPaths: string[]
   layerInEditionForThematic: JLayer | undefined
 }
 

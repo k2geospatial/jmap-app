@@ -1298,7 +1298,7 @@ declare namespace JMap {
     }
 
     namespace Query {
-      function activateQuery(groupId: number, queryId: number): void
+      function activateQuery(groupId: number, queryId: string): void
       function deactivateQuery(): void
       function setDefaultData(values: any): void
       function getDefaultData(): { [ id: string ]: any }

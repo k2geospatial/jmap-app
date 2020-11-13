@@ -59,10 +59,10 @@ export interface JAppMapContextState {
 }
 
 export interface JAppMeasureState {
-  measureType: JAppMeasureType
   measures: JAppMeasure[]
-  isNewElement: boolean
   isDeleting: boolean
+  isNewElement: boolean
+  draw: JAppDrawState
 }
 
 export interface JAppDrawState {
@@ -224,12 +224,26 @@ export interface JAppSelectionService {
 }
 
 export interface JAppMeasureService {
+  getAll(): JAppMeasure[]
+  getAllDistanceMeasures(): JAppMeasure[]
+  getAllPolygonMeasures(): JAppMeasure[]
+  getAllCircleMeasures(): JAppMeasure[]
+  setAllMeasures(measures: JAppMeasure[]): void
   activateMeasureType(measureType: JAppMeasureType): void
-  setDeletingMode(isDeleting: boolean): void
-  deleteAllMeasures(measureType?: JAppMeasureType): void
-  deleteMeasureAtLocation(location: JLocation): void
-  finalizeMeasure(): void
-  resetState(): void
+  getActiveMeasureType(): JAppMeasureType
+  getSelectedIds(): string[]
+  setSelectedMeasureIds(selectedMeasureIds: string[]): void
+  setIsDeleting(isDeleting: boolean): void
+  deleteAll(): number
+  deleteSelected(): number
+  deleteMeasuresById(measureIds: string[]): number
+  deleteAllDistances(): number
+  deleteAllPolygons(): number
+  deleteAllCircles(): number
+  createMeasure(feature: GeoJSON.Feature, type?: JAppMeasureType): JAppMeasure
+  createDistanceMeasure(feature: GeoJSON.Feature<GeoJSON.LineString>): JAppMeasure
+  createPolygonMeasure(polygon: GeoJSON.Feature<GeoJSON.Polygon>): JAppMeasure
+  createCircleMeasure(circle: GeoJSON.Feature<GeoJSON.Polygon>): JAppMeasure
 }
 
 export interface JAppExtensionService {

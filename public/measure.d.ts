@@ -1,11 +1,17 @@
-declare type JAppMeasureType = "circleArea" | "distance" | "polygonArea"
+declare type JAppMeasureType = "polygon" | "line_string" | "circle"
+
+declare interface JAppMeasureEdge {
+  popupLocation: JPoint
+  distance: number
+}
 
 declare interface JAppMeasure {
-  id: number
+  id: string
   type: JAppMeasureType
-  total: number
-  popups: Array<{ coordinates: JPoint, html: string }>
-  multiPointFeature: GeoJSON.Feature<GeoJSON.MultiPoint>
-  lineFeature: GeoJSON.Feature<GeoJSON.LineString>
-  fillFeature: GeoJSON.Feature<GeoJSON.LineString>
+  feature: GeoJSON.Feature<GeoJSON.LineString | GeoJSON.Polygon>
+  totalEdges: number
+  centroid: JPoint
+  edges: JAppMeasureEdge[]
+  area: number
+  radius: number
 }

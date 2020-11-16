@@ -169,6 +169,12 @@ declare namespace JMap {
      */
     namespace Measure {
 
+      function getAll(): JAppMeasure[]
+      function getAllDistanceMeasures(): JAppMeasure[]
+      function getAllPolygonMeasures(): JAppMeasure[]
+      function getAllCircleMeasures(): JAppMeasure[]
+      function setAllMeasures(measures: JAppMeasure[]): void
+
       /**
        * **JMap.Application.Measure.activateMeasureType**
        * 
@@ -181,9 +187,12 @@ declare namespace JMap {
        * ```
        */
       function activateMeasureType(measureType: JAppMeasureType): void
+      function getActiveMeasureType(): JAppMeasureType
+      function getSelectedIds(): string[]
+      function setSelectedMeasureIds(selectedMeasureIds: string[]): void
 
       /**
-       * **JMap.Application.Measure.setDeletingMode**
+       * **JMap.Application.Measure.setIsDeleting**
        * 
        * Activate or deactivate the measurement deleting tool.
        * 
@@ -193,77 +202,23 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // activate deleting measure
-       * JMap.Application.Measure.setDeletingMode(true)
+       * JMap.Application.Measure.setIsDeleting(true)
        * 
        * // deactivate deleting measure
-       * JMap.Application.Measure.setDeletingMode(false)
+       * JMap.Application.Measure.setIsDeleting(false)
        * ```
        */
-      function setDeletingMode(isDeleting: boolean): void
-
-      /**
-       * **JMap.Application.Measure.deleteAllMeasures**
-       * 
-       * Delete all measures.
-       * 
-       * @param measureType if provided will delete only measures of the given type
-       * @example ```ts
-       * 
-       * // Delete all measures (distance + circle area + polygon area)
-       * JMap.Application.Measure.deleteAllMeasures()
-       * 
-       * // Delete all distance measures
-       * JMap.Application.Measure.deleteAllMeasures("distance")
-       * 
-       * // Delete all circle measures
-       * JMap.Application.Measure.deleteAllMeasures("circleArea")
-       * 
-       * // Delete all polygon measures
-       * JMap.Application.Measure.deleteAllMeasures("polygonArea")
-       * ```
-       */
-      function deleteAllMeasures(measureType?: JAppMeasureType): void
-      
-      /**
-       * **JMap.Application.Measure.deleteMeasureAtLocation**
-       * 
-       * Delete measures at a specific location
-       * @param location The mapbox location on the map in x, y
-       * @example ```ts
-       * 
-       * // Delete measures at location x = 20, y = 30
-       * JMap.Application.Measure.deleteMeasureAtLocation({x: 20, y: 30})
-       * ```
-       */
-      function deleteMeasureAtLocation(location: JLocation): void
-    
-      /**
-       * **JMap.Application.Measure.finalizeMeasure**
-       * 
-       * Finalize the measure that is currently drawn.
-       * 
-       * @example ```ts
-       * 
-       * // Finalize the measure curremtly drawn
-       * JMap.Application.Measure.finalizeMeasure()
-       * ```
-       */
-      function finalizeMeasure(): void
-    
-      /**
-       * **JMap.Application.Measure.resetState**
-       * 
-       * Delete current drawing measure and reset all measurement data.
-       * 
-       * After calling this function, measure tool is initialized like it was at startup.
-       * 
-       * @example ```ts
-       * 
-       * // Reset the measure tool
-       * JMap.Application.Measure.resetState()
-       * ```
-       */
-      function resetState(): void
+      function setIsDeleting(isDeleting: boolean): void
+      function deleteAll(): number
+      function deleteSelected(): number
+      function deleteMeasuresById(measureIds: string[]): number
+      function deleteAllDistances(): number
+      function deleteAllPolygons(): number
+      function deleteAllCircles(): number
+      function createMeasure(feature: GeoJSON.Feature<GeoJSON.LineString | GeoJSON.Polygon>, type?: JAppMeasureType): JAppMeasure
+      function createDistanceMeasure(feature: GeoJSON.Feature<GeoJSON.LineString>): JAppMeasure
+      function createPolygonMeasure(polygon: GeoJSON.Feature<GeoJSON.Polygon>): JAppMeasure
+      function createCircleMeasure(circle: GeoJSON.Feature<GeoJSON.Polygon>): JAppMeasure
     }
     
     /**

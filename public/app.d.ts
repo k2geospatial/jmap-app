@@ -169,10 +169,109 @@ declare namespace JMap {
      */
     namespace Measure {
 
+      /**
+       * **JMap.Application.Measure.getAll**
+       * 
+       * Returns all measures.
+       * 
+       * @example ```ts
+       * 
+       * // return currently drawn measures
+       * JMap.Application.Measure.getAll()
+       * ```
+       */
       function getAll(): JAppMeasure[]
-      function getAllDistanceMeasures(): JAppMeasure[]
+
+      /**
+       * **JMap.Application.Measure.existsById**
+       * 
+       * Returns true if measure exists for the given id, else false.
+       * 
+       * @throws Error if measureId is not a string or an empty string
+       * @example ```ts
+       * 
+       * // return true if measure exist, else false
+       * JMap.Application.Measure.existsById("ac57b1bd83ca6d8e0013e4cf9f06847e")
+       * 
+       * // throw an error
+       * JMap.Application.Measure.existsById("")
+       *
+       * // throw an error
+       * JMap.Application.Measure.existsById()
+       * ```
+       */
+      function existsById(measureId: string): boolean
+
+      /**
+       * **JMap.Application.Measure.getById**
+       * 
+       * Returns the measure for the given id.
+       * 
+       * @throws Error if measureId is not a string or an empty string, or if measure is not found
+       * @example ```ts
+       * 
+       * // return the measure fr the given id
+       * JMap.Application.Measure.getById("ac57b1bd83ca6d8e0013e4cf9f06847e")
+       * 
+       * // throw an error
+       * JMap.Application.Measure.getById("")
+       *
+       * // throw an error
+       * JMap.Application.Measure.getById()
+       * ```
+       */
+      function getById(measureId: string): JAppMeasure
+
+      /**
+       * **JMap.Application.Measure.getAllLineMeasures**
+       * 
+       * Returns all "line" measures. Result contains no polygon or circle measures.
+       * 
+       * @example ```ts
+       * 
+       * // return all line measures
+       * JMap.Application.Measure.getAllLineMeasures()
+       * ```
+       */
+      function getAllLineMeasures(): JAppMeasure[]
+
+      /**
+       * **JMap.Application.Measure.getAllPolygonMeasures**
+       * 
+       * Returns all "polygon" measures. Result contains no line or circle measures.
+       * 
+       * @example ```ts
+       * 
+       * // return all polygon measures
+       * JMap.Application.Measure.getAllPolygonMeasures()
+       * ```
+       */
       function getAllPolygonMeasures(): JAppMeasure[]
+
+      /**
+       * **JMap.Application.Measure.getAllCircleMeasures**
+       * 
+       * Returns all "circle" measures. Result contains no line or polygon measures.
+       * 
+       * @example ```ts
+       * 
+       * // return all circle measures
+       * JMap.Application.Measure.getAllCircleMeasures()
+       * ```
+       */
       function getAllCircleMeasures(): JAppMeasure[]
+
+      /**
+       * **JMap.Application.Measure.setAllMeasures**
+       * 
+       * Reset measure with provided measures.
+       * 
+       * @example ```ts
+       * 
+       * // remove all measures
+       * JMap.Application.Measure.setAllMeasures([])
+       * ```
+       */
       function setAllMeasures(measures: JAppMeasure[]): void
 
       /**
@@ -187,38 +286,141 @@ declare namespace JMap {
        * ```
        */
       function activateMeasureType(measureType: JAppMeasureType): void
-      function getActiveMeasureType(): JAppMeasureType
-      function getSelectedIds(): string[]
-      function setSelectedMeasureIds(selectedMeasureIds: string[]): void
 
       /**
-       * **JMap.Application.Measure.setIsDeleting**
+       * **JMap.Application.Measure.getActiveMeasureType**
        * 
-       * Activate or deactivate the measurement deleting tool.
+       * Return the current active measure type.
        * 
-       * If active, measures are deleted when we click on it.
-       * 
-       * @param isDeleting true to activate deleting mode, else false
        * @example ```ts
        * 
-       * // activate deleting measure
-       * JMap.Application.Measure.setIsDeleting(true)
-       * 
-       * // deactivate deleting measure
-       * JMap.Application.Measure.setIsDeleting(false)
+       * // return active mesure type
+       * JMap.Application.Measure.getActiveMeasureType([])
        * ```
        */
-      function setIsDeleting(isDeleting: boolean): void
+      function getActiveMeasureType(): JAppMeasureType
+
+      /**
+       * **JMap.Application.Measure.getSelectedIds**
+       * 
+       * Return the current measure selection.
+       * 
+       * @example ```ts
+       * 
+       * // return current measure selection
+       * JMap.Application.Measure.getSelectedIds([])
+       * ```
+       */
+      function getSelectedIds(): string[]
+
+      /**
+       * **JMap.Application.Measure.setSelectionActive**
+       * 
+       * Activate or deactivate the measurement seletion mode.
+       * 
+       * If active, measures can be selected by clicking on the map (then changed or removed)..
+       * 
+       * @param isSelectionActive true to activate selection mode, false to deactivate
+       * @example ```ts
+       * 
+       * // activate selection of measures
+       * JMap.Application.Measure.setSelectionActive(true)
+       * 
+       * // deactivate selection of measure
+       * JMap.Application.Measure.setSelectionActive(false)
+       * ```
+       */
+      function setSelectionActive(isSelectionActive: boolean): void
+
+      /**
+       * **JMap.Application.Measure.deleteAll**
+       * 
+       * Delete all measures.
+       * 
+       * Return deleted measure count.
+       * 
+       * @example ```ts
+       * 
+       * // delete all measures
+       * const deletedMeasuresCount = JMap.Application.Measure.deleteAll()
+       * ```
+       */
       function deleteAll(): number
+
+      /**
+       * **JMap.Application.Measure.deleteSelected**
+       * 
+       * Delete all selected measures.
+       * 
+       * Return deleted measure count.
+       * 
+       * @example ```ts
+       * 
+       * // delete all selected measures
+       * const deletedMeasuresCount = JMap.Application.Measure.deleteSelected()
+       * ```
+       */
       function deleteSelected(): number
+
+      /**
+       * **JMap.Application.Measure.deleteMeasuresById**
+       * 
+       * Delete a measure for a given id.
+       * 
+       * @throws if measure is not found
+       * @param measureIds list of measure ids
+       * @example ```ts
+       * 
+       * // delete measure having id="bc4fc07f2e84eb50f5962d3d41c836cb"
+       * const deletedMeasuresCount = JMap.Application.Measure.deleteMeasuresById("bc4fc07f2e84eb50f5962d3d41c836cb")
+       * ```
+       */
       function deleteMeasuresById(measureIds: string[]): number
-      function deleteAllDistances(): number
+
+      /**
+       * **JMap.Application.Measure.deleteAllLines**
+       * 
+       * Delete all measures having type === "line_string".
+       * 
+       * Return deleted measure count.
+       * 
+       * @example ```ts
+       * 
+       * // delete all line measures (if exist)
+       * const deletedMeasuresCount = JMap.Application.Measure.deleteAllLines()
+       * ```
+       */
+      function deleteAllLines(): number
+
+      /**
+       * **JMap.Application.Measure.deleteAllPolygons**
+       * 
+       * Delete all measures having type === "polygon".
+       * 
+       * Return deleted measure count.
+       * 
+       * @example ```ts
+       * 
+       * // delete all polygon measures (if exist)
+       * const deletedMeasuresCount = JMap.Application.Measure.deleteAllPolygons()
+       * ```
+       */
       function deleteAllPolygons(): number
+
+      /**
+       * **JMap.Application.Measure.deleteAllCircles**
+       * 
+       * Delete all measures having type === "circle".
+       * 
+       * Return deleted measure count.
+       * 
+       * @example ```ts
+       * 
+       * // delete all circle measures (if exist)
+       * const deletedMeasuresCount = JMap.Application.Measure.deleteAllCircles()
+       * ```
+       */
       function deleteAllCircles(): number
-      function createMeasure(feature: GeoJSON.Feature<GeoJSON.LineString | GeoJSON.Polygon>, type?: JAppMeasureType): JAppMeasure
-      function createDistanceMeasure(feature: GeoJSON.Feature<GeoJSON.LineString>): JAppMeasure
-      function createPolygonMeasure(polygon: GeoJSON.Feature<GeoJSON.Polygon>): JAppMeasure
-      function createCircleMeasure(circle: GeoJSON.Feature<GeoJSON.Polygon>): JAppMeasure
     }
     
     /**

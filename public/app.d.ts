@@ -440,7 +440,7 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // return the layer id of the displayed selection
-       * JMap.Application.Measure.getDisplayedLayerId()
+       * JMap.Application.Selection.getDisplayedLayerId()
        * ```
        */
       function getDisplayedLayerId(): number
@@ -456,7 +456,7 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // display the layer id=2 selection
-       * JMap.Application.Measure.setDisplayedLayerId(2)
+       * JMap.Application.Selection.setDisplayedLayerId(2)
        * ```
        */
       function setDisplayedLayerId(layerId: number): void
@@ -469,11 +469,24 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // change the selection type to rectangle
-       * JMap.Application.Measure.activateSelectionType("rectangle")
+       * JMap.Application.Selection.activateSelectionType("rectangle")
        * ```
        */
       function activateSelectionType(selectionType: JAppSelectionType): void
       
+      /**
+       * **JMap.Application.Selection.getActiveSelectionType**
+       * 
+       * Return the current active type of selection
+       * 
+       * @example ```ts
+       * 
+       * // return the current active selection type
+       * JMap.Application.Selection.getActiveSelectionType()
+       * ```
+       */
+      function getActiveSelectionType(): JAppSelectionType
+
       /**
        * **JMap.Application.Selection.getTableVisibility**
        * 
@@ -482,7 +495,7 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // return true if the selection data table is visible
-       * JMap.Application.Measure.getTableVisibility()
+       * JMap.Application.Selection.getTableVisibility()
        * ```
        */
       function getTableVisibility(): boolean
@@ -495,10 +508,10 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // make selection data table visible
-       * JMap.Application.Measure.setTableVisibility(true)
+       * JMap.Application.Selection.setTableVisibility(true)
        *
        * // make selection data table not visible
-       * JMap.Application.Measure.setTableVisibility(false)
+       * JMap.Application.Selection.setTableVisibility(false)
        * ```
        */
       function setTableVisibility(tableVisibility: boolean): void
@@ -512,7 +525,7 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // clear the layer id=2 selection
-       * JMap.Application.Measure.clearSelectionForLayer(2)
+       * JMap.Application.Selection.clearSelectionForLayer(2)
        * ```
        */
       function clearSelectionForLayer(layerId: number): void
@@ -524,58 +537,24 @@ declare namespace JMap {
        * 
        * @example ```ts
        * // Clear the current selection
-       * JMap.Application.Measure.clearSelection()
+       * JMap.Application.Selection.clearSelection()
        * ```
        */
       function clearSelection(): void
 
       /**
-       * **JMap.Application.Selection.doubleClick**
+       * **JMap.Application.Selection.selectFromFeature**
        * 
-       * Make selection tool react to a double-click action.
+       * Select features on the map that intersect the given feature.
        * 
+       * @param feature the given feature
+       * @param selectionType if not provided the method use 
        * @example ```ts
-       * // double click action
-       * JMap.Application.Measure.doubleClick()
+       * // will select all features that intersect the provided line feature
+       * JMap.Application.Selection.selectFromFeature(lineFeature)
        * ```
        */
-      function doubleClick(): void
-
-      /**
-       * **JMap.Application.Selection.onKeyDown**
-       * 
-       * Make selection tool react to a onKeyDown action.
-       * 
-       * @example ```ts
-       * // on key down action
-       * JMap.Application.Measure.onKeyDown(event.code)
-       * ```
-       */
-      function onKeyDown(keyCode: string): void
-
-      /**
-       * **JMap.Application.Selection.onKeyUp**
-       * 
-       * Make selection tool react to a onKeyUp action.
-       * 
-       * @example ```ts
-       * // on key up action
-       * JMap.Application.Measure.onKeyUp(event.code)
-       * ```
-       */
-      function onKeyUp(keyCode: string): void
-
-      /**
-       * **JMap.Application.Selection.onKeyUp**
-       * 
-       * Finish the current drawing selection and select features on the map.
-       * 
-       * @example ```ts
-       * // on key up action
-       * JMap.Application.Measure.onKeyUp(event.code)
-       * ```
-       */
-      function applyDrawnSelection(): void
+      function selectFromFeature(feature: GeoJSON.Feature, selectionType: JAppSelectionType): void
 
       /**
        * **JMap.Application.Selection.exportAsExcelFile**
@@ -586,7 +565,7 @@ declare namespace JMap {
        * 
        * @example ```ts
        * // download the current selection as an excel file
-       * JMap.Application.Measure.exportAsExcelFile()
+       * JMap.Application.Selection.exportAsExcelFile()
        * ```
        */
       function exportAsExcelFile(): void
@@ -598,22 +577,10 @@ declare namespace JMap {
        * 
        * @example ```ts
        * // fit the map to display selected features
-       * JMap.Application.Measure.fitMapToDisplayLayerSelection()
+       * JMap.Application.Selection.fitMapToDisplayLayerSelection()
        * ```
        */
       function fitMapToDisplayLayerSelection(): void
-      
-      /**
-       * **JMap.Application.Selection.removeLastDrawnSelectionCoordinate**
-       * 
-       * Remove the last drawn point for the current selection
-       * 
-       * @example ```ts
-       * // Remove the last drawn point for the current selection
-       * JMap.Application.Measure.removeLastDrawnSelectionCoordinate()
-       * ```
-       */
-      function removeLastDrawnSelectionCoordinate(): void
     }
 
     /**

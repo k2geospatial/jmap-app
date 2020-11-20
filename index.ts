@@ -99,10 +99,10 @@ export interface JAppPrintState {
 }
 
 export interface JAppSelectionState {
-  selectionType: JAppSelectionType
   displayedLayerId: number
   isNewElement: boolean
   tableVisibility: boolean
+  draw: JAppDrawState
 }
 
 export interface JAppMessageState {
@@ -210,17 +210,14 @@ export interface JAppSelectionService {
   getDisplayedLayerId(): number
   setDisplayedLayerId(layerId: number): void
   activateSelectionType(selectionType: JAppSelectionType): void
+  getActiveSelectionType(): JAppSelectionType
   getTableVisibility(): boolean
   setTableVisibility(tableVisibility: boolean): void
   clearSelectionForLayer(layerId: number): void
   clearSelection(): void
-  doubleClick(): void
-  onKeyDown(keyCode: string): void
-  onKeyUp(keyCode: string): void
-  applyDrawnSelection(): void
+  selectFromFeature(feature: GeoJSON.Feature, selectionType?: JAppSelectionType): void
   exportAsExcelFile(): void
   fitMapToDisplayLayerSelection(): void
-  removeLastDrawnSelectionCoordinate(): void
 }
 
 export interface JAppMeasureService {

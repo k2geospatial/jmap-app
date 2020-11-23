@@ -1,1 +1,1 @@
-declare type JAppSelectionType = "point" | "line" | "rectangle" | "circle" | "polygon"
+declare type JAppSelectionType = "point" | "line_string" | "rectangle" | "circle" | "polygon"

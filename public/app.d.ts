@@ -55,6 +55,211 @@ declare namespace JMap {
     function openDocumentation(): void
     
     /**
+     * **JMap.Application.Annotation**
+     * 
+     * You can manage everything related to annotations here.
+     */
+    namespace Annotation {
+
+      /**
+       * **JMap.Application.Annotation.getDrawMode**
+       * 
+       * Returns the current draw mode.
+       * 
+       * @example ```ts
+       * 
+       * // returns the current draw mode
+       * JMap.Application.Annotation.getDrawMode()
+       * ```
+       */
+      function getDrawMode(): JAppDrawMode
+
+      /**
+       * **JMap.Application.Annotation.setDrawMode**
+       * 
+       * Set the annotation draw mode.
+       * 
+       * @param drawMode the new draw mode
+       * @example ```ts
+       * 
+       * // Set the annotation draw mode to "draw"
+       * JMap.Application.Annotation.setDrawMode("draw")
+       * ```
+       */
+      function setDrawMode(drawMode: JAppDrawMode): void
+
+      /**
+       * **JMap.Application.Annotation.getDrawType**
+       * 
+       * Returns the current draw type.
+       * 
+       * @example ```ts
+       * 
+       * // returns the current draw type
+       * JMap.Application.Annotation.getDrawType()
+       * ```
+       */
+      function getDrawType(): JAppDrawType
+
+      /**
+       * **JMap.Application.Annotation.setDrawMode**
+       * 
+       * Set the annotation draw mode.
+       * 
+       * @param drawType the new draw type
+       * @example ```ts
+       * 
+       * // Set the annotation draw mode to "draw"
+       * JMap.Application.Annotation.setDrawMode("draw")
+       * ```
+       */
+      function setDrawType(drawType: JAppDrawType): void
+
+      /**
+       * **JMap.Application.Annotation.existAnnotationById**
+       * 
+       * Returns true if annotation exist for the given id, else false
+       * 
+       * @throws if the annotationId param is not a valid string
+       * @param annotationId the given annotation id 
+       * @example ```ts
+       * 
+       * // returns true if annotation exist, else false
+       * JMap.Application.Annotation.existAnnotationById("d68385b01be3c241c7b6298b2788839d")
+       * ```
+       */
+      function existAnnotationById(annotationId: string): boolean
+
+      /**
+       * **JMap.Application.Annotation.getAnnotationById**
+       * 
+       * Returns the annotation for the given id.
+       * 
+       * @throws if the annotationId param is not a valid string, or annotation is not found
+       * @param annotationId the given annotation id 
+       * @example ```ts
+       * 
+       * // returns the annotation for the given id
+       * JMap.Application.Annotation.getAnnotationById("d68385b01be3c241c7b6298b2788839d")
+       * ```
+       */
+      function getAnnotationById(annotationId: string): JAppAnnotation
+
+      /**
+       * **JMap.Application.Annotation.getAll**
+       * 
+       * Returns all annotations.
+       * 
+       * @example ```ts
+       * 
+       * // returns all annotations
+       * JMap.Application.Annotation.getAll()
+       * ```
+       */
+      function getAll(): JAppAnnotation[]
+
+      /**
+       * **JMap.Application.Annotation.getSelectedAnnotationIds**
+       * 
+       * Returns the ids of the selected annotations.
+       * 
+       * Empty array if no annotation are selected
+       * 
+       * @example ```ts
+       * 
+       * // returns ids of selected annotations
+       * JMap.Application.Annotation.getSelectedAnnotationIds()
+       * ```
+       */
+      function getSelectedAnnotationIds(): string[]
+
+      /**
+       * **JMap.Application.Annotation.deleteAnnotationByIds**
+       * 
+       * Delete the annotations for the given ids.
+       * 
+       * @param annotationIds an array of annotation id
+       * @throws if an annotations array is empty or an annotation is not found for the given ids.
+       * @example ```ts
+       * 
+       * // Delete two annotations
+       * JMap.Application.Annotation.deleteAnnotationByIds([
+       *  "d68385b01be3c241c7b6298b2788839d",
+       *  "98ef8ad4476f0e6fa26be416d58d0734"
+       * ])
+       * ```
+       */
+      function deleteAnnotationByIds(annotationIds: string[]): void
+
+      /**
+       * **JMap.Application.Annotation.deleteSelectedFeatures**
+       * 
+       * Delete the selected features.
+       * 
+       * Do nothing if no selection.
+       * 
+       * @example ```ts
+       * 
+       * // Delete selected annotations
+       * JMap.Application.Annotation.deleteSelectedFeatures()
+       * ```
+       */
+      function deleteSelectedFeatures(): void
+
+      /**
+       * **JMap.Application.Annotation.getStyle**
+       * 
+       * Returns the current style in use for annotation drawing.
+       * 
+       * @example ```ts
+       * 
+       * // returns the current style in use for annotation drawing
+       * JMap.Application.Annotation.getStyle()
+       * ```
+       */
+      function getStyle(): JAppDrawStyle
+
+      /**
+       * **JMap.Application.Annotation.updateStyle**
+       * 
+       * Update annotation style, for the next annotations that will be drawn.
+       * 
+       * Merge the new options with current one.
+       * 
+       * @example ```ts
+       * 
+       * // Set the line width as 3px
+       * JMap.Application.Annotation.updateStyle({
+       *  lineWidth: 3
+       * })
+       * ```
+       */
+      function updateStyle(style: JAppDrawStyle): void
+
+      /**
+       * **JMap.Application.Annotation.setAnnotationsStyle**
+       * 
+       * For given ids, update annotation(s) style.
+       * 
+       * @example ```ts
+       * 
+       * const annotationIds = [
+       *  "d68385b01be3c241c7b6298b2788839d",
+       *  "98ef8ad4476f0e6fa26be416d58d0734"
+       * ]
+       * 
+       * const customStyle = {
+       *  lineWidth: 3
+       * }
+       * 
+       * // Set custom style for 2 annotations
+       * JMap.Application.Annotation.setAnnotationsStyle(annotationIds, customStyle)
+       * ```
+       */
+      function setAnnotationsStyle(annotationIds: string[], style: JAppDrawStyle): void
+    }
+
+    /**
      * **JMap.Application.Panel**
      * 
      * You can manage UI panels (on the left in the screen) here.
@@ -1444,18 +1649,18 @@ declare namespace JMap {
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function
-          * @example ```ts
-          * // log a message in the console once the application is loaded
-          * JMap.Application.Event.Main.on.appReady(
-          *    "custom-app-ready", 
-          *     () => {
-          *      if(JMap.User.getToken() !== "-1"){
-          *        console.log(`Logged in username is: "${JMap.User.getUsername()}"`)
-          *      }else{
-          *        console.log(`No user logged in`)
-          *      }
-          * })
-          * ```
+           * @example ```ts
+           * // log a message in the console once the application is loaded
+           * JMap.Application.Event.Main.on.appReady(
+           *    "custom-app-ready", 
+           *     () => {
+           *      if(JMap.User.getToken() !== "-1"){
+           *        console.log(`Logged in username is: "${JMap.User.getUsername()}"`)
+           *      }else{
+           *        console.log(`No user logged in`)
+           *      }
+           * })
+           * ```
            */
           function appReady(listenerId: string, fn: () => void): void
         }
@@ -1505,7 +1710,7 @@ declare namespace JMap {
     namespace Message {
 
       /**
-       * ***JMap.Message.error***
+       * ***JMap.Application.Message.error***
        * 
        * Adds an error message in the application's messages stack for the current session
        * 
@@ -1514,14 +1719,13 @@ declare namespace JMap {
        * @example ```ts
        * 
        * const message = "This operation is not allowed"
-       * JMap.Message.error(message, { duration: 5000 })
+       * JMap.Application.Message.error(message, { duration: 5000 })
        * ```
-       * 
        */
       function error(message: string, options?: JAppMessageOptions): void
 
       /**
-       * ***JMap.Message.warning***
+       * ***JMap.Application.Message.warning***
        * 
        * Adds an warning message in the application's messages stack for the current session
        * 
@@ -1530,14 +1734,13 @@ declare namespace JMap {
        * @example ```ts
        * 
        * const message = "This operation has no effect"
-       * JMap.Message.warning(message, { duration: 5000 })
+       * JMap.Application.Message.warning(message, { duration: 5000 })
        * ```
-       * 
        */
       function warning(message: string, options?: JAppMessageOptions): void
       
       /**
-       * ***JMap.Message.info***
+       * ***JMap.Application.Message.info***
        * 
        * Adds an info message in the application's messages stack for the current session
        * 
@@ -1546,14 +1749,13 @@ declare namespace JMap {
        * @example ```ts
        * 
        * const message = "You are here"
-       * JMap.Message.info(message, { duration: 5000 })
+       * JMap.Application.Message.info(message, { duration: 5000 })
        * ```
-       * 
        */
       function info(message: string, options?: JAppMessageOptions): void
       
       /**
-       * ***JMap.Message.success***
+       * ***JMap.Application.Message.success***
        * 
        * Adds an success message in the application's messages stack for the current session
        * 
@@ -1562,14 +1764,43 @@ declare namespace JMap {
        * @example ```ts
        * 
        * const message = "The operation was successful"
-       * JMap.Message.success(message, { duration: 5000 })
+       * JMap.Application.Message.success(message, { duration: 5000 })
        * ```
-       * 
        */
       function success(message: string, options?: JAppMessageOptions): void
       
       /**
-       * ***JMap.Message.display***
+       * ***JMap.Application.Message.confirmMessage***
+       * 
+       * Prompt a dialog confirm message on the screen.
+       * 
+       * The onSuccess callback is called when the user clicked "confirm" button.
+       *
+       * If it's an input confirm message, the onSuccess will get the input, else an empty string.
+       * 
+       * The onCancel callback is called when the cancel button is clicked.
+       * 
+       * @param params message parameters
+       * @example ```ts
+       * 
+       * JMap.Application.Message.confirmMessage({
+       *   message: "Are you sure to do a given action ?",
+       *   onSuccess: () => console.log(`The user is sure`),
+       *   onCancel: () => console.info("The user is not sure")
+       * })
+       * 
+       * JMap.Application.Message.confirmMessage({
+       *   message: "City name :",
+       *   isInputMessage: true,
+       *   onSuccess: cityName => console.log(`City name input = ${cityName}`),
+       *   onCancel: () => console.info("Input has been canceled")
+       * })
+       * ```
+       */
+      function confirmMessage(params: JAppConfirmMessage): void
+
+      /**
+       * ***JMap.Application.Message.display***
        * 
        * Adds an generic message in the application's messages stack for the current session
        * severity level should be passed (will default to "info")
@@ -1579,13 +1810,11 @@ declare namespace JMap {
        * @example ```ts
        * 
        * const message = "The operation has failed"
-       * const level:JAppMessageSeverity = "error"
-       * JMap.Message.display(message, { duration: 5000 , severity: level})
+       * const level = "error"
+       * JMap.Application.Message.display(message, { duration: 5000 , severity: level})
        * ```
-       * 
        */
       function display(message: string, options?: JAppMessageOptions): void
-    
     }
   }
 }

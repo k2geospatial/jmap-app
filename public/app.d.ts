@@ -116,7 +116,7 @@ declare namespace JMap {
       function setDrawType(drawType: JAppDrawType): void
 
       /**
-       * **JMap.Application.Annotation.existAnnotationById**
+       * **JMap.Application.Annotation.existsById**
        * 
        * Returns true if annotation exist for the given id, else false
        * 
@@ -125,13 +125,13 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // returns true if annotation exist, else false
-       * JMap.Application.Annotation.existAnnotationById("d68385b01be3c241c7b6298b2788839d")
+       * JMap.Application.Annotation.existsById("d68385b01be3c241c7b6298b2788839d")
        * ```
        */
-      function existAnnotationById(annotationId: string): boolean
+      function existsById(annotationId: string): boolean
 
       /**
-       * **JMap.Application.Annotation.getAnnotationById**
+       * **JMap.Application.Annotation.getById**
        * 
        * Returns the annotation for the given id.
        * 
@@ -140,10 +140,10 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // returns the annotation for the given id
-       * JMap.Application.Annotation.getAnnotationById("d68385b01be3c241c7b6298b2788839d")
+       * JMap.Application.Annotation.getById("d68385b01be3c241c7b6298b2788839d")
        * ```
        */
-      function getAnnotationById(annotationId: string): JAppAnnotation
+      function getById(annotationId: string): JAppAnnotation
 
       /**
        * **JMap.Application.Annotation.getAll**
@@ -159,7 +159,7 @@ declare namespace JMap {
       function getAll(): JAppAnnotation[]
 
       /**
-       * **JMap.Application.Annotation.getSelectedAnnotationIds**
+       * **JMap.Application.Annotation.getSelectedIds**
        * 
        * Returns the ids of the selected annotations.
        * 
@@ -168,13 +168,13 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // returns ids of selected annotations
-       * JMap.Application.Annotation.getSelectedAnnotationIds()
+       * JMap.Application.Annotation.getSelectedIds()
        * ```
        */
-      function getSelectedAnnotationIds(): string[]
+      function getSelectedIds(): string[]
 
       /**
-       * **JMap.Application.Annotation.deleteAnnotationByIds**
+       * **JMap.Application.Annotation.deleteByIds**
        * 
        * Delete the annotations for the given ids.
        * 
@@ -183,28 +183,28 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // Delete two annotations
-       * JMap.Application.Annotation.deleteAnnotationByIds([
+       * JMap.Application.Annotation.deleteByIds([
        *  "d68385b01be3c241c7b6298b2788839d",
        *  "98ef8ad4476f0e6fa26be416d58d0734"
        * ])
        * ```
        */
-      function deleteAnnotationByIds(annotationIds: string[]): void
+      function deleteByIds(annotationIds: string[]): void
 
       /**
-       * **JMap.Application.Annotation.deleteSelectedFeatures**
+       * **JMap.Application.Annotation.deleteSelected**
        * 
-       * Delete the selected features.
+       * Delete the selected annotations.
        * 
        * Do nothing if no selection.
        * 
        * @example ```ts
        * 
        * // Delete selected annotations
-       * JMap.Application.Annotation.deleteSelectedFeatures()
+       * JMap.Application.Annotation.deleteSelected()
        * ```
        */
-      function deleteSelectedFeatures(): void
+      function deleteSelected(): void
 
       /**
        * **JMap.Application.Annotation.getStyle**
@@ -237,7 +237,7 @@ declare namespace JMap {
       function updateStyle(style: JAppDrawStyle): void
 
       /**
-       * **JMap.Application.Annotation.setAnnotationsStyle**
+       * **JMap.Application.Annotation.setStyleByAnnotationIds**
        * 
        * For given ids, update annotation(s) style.
        * 
@@ -253,10 +253,10 @@ declare namespace JMap {
        * }
        * 
        * // Set custom style for 2 annotations
-       * JMap.Application.Annotation.setAnnotationsStyle(annotationIds, customStyle)
+       * JMap.Application.Annotation.setStyleByAnnotationIds(annotationIds, customStyle)
        * ```
        */
-      function setAnnotationsStyle(annotationIds: string[], style: JAppDrawStyle): void
+      function setStyleByAnnotationIds(annotationIds: string[], style: JAppDrawStyle): void
     }
 
     /**

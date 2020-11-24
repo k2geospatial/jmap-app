@@ -150,15 +150,15 @@ export interface JAppAnnotationService {
   setDrawMode(drawMode: JAppDrawMode): void
   getDrawType(): JAppDrawType
   setDrawType(drawType: JAppDrawType): void
-  existAnnotationById(annotationId: string): boolean
-  getAnnotationById(annotationId: string): JAppAnnotation
+  existsById(annotationId: string): boolean
+  getById(annotationId: string): JAppAnnotation
   getAll(): JAppAnnotation[]
-  getSelectedAnnotationIds(): string[]
-  deleteAnnotationByIds(annotationIds: string[]): void
-  deleteSelectedFeatures(): void
+  getSelectedIds(): string[]
+  deleteByIds(annotationIds: string[]): void
+  deleteSelected(): void
   getStyle(): JAppDrawStyle
   updateStyle(style: JAppDrawStyle): void
-  setAnnotationsStyle(annotationIds: string[], style: JAppDrawStyle): void
+  setStyleByAnnotationIds(annotationIds: string[], style: JAppDrawStyle): void
 }
 
 export interface JAppQueryService {

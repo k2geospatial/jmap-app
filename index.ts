@@ -107,6 +107,7 @@ export interface JAppSelectionState {
 
 export interface JAppMessageState {
   messages: JAppMessage[]
+  confirmMessage: JAppConfirmMessage | undefined
 }
 
 export interface JAppUserState {
@@ -140,19 +141,23 @@ export interface JAppMessageService {
   warning(message: string, options?: JAppMessageOptions): void
   info(message: string, options?: JAppMessageOptions): void
   success(message: string, options?: JAppMessageOptions): void
+  confirmMessage(params: JAppConfirmMessage): void
   display(message: string, options?: JAppMessageOptions): void
 }
 
 export interface JAppAnnotationService {
+  getDrawMode(): JAppDrawMode
   setDrawMode(drawMode: JAppDrawMode): void
+  getDrawType(): JAppDrawType
   setDrawType(drawType: JAppDrawType): void
-  saveAnnotation(annotation: JAppAnnotation): void
-  deleteAnnotations(annotationIds: string[]): void
-  updateAnnotations(annotations: JAppAnnotation[]): void
-  setIsDeleting(isDeleting: boolean): void
-  setIsStyling(isStyling: boolean): void
-  setDrawFeaturesSelected(featuresSelected: JAppDrawFeature[]): void
-  setStyle(style: JAppDrawStyle): void
+  existAnnotationById(annotationId: string): boolean
+  getAnnotationById(annotationId: string): JAppAnnotation
+  getAll(): JAppAnnotation[]
+  getSelectedAnnotationIds(): string[]
+  deleteAnnotationByIds(annotationIds: string[]): void
+  deleteSelectedFeatures(): void
+  getStyle(): JAppDrawStyle
+  updateStyle(style: JAppDrawStyle): void
   setAnnotationsStyle(annotationIds: string[], style: JAppDrawStyle): void
 }
 

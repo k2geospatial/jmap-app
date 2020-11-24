@@ -12,7 +12,7 @@ declare interface JAppMessage {
 declare interface JAppConfirmMessage {
   message: string
   title: string
-  isInputMessage: boolean
+  isInputMessage?: boolean
   inputPlaceholder?: string
   confirmButtonLabel?: string
   cancelButtonLabel?: string

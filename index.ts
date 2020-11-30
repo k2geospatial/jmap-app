@@ -154,6 +154,8 @@ export interface JAppAnnotationService {
   getById(annotationId: string): JAppAnnotation
   getAll(): JAppAnnotation[]
   getSelectedIds(): string[]
+  deleteAll(): void
+  deleteByType(annotationType: JAppDrawType): void
   deleteByIds(annotationIds: string[]): void
   deleteSelected(): void
   getStyle(): JAppDrawStyle

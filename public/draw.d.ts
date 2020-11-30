@@ -15,16 +15,12 @@ declare interface JAppDrawFeature extends GeoJSON.Feature {
   incomingCoords(coords: JPoint[][]): void
 }
 
-declare interface JAppDrawStyle {
+declare interface JAppDrawStyle extends Partial<JAppDrawTextStyle> {
   fillColor?: string
   fillOpacity?: number
   lineColor?: string
   lineOpacity?: number
   lineWidth?: number
-  textSize?: number
-  textColor?: string
-  textRotation?: number
-  textZoomRef?: number
   shapeType?: string
   radiusInKm?: number
   center?: number[]
@@ -34,5 +30,5 @@ declare interface JAppDrawTextStyle {
   textSize: number
   textColor: string
   textRotation: number
-  textZoomRef: number
+  textZoomRef?: number
 }

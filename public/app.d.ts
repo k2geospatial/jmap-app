@@ -174,6 +174,38 @@ declare namespace JMap {
       function getSelectedIds(): string[]
 
       /**
+       * **JMap.Application.Annotation.deleteAll**
+       * 
+       * Delete all annotations.
+       * 
+       * Do nothing if no annotation exist.
+       * 
+       * @example ```ts
+       * 
+       * // Delete all annotations
+       * JMap.Application.Annotation.deleteAll()
+       * ```
+       */
+      function deleteAll(): void
+
+      /**
+       * **JMap.Application.Annotation.deleteByType**
+       * 
+       * Delete the annotations for the given type.
+       * 
+       * Do nothing if no annotation exist for the type.
+       * 
+       * @param annotationType the annotation type : "point", "polygon", "line_string", "rectangle", "circle", or "text"
+       * @throws if the annotation type is not correct
+       * @example ```ts
+       * 
+       * // Delete all text annotations if exist
+       * JMap.Application.Annotation.deleteByType("text")
+       * ```
+       */
+      function deleteByType(annotationType: JAppDrawType): void
+
+      /**
        * **JMap.Application.Annotation.deleteByIds**
        * 
        * Delete the annotations for the given ids.

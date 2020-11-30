@@ -24,6 +24,8 @@ declare interface JMapContextData {
   selection: JMapSelection
   measures: JAppMeasure[]
   thumbnail: string
+  annotations: JAppAnnotation[]
+  annotationsTextMarkersProperties: JappTextMarkerProperties[]
 }
 
 declare interface JMapContextDataLayerElement {

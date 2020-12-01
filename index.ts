@@ -36,7 +36,6 @@ export interface JAppLayerState {
   exactlyMatchedTreeItemIds: number[]
   expandedMatchedTreeItemIds: number[]
   layerInEditionForThematic: JLayer | undefined
-  popupMenuAnchor: HTMLElement | null
   popupMenuLayerId: number | undefined
 }
 

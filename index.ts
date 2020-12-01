@@ -33,7 +33,10 @@ export interface JAppPanelState {
 
 export interface JAppLayerState {
   filter: string
+  exactlyMatchedTreeItemIds: number[]
+  expandedMatchedTreeItemIds: number[]
   layerInEditionForThematic: JLayer | undefined
+  popupMenuLayerId: number | undefined
 }
 
 export interface JAppUiState {

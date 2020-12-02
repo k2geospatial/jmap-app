@@ -844,6 +844,24 @@ declare namespace JMap {
       function setFilter(filter: string): void
 
       /**
+       * **JMap.Application.Layer.isFilterActive**
+       * 
+       * Tests if the layer filter is active.
+       * 
+       * Layer panel filter is active only if the filter contains a certain number of characters 
+       * 
+       * @example ```ts
+       * 
+       * // set the filter to "a"
+       * JMap.Application.Layer.setFilter("a")
+       * 
+       * // will return false
+       * const isFilterActive = JMap.Application.Layer.isFilterActive()
+       * ```
+       */
+      function isFilterActive(): boolean
+
+      /**
        * **JMap.Application.Layer.startThematicEdition**
        * 
        * If layer has no thematic, do nothing, just log a warning message in the console.

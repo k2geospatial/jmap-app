@@ -328,6 +328,7 @@ export interface JAppMapContextService {
 
 export interface JAppLayerService {
   setFilter(filter: string): void
+  isFilterActive(): boolean
   startThematicEdition(layerId: number): void
   stopThematicEdition(): void
 }

@@ -135,8 +135,8 @@ export interface JApplicationService extends JApplicationMainService {
 }
 
 export interface JAppProjectService {
-  activateProjectById(projectId: number): void
-  setProjectListVisibility(isVisible: boolean): void
+  activateById(projectId: number): JProject
+  setSelectionPanelVisibility(isVisible: boolean): void
 }
 
 export interface JAppMessageService {

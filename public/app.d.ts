@@ -821,6 +821,47 @@ declare namespace JMap {
     }
 
     /**
+     * **JMap.Application.Project**
+     * 
+     * You can manage all things related to JMap Core NG project and JMap App NG here.
+     */
+    namespace Project {
+
+      /**
+       * **JMap.Application.Project.activateById**
+       * 
+       * Activate the project for a given project id.
+       * 
+       * If you use the JMap App NG use this function over JMap.Project.activateById.
+       * 
+       * This function do the same as JMap.Project.activateById but also manage things for the application UI.
+       * 
+       * @throws if project id invalid or project not found
+       * @param projectId the JMap project id
+       * @returns the project
+       * @example ```ts
+       * 
+       * // activate project id=33
+       * JMap.Application.Project.activateById(33)
+       * ```
+       */
+      function activateById(projectId: number): JProject
+
+      /**
+       * **JMap.Application.Project.setSelectionPanelVisibility**
+       * 
+       * Display or hide the project list selection panel.
+       * 
+       * @example ```ts
+       * 
+       * // display the project list selection panel
+       * JMap.Application.Project.setSelectionPanelVisibility(true)
+       * ```
+       */
+      function setSelectionPanelVisibility(isVisible: boolean): void
+    }
+
+    /**
      * **JMap.Application.Layer**
      * 
      * You can manage the layer panel here.

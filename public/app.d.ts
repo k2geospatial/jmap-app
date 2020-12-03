@@ -1906,14 +1906,6 @@ declare namespace JMap {
        * ```
        */
       function display(message: string, options?: JAppMessageOptions): void
-    
-    
-    
-    
-    
-    
-    
-
     }
   }
 }

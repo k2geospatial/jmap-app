@@ -20,7 +20,7 @@ declare interface JMapContextData {
   mapZoom: number
   mapPitch: number
   mapBearing: number
-  baseMap: string
+  baseMap: string | undefined
   selection: JMapSelection
   measures: JAppMeasure[]
   thumbnail: string

@@ -1869,7 +1869,7 @@ declare namespace JMap {
        *
        * If it's an input confirm message, the onSuccess will get the input, else an empty string.
        * 
-       * The onCancel callback is called when the cancel button is clicked.
+       * The optional onCancel callback is called when the cancel button is clicked.
        * 
        * @param params message parameters
        * @example ```ts

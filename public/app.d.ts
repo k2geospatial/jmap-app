@@ -1728,7 +1728,7 @@ declare namespace JMap {
     }
 
     namespace Event {
-      namespace Main{
+      namespace Main {
         namespace on {
           /**
            * ***JMap.Application.Event.Main.on.appReady***
@@ -1741,24 +1741,21 @@ declare namespace JMap {
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function
            * @example ```ts
+           * 
            * // log a message in the console once the application is loaded
            * JMap.Application.Event.Main.on.appReady(
-           *    "custom-app-ready", 
-           *     () => {
-           *      if(JMap.User.getToken() !== "-1"){
-           *        console.log(`Logged in username is: "${JMap.User.getUsername()}"`)
-           *      }else{
-           *        console.log(`No user logged in`)
-           *      }
-           * })
+           *   "custom-app-ready", 
+           *   () => {
+           *     if (JMap.User.getToken() !== "-1") {
+           *       console.log(`Logged in username is: "${JMap.User.getUsername()}"`)
+           *     } else {
+           *       console.log(`No user logged in`)
+           *     }
+           *   }
+           * )
            * ```
            */
           function appReady(listenerId: string, fn: () => void): void
-        }
-      }
-      namespace UI {
-        namespace on {
-          function sizeChanged(listenerId: string, fn: (params: JAppEventSizeParams) => void): void
         }
       }
     }

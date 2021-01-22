@@ -42,10 +42,6 @@ export interface JAppLayerState {
 export interface JAppUiState {
   sidePanelVisible: boolean
   theme: { [key: string]: any }
-  container: {
-    width: number
-    height: number
-  }
 }
 
 export interface JAppMapContextState {
@@ -213,7 +209,6 @@ export interface JApplicationUIService {
 
 export interface JAppEventService {
   Main: JAppAppEventModule
-  UI: JAppUIEventModule
 }
 
 export interface JAppSelectionService {
@@ -331,15 +326,6 @@ export interface JAppLayerService {
   isFilterActive(): boolean
   startThematicEdition(layerId: number): void
   stopThematicEdition(): void
-}
-
-export interface JAppUIEventModule extends JEventModule {
-  on: {
-    sizeChanged(
-      listenerId: string,
-      fn: (params: JAppEventSizeParams) => void
-    ): void
-  }
 }
 
 export interface JAppAppEventModule extends JEventModule {

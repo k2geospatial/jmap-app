@@ -1,6 +1,6 @@
 declare interface JAppUserAction {
   id: string
-  label: string
+  label: string | JTranslationItem
   icon: string
   isHelp?: boolean
   href?: string

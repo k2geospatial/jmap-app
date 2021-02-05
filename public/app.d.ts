@@ -1766,7 +1766,12 @@ declare namespace JMap {
        * 
        * Add an action to the JMap User menu (visible in the project selection panel).
        * 
-       * An action must set the "href" OR the "onCLick" methods, but not both.
+       * An action must set the "href" OR the "onCLick" parameters, but not both.
+       * 
+       * **Displaying the action's label in the UI**
+       * The action's label will be translated by JMap NG translation engine if a JTranslationItem is passed, 
+       * otherwise the simple string will be used.
+       * (see See [[JMap.Language.translate]] and [[JMap.Language.addBundle]] for more details on translations)
        * 
        * @param action : the action to add
        * @param index : will insert at a specific index in the menu. Start at 0. If index is not correct insert at the end
@@ -1775,7 +1780,7 @@ declare namespace JMap {
        * JMap.Application.User.addPopupMenuAction({
        *   id: "my-unique-id",
        *   icon: "fas fa-info-circle",
-       *   label: "Custom documentation",
+       *   label: {  key: "my.custom.menu.item.translation.key", bundleId: "myTranslationBundleId"}, // label can also be a simple string
        *   isHelp: true, // if true will be displayed in the JMap help menu
        *   onClick: () => window.open("https://link-to-my-documentation", "_blanck")
        * }, 2)

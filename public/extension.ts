@@ -20,7 +20,7 @@ declare interface JAppExtension {
   /**
    * The panel icon tooltip.
    */
-  panelTooltip: string
+  panelTooltip: string | JTranslationItem
   /**
    * The panel creation method.
    * 
@@ -57,7 +57,7 @@ declare interface JAppExtension {
    * If provided, will create a header on top of the panel having
    * the same style of the others panels headers.
    */
-  panelTitle?: string
+  panelTitle?: string | JTranslationItem
   /**
    * An optional map interactor.
    * 

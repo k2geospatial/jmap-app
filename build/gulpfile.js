@@ -12,7 +12,7 @@ const typedoc = require("gulp-typedoc")
 const existEnvConfigFile = fs.existsSync("env-config.js")
 if (existEnvConfigFile) {
   // we'll use variables defined in this file instead of the ones defined by sys. env.
-  const toCheckVariables = [ 'NODE_ENV', "BUILD_DIR", "COPY_DIR" ]
+  const toCheckVariables = [ 'NODE_ENV', "BUILD_DIR", "COPY_DIR", "SOURCE_DIRS" ]
   const envConfig = require('./env-config.js')
   
   toCheckVariables.forEach(variable => {
@@ -32,6 +32,7 @@ const packageJSON = JSON.parse(fs.readFileSync("../package.json"))
 const newNpmVersion = packageJSON.version
 const DOC_LATEST_DIR = join(ROOT_DIR, "./docs/latest")
 const DOC_DIR = process.env.DOC_DIR ? join(ROOT_DIR, process.env.DOC_DIR) : join(DOC_ROOT_DIR, `v${newNpmVersion}`)
+const SOURCE_DIRS = process.env.SOURCE_DIRS ? process.env.SOURCE_DIRS : "jmap-app-js"
 
 console.log('Directories :')
 console.log(`  Doc dir  => ${DOC_ROOT_DIR}`)
@@ -43,12 +44,14 @@ gulp.task('copy', cb => {
   if (!process.env.COPY_DIR) {
     throw Error("Missing COPY_DIR env variable. Ex : set COPY_DIR='/Users/lmignonat/Desktop/'")
   }
-  
-  gulp.src([ join(ROOT_DIR, 'public/**/*') ])
-      .pipe(gulp.dest(join(process.env.COPY_DIR, "jmap-app-js/node_modules/jmap-app/public")))
-  gulp.src([ join(ROOT_DIR, 'index.ts') ])
-      .pipe(gulp.dest(join(process.env.COPY_DIR, "jmap-app-js/node_modules/jmap-app")))
-
+  const sourceDirs = SOURCE_DIRS.split(",").map(s => s.trim())
+  for (const sourceDir of sourceDirs) {
+    console.info(`Copy app files in "${join(process.env.COPY_DIR, `${sourceDir}`)}"`)
+    gulp.src([ join(ROOT_DIR, 'public/**/*') ])
+        .pipe(gulp.dest(join(process.env.COPY_DIR, `${sourceDir}/node_modules/jmap-app/public`)))
+    gulp.src([ join(ROOT_DIR, 'index.ts') ])
+        .pipe(gulp.dest(join(process.env.COPY_DIR, `${sourceDir}/node_modules/jmap-app`)))
+  }
   cb()
 })
 

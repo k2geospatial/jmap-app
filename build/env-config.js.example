@@ -1,0 +1,10 @@
+module.exports = {
+  /**
+   * COPY_DIR: The enclosing folder where all you projects are located
+   */  
+  COPY_DIR: "/Users/username/workspaces/",
+  /**
+   * SOURCE_DIRS: project folders where you want to copy jmap-app files 
+   */
+  SOURCE_DIRS: "jmap-app-js, my-extension-js"
+}

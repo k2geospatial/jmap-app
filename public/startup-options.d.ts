@@ -188,6 +188,31 @@ declare interface JApplicationOptions {
   disabledPanels?: string[]
 
   /**
+   * Controls the side panel default visibility state.
+   * 
+   * The JMap NG side panel is open by default when the application starts, but you can change this behaviour by using this option.
+   *  
+   * ```html
+   * <html>
+   *   ...
+   *   <body>
+   *     <script type="text/javascript">
+   *       window.JMAP_OPTIONS = {
+   *         ...
+   *         application: {
+   *           sidePanelInitialVisibility: false, // this will initially hide the panel
+   *           ...
+   *         }
+   *       }
+   *     </script>
+   *     ...
+   *   </body>
+   * </html>
+   * ```
+   */
+  sidePanelInitialVisibility: boolean
+
+  /**
    * If provided this function will be processed each time the application is ready :
    *  - A valid user session is set
    *  - A project is selected

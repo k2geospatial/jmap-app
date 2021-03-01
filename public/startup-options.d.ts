@@ -210,7 +210,7 @@ declare interface JApplicationOptions {
    * </html>
    * ```
    */
-  sidePanelInitialVisibility: boolean
+  sidePanelInitialVisibility?: boolean
 
   /**
    * If provided this function will be processed each time the application is ready :

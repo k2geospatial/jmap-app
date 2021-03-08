@@ -136,7 +136,7 @@ declare interface JApplicationOptions {
   /**
    * By default the active panel (the one displayed), is the "layer" panel.
    * 
-   * Standard application panels ids are : "project", "layer", "selection", "measure", "mapcontext", "print", "user".
+   * Standard application panels ids are : "layer", "selection", "measure", "mapcontext", "print", "user", "query", "annotation".
    * 
    * But if ***panel*** is defined, it will display the corresponding panel on the screen.
    * 
@@ -161,7 +161,7 @@ declare interface JApplicationOptions {
   panel?: string
 
   /**
-   * The application have multiple panels available by default : "project", "layer", "selection", "measure", "draw", "search", "add-feature", "print", "user"
+   * The application have multiple panels available by default : "layer", "selection", "measure", "mapcontext", "print", "user", "query", "annotation".
    * 
    * But you can tell the JMap application to disabled some panels. If a panel is disabled it will disappear on the left menu.
    * 

@@ -1761,6 +1761,7 @@ declare namespace JMap {
     }
 
     namespace User {
+
       /**
        * **JMap.Application.User.addPopupMenuAction**
        * 
@@ -1787,6 +1788,36 @@ declare namespace JMap {
        * ```
        */
       function addPopupMenuAction(action: JAppUserAction, index?: number): void
+
+      /**
+       * ***JMap.Application.User.existsPopupMenuActionById***
+       * 
+       * Returns true if an action menu exists for the given id, else false.
+       * 
+       * @param actionId the action menu id
+       * @throws if actionId is not a string (non empty)
+       * @example ```ts
+       * 
+       * // returns true if the action menu id="my-custom-action-menu" exists, else false
+       * JMap.Application.User.existsPopupMenuActionById("my-custom-action-menu")
+       * ```
+       */
+      function existsPopupMenuActionById(actionId: string): boolean
+
+      /**
+       * ***JMap.Application.User.removePopupMenuActionById***
+       * 
+       * Remove an existing action menu
+       * 
+       * @param actionId the action menu id
+       * @throws if actionId is not valid, or not found
+       * @example ```ts
+       * 
+       * // remove the action menu id="my-custom-action-menu"
+       * JMap.Application.User.removePopupMenuActionById("my-custom-action-menu")
+       * ```
+       */
+      function removePopupMenuActionById(actionId: string): void
     }
 
     namespace Extension {

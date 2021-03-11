@@ -174,6 +174,8 @@ export interface JAppQueryService {
 
 export interface JApplicationUserService {
   addPopupMenuAction(action: JAppUserAction, index?: number): void
+  existsPopupMenuActionById(actionId: string): boolean
+  removePopupMenuActionById(actionId: string): void
 }
 
 export interface JApplicationMainService {

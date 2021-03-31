@@ -26,6 +26,7 @@ declare interface JMapContextData {
   thumbnail: string
   annotations: JAppAnnotation[]
   annotationsTextMarkersProperties: JappTextMarkerProperties[]
+  extensionData?: { [extensionId: string]: any }
 }
 
 declare interface JMapContextDataLayerElement {
@@ -56,4 +57,31 @@ declare interface JMapContext {
   modificationDate?: string
   projectId?: string
   data: JMapContextData
+}
+
+declare interface JAppMapContextEventParams {
+  context: JMapContext
+  isExtensionDataSetById(extensionId: string): boolean
+  getExtensionDataById(extensionId: string): any
+}
+
+declare interface JAppMapContextSaveEventParams extends JAppMapContextEventParams {
+  isCreation: boolean
+}
+
+declare interface JAppMapContextBeforeSaveEventParams extends JAppMapContextSaveEventParams {
+  setExtensionDataById(extensionId: string, data: any): void
+  removeExtensionDataById(extensionId: string): void
+}
+
+declare interface JAppMapContextAfterSaveEventParams extends JAppMapContextSaveEventParams {
+  // nothing else
+}
+
+declare interface JAppMapContextBeforeApplyEventParams extends JAppMapContextEventParams {
+  // nothing else
+}
+
+declare interface JAppMapContextAfterApplyEventParams extends JAppMapContextEventParams  {
+  // nothing else
 }

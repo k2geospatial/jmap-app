@@ -339,8 +339,8 @@ export interface JAppAppEventModule extends JEventModule {
 
 export interface JAppMapContextEventModule extends JEventModule {
   on: {
-    beforeSave(listenerId: string, fn: (params: JAppMapContextBeforeSaveEventParams) => void): void
-    afterSave(listenerId: string, fn: (params: JAppMapContextAfterSaveEventParams) => void): void
+    beforeMapDataChange(listenerId: string, fn: (params: JAppMapContextBeforeMapDataChangeEventParams) => void): void
+    afterMapDataChange(listenerId: string, fn: (params: JAppMapContextAfterMapDataChangeEventParams) => void): void
     beforeApply(listenerId: string, fn: (params: JAppMapContextBeforeApplyEventParams) => void): void
     afterApply(listenerId: string, fn: (params: JAppMapContextAfterApplyEventParams) => void): void
   }

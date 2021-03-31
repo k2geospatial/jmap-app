@@ -1764,9 +1764,11 @@ declare namespace JMap {
         namespace on {
 
           /**
-           * ***JMap.Application.Event.MapContext.on.beforeSave***
+           * ***JMap.Application.Event.MapContext.on.beforeMapDataChange***
            * 
-           * This event is triggered before the map context is created or updated.
+           * This event is triggered before a context's map data is created or updated.
+           * 
+           * This event is not triggered when a context metadata is changed: title, description, default context, etc...
            * 
            * You can access and manage extension's data from this event, see example bellow.
            * 
@@ -1775,8 +1777,8 @@ declare namespace JMap {
            * @example ```ts
            * 
            * // Triggered before a map-context is created or updated
-           * JMap.Application.Event.MapContext.on.beforeSave("my-before-save-listener", params => {
-           *   console.info(`Before save map context id="${params.context.title}"`, params.context)
+           * JMap.Application.Event.MapContext.on.beforeMapDataChange("my-before-map-data-changed-listener", params => {
+           *   console.info(`Before map data changed for context id="${params.context.title}"`, params.context)
            *   console.info(`Is creation ="${params.isCreation}"`) // creation or update
            *   // you can check if some extension data has been set for this map-context
            *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
@@ -1790,12 +1792,14 @@ declare namespace JMap {
            * })
            * ```
            */
-          function beforeSave(listenerId: string, fn: (params: JAppMapContextBeforeSaveEventParams) => void): void
+          function beforeMapDataChange(listenerId: string, fn: (params: JAppMapContextBeforeMapDataChangeEventParams) => void): void
 
           /**
-           * ***JMap.Application.Event.MapContext.on.afterSave***
+           * ***JMap.Application.Event.MapContext.on.afterMapDataChange***
            * 
-           * This event is triggered before the map context is created or updated.
+           * This event is triggered after a context's map data is created or updated.
+           * 
+           * This event is not triggered when a context metadata is changed: title, description, default context, etc...
            * 
            * You can access extension's data from this event, see example bellow.
            * 
@@ -1804,8 +1808,8 @@ declare namespace JMap {
            * @example ```ts
            * 
            * // Triggered after a map-context is created or updated
-           * JMap.Application.Event.MapContext.on.afterSave("my-after-save-listener", params => {
-           *   console.info(`After save map context id="${params.context.title}"`, params.context)
+           * JMap.Application.Event.MapContext.on.afterMapDataChange("my-after-map-data-change-listener", params => {
+           *   console.info(`After map data change for context id="${params.context.title}"`, params.context)
            *   console.info(`Is creation ="${params.isCreation}"`) // creation or update
            *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
            *   if (isExtensionDataSet) {
@@ -1816,12 +1820,12 @@ declare namespace JMap {
            * })
            * ```
            */
-          function afterSave(listenerId: string, fn: (params: JAppMapContextAfterSaveEventParams) => void): void
+          function afterMapDataChange(listenerId: string, fn: (params: JAppMapContextAfterMapDataChangeEventParams) => void): void
 
           /**
            * ***JMap.Application.Event.MapContext.on.beforeApply***
            * 
-           * This event is triggered before the map context is created or updated.
+           * This event is triggered before the map context is applied.
            * 
            * You can access extension's data from this event, see example bellow.
            * 
@@ -1830,7 +1834,7 @@ declare namespace JMap {
            * @example ```ts
            * 
            * // Triggered before a map-context is applied
-           * JMap.Application.Event.MapContext.on.beforeApply("my-listener", params => {
+           * JMap.Application.Event.MapContext.on.beforeApply("my-before-apply-listener", params => {
            *   console.info(`Before apply map context id="${params.context.title}"`, params.context)
            *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
            *   if (!isExtensionDataSet) {
@@ -1846,7 +1850,7 @@ declare namespace JMap {
           /**
            * ***JMap.Application.Event.MapContext.on.afterApply***
            * 
-           * This event is triggered before the map context is created or updated.
+           * This event is triggered after the map context is applied.
            * 
            * You can access extension's data from this event, see example bellow.
            * 
@@ -1855,7 +1859,7 @@ declare namespace JMap {
            * @example ```ts
            * 
            * // Triggered after a map-context is applied
-           * JMap.Application.Event.MapContext.on.afterApply("my-after-listener", params => {
+           * JMap.Application.Event.MapContext.on.afterApply("my-after-apply-listener", params => {
            *   console.info(`After apply map context id="${params.context.title}"`, params.context)
            *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
            *   if (!isExtensionDataSet) {

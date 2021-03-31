@@ -65,16 +65,16 @@ declare interface JAppMapContextEventParams {
   getExtensionDataById(extensionId: string): any
 }
 
-declare interface JAppMapContextSaveEventParams extends JAppMapContextEventParams {
+declare interface JAppMapContextMapDataEventParams extends JAppMapContextEventParams {
   isCreation: boolean
 }
 
-declare interface JAppMapContextBeforeSaveEventParams extends JAppMapContextSaveEventParams {
+declare interface JAppMapContextBeforeMapDataChangeEventParams extends JAppMapContextMapDataEventParams {
   setExtensionDataById(extensionId: string, data: any): void
   removeExtensionDataById(extensionId: string): void
 }
 
-declare interface JAppMapContextAfterSaveEventParams extends JAppMapContextSaveEventParams {
+declare interface JAppMapContextAfterMapDataChangeEventParams extends JAppMapContextMapDataEventParams {
   // nothing else
 }
 

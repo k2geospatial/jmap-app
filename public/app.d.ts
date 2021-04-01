@@ -1770,7 +1770,7 @@ declare namespace JMap {
            * 
            * This event is not triggered when a context metadata is changed: title, description, default context, etc...
            * 
-           * You can access and manage extension's data from this event, see example bellow.
+           * You can access and manage extension's data from this event, see example below.
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function
@@ -1801,7 +1801,7 @@ declare namespace JMap {
            * 
            * This event is not triggered when a context metadata is changed: title, description, default context, etc...
            * 
-           * You can access extension's data from this event, see example bellow.
+           * You can access extension's data from this event, see example below.
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function
@@ -1827,7 +1827,7 @@ declare namespace JMap {
            * 
            * This event is triggered before the map context is applied.
            * 
-           * You can access extension's data from this event, see example bellow.
+           * You can access extension's data from this event, see example below.
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function
@@ -1852,7 +1852,7 @@ declare namespace JMap {
            * 
            * This event is triggered after the map context is applied.
            * 
-           * You can access extension's data from this event, see example bellow.
+           * You can access extension's data from this event, see example below.
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function

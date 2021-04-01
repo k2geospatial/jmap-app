@@ -211,6 +211,7 @@ export interface JApplicationUIService {
 
 export interface JAppEventService {
   Main: JAppAppEventModule
+  MapContext: JAppMapContextEventModule
 }
 
 export interface JAppSelectionService {
@@ -332,9 +333,15 @@ export interface JAppLayerService {
 
 export interface JAppAppEventModule extends JEventModule {
   on: {
-    appReady(
-      listenerId: string,
-      fn: () => void
-    ): void
+    appReady(listenerId: string, fn: () => void): void
+  }
+}
+
+export interface JAppMapContextEventModule extends JEventModule {
+  on: {
+    beforeMapDataChange(listenerId: string, fn: (params: JAppMapContextBeforeMapDataChangeEventParams) => void): void
+    afterMapDataChange(listenerId: string, fn: (params: JAppMapContextAfterMapDataChangeEventParams) => void): void
+    beforeApply(listenerId: string, fn: (params: JAppMapContextBeforeApplyEventParams) => void): void
+    afterApply(listenerId: string, fn: (params: JAppMapContextAfterApplyEventParams) => void): void
   }
 }

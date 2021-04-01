@@ -1730,6 +1730,7 @@ declare namespace JMap {
     namespace Event {
       namespace Main {
         namespace on {
+
           /**
            * ***JMap.Application.Event.Main.on.appReady***
            * 
@@ -1756,6 +1757,120 @@ declare namespace JMap {
            * ```
            */
           function appReady(listenerId: string, fn: () => void): void
+        }
+      }
+
+      namespace MapContext {
+        namespace on {
+
+          /**
+           * ***JMap.Application.Event.MapContext.on.beforeMapDataChange***
+           * 
+           * This event is triggered before a context's map data is created or updated.
+           * 
+           * This event is not triggered when a context metadata is changed: title, description, default context, etc...
+           * 
+           * You can access and manage extension's data from this event, see example below.
+           * 
+           * @param listenerId Your listener id (must be unique)
+           * @param fn Your listener function
+           * @example ```ts
+           * 
+           * // Triggered before a map-context is created or updated
+           * JMap.Application.Event.MapContext.on.beforeMapDataChange("my-before-map-data-changed-listener", params => {
+           *   console.info(`Before map data changed for context id="${params.context.title}"`, params.context)
+           *   console.info(`Is creation ="${params.isCreation}"`) // creation or update
+           *   // you can check if some extension data has been set for this map-context
+           *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
+           *   if (isExtensionDataSet) {
+           *     // and you can delete this data if you want
+           *     params.removeExtensionDataById("my-extension")
+           *   }
+           *   // it's not necessary to delete before setting the data, update will overwrite the existing data
+           *   params.setExtensionDataById("my-extension", { count: 0, description: "your own extension data" })
+           *   console.info("Extension data has been set and will be saved", params.getExtensionDataById("my-extension"))
+           * })
+           * ```
+           */
+          function beforeMapDataChange(listenerId: string, fn: (params: JAppMapContextBeforeMapDataChangeEventParams) => void): void
+
+          /**
+           * ***JMap.Application.Event.MapContext.on.afterMapDataChange***
+           * 
+           * This event is triggered after a context's map data is created or updated.
+           * 
+           * This event is not triggered when a context metadata is changed: title, description, default context, etc...
+           * 
+           * You can access extension's data from this event, see example below.
+           * 
+           * @param listenerId Your listener id (must be unique)
+           * @param fn Your listener function
+           * @example ```ts
+           * 
+           * // Triggered after a map-context is created or updated
+           * JMap.Application.Event.MapContext.on.afterMapDataChange("my-after-map-data-change-listener", params => {
+           *   console.info(`After map data change for context id="${params.context.title}"`, params.context)
+           *   console.info(`Is creation ="${params.isCreation}"`) // creation or update
+           *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
+           *   if (isExtensionDataSet) {
+           *     console.info("Saved extension data", params.getExtensionDataById("my-extension")) 
+           *   } else {
+           *     console.info("No extension data")
+           *   }
+           * })
+           * ```
+           */
+          function afterMapDataChange(listenerId: string, fn: (params: JAppMapContextAfterMapDataChangeEventParams) => void): void
+
+          /**
+           * ***JMap.Application.Event.MapContext.on.beforeApply***
+           * 
+           * This event is triggered before the map context is applied.
+           * 
+           * You can access extension's data from this event, see example below.
+           * 
+           * @param listenerId Your listener id (must be unique)
+           * @param fn Your listener function
+           * @example ```ts
+           * 
+           * // Triggered before a map-context is applied
+           * JMap.Application.Event.MapContext.on.beforeApply("my-before-apply-listener", params => {
+           *   console.info(`Before apply map context id="${params.context.title}"`, params.context)
+           *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
+           *   if (!isExtensionDataSet) {
+           *     console.info("No extension data in map-context")
+           *   } else {
+           *     console.info("Extension map context data = ", params.getExtensionDataById("my-extension"))
+           *   }
+           * })
+           * ```
+           */
+          function beforeApply(listenerId: string, fn: (params: JAppMapContextBeforeApplyEventParams) => void): void
+          
+          /**
+           * ***JMap.Application.Event.MapContext.on.afterApply***
+           * 
+           * This event is triggered after the map context is applied.
+           * 
+           * You can access extension's data from this event, see example below.
+           * 
+           * @param listenerId Your listener id (must be unique)
+           * @param fn Your listener function
+           * @example ```ts
+           * 
+           * // Triggered after a map-context is applied
+           * JMap.Application.Event.MapContext.on.afterApply("my-after-apply-listener", params => {
+           *   console.info(`After apply map context id="${params.context.title}"`, params.context)
+           *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
+           *   if (!isExtensionDataSet) {
+           *     console.info("No extension data in map-context")
+           *   } else {
+           *     console.info("Extension map context data = ", params.getExtensionDataById("my-extension"))
+           *   }
+           * })
+           * ```
+           */
+          function afterApply(listenerId: string, fn: (params: JAppMapContextAfterApplyEventParams) => void): void
         }
       }
     }

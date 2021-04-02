@@ -211,6 +211,7 @@ export interface JApplicationUIService {
 
 export interface JAppEventService {
   Main: JAppAppEventModule
+  Layer: JAppLayerEventModule
   MapContext: JAppMapContextEventModule
 }
 
@@ -334,6 +335,12 @@ export interface JAppLayerService {
 export interface JAppAppEventModule extends JEventModule {
   on: {
     appReady(listenerId: string, fn: () => void): void
+  }
+}
+
+export interface JAppLayerEventModule extends JEventModule {
+  on: {
+    doubleClick(listenerId: string, fn: (params: JAppLayerEventParams) => void): void
   }
 }
 

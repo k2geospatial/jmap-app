@@ -1760,6 +1760,36 @@ declare namespace JMap {
         }
       }
 
+      namespace Layer {
+        namespace on {
+
+          /**
+           * ***JMap.Application.Event.Layer.on.doubleClick***
+           * 
+           * This event is triggered when a user double clicks on a layer name in the hierarchical tree of the layers panel
+           * 
+           * The layer is received as a param property of the event, you can then take any action that would be executed on double click for this layer
+           * 
+           * @param listenerId Your listener id (must be unique)
+           * @param fn Your listener function
+           * @example ```ts
+           * 
+           * // Triggered when a user double clicks on a layer name 
+           * JMap.Application.Event.Layer.on.doubleClick("my-layer-double-click-listener", params => {
+           *   const layer = params.layer
+           *   console.info(`The following layer has been double clicked by the current user: "${layer.name}". Its visibility will be toggled`)
+           *   if (!JMap.Layer.isVisible(layer.id)) {
+           *     JMap.Layer.ensureLayerIsVisible(layer.id)
+           *   } else {
+           *     JMap.Layer.setVisible(layer.id, false)
+           *   }
+           * })
+           * ```
+           */
+          function doubleClick(listenerId: string, fn: (params: JAppLayerEventParams) => void): void
+        }
+      }
+
       namespace MapContext {
         namespace on {
 

@@ -53,6 +53,19 @@ declare namespace JMap {
      * ```
      */
     function openDocumentation(): void
+
+    /**
+    * **JMap.Application.openUserManual**
+    * 
+    * Open the JMap NG online user manual, in a new tab.
+    * 
+    * @example ```ts
+    * 
+    * // Open the JMap NG Application online user manual, in a new tab
+    * JMap.Application.openUserManual()
+    * ```
+    */
+    function openUserManual(): void
     
     /**
      * **JMap.Application.Annotation**

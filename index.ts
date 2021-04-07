@@ -182,6 +182,7 @@ export interface JApplicationMainService {
   getVersion(): string
   getApiVersion(): string
   openDocumentation(): void
+  openUserManual(): void
 }
 
 export interface JApplicationUIService {

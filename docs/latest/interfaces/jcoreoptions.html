@@ -111,7 +111,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					<p>Below a full example of how to start the JMap library in a web page,
 					where parameters <strong><em>ngToken</em></strong> and <strong><em>ngProjectId</em></strong> are get from the url :</p>
-					<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+					<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"Content-Type"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"text/html;charset=UTF-8"</span>&gt;</span>
@@ -167,6 +167,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreoptions.html#loadprojectthumbnails" class="tsd-kind-icon">load<wbr>Project<wbr>Thumbnails</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreoptions.html#locale" class="tsd-kind-icon">locale</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreoptions.html#map" class="tsd-kind-icon">map</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreoptions.html#onready" class="tsd-kind-icon">on<wbr>Ready</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreoptions.html#projectid" class="tsd-kind-icon">project<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreoptions.html#projectname" class="tsd-kind-icon">project<wbr>Name</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreoptions.html#restbaseurl" class="tsd-kind-icon">rest<wbr>Base<wbr>Url</a></li>
@@ -228,7 +229,7 @@
 					<div class="tsd-signature tsd-kind-icon">application<span class="tsd-signature-symbol">:</span> <a href="japplicationoptions.html" class="tsd-signature-type">JApplicationOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/83ebf22/public/startup-options.d.ts#L32">public/startup-options.d.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/bf2f5c7/public/startup-options.d.ts#L32">public/startup-options.d.ts:32</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -250,7 +251,7 @@
          <span class="hljs-attr">token</span>: <span class="hljs-number">2345677654</span>
        },
        <span class="hljs-attr">application</span>: {
-         <span class="hljs-comment">// will create the application in the div id="custom-app"</span>
+         <span class="hljs-comment">// will create the application in the div id="custom-app"</span>
          <span class="hljs-attr">containerId</span>: <span class="hljs-string">"custom-app"</span>
        }
      }
@@ -302,7 +303,7 @@
 					<div class="tsd-signature tsd-kind-icon">extensions<wbr>Url<wbr>Override<span class="tsd-signature-symbol">:</span> <a href="jextensionserveroverride.html" class="tsd-signature-type">JExtensionServerOverride</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/jmap-core/public/jmap/startup-options.d.ts:408</li>
+							<li>Defined in node_modules/jmap-core/public/jmap/startup-options.d.ts:413</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -412,6 +413,21 @@ JMap.Project.getById(<span class="hljs-number">3</span>).base64ImageThumbnail <s
 							<p>All map related options.</p>
 						</div>
 						<p>Click on <a href="jcoremapoptions.html">JCoreMapOptions</a> to get details.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="onready" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> on<wbr>Ready</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Ready<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/startup-options.d.ts:396</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Call when the JMap library is loaded</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
@@ -548,7 +564,7 @@ JMap.Project.getById(<span class="hljs-number">3</span>).base64ImageThumbnail <s
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 						<p>If you don&#39;t want to make an AJAX call to the REST API, you can use the JMap library to login (JMap will make the AJAX call to the rest API). But you have to wait for the lib to be loaded. To know if the lib has been loaded you can check if the JMAp namespace exist or not. Bellow the example :</p>
-						<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+						<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     ...
     <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"jmap_wrapper"</span>&gt;</span>
@@ -672,6 +688,9 @@ JMap.Project.getById(<span class="hljs-number">3</span>).base64ImageThumbnail <s
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 								<a href="jcoreoptions.html#map" class="tsd-kind-icon">map</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreoptions.html#onready" class="tsd-kind-icon">on<wbr>Ready</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 								<a href="jcoreoptions.html#projectid" class="tsd-kind-icon">project<wbr>Id</a>

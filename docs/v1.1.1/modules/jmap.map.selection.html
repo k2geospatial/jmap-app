@@ -93,6 +93,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.map.selection.html#getselectedfeatureidsforlayer" class="tsd-kind-icon">get<wbr>Selected<wbr>Feature<wbr>Ids<wbr>For<wbr>Layer</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.map.selection.html#getselectedfeatures" class="tsd-kind-icon">get<wbr>Selected<wbr>Features</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.map.selection.html#getselectedfeaturesforlayer" class="tsd-kind-icon">get<wbr>Selected<wbr>Features<wbr>For<wbr>Layer</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.map.selection.html#getselectioncentroid" class="tsd-kind-icon">get<wbr>Selection<wbr>Centroid</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.map.selection.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.map.selection.html#isemptybylayerid" class="tsd-kind-icon">is<wbr>Empty<wbr>ByLayer<wbr>Id</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.map.selection.html#removefeaturesfromlayerselection" class="tsd-kind-icon">remove<wbr>Features<wbr>From<wbr>Layer<wbr>Selection</a></li>
@@ -123,7 +124,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3384</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3494</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -193,7 +194,7 @@ JMap.Map.Selection.addFeaturesToLayerSelection(<span class="hljs-number">4</span
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3440</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3550</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -235,7 +236,7 @@ JMap.Map.Selection.clearLayersSelection([<span class="hljs-number">4</span>, <sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3425</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3535</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -281,7 +282,7 @@ JMap.Map.Selection.clearSelection()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3101</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3211</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -322,7 +323,7 @@ JMap.Map.Selection.getSelectedFeatureIdsForLayer(<span class="hljs-number">3</sp
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3066</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3176</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -356,7 +357,7 @@ JMap.Map.Selection.getSelectedFeatures()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3080</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3190</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -384,6 +385,53 @@ JMap.Map.Selection.getSelectedFeaturesForLayer(<span class="hljs-number">3</span
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getselectioncentroid" class="tsd-anchor"></a>
+					<h3>get<wbr>Selection<wbr>Centroid</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Selection<wbr>Centroid<span class="tsd-signature-symbol">(</span>selection<span class="tsd-signature-symbol">: </span><a href="../interfaces/jmapselection.html" class="tsd-signature-type">JMapSelection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/jlocation.html" class="tsd-signature-type">JLocation</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3161</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong><em>JMap.Map.Selection.getSelectionCentroid</em></strong></p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>Error if selection is empty</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// get the current selected features by layer id</span>
+<span class="hljs-keyword">const</span> selection = JMap.Map.Selection.getSelectedFeatures()
+
+<span class="hljs-comment">// compute the centroid of the selection</span>
+<span class="hljs-keyword">const</span> centroid = JMap.Map.Selection.getSelectionCentroid(selection)
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`centroid of selection is located at: LAT: <span class="hljs-subst">${centroid.y}</span>, LON: <span class="hljs-subst">${centroid.x}</span>`</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>selection: <a href="../interfaces/jmapselection.html" class="tsd-signature-type">JMapSelection</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>a JMapSelection object</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/jlocation.html" class="tsd-signature-type">JLocation</a></h4>
+							<p>a JLocation representing the centroid of the selection</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="isempty" class="tsd-anchor"></a>
 					<h3>is<wbr>Empty</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -393,7 +441,7 @@ JMap.Map.Selection.getSelectedFeaturesForLayer(<span class="hljs-number">3</span
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3036</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3126</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -424,7 +472,7 @@ JMap.Map.Selection.isEmpty()</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3051</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3141</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -461,7 +509,7 @@ JMap.Map.Selection.isEmptyByLayerId(<span class="hljs-number">5</span>)</code></
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3405</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3515</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -513,7 +561,7 @@ JMap.Map.Selection.removeFeaturesFromLayerSelection(<span class="hljs-number">4<
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3217</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3327</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -563,7 +611,7 @@ JMap.Map.Selection.selectOnAllLayersAtLocation({ x: <span class="hljs-number">34
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3238</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3348</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -616,7 +664,7 @@ JMap.Map.Selection.selectOnAllLayersFromCircle({
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3260</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3370</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -670,7 +718,7 @@ JMap.Map.Selection.selectOnAllLayersFromLine([
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3283</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3393</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -725,7 +773,7 @@ JMap.Map.Selection.selectOnAllLayersFromPolygon([
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3121</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3231</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -781,7 +829,7 @@ JMap.Map.Selection.selectOnOneLayerAtLocation(<span class="hljs-number">4</span>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3146</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3256</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -843,7 +891,7 @@ JMap.Map.Selection.selectOnOneLayerFromCircle(
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3172</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3282</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -906,7 +954,7 @@ JMap.Map.Selection.selectOnOneLayerFromLine(
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3198</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3308</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -969,7 +1017,7 @@ JMap.Map.Selection.selectOnOneLayerFromPolygon(
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3322</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3432</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1039,7 +1087,7 @@ JMap.Map.Selection.setLayerSelection(<span class="hljs-number">4</span>, [
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3345</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3455</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1139,6 +1187,9 @@ JMap.Layer.setLayersSelection([
 								<a href="jmap.mouseover.html">Mouse<wbr>Over</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.photo.html">Photo</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.project.html">Project</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -1173,6 +1224,9 @@ JMap.Layer.setLayersSelection([
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.map.selection.html#getselectedfeaturesforlayer" class="tsd-kind-icon">get<wbr>Selected<wbr>Features<wbr>For<wbr>Layer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.map.selection.html#getselectioncentroid" class="tsd-kind-icon">get<wbr>Selection<wbr>Centroid</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.map.selection.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>

@@ -83,6 +83,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.feature.html#deletebyid" class="tsd-kind-icon">delete<wbr>ById</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.feature.html#deletebyids" class="tsd-kind-icon">delete<wbr>ByIds</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.feature.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.feature.html#getbyids" class="tsd-kind-icon">get<wbr>ByIds</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.feature.html#updategeometry" class="tsd-kind-icon">update<wbr>Geometry</a></li>
@@ -103,14 +104,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:330</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:379</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.Feature.deleteById</strong></p>
 								</div>
-								<p>Delete the feature for the given layer and feature id.</p>
+								<p>Delete the feature for the given layer and feature ids.</p>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
 									<dd><p>if layer or feature not found</p>
@@ -145,6 +146,57 @@ JMap.Feature
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="deletebyids" class="tsd-anchor"></a>
+					<h3>delete<wbr>ByIds</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>ByIds<span class="tsd-signature-symbol">(</span>layerId<span class="tsd-signature-symbol">: </span><a href="../globals.html#jid" class="tsd-signature-type">JId</a>, featureIds<span class="tsd-signature-symbol">: </span><a href="../globals.html#jid" class="tsd-signature-type">JId</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/jfeaturedeletebyidsresult.html" class="tsd-signature-type">JFeatureDeleteByIdsResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:398</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Feature.deleteByIds</strong></p>
+								</div>
+								<p>Delete the features for the given layer and features ids.</p>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>if layer or feature not found</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// delete 3 features on layer id="3"</span>
+JMap.Feature
+ .deleteByIds(<span class="hljs-number">3</span>, [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">16</span>])
+ .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.info(<span class="hljs-string">"Features have been deleted"</span>))
+ .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(<span class="hljs-string">"An error occured"</span>, error))</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>layerId: <a href="../globals.html#jid" class="tsd-signature-type">JId</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the JMap layer id</p>
+									</div>
+								</li>
+								<li>
+									<h5>featureIds: <a href="../globals.html#jid" class="tsd-signature-type">JId</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the JMap feature ids to delete</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/jfeaturedeletebyidsresult.html" class="tsd-signature-type">JFeatureDeleteByIdsResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="getbyid" class="tsd-anchor"></a>
 					<h3>get<wbr>ById</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -154,7 +206,7 @@ JMap.Feature
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:269</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:318</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -205,7 +257,7 @@ JMap.Feature
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:288</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:337</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -256,7 +308,7 @@ JMap.Feature
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:311</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:360</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,6 +396,9 @@ JMap.Feature
 								<a href="jmap.mouseover.html">Mouse<wbr>Over</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.photo.html">Photo</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.project.html">Project</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -363,6 +418,9 @@ JMap.Feature
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.feature.html#deletebyid" class="tsd-kind-icon">delete<wbr>ById</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.feature.html#deletebyids" class="tsd-kind-icon">delete<wbr>ByIds</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.feature.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a>

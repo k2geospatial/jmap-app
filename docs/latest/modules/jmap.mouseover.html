@@ -91,6 +91,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.mouseover.html#getmouseovercontent" class="tsd-kind-icon">get<wbr>Mouse<wbr>Over<wbr>Content</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.mouseover.html#ispopupopened" class="tsd-kind-icon">is<wbr>Popup<wbr>Opened</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.mouseover.html#openpopup" class="tsd-kind-icon">open<wbr>Popup</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.mouseover.html#openpopupforselection" class="tsd-kind-icon">open<wbr>Popup<wbr>For<wbr>Selection</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.mouseover.html#processjsandphotosforcontent" class="tsd-kind-icon">processJSAnd<wbr>Photos<wbr>For<wbr>Content</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.mouseover.html#renderforfeaturesatlocation" class="tsd-kind-icon">render<wbr>For<wbr>Features<wbr>AtLocation</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.mouseover.html#renderforfeaturesselection" class="tsd-kind-icon">render<wbr>For<wbr>Features<wbr>Selection</a></li>
@@ -111,7 +112,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3694</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3804</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -133,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3790</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3925</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -202,7 +203,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3689</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3799</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -218,27 +219,76 @@
 					<a name="openpopup" class="tsd-anchor"></a>
 					<h3>open<wbr>Popup</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">open<wbr>Popup<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><a href="../interfaces/jlocation.html" class="tsd-signature-type">JLocation</a>, html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">open<wbr>Popup<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/jmouseoveropenpopupparams.html" class="tsd-signature-type">JMouseOverOpenPopupParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3700</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3817</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p><strong>JMap.MouseOver.openPopup</strong></p>
 								</div>
+								<p>Displays an arbitrary popup at an arbitrary location on the map</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+JMap.MouseOver.openPopup({ html: <span class="hljs-string">"&lt;br /&gt;&lt;div style='background-color:#ff8888'&gt;&lt;br /&gt;&lt;br /&gt;this is a simple mouseOver&lt;br /&gt;&lt;br /&gt;&lt;/div&gt;"</span>, location: { y: <span class="hljs-number">45.5</span>, x:<span class="hljs-number">-73.5</span> }, toEvalJS: [<span class="hljs-string">"alert('This is a test');"</span>] })</code></pre>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>location: <a href="../interfaces/jlocation.html" class="tsd-signature-type">JLocation</a></h5>
+									<h5>params: <a href="../interfaces/jmouseoveropenpopupparams.html" class="tsd-signature-type">JMouseOverOpenPopupParams</a></h5>
 								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="openpopupforselection" class="tsd-anchor"></a>
+					<h3>open<wbr>Popup<wbr>For<wbr>Selection</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">open<wbr>Popup<wbr>For<wbr>Selection<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/jmouseoveropenpopupforselectionparams.html" class="tsd-signature-type">JMouseOverOpenPopupForSelectionParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3835</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.MouseOver.openPopupForSelection</strong></p>
+								</div>
+								<p>Displays a standard MouseOver popup, based on a selection of features. You can specify an optional location to display
+								the popup on the map, as well as an option to specify if the map shoud pan to the popup&#39;s location</p>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>Error if the user-defined location is invalid or if the pan-to option is not a boolean</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// display a MouseOver popup using the current selection and a custom location</span>
+<span class="hljs-keyword">const</span> currentSelection = JMap.Map.Selection.getSelectedFeatures()
+<span class="hljs-keyword">const</span> myLocation = {x:<span class="hljs-number">-73</span>, y:<span class="hljs-number">46</span>}
+JMap.MouseOver.openPopupForSelection({ selection: currentSelection, location: myLocation, panToLocation: <span class="hljs-literal">true</span> })</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
 								<li>
-									<h5>html: <span class="tsd-signature-type">string</span></h5>
+									<h5>params: <a href="../interfaces/jmouseoveropenpopupforselectionparams.html" class="tsd-signature-type">JMouseOverOpenPopupForSelectionParams</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A JMouseOverOpenPopupForSelectionParams object</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -255,7 +305,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3818</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3953</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -308,7 +358,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3722</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3857</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -361,7 +411,7 @@ JMap.MouseOver.renderForFeaturesAtLocation(<span class="hljs-string">"my-custom-
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/jmap-core/public/core.d.ts:3749</li>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:3884</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -458,6 +508,9 @@ JMap.MouseOver.renderForFeaturesSelection(<span class="hljs-string">"my-custom-d
 								<a href="jmap.mouseover.html">Mouse<wbr>Over</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.photo.html">Photo</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.project.html">Project</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -486,6 +539,9 @@ JMap.MouseOver.renderForFeaturesSelection(<span class="hljs-string">"my-custom-d
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.mouseover.html#openpopup" class="tsd-kind-icon">open<wbr>Popup</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.mouseover.html#openpopupforselection" class="tsd-kind-icon">open<wbr>Popup<wbr>For<wbr>Selection</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.mouseover.html#processjsandphotosforcontent" class="tsd-kind-icon">processJSAnd<wbr>Photos<wbr>For<wbr>Content</a>

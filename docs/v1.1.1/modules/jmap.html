@@ -95,6 +95,7 @@ JMap.getVersion()</code></pre>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.layer.html" class="tsd-kind-icon">Layer</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.map.html" class="tsd-kind-icon">Map</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.mouseover.html" class="tsd-kind-icon">Mouse<wbr>Over</a></li>
+								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.photo.html" class="tsd-kind-icon">Photo</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.project.html" class="tsd-kind-icon">Project</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.query.html" class="tsd-kind-icon">Query</a></li>
 								<li class="tsd-kind-module tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.server.html" class="tsd-kind-icon">Server</a></li>
@@ -109,6 +110,7 @@ JMap.getVersion()</code></pre>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.html#getos" class="tsd-kind-icon">getOS</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.html#getresturl" class="tsd-kind-icon">get<wbr>Rest<wbr>Url</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.html#getversion" class="tsd-kind-icon">get<wbr>Version</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.html#loadjsfile" class="tsd-kind-icon">loadJSFile</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.html#opendocumentation" class="tsd-kind-icon">open<wbr>Documentation</a></li>
 							</ul>
 						</section>
@@ -275,6 +277,42 @@ JMap.getVersion()</code></pre>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="loadjsfile" class="tsd-anchor"></a>
+					<h3>loadJSFile</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">loadJSFile<span class="tsd-signature-symbol">(</span>fileUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/jmap-core/public/core.d.ts:112</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.loadJSFile</strong></p>
+								</div>
+								<p>Load an external JS File then resolve when file has been loaded.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// load your custom JS file dynamically</span>
+JMap.loadJSFile(<span class="hljs-string">"https://mysever/toLoadFile.js"</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fileUrl: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="opendocumentation" class="tsd-anchor"></a>
 					<h3>open<wbr>Documentation</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -352,6 +390,9 @@ JMap.openDocumentation()</code></pre>
 								<a href="jmap.mouseover.html">Mouse<wbr>Over</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.photo.html">Photo</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 								<a href="jmap.project.html">Project</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
@@ -383,6 +424,9 @@ JMap.openDocumentation()</code></pre>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.html#getversion" class="tsd-kind-icon">get<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.html#loadjsfile" class="tsd-kind-icon">loadJSFile</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="jmap.html#opendocumentation" class="tsd-kind-icon">open<wbr>Documentation</a>

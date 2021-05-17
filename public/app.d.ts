@@ -413,6 +413,61 @@ declare namespace JMap {
     }
 
     /**
+     * **JMap.Application.Feature**
+     * 
+     * You can manage everything related to app features here.
+     */
+    namespace Feature {
+
+      /**
+       * **JMap.Application.Feature.openEditMenuById**
+       * 
+       * Open the feature edit menu for single edition.
+       * 
+       * @param layerId the JMap layer id
+       * @param featureId the feature id
+       * @example ```ts
+       * 
+       * // open edit menu (single edition) for layer id=5, and feature id=234
+       * JMap.Application.Feature.openEditMenuById(5, 234)
+       * ```
+       */
+      function openEditMenuById(layerId: JId, featureId: JId): Promise<GeoJSON.Feature>
+
+      /**
+       * **JMap.Application.Feature.openEditMenuByIds**
+       * 
+       * Open the feature edit menu for multiple edition.
+       * 
+       * @param layerId the JMap layer id
+       * @param featureIds an array of features ids
+       * @example ```ts
+       * 
+       * // open edit menu (multiple edition) for layer id=5, and features id=234, 452 and 176
+       * JMap.Application.Feature.openEditMenuByIds(5, [234, 452, 176])
+       * ```
+       */
+      function openEditMenuByIds(layerId: JId, featureIds: JId[]): Promise<GeoJSON.Feature[]>
+
+      /**
+       * **JMap.Application.Feature.closeEditMenu**
+       * 
+       * Close the feature edit menu if visible.
+       * 
+       * If not visible do nothing.
+       * 
+       * @param layerId the JMap layer id
+       * @param featureIds an array of features ids
+       * @example ```ts
+       * 
+       * // close the edit menu if visible
+       * JMap.Application.Feature.closeEditMenu()
+       * ```
+       */
+      function closeEditMenu(): void
+    }
+
+    /**
      * **JMap.Application.Selection**
      * 
      * You can manage the application measure tools here.

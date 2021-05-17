@@ -13,6 +13,12 @@ export interface JAppState {
   annotation: JAppAnnotationState
   message: JAppMessageState
   user: JAppUserState
+  feature: JAppFeatureState
+}
+
+export interface JAppFeatureState {
+  layerId: JId | undefined
+  features: GeoJSON.Feature[]
 }
 
 export interface JAppProjectState {
@@ -128,6 +134,13 @@ export interface JApplicationService extends JApplicationMainService {
   Extension: JAppExtensionService
   Message: JAppMessageService
   Project: JAppProjectService
+  Feature: JAppFeatureService
+}
+
+export interface JAppFeatureService {
+  openEditMenuById(layerId: JId, featureId: JId): Promise<GeoJSON.Feature>
+  openEditMenuByIds(layerId: JId, featureIds: JId[]): Promise<GeoJSON.Feature[]>
+  closeEditMenu(): void
 }
 
 export interface JAppProjectService {

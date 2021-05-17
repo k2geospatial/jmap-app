@@ -3,13 +3,13 @@ declare namespace JMap {
   /**
    * **JMap.Application**
    * 
-   * This is the NG App API documentation.
+   * This is the JMap NG App API documentation.
    * 
-   * NG App depends on the NG Core library ([[JMap]]).
+   * JMap NG App depends on the JMap NG Core library ([[JMap]]).
    * 
    * Examples are availables <a href="https://doc.k2geospatial.com/jmap/doc/ng_dev/examples.html" target="_blank">here</a>.
    * 
-   * You can customize NG App by providing startup options ([[JApplicationOptions]]).
+   * You can customize JMap NG App by providing startup options ([[JApplicationOptions]]).
    */
   namespace Application {
 
@@ -44,11 +44,11 @@ declare namespace JMap {
     /**
      * **JMap.Application.openDocumentation**
      * 
-     * Open NG App online JS API documentation, in a new tab.
+     * Open JMap NG App online JS API documentation, in a new tab.
      * 
      * @example ```ts
      * 
-     * // open NG App online documentation, in a new tab
+     * // open JMap NG App online documentation, in a new tab
      * JMap.Application.openDocumentation()
      * ```
      */
@@ -57,11 +57,11 @@ declare namespace JMap {
     /**
     * **JMap.Application.openUserManual**
     * 
-    * Open the JMap NG online user manual, in a new tab.
+    * Open the JMap NG App online user manual, in a new tab.
     * 
     * @example ```ts
     * 
-    * // Open the JMap NG Application online user manual, in a new tab
+    * // Open the JMap NG App online user manual, in a new tab
     * JMap.Application.openUserManual()
     * ```
     */
@@ -356,7 +356,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.activateById**
        * 
-       * Change the NG App panel.
+       * Change the JMap NG App panel.
        * 
        * If no panelId is provided, will activate the "layer" panel by default, if the 
        * "layer" panel is disabled will activate the first available panel.
@@ -374,7 +374,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.add**
        * 
-       * Add a custom panel for a given panel definition to NG App.
+       * Add a custom panel for a given panel definition to JMap NG App.
        * 
        * @throws if panel format is not correct
        * @param panel an object that is the definition of the new panel
@@ -397,7 +397,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.removeById**
        * 
-       * Remove a panel for a given panel id from NG App.
+       * Remove a panel for a given panel id from JMap NG App.
        * 
        * If the panel was active will activate the first panel the application found.
        * 
@@ -836,7 +836,7 @@ declare namespace JMap {
     /**
      * **JMap.Application.Project**
      * 
-     * You can manage all things related to JMap Core NG project and JMap App NG here.
+     * You can manage all things related to JMap NG Core project and JMap NG App here.
      */
     namespace Project {
 
@@ -845,7 +845,7 @@ declare namespace JMap {
        * 
        * Activate the project for a given project id.
        * 
-       * If you use the JMap App NG use this function over JMap.Project.activateById.
+       * If you use the JMap NG App use this function over JMap.Project.activateById.
        * 
        * This function do the same as JMap.Project.activateById but also manage things for the application UI.
        * 
@@ -1532,7 +1532,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.UI.SidePanel.isVisible**
          * 
-         * Returns true if the NG App main panel on the left is opened.
+         * Returns true if the JMap NG App main panel on the left is opened.
          * 
          * @example ```ts
          * 
@@ -1545,7 +1545,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.UI.SidePanel.toggleVisibility**
          * 
-         * Change the NG App main panel on the left visibility.
+         * Change the JMap NG App main panel on the left visibility.
          * 
          * If the panel is open, it will close.
          * 
@@ -2145,7 +2145,7 @@ declare namespace JMap {
        * 
        * If features are found, we make the layer selectable and visible if needed, then select and zoom on found features.
        * 
-       * If no feature are found, reject promise. When rejected, it rejects human readable error, using user locale.
+       * If no feature is found, the Promise rejects with a human readable error in the current user's locale.
        * 
        * @throws if no query is active
        * @param value the form data, depends on the form
@@ -2171,30 +2171,30 @@ declare namespace JMap {
     /**
      * **JMap.Application.Event**
      * 
-     * From this section you can manage your own event listeners reacting to NG App library events.
+     * From this section you can manage your own event listeners reacting to JMap NG App library events.
      * 
      * For all your listener you need provide a listener id. We introduced this notion of listener ids in order
      * to be able to know what's the problem if something goes wrong in a listener.
      * 
      * Like that we are able to identify more easily the problem in the javascript console.
      * 
-     * Listener ids have to be unique for the namespace, regardless to the type of event you register your listener.
+     * Listener ids have to be unique for the namespace, regardless to the type of event you register your listener to.
      * 
      * By example, for all Map COntext events, you can register only one listener named "***my-custom-listener***"".
      * 
      * A good practice could be prefixing all your listener ids. For example if you work for the city of Montreal
-     * they could all start with "***mtm-***"".
+     * they could all start with "***montreal-city-***"".
      * 
      * Listeners can be deactivated and reactivated.
      * 
-     * Deactivating a listener keep it in the NG App library, but ignore it when an event is emitted.
+     * Deactivating a listener keep it in the JMap NG App library, but ignore it when an event is emitted.
      */
     namespace Event {
 
       /**
        * ***JMap.Application.Event.Main***
        * 
-       * Here you can manage all NG App high level event listeners.
+       * Here you can manage all JMap NG App high level event listeners.
        * 
        * Click to see all events available: ***[[JMap.Application.Event.Main.on]]***. 
        */
@@ -2203,7 +2203,7 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.Main.on***
          * 
-         * Here you have all NG App high level available events on which you can attach a listener.
+         * Here you have all JMap NG App high level available events on which you can attach a listener.
          */
         namespace on {
 
@@ -2278,7 +2278,7 @@ declare namespace JMap {
          * 
          * If the listener doesn't exist, do nothing.
          * 
-         * Remove the listener from NG Core library. The listener is deleted and never called again after that.
+         * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts
@@ -2293,7 +2293,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Event.Layer***
        * 
-       * Here you can manage all NG App layer event listeners.
+       * Here you can manage all JMap NG App layer event listeners.
        * 
        * Click to see all events available: ***[[JMap.Application.Event.Layer.on]]***. 
        */
@@ -2302,7 +2302,7 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.Layer.on***
          * 
-         * Here you have all NG App available layer events on which you can attach a listener.
+         * Here you have all JMap NG App available layer events on which you can attach a listener.
          */
         namespace on {
 
@@ -2375,7 +2375,7 @@ declare namespace JMap {
          * 
          * If the listener doesn't exist, do nothing.
          * 
-         * Remove the listener from NG Core library. The listener is deleted and never called again after that.
+         * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts
@@ -2390,7 +2390,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Event.MapContext***
        * 
-       * Here you can manage all NG App map context event listeners.
+       * Here you can manage all JMap NG App map context event listeners.
        * 
        * Click to see all events available: ***[[JMap.Application.Event.MapContext.on]]***. 
        */
@@ -2399,7 +2399,7 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.MapContext.on***
          * 
-         * Here you have all NG App available map context events on which you can attach a listener.
+         * Here you have all JMap NG App available map context events on which you can attach a listener.
          */
         namespace on {
 
@@ -2556,7 +2556,7 @@ declare namespace JMap {
          * 
          * If the listener doesn't exist, do nothing.
          * 
-         * Remove the listener from NG Core library. The listener is deleted and never called again after that.
+         * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts
@@ -2572,7 +2572,7 @@ declare namespace JMap {
     /**
      * **JMap.Application.User**
      * 
-     * You can manage everything related to user in NG App here.
+     * You can manage everything related to user in JMap NG App here.
      */
     namespace User {
 
@@ -2637,14 +2637,14 @@ declare namespace JMap {
     /**
      * **JMap.Application.Extension**
      * 
-     * You can manage everything related to NG App extensions here.
+     * You can manage everything related to JMap NG App extensions here.
      */
     namespace Extension {
       
       /**
        * ***JMap.Application.Extension.register***
        * 
-       * Register your own NG App extension.
+       * Register your own JMap NG App extension.
        * 
        * @throws Error if a parameter is not correct
        * @param extensionModel The extension model
@@ -2670,9 +2670,9 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Extension.isRegistered***
        * 
-       * Tell if an NG App extension has been registered or not.
+       * Tell if an JMap NG App extension has been registered or not.
        * 
-       * It can be usefull to know if a NG App extension is in use or not.
+       * It can be usefull to know if a JMap NG App extension is in use or not.
        * 
        * @throws Error if extensionId format is not correct
        * @param extensionId The extension id
@@ -2687,9 +2687,9 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Extension.getAllRegisteredIds***
        * 
-       * Returns all NG App registered extension ids.
+       * Returns all JMap NG App registered extension ids.
        * 
-       * Don't list NG Core extensions, only NG App extensions.
+       * Don't list JMap NG Core extensions, only JMap NG App extensions.
        * 
        * @example ```ts
        * 

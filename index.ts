@@ -169,7 +169,7 @@ export interface JAppQueryService {
   getDefaultData(): { [id: string]: any }
   clearDefaultData(): void
   displayInDialog(isVisibleInDialog: boolean): void
-  processQuery(values: any): Promise<void>
+  processQuery(values: any): Promise<GeoJSON.Feature[]>
 }
 
 export interface JApplicationUserService {
@@ -270,7 +270,7 @@ export interface JAppPrintService {
   setScaleControlVisibility(isVisible: boolean): void
   isScaleControlVisible(): boolean
   setPageTitle(title: string): void
-  getPageTitle(type?: string): string
+  getPageTitle(): string
   setPageSubTitle(subTitle: string): void
   getPageSubTitle(): string
   setDateVisibility(isVisible: boolean): void

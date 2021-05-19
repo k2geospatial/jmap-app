@@ -465,6 +465,21 @@ declare namespace JMap {
        * ```
        */
       function closeEditMenu(): void
+
+      /**
+       * **JMap.Application.Feature.deleteByIds**
+       * 
+       * Delete features (on the server), refresh the layer on the map and display a success or error message when done.
+       * 
+       * @param layerId the JMap layer id
+       * @param featureIds an array of features ids
+       * @example ```ts
+       * 
+       * // delete 2 features on layer id=4
+       * JMap.Application.Feature.deleteByIds(4, [23, 76]).then(result => console.log("Delete result", result))
+       * ```
+       */
+      function deleteByIds(layerId: JId, featureIds: JId[]): Promise<JFeatureDeleteByIdsResult>
     }
 
     /**

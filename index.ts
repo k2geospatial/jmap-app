@@ -18,6 +18,8 @@ export interface JAppState {
 
 export interface JAppFeatureState {
   layerId: JId | undefined
+  isLoading: boolean
+  hasLoadingError: boolean
   features: GeoJSON.Feature[]
 }
 
@@ -141,6 +143,7 @@ export interface JAppFeatureService {
   openEditMenuById(layerId: JId, featureId: JId): Promise<GeoJSON.Feature>
   openEditMenuByIds(layerId: JId, featureIds: JId[]): Promise<GeoJSON.Feature[]>
   closeEditMenu(): void
+  deleteByIds(layerId: JId, featureIds: JId[]): Promise<JFeatureDeleteByIdsResult>
 }
 
 export interface JAppProjectService {

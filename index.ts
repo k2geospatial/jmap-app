@@ -14,6 +14,15 @@ export interface JAppState {
   message: JAppMessageState
   user: JAppUserState
   feature: JAppFeatureState
+  geometry: JAppGeometryState
+}
+
+export interface JAppGeometryState {
+  layerId: JId | undefined
+  feature: GeoJSON.Feature | undefined
+  isUpdate: boolean
+  wizardStep: JAppGeometryWizardStep
+  draw: JAppDrawState
 }
 
 export interface JAppFeatureState {
@@ -137,6 +146,15 @@ export interface JApplicationService extends JApplicationMainService {
   Message: JAppMessageService
   Project: JAppProjectService
   Feature: JAppFeatureService
+  Geometry: JAppGeometryService
+}
+
+export interface JAppGeometryService {
+  openPanelForCreation(): void
+  selectLayer(layerId: JId): void
+  startCreationDrawing(): void
+  stopCreationDrawing(): void
+  closePanel(avoidConfirmationMessage?: boolean): void
 }
 
 export interface JAppFeatureService {
@@ -276,7 +294,8 @@ export interface JAppPanelService {
   getActive(): JAppPanel
   getAll(): JAppPanel[]
   existById(panelId: string): boolean
-  activateById(panelId?: string): void
+  activateById(panelId?: string, params?: JAppPanelActivationParams): void
+  deactivateCurrent(params?: JAppPanelDeactivationParams): void
   add(panel: JAppPanel): void
   removeById(panelId: string): void
 }

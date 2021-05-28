@@ -363,14 +363,29 @@ declare namespace JMap {
        * 
        * @throws if panel is not found
        * @param panelId The new application panel to activate
+       * @param params optionnal parameters
        * @example ```ts
        * 
        * // will activate and display the panel id="layer"
        * JMap.Application.Panel.activateById("layer")
        * ```
        */
-      function activateById(panelId?: string): void
+      function activateById(panelId?: string, params?: JAppPanelActivationParams): void
       
+      /**
+       * **JMap.Application.Panel.deactivateCurrent**
+       * 
+       * Deactivate the current panel panel, except if the current panel is the layer panel, or there is only one panel available.
+       * 
+       * @param params optionnal parameters
+       * @example ```ts
+       * 
+       * // will activate the current panel
+       * JMap.Application.Panel.deactivateCurrent()
+       * ```
+       */
+      function deactivateCurrent(params?: JAppPanelDeactivationParams): void
+
       /**
        * **JMap.Application.Panel.add**
        * 
@@ -480,6 +495,84 @@ declare namespace JMap {
        * ```
        */
       function deleteByIds(layerId: JId, featureIds: JId[]): Promise<JFeatureDeleteByIdsResult>
+    }
+
+    /**
+     * **JMap.Application.Geometry**
+     * 
+     * You can manage everything related to app geometry creation or update here.
+     */
+    namespace Geometry {
+
+      /**
+       * **JMap.Application.Panel.openPanelForCreation**
+       * 
+       * Open the geometry panel in order to create a new feature.
+       * 
+       * @throws if no layer is editable
+       * @example ```ts
+       * 
+       * // will open the geometry panel
+       * JMap.Application.Panel.openPanelForCreation()
+       * ```
+       */
+      function openPanelForCreation(): void
+
+      /**
+       * **JMap.Application.Panel.selectLayer**
+       * 
+       * Select the layer that will be used to create the geometry then the feature.
+       * 
+       * @throws if layer not found
+       * @param layerId The JMap layer id
+       * @example ```ts
+       * 
+       * // will select the layer id=3
+       * JMap.Application.Panel.selectLayer(3)
+       * ```
+       */
+      function selectLayer(layerId: JId): void
+
+      /**
+       * **JMap.Application.Panel.startCreationDrawing**
+       * 
+       * Enable drawing the geometry on the map.
+       * 
+       * @throws if no layer is selected
+       * @example ```ts
+       * 
+       * // enable drawing the geometry on the map
+       * JMap.Application.Panel.startCreationDrawing()
+       * ```
+       */
+      function startCreationDrawing(): void
+
+      /**
+       * **JMap.Application.Panel.stopCreationDrawing**
+       * 
+       * Stop the geometry creation, when drawing on the map, and display the layer selection panel.
+       * 
+       * @example ```ts
+       * 
+       * // stop drawing the geometry on the map
+       * JMap.Application.Panel.stopCreationDrawing()
+       * ```
+       */
+      function stopCreationDrawing(): void
+
+      /**
+       * **JMap.Application.Panel.closePanel**
+       * 
+       * Close the geometry creation or update panel, by default display a confirmation message before leaving the panel.
+       * 
+       * @param avoidConfirmationMessage if true will not ask before leaving the panel
+       * @example ```ts
+       * 
+       * // close the geometry panel
+       * JMap.Application.Panel.closePanel()
+       * ```
+       */
+      function closePanel(avoidConfirmationMessage?: boolean): void
     }
 
     /**

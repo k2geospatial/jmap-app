@@ -3,13 +3,13 @@ declare namespace JMap {
   /**
    * **JMap.Application**
    * 
-   * This is the JMap Web App API documentation.
+   * This is the JMap NG App API documentation.
    * 
-   * JMap Web App depends on the JMap Web Core library ([[JMap]]).
+   * JMap NG App depends on the JMap NG Core library ([[JMap]]).
    * 
    * Examples are availables <a href="https://doc.k2geospatial.com/jmap/doc/ng_dev/examples.html" target="_blank">here</a>.
    * 
-   * You can customize JMap Web App by providing startup options ([[JApplicationOptions]]).
+   * You can customize JMap NG App by providing startup options ([[JApplicationOptions]]).
    */
   namespace Application {
 
@@ -44,11 +44,11 @@ declare namespace JMap {
     /**
      * **JMap.Application.openDocumentation**
      * 
-     * Open JMap Web App online JS API documentation, in a new tab.
+     * Open JMap NG App online JS API documentation, in a new tab.
      * 
      * @example ```ts
      * 
-     * // open JMap Web App online documentation, in a new tab
+     * // open JMap NG App online documentation, in a new tab
      * JMap.Application.openDocumentation()
      * ```
      */
@@ -57,11 +57,11 @@ declare namespace JMap {
     /**
     * **JMap.Application.openUserManual**
     * 
-    * Open the JMap NG online user manual, in a new tab.
+    * Open the JMap NG App online user manual, in a new tab.
     * 
     * @example ```ts
     * 
-    * // Open the JMap NG Application online user manual, in a new tab
+    * // Open the JMap NG App online user manual, in a new tab
     * JMap.Application.openUserManual()
     * ```
     */
@@ -356,7 +356,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.activateById**
        * 
-       * Change the JMap Web App panel.
+       * Change the JMap NG App panel.
        * 
        * If no panelId is provided, will activate the "layer" panel by default, if the 
        * "layer" panel is disabled will activate the first available panel.
@@ -389,7 +389,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.add**
        * 
-       * Add a custom panel for a given panel definition to JMap Web App.
+       * Add a custom panel for a given panel definition to JMap NG App.
        * 
        * @throws if panel format is not correct
        * @param panel an object that is the definition of the new panel
@@ -412,7 +412,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.removeById**
        * 
-       * Remove a panel for a given panel id from JMap Web App.
+       * Remove a panel for a given panel id from JMap NG App.
        * 
        * If the panel was active will activate the first panel the application found.
        * 
@@ -999,7 +999,7 @@ declare namespace JMap {
     /**
      * **JMap.Application.Project**
      * 
-     * You can manage all things related to JMap Core NG project and JMap App NG here.
+     * You can manage all things related to JMap NG Core project and JMap NG App here.
      */
     namespace Project {
 
@@ -1008,7 +1008,7 @@ declare namespace JMap {
        * 
        * Activate the project for a given project id.
        * 
-       * If you use the JMap App NG use this function over JMap.Project.activateById.
+       * If you use the JMap NG App use this function over JMap.Project.activateById.
        * 
        * This function do the same as JMap.Project.activateById but also manage things for the application UI.
        * 
@@ -1695,7 +1695,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.UI.SidePanel.isVisible**
          * 
-         * Returns true if the JMap Web App main panel on the left is opened.
+         * Returns true if the JMap NG App main panel on the left is opened.
          * 
          * @example ```ts
          * 
@@ -1708,7 +1708,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.UI.SidePanel.toggleVisibility**
          * 
-         * Change the JMap Web App main panel on the left visibility.
+         * Change the JMap NG App main panel on the left visibility.
          * 
          * If the panel is open, it will close.
          * 
@@ -1869,42 +1869,505 @@ declare namespace JMap {
       }
     }
 
+    /**
+     * **JMap.Application.Print**
+     * 
+     * You can manage everything related to print here.
+     */
     namespace Print {
+
+      /**
+       * **JMap.Application.Print.refreshScaleForCurrentZoom**
+       *
+       * Refresh the scale depending on the current zoom.
+       * 
+       * This is a technical function, you shouldn't use it.
+       * 
+       * @deprecated 
+       * @example ```ts
+       * 
+       * // refresh the scale
+       * JMap.Application.Print.refreshScaleForCurrentZoom()
+       * ```
+       */
       function refreshScaleForCurrentZoom(): void
+
+      /**
+       * **JMap.Application.Print.setScaleControlVisibility**
+       *
+       * Display or hide the scale control widget.
+       * 
+       * @param isVisible true to display, false to hide
+       * @example ```ts
+       * 
+       * // Display the scale
+       * JMap.Application.Print.setScaleControlVisibility(true)
+       * 
+       * // Hide the scale
+       * JMap.Application.Print.setScaleControlVisibility(false)
+       * ```
+       */
       function setScaleControlVisibility(isVisible: boolean): void
+      
+      /**
+       * **JMap.Application.Print.isScaleControlVisible**
+       *
+       * Return true if the scale control widget is visible, else false.
+       * 
+       * @example ```ts
+       * 
+       * // true if the scale controle widget is displayed
+       * JMap.Application.Print.isScaleControlVisible()
+       * ```
+       */
       function isScaleControlVisible(): boolean
+
+      /**
+       * **JMap.Application.Print.setPageTitle**
+       *
+       * Set the title displayed in the bottom of the print layout.
+       * 
+       * If empty string will display no title.
+       * 
+       * @throws if title is not a string
+       * @param title The title displayed in the bottom of the print layout
+       * @example ```ts
+       * 
+       * // set title
+       * JMap.Application.Print.setPageTitle("My custom title")
+       * ```
+       */
       function setPageTitle(title: string): void
-      function getPageTitle(type?: string): string
+      
+      /**
+       * **JMap.Application.Print.getPageTitle**
+       *
+       * Returns the title displayed in the bottom of the print layout.
+       * 
+       * @example ```ts
+       * 
+       * // returns the displayed title
+       * JMap.Application.Print.getPageTitle()
+       * ```
+       */
+      function getPageTitle(): string
+
+      /**
+       * **JMap.Application.Print.setPageSubTitle**
+       *
+       * Set the subtitle displayed in the bottom of the print layout.
+       * 
+       * @throws if subTitle is not a string
+       * @param subTitle The subtitle displayed in the bottom of the print layout
+       * @example ```ts
+       * 
+       * // set subtitle
+       * JMap.Application.Print.setPageSubTitle("My custom subtitle")
+       * ```
+       */
       function setPageSubTitle(subTitle: string): void
+      
+      /**
+       * **JMap.Application.Print.getPageSubTitle**
+       *
+       * Returns the subtitle displayed in the bottom of the print layout.
+       * 
+       * @example ```ts
+       * 
+       * // returns the displayed subtitle
+       * JMap.Application.Print.getPageSubTitle()
+       * ```
+       */
       function getPageSubTitle(): string
-      function setDateVisibility(isVisible: boolean): void
+
+      /**
+       * **JMap.Application.Print.isDateVisibile**
+       *
+       * Returns true if the date is displayed in the bottom of the print layout.
+       * 
+       * @example ```ts
+       * 
+       * // returns true if the date is visible
+       * JMap.Application.Print.isDateVisibile()
+       * ```
+       */
       function isDateVisibile(): boolean
-      function setNorthArrowVisibility(isVisible: boolean): void
+
+      /**
+       * **JMap.Application.Print.setDateVisibility**
+       *
+       * Set the date visible or hidden in the bottom of the print layout.
+       * 
+       * @param isVisible true to display, false to hide
+       * @example ```ts
+       * 
+       * // Hide the date
+       * JMap.Application.Print.setDateVisibility(false)
+       * 
+       * // Show the date
+       * JMap.Application.Print.setDateVisibility(true)
+       * ```
+       */
+      function setDateVisibility(isVisible: boolean): void
+
+      /**
+       * **JMap.Application.Print.isNorthArrowVisible**
+       *
+       * Returns true if the north arrow is displayed in the bottom of the print layout.
+       * 
+       * @example ```ts
+       * 
+       * // returns true if the north arrow is visible
+       * JMap.Application.Print.isNorthArrowVisible()
+       * ```
+       */
       function isNorthArrowVisible(): boolean
+
+      /**
+       * **JMap.Application.Print.setNorthArrowVisibility**
+       *
+       * Set the north arrow visible or hidden in the bottom of the print layout.
+       * 
+       * @param isVisible true to display, false to hide
+       * @example ```ts
+       * 
+       * // Hide the north arrow
+       * JMap.Application.Print.setNorthArrowVisibility(false)
+       * 
+       * // Show the north arrow
+       * JMap.Application.Print.setNorthArrowVisibility(true)
+       * ```
+       */
+      function setNorthArrowVisibility(isVisible: boolean): void
+
+      /**
+       * **JMap.Application.Print.getAllPaperFormats**
+       *
+       * Returns all available paper format.
+       * 
+       * Different sizes are available: "letter" | "legal" | "a3" | "a4".
+       * 
+       * @deprecated will be removed in the futur
+       * @example ```ts
+       * 
+       * // returns all available paper formats
+       * JMap.Application.Print.getAllPaperFormats()
+       * ```
+       */
       function getAllPaperFormats(): JAppPaperFormat[]
+
+      /**
+       * **JMap.Application.Print.setPaperFormat**
+       *
+       * Set the paper format of the print layout.
+       * 
+       * Technical method, you should not use it.
+       * 
+       * @deprecated will be removed in the futur
+       * @throws if format is incorrect
+       * @param the paper format object or a [[JAppPaperSize]]
+       * @example ```ts
+       * 
+       * // set the letter paper format
+       * JMap.Application.Print.setPaperFormat("letter")
+       * ```
+       */
       function setPaperFormat(format: JAppPaperFormat | string): void
+
+      /**
+       * **JMap.Application.Print.getPaperFormat**
+       *
+       * Returns the active paper format.
+       * 
+       * @deprecated will be removed in the futur
+       * @example ```ts
+       * 
+       * // returns active paper format
+       * JMap.Application.Print.getPaperFormat()
+       * ```
+       */
       function getPaperFormat(): JAppPaperFormat
-      function setOrientation(isPortrait: boolean): void
+
+      /**
+       * **JMap.Application.Print.isOrientationPortrait**
+       *
+       * Returns true if the print layout is portrait, else false (landscape).
+       * 
+       * @example ```ts
+       * 
+       * // returns true if the print layout is portrait, else false (landscape)
+       * JMap.Application.Print.isOrientationPortrait()
+       * ```
+       */
       function isOrientationPortrait(): boolean
-      function setFileType(fileType: JAppPrintFileType): void
+
+      /**
+       * **JMap.Application.Print.setOrientation**
+       *
+       * Set the print layout orientation as portrait or landscape.
+       * 
+       * @throws if isPortrait is not a boolean
+       * @param isPortrait true to display as portrait, false as landscape
+       * @example ```ts
+       * 
+       * // set the layout as portrait
+       * JMap.Application.Print.setOrientation(true)
+       *
+       * // set the layout as landscape
+       * JMap.Application.Print.setOrientation(false)
+       * ```
+       */
+      function setOrientation(isPortrait: boolean): void
+
+      /**
+       * **JMap.Application.Print.getFileType**
+       *
+       * Returns the current type of the file, that is used when downloading the print.
+       * 
+       * One of the following: "png" | "jpeg" | "pdf"
+       * 
+       * @example ```ts
+       * 
+       * // returns "png", "jpeg", or "pdf"
+       * JMap.Application.Print.getFileType()
+       * ```
+       */
       function getFileType(): JAppPrintFileType
+
+      /**
+       * **JMap.Application.Print.setFileType**
+       *
+       * Set the type of file used when downloading the print.
+       * 
+       * @throws if fileType is not correct
+       * @param fileType "png", "jpeg", or "pdf" 
+       * @example ```ts
+       * 
+       * // set the layout as portrait
+       * JMap.Application.Print.setFileType("pdf")
+       * ```
+       */
+      function setFileType(fileType: JAppPrintFileType): void
+
+      /**
+       * **JMap.Application.Print.getScale**
+       *
+       * Returns the current scale on the map.
+       * 
+       * @example ```ts
+       * 
+       * // returns the current scale on the map
+       * JMap.Application.Print.getScale()
+       * ```
+       */
       function getScale(): number
+
+      /**
+       * **JMap.Application.Print.setZoomFromScale**
+       *
+       * Set the zoom from a given map scale.
+       * 
+       * @param scale the map scale
+       * @example ```ts
+       * 
+       * // set the zoom from a given scale
+       * JMap.Application.Print.setZoomFromScale(1255)
+       * ```
+       */
       function setZoomFromScale(scale: number): void
+
+      /**
+       * **JMap.Application.Print.takeCapture**
+       *
+       * Build print image and launch downwnload of the file
+       * 
+       * @example ```ts
+       * 
+       * // build print image and launch downwnload of the file
+       * JMap.Application.Print.takeCapture()
+       * ```
+       */
       function takeCapture(): void
     }
 
+    /**
+     * **JMap.Application.Query**
+     * 
+     * You can manage everything related to query here.
+     */
     namespace Query {
+
+      /**
+       * **JMap.Application.Query.activateQuery**
+       *
+       * Activate a query by id and group id.
+       * 
+       * It display the query form instead of the list of query in the query panel.
+       * 
+       * @param groupId the query group id
+       * @param queryId the query id
+       * @example ```ts
+       * 
+       * // activate query id=43 on group id=23
+       * JMap.Application.Print.activateQuery(23, 43)
+       * ```
+       */
       function activateQuery(groupId: number, queryId: string): void
+      
+      /**
+       * **JMap.Application.Query.deactivateQuery**
+       *
+       * Deactivate the current query. If no query active do nothing.
+       * 
+       * If a query form is active (= its form is displayed), hide it and returns to the query list.
+       * 
+       * @example ```ts
+       * 
+       * // if a query form is displayed, hide it and returns to the query list.
+       * JMap.Application.Print.deactivateQuery()
+       * ```
+       */
       function deactivateQuery(): void
-      function setDefaultData(values: any): void
+      
+      /**
+       * **JMap.Application.Query.getDefaultData**
+       *
+       * Returns the current query form data.
+       * 
+       * If there is no active form, warn in the console and return an empty object {}.
+       * 
+       * @example ```ts
+       * 
+       * // returns the current query form data
+       * JMap.Application.Print.getDefaultData()
+       * ```
+       */
       function getDefaultData(): { [ id: string ]: any }
+
+      /**
+       * **JMap.Application.Query.setDefaultData**
+       *
+       * Set active query form data. If there is no active form, this function throws.
+       * 
+       * @throws if no query is active
+       * @param values the form data, depends on the form
+       * @example ```ts
+       * 
+       * // set the current query form data
+       * JMap.Application.Print.setDefaultData({
+       *  $param1: "black",
+       *  $param2: "white"
+       * })
+       * ```
+       */
+      function setDefaultData(values: any): void
+
+      /**
+       * **JMap.Application.Query.clearDefaultData**
+       *
+       * Reset the current query form data.
+       * 
+       * If there is no active form, do nothing.
+       * 
+       * @example ```ts
+       * 
+       * // clear the current query form data
+       * JMap.Application.Print.clearDefaultData()
+       * ```
+       */
       function clearDefaultData(): void
+
+      /**
+       * **JMap.Application.Query.displayInDialog**
+       *
+       * By default the query form is displayed in the left panel with a simple layout, one field per line.
+       * 
+       * But it is possible to display it in a modal window, with the layout defined in the administration.
+       * 
+       * @throws if isVisibleInDialog is not a boolean
+       * @param isVisibleInDialog true in modal window, false in left panel
+       * @example ```ts
+       * 
+       * // display the current form in a modal window
+       * JMap.Application.Print.displayInDialog(true)
+       * 
+       * // display the current form in the left panel
+       * JMap.Application.Print.displayInDialog(false)
+       * ```
+       */
       function displayInDialog(isVisibleInDialog: boolean): void
-      function processQuery(values: any): Promise<void>
+
+      /**
+       * **JMap.Application.Query.processQuery**
+       *
+       * Process active query form with the given values.  
+       * 
+       * Throws if no query is active.
+       * 
+       * Resolve only if some features are found.
+       * 
+       * If features are found, we make the layer selectable and visible if needed, then select and zoom on found features.
+       * 
+       * If no feature is found, the Promise rejects with a human readable error in the current user's locale.
+       * 
+       * @throws if no query is active
+       * @param value the form data, depends on the form
+       * @example ```ts
+       * 
+       * // display the current form in a modal window
+       * JMap.Application.Print
+       *   .processQuery({
+       *    $param1: "black",
+       *    $param2: "white"
+       *   })
+       *   .then(features => console.info(`Found ${features.length} feature(s)`, features))
+       *   .catch(error => {
+       *     // pass here if no features are found, or other error
+       *     // thrown error is a readable error using the user locale
+       *     console.error(error)
+       *   })
+       * ```
+       */
+      function processQuery(values: any): Promise<GeoJSON.Feature[]>
     }
 
+    /**
+     * **JMap.Application.Event**
+     * 
+     * From this section you can manage your own event listeners reacting to JMap NG App library events.
+     * 
+     * For all your listener you need provide a listener id. We introduced this notion of listener ids in order
+     * to be able to know what's the problem if something goes wrong in a listener.
+     * 
+     * Like that we are able to identify more easily the problem in the javascript console.
+     * 
+     * Listener ids have to be unique for the namespace, regardless to the type of event you register your listener to.
+     * 
+     * By example, for all Map COntext events, you can register only one listener named "***my-custom-listener***"".
+     * 
+     * A good practice could be prefixing all your listener ids. For example if you work for the city of Montreal
+     * they could all start with "***montreal-city-***"".
+     * 
+     * Listeners can be deactivated and reactivated.
+     * 
+     * Deactivating a listener keep it in the JMap NG App library, but ignore it when an event is emitted.
+     */
     namespace Event {
+
+      /**
+       * ***JMap.Application.Event.Main***
+       * 
+       * Here you can manage all JMap NG App high level event listeners.
+       * 
+       * Click to see all events available: ***[[JMap.Application.Event.Main.on]]***. 
+       */
       namespace Main {
+
+        /**
+         * ***JMap.Application.Event.Main.on***
+         * 
+         * Here you have all JMap NG App high level available events on which you can attach a listener.
+         */
         namespace on {
 
           /**
@@ -1934,9 +2397,76 @@ declare namespace JMap {
            */
           function appReady(listenerId: string, fn: () => void): void
         }
+
+        /**
+         * ***JMap.Application.Event.Main.activate***
+         * 
+         * Activate the listener.
+         * 
+         * If the listener is already active, do nothing.
+         * 
+         * If the listener is inactive, it will be reactivated and will be called again ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // activate the listener "my-main-listener"
+         * JMap.Application.Event.Main.activate("my-main-listener")
+         * ```
+         */
+        function activate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.Main.deactivate***
+         * 
+         * Deactivate the listener.
+         * 
+         * If the listener id doesn't exists or if the listener is already inactive, do nothing.
+         * 
+         * If the listener is active, it will be deactivated and will be ignored ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // deactivate the listener "my-main-listener"
+         * JMap.Application.Event.Main.deactivate("my-main-listener")
+         * ```
+         */
+        function deactivate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.Main.remove***
+         * 
+         * Remove the listener.
+         * 
+         * If the listener doesn't exist, do nothing.
+         * 
+         * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // remove the listener "my-main-listener"
+         * JMap.Application.Event.Main.remove("my-main-listener")
+         * ```
+         */
+        function remove(listenerId: string): void
       }
 
+      /**
+       * ***JMap.Application.Event.Layer***
+       * 
+       * Here you can manage all JMap NG App layer event listeners.
+       * 
+       * Click to see all events available: ***[[JMap.Application.Event.Layer.on]]***. 
+       */
       namespace Layer {
+
+        /**
+         * ***JMap.Application.Event.Layer.on***
+         * 
+         * Here you have all JMap NG App available layer events on which you can attach a listener.
+         */
         namespace on {
 
           /**
@@ -1964,9 +2494,76 @@ declare namespace JMap {
            */
           function doubleClick(listenerId: string, fn: (params: JAppLayerEventParams) => void): void
         }
+
+        /**
+         * ***JMap.Application.Event.Layer.activate***
+         * 
+         * Activate the listener.
+         * 
+         * If the listener is already active, do nothing.
+         * 
+         * If the listener is inactive, it will be reactivated and will be called again ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // activate the listener "my-layer-listener"
+         * JMap.Application.Event.Layer.activate("my-layer-listener")
+         * ```
+         */
+        function activate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.Layer.deactivate***
+         * 
+         * Deactivate the listener.
+         * 
+         * If the listener id doesn't exists or if the listener is already inactive, do nothing.
+         * 
+         * If the listener is active, it will be deactivated and will be ignored ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // deactivate the listener "my-layer-listener"
+         * JMap.Application.Event.Layer.deactivate("my-layer-listener")
+         * ```
+         */
+        function deactivate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.Layer.remove***
+         * 
+         * Remove the listener.
+         * 
+         * If the listener doesn't exist, do nothing.
+         * 
+         * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // remove the listener "my-layer-listener"
+         * JMap.Application.Event.Layer.remove("my-layer-listener")
+         * ```
+         */
+        function remove(listenerId: string): void
       }
 
+      /**
+       * ***JMap.Application.Event.MapContext***
+       * 
+       * Here you can manage all JMap NG App map context event listeners.
+       * 
+       * Click to see all events available: ***[[JMap.Application.Event.MapContext.on]]***. 
+       */
       namespace MapContext {
+
+        /**
+         * ***JMap.Application.Event.MapContext.on***
+         * 
+         * Here you have all JMap NG App available map context events on which you can attach a listener.
+         */
         namespace on {
 
           /**
@@ -2078,9 +2675,68 @@ declare namespace JMap {
            */
           function afterApply(listenerId: string, fn: (params: JAppMapContextAfterApplyEventParams) => void): void
         }
+
+        /**
+         * ***JMap.Application.Event.MapContext.activate***
+         * 
+         * Activate the listener.
+         * 
+         * If the listener is already active, do nothing.
+         * 
+         * If the listener is inactive, it will be reactivated and will be called again ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // activate the listener "my-mapcontext-listener"
+         * JMap.Application.Event.MapContext.activate("my-mapcontext-listener")
+         * ```
+         */
+        function activate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.MapContext.deactivate***
+         * 
+         * Deactivate the listener.
+         * 
+         * If the listener id doesn't exists or if the listener is already inactive, do nothing.
+         * 
+         * If the listener is active, it will be deactivated and will be ignored ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // deactivate the listener "my-mapcontext-listener"
+         * JMap.Application.Event.MapContext.deactivate("my-mapcontext-listener")
+         * ```
+         */
+        function deactivate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.MapContext.remove***
+         * 
+         * Remove the listener.
+         * 
+         * If the listener doesn't exist, do nothing.
+         * 
+         * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // remove the listener "my-mapcontext-listener"
+         * JMap.Application.Event.MapContext.remove("my-mapcontext-listener")
+         * ```
+         */
+        function remove(listenerId: string): void
       }
     }
 
+    /**
+     * **JMap.Application.User**
+     * 
+     * You can manage everything related to user in JMap NG App here.
+     */
     namespace User {
 
       /**
@@ -2141,9 +2797,69 @@ declare namespace JMap {
       function removePopupMenuActionById(actionId: string): void
     }
 
+    /**
+     * **JMap.Application.Extension**
+     * 
+     * You can manage everything related to JMap NG App extensions here.
+     */
     namespace Extension {
+      
+      /**
+       * ***JMap.Application.Extension.register***
+       * 
+       * Register your own JMap NG App extension.
+       * 
+       * @throws Error if a parameter is not correct
+       * @param extensionModel The extension model
+       * @example ```ts
+       * 
+       * JMap.Application.Extension.register({
+       *  id: "MyExtension", // Unique id
+       *  initFn: () => {
+       *    // here you can start your UI component if needed
+       *    console.log("JMap is started and my extension has been successfuly started")
+       *  },
+       *  onPanelCreation: panelContainerId => {
+       *    console.info("Create your component here")
+       *  },
+       *  onPanelDestroy: panelContainerId => {
+       *    console.info("Destroy your component here")
+       *  }
+       * })
+       * ```
+       */
       function register(extension: JAppExtension): void
+
+      /**
+       * ***JMap.Application.Extension.isRegistered***
+       * 
+       * Tell if an JMap NG App extension has been registered or not.
+       * 
+       * It can be usefull to know if a JMap NG App extension is in use or not.
+       * 
+       * @throws Error if extensionId format is not correct
+       * @param extensionId The extension id
+       * @example ```ts
+       * 
+       * // returns true if extension id="my-extension" is in use or not
+       * JMap.Extension.isRegistered("my-extension")
+       * ```
+       */
       function isRegistered(extensionId: string): boolean
+
+      /**
+       * ***JMap.Application.Extension.getAllRegisteredIds***
+       * 
+       * Returns all JMap NG App registered extension ids.
+       * 
+       * Don't list JMap NG Core extensions, only JMap NG App extensions.
+       * 
+       * @example ```ts
+       * 
+       * // Could returns [ "my-first-extension", "my-second-extension" ]
+       * JMap.Extension.getAllRegisteredIds()
+       * ```
+       */
       function getAllRegisteredIds(): string[]
     }
 

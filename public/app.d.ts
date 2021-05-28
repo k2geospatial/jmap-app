@@ -505,7 +505,7 @@ declare namespace JMap {
     namespace Geometry {
 
       /**
-       * **JMap.Application.Panel.openPanelForCreation**
+       * **JMap.Application.Geometry.openPanelForCreation**
        * 
        * Open the geometry panel in order to create a new feature.
        * 
@@ -513,13 +513,13 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // will open the geometry panel
-       * JMap.Application.Panel.openPanelForCreation()
+       * JMap.Application.Geometry.openPanelForCreation()
        * ```
        */
       function openPanelForCreation(): void
 
       /**
-       * **JMap.Application.Panel.selectLayer**
+       * **JMap.Application.Geometry.selectLayer**
        * 
        * Select the layer that will be used to create the geometry then the feature.
        * 
@@ -528,13 +528,13 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // will select the layer id=3
-       * JMap.Application.Panel.selectLayer(3)
+       * JMap.Application.Geometry.selectLayer(3)
        * ```
        */
       function selectLayer(layerId: JId): void
 
       /**
-       * **JMap.Application.Panel.startCreationDrawing**
+       * **JMap.Application.Geometry.startCreationDrawing**
        * 
        * Enable drawing the geometry on the map.
        * 
@@ -542,26 +542,26 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // enable drawing the geometry on the map
-       * JMap.Application.Panel.startCreationDrawing()
+       * JMap.Application.Geometry.startCreationDrawing()
        * ```
        */
       function startCreationDrawing(): void
 
       /**
-       * **JMap.Application.Panel.stopCreationDrawing**
+       * **JMap.Application.Geometry.stopCreationDrawing**
        * 
        * Stop the geometry creation, when drawing on the map, and display the layer selection panel.
        * 
        * @example ```ts
        * 
        * // stop drawing the geometry on the map
-       * JMap.Application.Panel.stopCreationDrawing()
+       * JMap.Application.Geometry.stopCreationDrawing()
        * ```
        */
       function stopCreationDrawing(): void
 
       /**
-       * **JMap.Application.Panel.closePanel**
+       * **JMap.Application.Geometry.closePanel**
        * 
        * Close the geometry creation or update panel, by default display a confirmation message before leaving the panel.
        * 
@@ -569,7 +569,7 @@ declare namespace JMap {
        * @example ```ts
        * 
        * // close the geometry panel
-       * JMap.Application.Panel.closePanel()
+       * JMap.Application.Geometry.closePanel()
        * ```
        */
       function closePanel(avoidConfirmationMessage?: boolean): void

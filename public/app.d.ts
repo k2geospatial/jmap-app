@@ -519,6 +519,21 @@ declare namespace JMap {
       function openPanelForCreation(): void
 
       /**
+       * **JMap.Application.Geometry.openPanelForUpdate**
+       * 
+       * Open the geometry panel in order to update a feature geometry.
+       * 
+       * @throws if the given layer or feature are not editable
+       * @param JAppGeometryUpdateParams function parameters
+       * @example ```ts
+       * 
+       * // will open the geometry panel in order to update the feature geometry
+       * JMap.Application.Geometry.openPanelForUpdate()
+       * ```
+       */
+      function openPanelForUpdate(params: JAppGeometryUpdateParams): void
+
+      /**
        * **JMap.Application.Geometry.selectLayer**
        * 
        * Select the layer that will be used to create the geometry then the feature.
@@ -559,6 +574,34 @@ declare namespace JMap {
        * ```
        */
       function stopCreationDrawing(): void
+
+      /**
+       * **JMap.Application.Geometry.finishCreate**
+       * 
+       * Finish geometry creation.
+       *  
+       * @throws if panel is not in creation mode, or if geometry has not yet been created.
+       * @example ```ts
+       * 
+       * // finish creating or updating the geometry
+       * JMap.Application.Geometry.finishCreate()
+       * ```
+       */
+      function finishCreate(): void
+
+      /**
+       * **JMap.Application.Geometry.finishUpdate**
+       * 
+       * Finish geometry update.
+       * 
+       * @throws if panel is not in update mode
+       * @example ```ts
+       * 
+       * // finish updating the geometry
+       * JMap.Application.Geometry.finishUpdate()
+       * ```
+       */
+      function finishUpdate(): Promise<void>
 
       /**
        * **JMap.Application.Geometry.closePanel**

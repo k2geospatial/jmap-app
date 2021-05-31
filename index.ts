@@ -151,9 +151,12 @@ export interface JApplicationService extends JApplicationMainService {
 
 export interface JAppGeometryService {
   openPanelForCreation(): void
+  openPanelForUpdate(params: JAppGeometryUpdateParams): void
   selectLayer(layerId: JId): void
   startCreationDrawing(): void
   stopCreationDrawing(): void
+  finishCreate(): void
+  finishUpdate(): Promise<void>
   closePanel(avoidConfirmationMessage?: boolean): void
 }
 

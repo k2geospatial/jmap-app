@@ -157,7 +157,7 @@ export interface JAppGeometryService {
   stopCreationDrawing(): void
   finishCreate(): void
   finishUpdate(): Promise<void>
-  closePanel(avoidConfirmationMessage?: boolean): void
+  closePanel(): void
 }
 
 export interface JAppFeatureService {

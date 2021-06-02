@@ -606,16 +606,15 @@ declare namespace JMap {
       /**
        * **JMap.Application.Geometry.closePanel**
        * 
-       * Close the geometry creation or update panel, by default display a confirmation message before leaving the panel.
+       * Close the geometry creation or update panel without confirmation message.
        * 
-       * @param avoidConfirmationMessage if true will not ask before leaving the panel
        * @example ```ts
        * 
        * // close the geometry panel
        * JMap.Application.Geometry.closePanel()
        * ```
        */
-      function closePanel(avoidConfirmationMessage?: boolean): void
+      function closePanel(): void
     }
 
     /**

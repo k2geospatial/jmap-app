@@ -19,6 +19,7 @@ export interface JAppState {
 
 export interface JAppGeometryState {
   layerId: JId | undefined
+  featureId: JId | undefined // needed for update
   feature: GeoJSON.Feature | undefined
   isUpdate: boolean
   wizardStep: JAppGeometryWizardStep

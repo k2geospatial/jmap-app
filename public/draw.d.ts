@@ -23,6 +23,10 @@ declare interface JAppDrawStyle extends Partial<JAppDrawTextStyle> {
   lineWidth?: number
   shapeType?: string
   radiusInKm?: number
+  pointRadiusStrokeInactive?: number
+  pointRadiusActive?: number
+  pointRadiusStrokeActive?: number
+  pointRadiusInactive?: number
   center?: number[]
 }
 

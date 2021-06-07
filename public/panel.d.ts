@@ -6,6 +6,11 @@ declare interface JAppPanelDeactivationParams extends JAppPanelActivationParams 
   activatePrevious?: boolean
 }
 
+declare interface JAppPanelLeaveResponse {
+  title: string,
+  message: string
+}
+
 declare interface JAppPanel {
   id: string
   icon: string // url or base64 or app name
@@ -15,5 +20,5 @@ declare interface JAppPanel {
   isPopup?: boolean
   onPanelCreation?: (panelContainerId: string) => void
   onPanelDestroy?: (panelContainerId: string) => void
-  leaveConfirmationMessageFn?: () => string | undefined // returning a message will display popup
+  leaveConfirmationMessageFn?: () => JAppPanelLeaveResponse | undefined // returning a message will display popup
 }

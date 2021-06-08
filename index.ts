@@ -113,10 +113,6 @@ export interface JAppUserState {
   actions: JAppUserAction[]
 }
 
-export interface JAppFavoriteState {
-  isSelectionActive: boolean
-}
-
 export interface JApplicationService extends JApplicationMainService {
   User: JApplicationUserService
   Panel: JAppPanelService

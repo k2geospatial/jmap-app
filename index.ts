@@ -13,6 +13,7 @@ export interface JAppState {
   annotation: JAppAnnotationState
   message: JAppMessageState
   user: JAppUserState
+  favorite : JAppFavoriteState
 }
 
 export interface JAppProjectState {
@@ -114,7 +115,8 @@ export interface JAppUserState {
 }
 
 export interface JAppFavoriteState {
-  isSelectionActive: boolean
+  favorites: JAppFavorite[]
+  features: GeoJSON.Feature[]
 }
 
 export interface JApplicationService extends JApplicationMainService {
@@ -252,6 +254,12 @@ export interface JAppMeasureService {
   deleteAllLines(): number
   deleteAllPolygons(): number
   deleteAllCircles(): number
+}
+
+export interface JAppFavoriteService {
+  addFavorite(location: JLocation) : void
+  deleteFavoriteById(id: number): void
+  deleteAllFavorites() : void
 }
 
 export interface JAppExtensionService {

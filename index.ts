@@ -117,6 +117,7 @@ export interface JAppUserState {
 export interface JAppFavoriteState {
   favorites: JAppFavorite[]
   features: GeoJSON.Feature[]
+  isLoading: boolean
 }
 
 export interface JApplicationService extends JApplicationMainService {

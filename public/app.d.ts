@@ -2814,5 +2814,53 @@ declare namespace JMap {
        */
       function display(message: string, options?: JAppMessageOptions): void
     }
+
+    /**
+     * **JMap.Application.Favorite**
+     * 
+     * You can manage everything related to your favorites from here.
+     */
+    namespace Favorite {
+      /**
+       * **JMap.Application.Favorite.addFavorite**
+       * 
+       * Add a favorite to the JMap Favorite User menu (visible in the project favorite panel)
+       * 
+       * @param newLocation the location of the new favorite
+       * @example ```ts
+       * 
+       * const newLocation: JLocation = {
+       *  x: 50,
+       *  y: 50
+       * }
+       * JMap.Application.Favorite.addFavorite(newLocation)
+       * ```
+       */
+      function addFavorite(newLocation: JLocation): void
+
+      /**
+       * **JMap.Application.Favorite.deleteFavoriteById**
+       * 
+       * Delete the favorite of the given id from the JMap Favorite User menu
+       * 
+       * @param favoriteId 
+       * @example ```ts
+       * 
+       * JMap.Application.Favorite.deleteFavoriteById(2)
+       * ```
+       */
+       function deleteFavoriteById(favoriteId: number): void 
+
+      /**
+       * **JMap.Application.Favorite.deleteAllFavorites**
+       * 
+       * Delete all favorites from the JMap Favorite User menu
+       * 
+       * @example ```ts
+       * 
+       * JMap.Application.Favorite.deleteAllFavorites()
+       * ```
+       */
+    }
   }
 }

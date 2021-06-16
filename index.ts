@@ -135,6 +135,7 @@ export interface JApplicationService extends JApplicationMainService {
   Extension: JAppExtensionService
   Message: JAppMessageService
   Project: JAppProjectService
+  Favorite: JAppFavoriteService
 }
 
 export interface JAppProjectService {

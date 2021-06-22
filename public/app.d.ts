@@ -2824,7 +2824,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Favorite.addFavorite**
        * 
-       * Add a favorite to the JMap Favorite User menu (visible in the project favorite panel)
+       * Return the favorite created using the location or nothing if there is an error.
        * 
        * @param newLocation the location of the new favorite
        * @example ```ts
@@ -2833,34 +2833,59 @@ declare namespace JMap {
        *  x: 50,
        *  y: 50
        * }
-       * JMap.Application.Favorite.addFavorite(newLocation)
+       * JMap.Application.Favorite.add(newLocation)
        * ```
        */
-      function addFavorite(newLocation: JLocation): void
+      function add(newLocation: JLocation): JAppFavorite|void
 
       /**
-       * **JMap.Application.Favorite.deleteFavoriteById**
+       * **JMap.Application.Favorite.deleteById**
        * 
-       * Delete the favorite of the given id from the JMap Favorite User menu
-       * 
-       * @param favoriteId 
+       * Delete the favorite of the given id from the JMap Favorite User menu.
+       *       
+       * @param favoriteId the favorite id
        * @example ```ts
        * 
-       * JMap.Application.Favorite.deleteFavoriteById(2)
+       * JMap.Application.Favorite.deleteById(3)
        * ```
        */
-       function deleteFavoriteById(favoriteId: number): void 
+       function deleteById(favoriteId: number): void 
 
-      /**
-       * **JMap.Application.Favorite.deleteAllFavorites**
-       * 
-       * Delete all favorites from the JMap Favorite User menu
-       * 
-       * @example ```ts
-       * 
-       * JMap.Application.Favorite.deleteAllFavorites()
-       * ```
-       */
-    }
+       /**
+        * **JMap.Application.Favorite.getAll**
+        * 
+        * Return all favorites.
+        * 
+        * @example ```ts
+        * 
+        * JMap.Application.Favorite.getAll()
+        * ```
+        */
+        function getAll(): JAppFavorite[] 
+
+        /**
+         * **JMap.Application.Favorite.getById**
+         * 
+         * Return the favorite for the given id if it exist.
+         * @param favoriteId the favorite id
+         * @example ```ts
+         * 
+         * JMap.Application.Favorite.getById(3)
+         * ```
+         */
+         function getById(favoriteId: number): JAppFavorite
+
+        /**
+         * **JMap.Application.Favorite.existById**
+         * 
+         * Return true if the favorite exists for a given id.
+         * @param favoriteId the favorite id
+         * @example ```ts
+         * 
+         * JMap.Application.Favorite.existById(3)
+         * ```
+         */
+        function existById(favoriteId: number): boolean
+     }
   }
 }

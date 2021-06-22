@@ -116,7 +116,6 @@ export interface JAppUserState {
 
 export interface JAppFavoriteState {
   favorites: JAppFavorite[]
-  features: GeoJSON.Feature[]
   isDeleting: boolean
   isSaving: boolean
 }
@@ -260,9 +259,12 @@ export interface JAppMeasureService {
 }
 
 export interface JAppFavoriteService {
-  addFavorite(location: JLocation) : void
-  deleteFavoriteById(id: number): void
-  deleteAllFavorites() : void
+  add(location: JLocation): JAppFavorite|void
+  deleteById(id: number): void
+  deleteAll(): void
+  getById(id: number): JAppFavorite
+  getAll(): JAppFavorite[]
+  existById(id: number): boolean
 }
 
 export interface JAppExtensionService {

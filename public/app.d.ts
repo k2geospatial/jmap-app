@@ -882,38 +882,71 @@ declare namespace JMap {
     namespace Layer {
 
       /**
-       * **JMap.Application.Layer.setFilter**
-       * 
-       * Filter on the name of the layer.
-       * 
-       * Panel layer will show only layers whose name matches the filter. The filter is case-insensitive
-       * 
-       * @param filter the filter to apply
-       * @example ```ts
-       * 
-       * // In the layer panel will display only layers whose name matches "pro" (case-insensitive)
-       * JMap.Application.Layer.setFilter("pro")
-       * ```
-       */
-      function setFilter(filter: string): void
+      * **JMap.Application.Layer.Tree**
+      * 
+      * You can manage the layer panel's tree view here.
+      */
+      namespace Tree {
+      
+        /**
+        * **JMap.Application.Layer.Tree.Filter**
+        * 
+        * You can manage the layer panel's tree view filtering here.
+        */
+        namespace Filter {
+          
+        /**
+         * **JMap.Application.Layer.Tree.Filter.setName**
+         * 
+         * Filter on the name of the layer.
+         * 
+         * Panel layer will show only layers whose name matches the filter. The filter is case-insensitive and 
+         * diacritical characters insensitive
+         * 
+         * @param nameFilter the name filter to apply
+         * @example ```ts
+         * 
+         * // In the layer panel will display only layers whose name matches "pro" (case-insensitive)
+         * JMap.Application.Layer.setName("pro")
+         * ```
+         */
+        function setName( nameFilter: string): void
 
-      /**
-       * **JMap.Application.Layer.isFilterActive**
-       * 
-       * Tests if the layer filter is active.
-       * 
-       * Layer panel filter is active only if the filter contains a certain number of characters 
-       * 
-       * @example ```ts
-       * 
-       * // set the filter to "a"
-       * JMap.Application.Layer.setFilter("a")
-       * 
-       * // will return false
-       * const isFilterActive = JMap.Application.Layer.isFilterActive()
-       * ```
-       */
-      function isFilterActive(): boolean
+        /**
+         * **JMap.Application.Layer.Tree.Filter.isNameActive**
+         * 
+         * Tests if the layer name filter is active.
+         * 
+         * Layer name filter is active only if the filter contains a certain number of characters, and
+         * if the filtering is active
+         * 
+         * @example ```ts
+         * 
+         * // set the filter to "a"
+         * JMap.Application.Layer.setName("a")
+         * 
+         * // will return false
+         * const isNameActive = JMap.Application.Layer.isNameActive()
+         * ```
+         */
+        function isNameActive(): boolean
+        
+        // TODO: document those
+        function isActive(): boolean
+        function setActive(active: boolean): void
+        function applyToMap(): void
+        function existById(id: number): boolean
+        function existsByMetadataItemId(id: number): boolean
+        function getAll(): JAppAnyLayerFilter[]
+        function getById(id: number): JAppAnyLayerFilter
+        function add(filter: JAppAnyLayerFilter): JAppAnyLayerFilter
+        function deleteById(id: number): JAppAnyLayerFilter
+        function openAddFilterDialog(): void
+        function closeAddFilterDialog(): void
+      
+        }
+      }
+
 
       /**
        * **JMap.Application.Layer.startThematicEdition**

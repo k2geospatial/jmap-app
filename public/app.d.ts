@@ -913,23 +913,31 @@ declare namespace JMap {
         function setName( nameFilter: string): void
 
         /**
-         * **JMap.Application.Layer.Tree.Filter.isNameActive**
+         * **JMap.Application.Layer.Tree.Filter.isApplied**
          * 
-         * Tests if the layer name filter is active.
+         * Tests if the layer tree filters are applied.
          * 
-         * Layer name filter is active only if the filter contains a certain number of characters, and
-         * if the filtering is active
+         * layer tree filters are applied (in action) only if the filtering is active (**JMap.Application.Layer.Tree.Filter.isActive** returns true)
+         * and either one of those two conditions are met:
+         * 
+         * a) the name filter contains at least 2 characters
+         * b) one of the custom layer filters has been added to the filtering configuration
          * 
          * @example ```ts
          * 
-         * // set the filter to "a"
-         * JMap.Application.Layer.setName("a")
+         * // filter configuration is initially empty
+         * 
+         * // activate the filters
+         * JMap.Application.Layer.Tree.Filter.setActive(true)
+         * 
+         * // set the name filter to "a"
+         * JMap.Application.Layer.Tree.Filter.setName("a")
          * 
          * // will return false
-         * const isNameActive = JMap.Application.Layer.isNameActive()
+         * const isFilterApplied = JMap.Application.Layer.Tree.Filter.isApplied()
          * ```
          */
-        function isNameActive(): boolean
+        function isApplied(): boolean
         
         // TODO: document those
         function isActive(): boolean

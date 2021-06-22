@@ -335,10 +335,10 @@ export interface JAppLayerTreeService {
 }
 
 export interface JAppLayerTreeFilterService {
-  isNameActive(): boolean
+  setName(nameFilter: string): void
+  isApplied(): boolean
   isActive(): boolean
   setActive(active: boolean): void
-  setName(nameFilter: string): void
   applyToMap(): void
   existById(id: number): boolean
   existsByMetadataItemId(id: number): boolean

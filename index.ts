@@ -13,7 +13,29 @@ export interface JAppState {
   annotation: JAppAnnotationState
   message: JAppMessageState
   user: JAppUserState
+<<<<<<< HEAD
   favorite : JAppFavoriteState
+=======
+  feature: JAppFeatureState
+  geometry: JAppGeometryState
+}
+
+export interface JAppGeometryState {
+  layerId: JId | undefined
+  featureId: JId | undefined // needed for update
+  hasChanged: boolean
+  feature: GeoJSON.Feature | undefined
+  isUpdate: boolean
+  wizardStep: JAppGeometryWizardStep
+  draw: JAppDrawState
+}
+
+export interface JAppFeatureState {
+  layerId: JId | undefined
+  isLoading: boolean
+  hasLoadingError: boolean
+  features: GeoJSON.Feature[]
+>>>>>>> master
 }
 
 export interface JAppProjectState {
@@ -136,6 +158,26 @@ export interface JApplicationService extends JApplicationMainService {
   Message: JAppMessageService
   Project: JAppProjectService
   Favorite: JAppFavoriteService
+  Feature: JAppFeatureService
+  Geometry: JAppGeometryService
+}
+
+export interface JAppGeometryService {
+  openPanelForCreation(): void
+  openPanelForUpdate(params: JAppGeometryUpdateParams): void
+  selectLayer(layerId: JId): void
+  startCreationDrawing(): void
+  stopCreationDrawing(): void
+  finishCreate(): void
+  finishUpdate(): Promise<void>
+  closePanel(): void
+}
+
+export interface JAppFeatureService {
+  openEditMenuById(layerId: JId, featureId: JId): Promise<GeoJSON.Feature>
+  openEditMenuByIds(layerId: JId, featureIds: JId[]): Promise<GeoJSON.Feature[]>
+  closeEditMenu(): void
+  deleteByIds(layerId: JId, featureIds: JId[]): Promise<JFeatureDeleteByIdsResult>
 }
 
 export interface JAppProjectService {
@@ -277,7 +319,8 @@ export interface JAppPanelService {
   getActive(): JAppPanel
   getAll(): JAppPanel[]
   existById(panelId: string): boolean
-  activateById(panelId?: string): void
+  activateById(panelId?: string, params?: JAppPanelActivationParams): void
+  deactivateCurrent(params?: JAppPanelDeactivationParams): void
   add(panel: JAppPanel): void
   removeById(panelId: string): void
 }

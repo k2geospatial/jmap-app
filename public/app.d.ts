@@ -363,14 +363,29 @@ declare namespace JMap {
        * 
        * @throws if panel is not found
        * @param panelId The new application panel to activate
+       * @param params optionnal parameters
        * @example ```ts
        * 
        * // will activate and display the panel id="layer"
        * JMap.Application.Panel.activateById("layer")
        * ```
        */
-      function activateById(panelId?: string): void
+      function activateById(panelId?: string, params?: JAppPanelActivationParams): void
       
+      /**
+       * **JMap.Application.Panel.deactivateCurrent**
+       * 
+       * Deactivate the current panel panel, except if the current panel is the layer panel, or there is only one panel available.
+       * 
+       * @param params optionnal parameters
+       * @example ```ts
+       * 
+       * // will activate the current panel
+       * JMap.Application.Panel.deactivateCurrent()
+       * ```
+       */
+      function deactivateCurrent(params?: JAppPanelDeactivationParams): void
+
       /**
        * **JMap.Application.Panel.add**
        * 
@@ -410,6 +425,196 @@ declare namespace JMap {
        * ```
        */
       function removeById(panelId: string): void
+    }
+
+    /**
+     * **JMap.Application.Feature**
+     * 
+     * You can manage everything related to app features here.
+     */
+    namespace Feature {
+
+      /**
+       * **JMap.Application.Feature.openEditMenuById**
+       * 
+       * Open the feature edit menu for single edition.
+       * 
+       * @param layerId the JMap layer id
+       * @param featureId the feature id
+       * @example ```ts
+       * 
+       * // open edit menu (single edition) for layer id=5, and feature id=234
+       * JMap.Application.Feature.openEditMenuById(5, 234)
+       * ```
+       */
+      function openEditMenuById(layerId: JId, featureId: JId): Promise<GeoJSON.Feature>
+
+      /**
+       * **JMap.Application.Feature.openEditMenuByIds**
+       * 
+       * Open the feature edit menu for multiple edition.
+       * 
+       * @param layerId the JMap layer id
+       * @param featureIds an array of features ids
+       * @example ```ts
+       * 
+       * // open edit menu (multiple edition) for layer id=5, and features id=234, 452 and 176
+       * JMap.Application.Feature.openEditMenuByIds(5, [234, 452, 176])
+       * ```
+       */
+      function openEditMenuByIds(layerId: JId, featureIds: JId[]): Promise<GeoJSON.Feature[]>
+
+      /**
+       * **JMap.Application.Feature.closeEditMenu**
+       * 
+       * Close the feature edit menu if visible.
+       * 
+       * If not visible do nothing.
+       * 
+       * @param layerId the JMap layer id
+       * @param featureIds an array of features ids
+       * @example ```ts
+       * 
+       * // close the edit menu if visible
+       * JMap.Application.Feature.closeEditMenu()
+       * ```
+       */
+      function closeEditMenu(): void
+
+      /**
+       * **JMap.Application.Feature.deleteByIds**
+       * 
+       * Delete features (on the server), refresh the layer on the map and display a success or error message when done.
+       * 
+       * @param layerId the JMap layer id
+       * @param featureIds an array of features ids
+       * @example ```ts
+       * 
+       * // delete 2 features on layer id=4
+       * JMap.Application.Feature.deleteByIds(4, [23, 76]).then(result => console.log("Delete result", result))
+       * ```
+       */
+      function deleteByIds(layerId: JId, featureIds: JId[]): Promise<JFeatureDeleteByIdsResult>
+    }
+
+    /**
+     * **JMap.Application.Geometry**
+     * 
+     * You can manage everything related to app geometry creation or update here.
+     */
+    namespace Geometry {
+
+      /**
+       * **JMap.Application.Geometry.openPanelForCreation**
+       * 
+       * Open the geometry panel in order to create a new feature.
+       * 
+       * @throws if no layer is editable
+       * @example ```ts
+       * 
+       * // will open the geometry panel
+       * JMap.Application.Geometry.openPanelForCreation()
+       * ```
+       */
+      function openPanelForCreation(): void
+
+      /**
+       * **JMap.Application.Geometry.openPanelForUpdate**
+       * 
+       * Open the geometry panel in order to update a feature geometry.
+       * 
+       * @throws if the given layer or feature are not editable
+       * @param JAppGeometryUpdateParams function parameters
+       * @example ```ts
+       * 
+       * // will open the geometry panel in order to update the feature geometry
+       * JMap.Application.Geometry.openPanelForUpdate()
+       * ```
+       */
+      function openPanelForUpdate(params: JAppGeometryUpdateParams): void
+
+      /**
+       * **JMap.Application.Geometry.selectLayer**
+       * 
+       * Select the layer that will be used to create the geometry then the feature.
+       * 
+       * @throws if layer not found
+       * @param layerId The JMap layer id
+       * @example ```ts
+       * 
+       * // will select the layer id=3
+       * JMap.Application.Geometry.selectLayer(3)
+       * ```
+       */
+      function selectLayer(layerId: JId): void
+
+      /**
+       * **JMap.Application.Geometry.startCreationDrawing**
+       * 
+       * Enable drawing the geometry on the map.
+       * 
+       * @throws if no layer is selected
+       * @example ```ts
+       * 
+       * // enable drawing the geometry on the map
+       * JMap.Application.Geometry.startCreationDrawing()
+       * ```
+       */
+      function startCreationDrawing(): void
+
+      /**
+       * **JMap.Application.Geometry.stopCreationDrawing**
+       * 
+       * Stop the geometry creation, when drawing on the map, and display the layer selection panel.
+       * 
+       * @example ```ts
+       * 
+       * // stop drawing the geometry on the map
+       * JMap.Application.Geometry.stopCreationDrawing()
+       * ```
+       */
+      function stopCreationDrawing(): void
+
+      /**
+       * **JMap.Application.Geometry.finishCreate**
+       * 
+       * Finish geometry creation.
+       *  
+       * @throws if panel is not in creation mode, or if geometry has not yet been created.
+       * @example ```ts
+       * 
+       * // finish creating or updating the geometry
+       * JMap.Application.Geometry.finishCreate()
+       * ```
+       */
+      function finishCreate(): void
+
+      /**
+       * **JMap.Application.Geometry.finishUpdate**
+       * 
+       * Finish geometry update.
+       * 
+       * @throws if panel is not in update mode
+       * @example ```ts
+       * 
+       * // finish updating the geometry
+       * JMap.Application.Geometry.finishUpdate()
+       * ```
+       */
+      function finishUpdate(): Promise<void>
+
+      /**
+       * **JMap.Application.Geometry.closePanel**
+       * 
+       * Close the geometry creation or update panel without confirmation message.
+       * 
+       * @example ```ts
+       * 
+       * // close the geometry panel
+       * JMap.Application.Geometry.closePanel()
+       * ```
+       */
+      function closePanel(): void
     }
 
     /**

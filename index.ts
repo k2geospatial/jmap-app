@@ -13,9 +13,7 @@ export interface JAppState {
   annotation: JAppAnnotationState
   message: JAppMessageState
   user: JAppUserState
-<<<<<<< HEAD
   favorite : JAppFavoriteState
-=======
   feature: JAppFeatureState
   geometry: JAppGeometryState
 }
@@ -35,7 +33,6 @@ export interface JAppFeatureState {
   isLoading: boolean
   hasLoadingError: boolean
   features: GeoJSON.Feature[]
->>>>>>> master
 }
 
 export interface JAppProjectState {

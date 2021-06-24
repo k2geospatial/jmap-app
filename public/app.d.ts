@@ -1087,38 +1087,277 @@ declare namespace JMap {
     namespace Layer {
 
       /**
-       * **JMap.Application.Layer.setFilter**
-       * 
-       * Filter on the name of the layer.
-       * 
-       * Panel layer will show only layers whose name matches the filter. The filter is case-insensitive
-       * 
-       * @param filter the filter to apply
-       * @example ```ts
-       * 
-       * // In the layer panel will display only layers whose name matches "pro" (case-insensitive)
-       * JMap.Application.Layer.setFilter("pro")
-       * ```
-       */
-      function setFilter(filter: string): void
+      * **JMap.Application.Layer.Tree**
+      * 
+      * You can manage the layer panel's tree view here.
+      */
+      namespace Tree {
+      
+        /**
+        * **JMap.Application.Layer.Tree.Filter**
+        * 
+        * You can manage the layer panel's tree view filtering here.
+        */
+        namespace Filter {
+        
+          /**
+           * **JMap.Application.Layer.Tree.Filter.setName**
+           * 
+           * Sets the name filter. Name filter need to have at least 2 characters to be applied
+           * 
+           * Panel layer will show only layers whose name matches the name filter. The name filter is case-insensitive and 
+           * diacritical characters insensitive
+           * 
+           * @param nameFilter the name filter to apply
+           * @example ```ts
+           * 
+           * // In the layer panel will display only layers whose name matches "pro" (case-insensitive)
+           * JMap.Application.Layer.setName("pro")
+           * ```
+           */
+          function setName( nameFilter: string): void
 
-      /**
-       * **JMap.Application.Layer.isFilterActive**
-       * 
-       * Tests if the layer filter is active.
-       * 
-       * Layer panel filter is active only if the filter contains a certain number of characters 
-       * 
-       * @example ```ts
-       * 
-       * // set the filter to "a"
-       * JMap.Application.Layer.setFilter("a")
-       * 
-       * // will return false
-       * const isFilterActive = JMap.Application.Layer.isFilterActive()
-       * ```
-       */
-      function isFilterActive(): boolean
+          /**
+           * **JMap.Application.Layer.Tree.Filter.isApplied**
+           * 
+           * Tests if the layer tree filters are applied.
+           * 
+           * layer tree filters are applied (in action) only if the filtering is active ([[JMap.Application.Layer.Tree.Filter.isActive]] returns true)
+           * and either one of those two conditions are met:
+           * 
+           * a) the name filter contains at least 2 characters
+           * b) one of the layer filters has been added to the filtering configuration
+           * 
+           * @example ```ts
+           * 
+           * // filter configuration is initially empty
+           * 
+           * // activate the filters
+           * JMap.Application.Layer.Tree.Filter.setActive(true)
+           * 
+           * // set the name filter to "a"
+           * JMap.Application.Layer.Tree.Filter.setName("a")
+           * 
+           * // will return false
+           * const isFilterApplied = JMap.Application.Layer.Tree.Filter.isApplied()
+           * ```
+           */
+          function isApplied(): boolean
+        
+          /**
+           * **JMap.Application.Layer.Tree.Filter.isActive**
+           * 
+           * Tests if the layer tree filters are active.
+           * 
+           * Layer tree filter are active, but initially not applied, when the user activate the Filter user interface either by clicking on a button
+           * or by calling a JMap NG API method to activate it.
+           * See [[JMap.Application.Layer.Tree.Filter.isApplied]] for more details 
+           * 
+           * @example ```ts
+           * 
+           * // activate the filters
+           * JMap.Application.Layer.Tree.Filter.setActive(false)
+           * 
+           * // will return false
+           * JMap.Application.Layer.Tree.Filter.isActive()
+           * ```
+           */        
+          function isActive(): boolean
+        
+          /**
+           * **JMap.Application.Layer.Tree.Filter.setActive**
+           * 
+           * Tests if the layer tree filters are active.
+           * 
+           * Layer tree filters are active, but initially not applied, when the user activate the Filter user interface either by clicking on a button
+           * or by calling a JMap NG API method to activate it.
+           * See [[JMap.Application.Layer.Tree.Filter.isApplied]] for more details 
+           * 
+           * @param active a boolean
+           * @example ```ts
+           * 
+           * // activate the filters
+           * JMap.Application.Layer.Tree.Filter.setActive(false)
+           * 
+           * // will return false
+           * JMap.Application.Layer.Tree.Filter.isActive()
+           * ```
+           */        
+          function setActive(active: boolean): void
+
+          /**
+           * **JMap.Application.Layer.Tree.Filter.applyToMap**
+           * 
+           * Applies the current filter configuration on the map. All layers not matching the filter will be hidden, and only those
+           * that matche the filter will stay visible on the map. If no filter is defined (or appliable), no change is applied on the map.
+           * 
+           * @example ```ts
+           * 
+           * // Apply the current filter
+           * JMap.Application.Layer.Tree.Filter.applyToMap()
+           * ```
+           */        
+          function applyToMap(): void
+
+          /**
+           * **JMap.Application.Layer.Tree.Filter.existById**
+           * 
+           * Tests if the specified filter exists.
+           * 
+           * @param filterId the filter id
+           * @example ```ts
+           * 
+           * // create a filter
+           * JMap.Application.Layer.Tree.Filter.add({
+           *  1,
+           *  metadataItemId: 0,
+           *  type: "date",
+           *  operator: "between",
+           *  value: [new Date("2021-06-02T00:00:00"),new Date("2021-06-22:T00:00:00")]
+           * })
+           * 
+           * // will return true
+           * JMap.Application.Layer.Tree.Filter.existById(1)
+           * ```
+           */      
+          function existById(filterId: number): boolean
+
+          /**
+           * **JMap.Application.Layer.Tree.Filter.oneFilterExistForMetadataId**
+           * 
+           * Tests if at least one filter associated with the specified metadata id exists.
+           * 
+           * @param metadataId the metadata id
+           * @example ```ts
+           * 
+           * //filter collection is initially empty
+           * 
+           * // create a filter
+           * JMap.Application.Layer.Tree.Filter.add({
+           *  1,
+           *  metadataItemId: 0,
+           *  type: "date",
+           *  operator: "between",
+           *  value: [new Date("2021-06-02T00:00:00"),new Date("2021-06-22:T00:00:00")]
+           * })
+           * 
+           * // will return false
+           * JMap.Application.Layer.Tree.Filter.oneFilterExistForMetadataId(6)
+           * ```
+           */        
+          function oneFilterExistForMetadataId(metadataId: number): boolean
+
+          /**
+           * **JMap.Application.Layer.Tree.Filter.getAll**
+           * 
+           * Returns an object containing the current name filter and an array of all current filters
+           * 
+           * @example ```ts
+           * 
+           * // get filters configuration
+           * console.log(JMap.Application.Layer.Tree.Filter.getAll())
+           * // {
+           * //   "nameFilter":"Mont",
+           * //   "filters":[
+           * //     {"id":1,
+           * //       "metadataItemId":0,
+           * //       "operator":"between",
+           * //       "type":"date",
+           * //       "value":[
+           * //       "2021-06-01T10:25:00.000Z",
+           * //       "2021-06-22T10:25:00.000Z"
+           * //       ]
+           * //     }
+           * //   ]
+           * // }
+           * ```
+           */        
+          function getAll(): JAppGetAllFiltersResult
+
+          /**
+           * **JMap.Application.Layer.Tree.Filter.getById**
+           * 
+           * Retrieves the specified filter by id.
+           * 
+           * @param filterId the filter id
+           * @example ```ts
+           * 
+           * // get filter id=1
+           * JMap.Application.Layer.Tree.Filter.getById(1)
+           * // {"id":1,
+           * //   "metadataItemId":0,
+           * //   "operator":"between",
+           * //   "type":"date",
+           * //   "value":[
+           * //     "2021-06-01T10:25:00.000Z",
+           * //     "2021-06-22T10:25:00.000Z"
+           * //   ]
+           * // }
+           * ```
+           */        
+          function getById(filterId: number): JAppAnyLayerFilter
+
+          /**
+           * **JMap.Application.Layer.Tree.Filter.add**
+           * 
+           * add a filter. The list a available metadata schema items can be retieved by calling [[JMap.Layer.getMetadataSchema]]
+           * 
+           * @param filter a JAppAnyLayerFilter object
+           * @example ```ts
+           * 
+           * // add a filter to the config
+           * JMap.Application.Layer.Tree.Filter.add({
+           *  1,
+           *  metadataItemId: 0,
+           *  type: "date",
+           *  operator: "between",
+           *  value: [new Date("2021-06-02T00:00:00"),new Date("2021-06-22:T00:00:00")]
+           * })
+           * ```
+           */        
+          function add(filter: JAppAnyLayerFilter): JAppAnyLayerFilter
+
+          /**
+           * **JMap.Application.Layer.Tree.Filter.deleteById**
+           * 
+           * Removes the specified filter from the filter configuration.
+           * 
+           * @param filterId the id of the filter to delete
+           * @example ```ts
+           * 
+           * // delete filter id=1
+           * JMap.Application.Layer.Tree.Filter.deleteById(1)
+           * ```
+           */        
+          function deleteById(filterId: number): JAppAnyLayerFilter
+
+          /**
+           * **JMap.Application.Layer.Tree.Filter.openAddFilterDialog**
+           * 
+           * Opens the Add Filter dialog box, and activates the Layer panel if it is not already active.
+           * 
+           * @example ```ts
+           * 
+           * // open Add Filter UI
+           * JMap.Application.Layer.Tree.Filter.openAddFilterDialog()
+           * ```
+           */        
+          function openAddFilterDialog(): void
+
+          /**
+           * **JMap.Application.Layer.Tree.Filter.closeAddFilterDialog**
+           * 
+           * Closes the Add Filter dialog box (without saving the filter).
+           * 
+           * @example ```ts
+           * 
+           * // close Add Filter UI
+           * JMap.Application.Layer.Tree.Filter.closeAddFilterDialog()
+           * ```
+           */        
+          function closeAddFilterDialog(): void
+        }
+      }
 
       /**
        * **JMap.Application.Layer.startThematicEdition**

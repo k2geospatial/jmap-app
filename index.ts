@@ -51,9 +51,7 @@ export interface JAppPanelState {
 }
 
 export interface JAppLayerState {
-  filter: string
-  exactlyMatchedTreeItemIds: number[]
-  expandedMatchedTreeItemIds: number[]
+  treeFilter: JAppLayerTreeFilterState
   layerInEditionForThematic: JLayer | undefined
   popupMenuLayerId: number | undefined
 }
@@ -367,10 +365,29 @@ export interface JAppMapContextService {
 }
 
 export interface JAppLayerService {
-  setFilter(filter: string): void
-  isFilterActive(): boolean
+  Tree: JAppLayerTreeService
   startThematicEdition(layerId: number): void
   stopThematicEdition(): void
+}
+
+export interface JAppLayerTreeService {
+  Filter: JAppLayerTreeFilterService
+}
+
+export interface JAppLayerTreeFilterService {
+  setName(nameFilter: string): void
+  isApplied(): boolean
+  isActive(): boolean
+  setActive(active: boolean): void
+  applyToMap(): void
+  existById(filterId: number): boolean
+  oneFilterExistForMetadataId(metadataId: number): boolean
+  getAll(): JAppGetAllFiltersResult
+  getById(filterId: number): JAppAnyLayerFilter
+  add(filter: JAppAnyLayerFilter): JAppAnyLayerFilter
+  deleteById(filterId: number): JAppAnyLayerFilter
+  openAddFilterDialog(): void
+  closeAddFilterDialog(): void
 }
 
 export interface JAppAppEventModule extends JEventModule {

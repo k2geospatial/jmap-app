@@ -1,0 +1,831 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Filter | jmap-app</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">jmap-app</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="jmap.html">JMap</a>
+				</li>
+				<li>
+					<a href="jmap.application.html">Application</a>
+				</li>
+				<li>
+					<a href="jmap.application.layer.html">Layer</a>
+				</li>
+				<li>
+					<a href="jmap.application.layer.tree.html">Tree</a>
+				</li>
+				<li>
+					<a href="jmap.application.layer.tree.filter.html">Filter</a>
+				</li>
+			</ul>
+			<h1>Module Filter</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p><strong>JMap.Application.Layer.Tree.Filter</strong></p>
+					</div>
+					<p>You can manage the layer panel&#39;s tree view filtering here.</p>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#applytomap" class="tsd-kind-icon">apply<wbr>ToMap</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#closeaddfilterdialog" class="tsd-kind-icon">close<wbr>Add<wbr>Filter<wbr>Dialog</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#deletebyid" class="tsd-kind-icon">delete<wbr>ById</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#existbyid" class="tsd-kind-icon">exist<wbr>ById</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#getall" class="tsd-kind-icon">get<wbr>All</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#isactive" class="tsd-kind-icon">is<wbr>Active</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#isapplied" class="tsd-kind-icon">is<wbr>Applied</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#onefilterexistformetadataid" class="tsd-kind-icon">one<wbr>Filter<wbr>Exist<wbr>For<wbr>Metadata<wbr>Id</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#openaddfilterdialog" class="tsd-kind-icon">open<wbr>Add<wbr>Filter<wbr>Dialog</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#setactive" class="tsd-kind-icon">set<wbr>Active</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="jmap.application.layer.tree.filter.html#setname" class="tsd-kind-icon">set<wbr>Name</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="add" class="tsd-anchor"></a>
+					<h3>add</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>filter<span class="tsd-signature-symbol">: </span><a href="../globals.html#jappanylayerfilter" class="tsd-signature-type">JAppAnyLayerFilter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#jappanylayerfilter" class="tsd-signature-type">JAppAnyLayerFilter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1318">public/app.d.ts:1318</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.add</strong></p>
+								</div>
+								<p>add a filter. The list a available metadata schema items can be retieved by calling <a href="jmap.layer.html#getmetadataschema">JMap.Layer.getMetadataSchema</a></p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// add a filter to the config</span>
+JMap.Application.Layer.Tree.Filter.add({
+ <span class="hljs-number">1</span>,
+ metadataItemId: <span class="hljs-number">0</span>,
+ <span class="hljs-keyword">type</span>: <span class="hljs-string">"date"</span>,
+ operator: <span class="hljs-string">"between"</span>,
+ value: [<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">"2021-06-02T00:00:00"</span>),<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">"2021-06-22:T00:00:00"</span>)]
+})</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filter: <a href="../globals.html#jappanylayerfilter" class="tsd-signature-type">JAppAnyLayerFilter</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>a JAppAnyLayerFilter object</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#jappanylayerfilter" class="tsd-signature-type">JAppAnyLayerFilter</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="applytomap" class="tsd-anchor"></a>
+					<h3>apply<wbr>ToMap</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">apply<wbr>ToMap<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1200">public/app.d.ts:1200</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.applyToMap</strong></p>
+								</div>
+								<p>Applies the current filter configuration on the map. All layers not matching the filter will be hidden, and only those
+								that matche the filter will stay visible on the map. If no filter is defined (or appliable), no change is applied on the map.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// Apply the current filter</span>
+JMap.Application.Layer.Tree.Filter.applyToMap()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="closeaddfilterdialog" class="tsd-anchor"></a>
+					<h3>close<wbr>Add<wbr>Filter<wbr>Dialog</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">close<wbr>Add<wbr>Filter<wbr>Dialog<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1358">public/app.d.ts:1358</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.closeAddFilterDialog</strong></p>
+								</div>
+								<p>Closes the Add Filter dialog box (without saving the filter).</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// close Add Filter UI</span>
+JMap.Application.Layer.Tree.Filter.closeAddFilterDialog()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="deletebyid" class="tsd-anchor"></a>
+					<h3>delete<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>ById<span class="tsd-signature-symbol">(</span>filterId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#jappanylayerfilter" class="tsd-signature-type">JAppAnyLayerFilter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1332">public/app.d.ts:1332</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.deleteById</strong></p>
+								</div>
+								<p>Removes the specified filter from the filter configuration.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// delete filter id=1</span>
+JMap.Application.Layer.Tree.Filter.deleteById(<span class="hljs-number">1</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filterId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the id of the filter to delete</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#jappanylayerfilter" class="tsd-signature-type">JAppAnyLayerFilter</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="existbyid" class="tsd-anchor"></a>
+					<h3>exist<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">exist<wbr>ById<span class="tsd-signature-symbol">(</span>filterId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1223">public/app.d.ts:1223</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.existById</strong></p>
+								</div>
+								<p>Tests if the specified filter exists.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// create a filter</span>
+JMap.Application.Layer.Tree.Filter.add({
+ <span class="hljs-number">1</span>,
+ metadataItemId: <span class="hljs-number">0</span>,
+ <span class="hljs-keyword">type</span>: <span class="hljs-string">"date"</span>,
+ operator: <span class="hljs-string">"between"</span>,
+ value: [<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">"2021-06-02T00:00:00"</span>),<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">"2021-06-22:T00:00:00"</span>)]
+})
+
+<span class="hljs-comment">// will return true</span>
+JMap.Application.Layer.Tree.Filter.existById(<span class="hljs-number">1</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filterId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the filter id</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getall" class="tsd-anchor"></a>
+					<h3>get<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/jappgetallfiltersresult.html" class="tsd-signature-type">JAppGetAllFiltersResult</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1275">public/app.d.ts:1275</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.getAll</strong></p>
+								</div>
+								<p>Returns an object containing the current name filter and an array of all current filters</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// get filters configuration</span>
+<span class="hljs-built_in">console</span>.log(JMap.Application.Layer.Tree.Filter.getAll())
+<span class="hljs-comment">// {</span>
+<span class="hljs-comment">//   "nameFilter":"Mont",</span>
+<span class="hljs-comment">//   "filters":[</span>
+<span class="hljs-comment">//     {"id":1,</span>
+<span class="hljs-comment">//       "metadataItemId":0,</span>
+<span class="hljs-comment">//       "operator":"between",</span>
+<span class="hljs-comment">//       "type":"date",</span>
+<span class="hljs-comment">//       "value":[</span>
+<span class="hljs-comment">//       "2021-06-01T10:25:00.000Z",</span>
+<span class="hljs-comment">//       "2021-06-22T10:25:00.000Z"</span>
+<span class="hljs-comment">//       ]</span>
+<span class="hljs-comment">//     }</span>
+<span class="hljs-comment">//   ]</span>
+<span class="hljs-comment">// }</span></code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/jappgetallfiltersresult.html" class="tsd-signature-type">JAppGetAllFiltersResult</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getbyid" class="tsd-anchor"></a>
+					<h3>get<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ById<span class="tsd-signature-symbol">(</span>filterId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#jappanylayerfilter" class="tsd-signature-type">JAppAnyLayerFilter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1298">public/app.d.ts:1298</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.getById</strong></p>
+								</div>
+								<p>Retrieves the specified filter by id.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// get filter id=1</span>
+JMap.Application.Layer.Tree.Filter.getById(<span class="hljs-number">1</span>)
+<span class="hljs-comment">// {"id":1,</span>
+<span class="hljs-comment">//   "metadataItemId":0,</span>
+<span class="hljs-comment">//   "operator":"between",</span>
+<span class="hljs-comment">//   "type":"date",</span>
+<span class="hljs-comment">//   "value":[</span>
+<span class="hljs-comment">//     "2021-06-01T10:25:00.000Z",</span>
+<span class="hljs-comment">//     "2021-06-22T10:25:00.000Z"</span>
+<span class="hljs-comment">//   ]</span>
+<span class="hljs-comment">// }</span></code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filterId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the filter id</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#jappanylayerfilter" class="tsd-signature-type">JAppAnyLayerFilter</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="isactive" class="tsd-anchor"></a>
+					<h3>is<wbr>Active</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Active<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1165">public/app.d.ts:1165</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.isActive</strong></p>
+								</div>
+								<p>Tests if the layer tree filters are active.</p>
+								<p>Layer tree filter are active, but initially not applied, when the user activate the Filter user interface either by clicking on a button
+									or by calling a JMap NG API method to activate it.
+								See <a href="jmap.application.layer.tree.filter.html#isapplied">JMap.Application.Layer.Tree.Filter.isApplied</a> for more details</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// activate the filters</span>
+JMap.Application.Layer.Tree.Filter.setActive(<span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// will return false</span>
+JMap.Application.Layer.Tree.Filter.isActive()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="isapplied" class="tsd-anchor"></a>
+					<h3>is<wbr>Applied</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Applied<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1145">public/app.d.ts:1145</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.isApplied</strong></p>
+								</div>
+								<p>Tests if the layer tree filters are applied.</p>
+								<p>layer tree filters are applied (in action) only if the filtering is active (<a href="jmap.application.layer.tree.filter.html#isactive">JMap.Application.Layer.Tree.Filter.isActive</a> returns true)
+								and either one of those two conditions are met:</p>
+								<p>a) the name filter contains at least 2 characters
+								b) one of the layer filters has been added to the filtering configuration</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// filter configuration is initially empty</span>
+
+<span class="hljs-comment">// activate the filters</span>
+JMap.Application.Layer.Tree.Filter.setActive(<span class="hljs-literal">true</span>)
+
+<span class="hljs-comment">// set the name filter to "a"</span>
+JMap.Application.Layer.Tree.Filter.setName(<span class="hljs-string">"a"</span>)
+
+<span class="hljs-comment">// will return false</span>
+<span class="hljs-keyword">const</span> isFilterApplied = JMap.Application.Layer.Tree.Filter.isApplied()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="onefilterexistformetadataid" class="tsd-anchor"></a>
+					<h3>one<wbr>Filter<wbr>Exist<wbr>For<wbr>Metadata<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">one<wbr>Filter<wbr>Exist<wbr>For<wbr>Metadata<wbr>Id<span class="tsd-signature-symbol">(</span>metadataId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1248">public/app.d.ts:1248</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.oneFilterExistForMetadataId</strong></p>
+								</div>
+								<p>Tests if at least one filter associated with the specified metadata id exists.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">//filter collection is initially empty</span>
+
+<span class="hljs-comment">// create a filter</span>
+JMap.Application.Layer.Tree.Filter.add({
+ <span class="hljs-number">1</span>,
+ metadataItemId: <span class="hljs-number">0</span>,
+ <span class="hljs-keyword">type</span>: <span class="hljs-string">"date"</span>,
+ operator: <span class="hljs-string">"between"</span>,
+ value: [<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">"2021-06-02T00:00:00"</span>),<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">"2021-06-22:T00:00:00"</span>)]
+})
+
+<span class="hljs-comment">// will return false</span>
+JMap.Application.Layer.Tree.Filter.oneFilterExistForMetadataId(<span class="hljs-number">6</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>metadataId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the metadata id</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="openaddfilterdialog" class="tsd-anchor"></a>
+					<h3>open<wbr>Add<wbr>Filter<wbr>Dialog</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">open<wbr>Add<wbr>Filter<wbr>Dialog<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1345">public/app.d.ts:1345</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.openAddFilterDialog</strong></p>
+								</div>
+								<p>Opens the Add Filter dialog box, and activates the Layer panel if it is not already active.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// open Add Filter UI</span>
+JMap.Application.Layer.Tree.Filter.openAddFilterDialog()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="setactive" class="tsd-anchor"></a>
+					<h3>set<wbr>Active</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Active<span class="tsd-signature-symbol">(</span>active<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1186">public/app.d.ts:1186</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.setActive</strong></p>
+								</div>
+								<p>Tests if the layer tree filters are active.</p>
+								<p>Layer tree filters are active, but initially not applied, when the user activate the Filter user interface either by clicking on a button
+									or by calling a JMap NG API method to activate it.
+								See <a href="jmap.application.layer.tree.filter.html#isapplied">JMap.Application.Layer.Tree.Filter.isApplied</a> for more details</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// activate the filters</span>
+JMap.Application.Layer.Tree.Filter.setActive(<span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// will return false</span>
+JMap.Application.Layer.Tree.Filter.isActive()</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>active: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>a boolean</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="setname" class="tsd-anchor"></a>
+					<h3>set<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Name<span class="tsd-signature-symbol">(</span>nameFilter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/k2geospatial/jmap-app/blob/536a6b3/public/app.d.ts#L1118">public/app.d.ts:1118</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><strong>JMap.Application.Layer.Tree.Filter.setName</strong></p>
+								</div>
+								<p>Sets the name filter. Name filter need to have at least 2 characters to be applied</p>
+								<p>Panel layer will show only layers whose name matches the name filter. The name filter is case-insensitive and
+								diacritical characters insensitive</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-ts">
+<span class="hljs-comment">// In the layer panel will display only layers whose name matches "pro" (case-insensitive)</span>
+JMap.Application.Layer.setName(<span class="hljs-string">"pro"</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nameFilter: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name filter to apply</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module tsd-is-not-exported">
+						<a href="jmap.html">JMap</a>
+						<ul>
+							<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+								<a href="jmap.application.html">Application</a>
+								<ul>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.annotation.html">Annotation</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.event.html">Event</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.extension.html">Extension</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.feature.html">Feature</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.geometry.html">Geometry</a>
+									</li>
+									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.layer.html">Layer</a>
+										<ul>
+											<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+												<a href="jmap.application.layer.tree.html">Tree</a>
+												<ul>
+													<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+														<a href="jmap.application.layer.tree.filter.html">Filter</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.mapcontext.html">Map<wbr>Context</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.measure.html">Measure</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.message.html">Message</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.panel.html">Panel</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.print.html">Print</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.project.html">Project</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.query.html">Query</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.selection.html">Selection</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.ui.html">UI</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+										<a href="jmap.application.user.html">User</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#add" class="tsd-kind-icon">add</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#applytomap" class="tsd-kind-icon">apply<wbr>ToMap</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#closeaddfilterdialog" class="tsd-kind-icon">close<wbr>Add<wbr>Filter<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#deletebyid" class="tsd-kind-icon">delete<wbr>ById</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#existbyid" class="tsd-kind-icon">exist<wbr>ById</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#getall" class="tsd-kind-icon">get<wbr>All</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#isactive" class="tsd-kind-icon">is<wbr>Active</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#isapplied" class="tsd-kind-icon">is<wbr>Applied</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#onefilterexistformetadataid" class="tsd-kind-icon">one<wbr>Filter<wbr>Exist<wbr>For<wbr>Metadata<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#openaddfilterdialog" class="tsd-kind-icon">open<wbr>Add<wbr>Filter<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#setactive" class="tsd-kind-icon">set<wbr>Active</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="jmap.application.layer.tree.filter.html#setname" class="tsd-kind-icon">set<wbr>Name</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

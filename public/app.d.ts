@@ -960,7 +960,7 @@ declare namespace JMap {
           function isActive(): boolean
         
           /**
-           * **JMap.Application.Layer.Tree.Filter.isActive**
+           * **JMap.Application.Layer.Tree.Filter.setActive**
            * 
            * Tests if the layer tree filters are active.
            * 
@@ -999,7 +999,7 @@ declare namespace JMap {
            * 
            * Tests if the specified filter exists.
            * 
-           * @param id the filter id
+           * @param filterId the filter id
            * @example ```ts
            * 
            * // create a filter
@@ -1015,14 +1015,14 @@ declare namespace JMap {
            * JMap.Application.Layer.Tree.Filter.existById(1)
            * ```
            */      
-          function existById(id: number): boolean
+          function existById(filterId: number): boolean
 
           /**
-           * **JMap.Application.Layer.Tree.Filter.existsByMetadataItemId**
+           * **JMap.Application.Layer.Tree.Filter.oneFilterExistForMetadataId**
            * 
-           * Tests if at least one filter associated with the specified metadata schema item id exists.
+           * Tests if at least one filter associated with the specified metadata id exists.
            * 
-           * @param id the metadata schema item id
+           * @param metadataId the metadata id
            * @example ```ts
            * 
            * //filter collection is initially empty
@@ -1037,10 +1037,10 @@ declare namespace JMap {
            * })
            * 
            * // will return false
-           * JMap.Application.Layer.Tree.Filter.existsByMetadataItemId(6)
+           * JMap.Application.Layer.Tree.Filter.oneFilterExistForMetadataId(6)
            * ```
            */        
-          function existsByMetadataItemId(id: number): boolean
+          function oneFilterExistForMetadataId(metadataId: number): boolean
 
           /**
            * **JMap.Application.Layer.Tree.Filter.getAll**
@@ -1074,7 +1074,7 @@ declare namespace JMap {
            * 
            * Retrieves the specified filter by id.
            * 
-           * @param id the filter id
+           * @param filterId the filter id
            * @example ```ts
            * 
            * // get filter id=1
@@ -1090,7 +1090,7 @@ declare namespace JMap {
            * // }
            * ```
            */        
-          function getById(id: number): JAppAnyLayerFilter
+          function getById(filterId: number): JAppAnyLayerFilter
 
           /**
            * **JMap.Application.Layer.Tree.Filter.add**
@@ -1117,14 +1117,14 @@ declare namespace JMap {
            * 
            * Removes the specified filter from the filter configuration.
            * 
-           * @param id the id of the filter to delete
+           * @param filterId the id of the filter to delete
            * @example ```ts
            * 
            * // delete filter id=1
            * JMap.Application.Layer.Tree.Filter.deleteById(1)
            * ```
            */        
-          function deleteById(id: number): JAppAnyLayerFilter
+          function deleteById(filterId: number): JAppAnyLayerFilter
 
           /**
            * **JMap.Application.Layer.Tree.Filter.openAddFilterDialog**
@@ -1140,7 +1140,7 @@ declare namespace JMap {
           function openAddFilterDialog(): void
 
           /**
-           * **JMap.Application.Layer.Tree.Filter._____**
+           * **JMap.Application.Layer.Tree.Filter.closeAddFilterDialog**
            * 
            * Closes the Add Filter dialog box (without saving the filter).
            * 

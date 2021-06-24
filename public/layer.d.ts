@@ -32,6 +32,11 @@ declare interface JAppLayerTreeFilterState {
   layerIdsByFilterId: JAppLayerIdByFilterId
 }
 
+declare interface JAppGetAllFiltersResult {
+  nameFilter: string
+  filters: JAppAnyLayerFilter[]
+}
+
 declare type JAppLayerIdByFilterId = {[filterId: number]: JId[]}
 
 declare type JAppAnyLayerFilter = JAppNumberLayerFilter | JAppTextLayerFilter | JAppDateLayerFilter

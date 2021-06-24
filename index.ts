@@ -342,7 +342,7 @@ export interface JAppLayerTreeFilterService {
   applyToMap(): void
   existById(id: number): boolean
   existsByMetadataItemId(id: number): boolean
-  getAll(): JAppAnyLayerFilter[]
+  getAll(): JAppGetAllFiltersResult
   getById(id: number): JAppAnyLayerFilter
   add(filter: JAppAnyLayerFilter): JAppAnyLayerFilter
   deleteById(id: number): JAppAnyLayerFilter

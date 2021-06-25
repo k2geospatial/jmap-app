@@ -298,9 +298,9 @@ export interface JAppMeasureService {
 }
 
 export interface JAppFavoriteService {
-  add(location: JLocation): JAppFavorite|void
-  deleteById(id: number): void
-  deleteAll(): void
+  add(location: JLocation): Promise<JAppFavorite>
+  deleteById(id: number): Promise<void>
+  deleteAll(): Promise<void>
   getById(id: number): JAppFavorite
   getAll(): JAppFavorite[]
   existById(id: number): boolean

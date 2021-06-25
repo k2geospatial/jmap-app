@@ -3029,7 +3029,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Favorite.addFavorite**
        * 
-       * Return the favorite created using the location or nothing if there is an error.
+       *  Add a favorite to your map and to the JMap Favorite User menu.
        * 
        * @param newLocation the location of the new favorite
        * @example ```ts
@@ -3041,12 +3041,12 @@ declare namespace JMap {
        * JMap.Application.Favorite.add(newLocation)
        * ```
        */
-      function add(newLocation: JLocation): JAppFavorite|void
+      function add(newLocation: JLocation): Promise<JAppFavorite>
 
       /**
        * **JMap.Application.Favorite.deleteById**
        * 
-       * Delete the favorite of the given id from the JMap Favorite User menu.
+       * Delete the favorite of the given id from map and the JMap Favorite User menu.
        *       
        * @param favoriteId the favorite id
        * @example ```ts
@@ -3054,7 +3054,7 @@ declare namespace JMap {
        * JMap.Application.Favorite.deleteById(3)
        * ```
        */
-       function deleteById(favoriteId: number): void 
+       function deleteById(favoriteId: number): Promise<void>
 
        /**
         * **JMap.Application.Favorite.getAll**

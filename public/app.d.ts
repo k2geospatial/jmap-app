@@ -7,7 +7,7 @@ declare namespace JMap {
    * 
    * JMap NG App depends on the JMap NG Core library ([[JMap]]).
    * 
-   * Examples are availables <a href="https://doc.k2geospatial.com/jmap/doc/ng_dev/examples.html" target="_blank">here</a>.
+   * Examples are available <a href="https://doc.k2geospatial.com/jmap/doc/ng_dev/examples.html" target="_blank">here</a>.
    * 
    * You can customize JMap NG App by providing startup options ([[JApplicationOptions]]).
    */
@@ -44,11 +44,11 @@ declare namespace JMap {
     /**
      * **JMap.Application.openDocumentation**
      * 
-     * Open JMap NG App online JS API documentation, in a new tab.
+     * Opens JMap NG App online JS API documentation, in a new tab.
      * 
      * @example ```ts
      * 
-     * // open JMap NG App online documentation, in a new tab
+     * // opens JMap NG App online documentation, in a new tab
      * JMap.Application.openDocumentation()
      * ```
      */
@@ -57,11 +57,11 @@ declare namespace JMap {
     /**
     * **JMap.Application.openUserManual**
     * 
-    * Open the JMap NG App online user manual, in a new tab.
+    * Opens the JMap NG App online user manual, in a new tab.
     * 
     * @example ```ts
     * 
-    * // Open the JMap NG App online user manual, in a new tab
+    * // Opens the JMap NG App online user manual, in a new tab
     * JMap.Application.openUserManual()
     * ```
     */
@@ -90,12 +90,12 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.setDrawMode**
        * 
-       * Set the annotation draw mode.
+       * Sets the annotation draw mode.
        * 
        * @param drawMode the new draw mode
        * @example ```ts
        * 
-       * // Set the annotation draw mode to "draw"
+       * // Sets the annotation draw mode to "draw"
        * JMap.Application.Annotation.setDrawMode("draw")
        * ```
        */
@@ -117,12 +117,12 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.setDrawMode**
        * 
-       * Set the annotation draw mode.
+       * Sets the annotation draw mode.
        * 
        * @param drawType the new draw type
        * @example ```ts
        * 
-       * // Set the annotation draw mode to "draw"
+       * // Sets the annotation draw mode to "draw"
        * JMap.Application.Annotation.setDrawMode("draw")
        * ```
        */
@@ -131,13 +131,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.existsById**
        * 
-       * Returns true if annotation exist for the given id, else false
+       * Returns true if annotation exists for the given id, else false
        * 
        * @throws if the annotationId param is not a valid string
        * @param annotationId the given annotation id 
        * @example ```ts
        * 
-       * // returns true if annotation exist, else false
+       * // returns true if annotation exists, else false
        * JMap.Application.Annotation.existsById("d68385b01be3c241c7b6298b2788839d")
        * ```
        */
@@ -176,7 +176,7 @@ declare namespace JMap {
        * 
        * Returns the ids of the selected annotations.
        * 
-       * Empty array if no annotation are selected
+       * Empty array if no annotation is selected
        * 
        * @example ```ts
        * 
@@ -189,13 +189,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.deleteAll**
        * 
-       * Delete all annotations.
+       * Deletes all annotations.
        * 
-       * Do nothing if no annotation exist.
+       * Does nothing if no annotation exists.
        * 
        * @example ```ts
        * 
-       * // Delete all annotations
+       * // Deletes all annotations
        * JMap.Application.Annotation.deleteAll()
        * ```
        */
@@ -204,15 +204,15 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.deleteByType**
        * 
-       * Delete the annotations for the given type.
+       * Deletes the annotations for the given type.
        * 
-       * Do nothing if no annotation exist for the type.
+       * Does nothing if no annotation exist for the type.
        * 
        * @param annotationType the annotation type : "point", "polygon", "line_string", "rectangle", "circle", or "text"
        * @throws if the annotation type is not correct
        * @example ```ts
        * 
-       * // Delete all text annotations if exist
+       * // Deletes all text annotations if exist
        * JMap.Application.Annotation.deleteByType("text")
        * ```
        */
@@ -221,13 +221,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.deleteByIds**
        * 
-       * Delete the annotations for the given ids.
+       * Deletes the annotations for the given ids.
        * 
        * @param annotationIds an array of annotation id
-       * @throws if an annotations array is empty or an annotation is not found for the given ids.
+       * @throws if an annotation array is empty or an annotation is not found for the given ids.
        * @example ```ts
        * 
-       * // Delete two annotations
+       * // Deletes two annotations
        * JMap.Application.Annotation.deleteByIds([
        *  "d68385b01be3c241c7b6298b2788839d",
        *  "98ef8ad4476f0e6fa26be416d58d0734"
@@ -239,13 +239,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.deleteSelected**
        * 
-       * Delete the selected annotations.
+       * Deletes the selected annotations.
        * 
-       * Do nothing if no selection.
+       * Does nothing if no selection.
        * 
        * @example ```ts
        * 
-       * // Delete selected annotations
+       * // Deletes selected annotations
        * JMap.Application.Annotation.deleteSelected()
        * ```
        */
@@ -267,13 +267,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.updateStyle**
        * 
-       * Update annotation style, for the next annotations that will be drawn.
+       * Updates annotation style, for the next annotations that will be drawn.
        * 
-       * Merge the new options with current one.
+       * Merges the new options with current one.
        * 
        * @example ```ts
        * 
-       * // Set the line width as 3px
+       * // Sets the line width as 3px
        * JMap.Application.Annotation.updateStyle({
        *  lineWidth: 3
        * })
@@ -284,7 +284,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.setStyleByAnnotationIds**
        * 
-       * For given ids, update annotation(s) style.
+       * For given ids, updates annotation style.
        * 
        * @example ```ts
        * 
@@ -297,7 +297,7 @@ declare namespace JMap {
        *  lineWidth: 3
        * }
        * 
-       * // Set custom style for 2 annotations
+       * // Sets custom style for 2 annotations
        * JMap.Application.Annotation.setStyleByAnnotationIds(annotationIds, customStyle)
        * ```
        */
@@ -309,18 +309,18 @@ declare namespace JMap {
      * 
      * You can manage UI panels (on the left in the screen) here.
      * 
-     * A panel is always displayed, so a panel is always active and there is at least one panel.
+     * There is one diplayed and active panel at all times.
      */
     namespace Panel {
 
       /**
        * **JMap.Application.Panel.getActive**
        * 
-       * Returns the activated panel, displayed on the left.
+       * Returns the active panel.
        * 
        * @example ```ts
        * 
-       * // returns the currently activated panel
+       * // returns the currently active panel
        * JMap.Application.Panel.getActive()
        * ```
        */
@@ -342,12 +342,12 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.existById**
        * 
-       * Return true if the panel exists for a given panel id.
+       * Returns true if the panel exists for a given panel id.
        * 
        * @param panelId The panel id to test
        * @example ```ts
        * 
-       * // return true if panel id="layer" exists
+       * // returns true if panel id="layer" exists
        * JMap.Application.Panel.existById("custom-panel")
        * ```
        */
@@ -356,7 +356,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.activateById**
        * 
-       * Change the JMap NG App panel.
+       * Changes the JMap NG App panel.
        * 
        * If no panelId is provided, will activate the "layer" panel by default, if the 
        * "layer" panel is disabled will activate the first available panel.
@@ -375,7 +375,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.deactivateCurrent**
        * 
-       * Deactivate the current panel panel, except if the current panel is the layer panel, or there is only one panel available.
+       * Deactivates the current panel, except if the current panel is the layer panel, or if there is only one panel available.
        * 
        * @param params optionnal parameters
        * @example ```ts
@@ -389,21 +389,21 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.add**
        * 
-       * Add a custom panel for a given panel definition to JMap NG App.
+       * Adds a custom panel for a given panel definition to JMap NG App.
        * 
        * @throws if panel format is not correct
        * @param panel an object that is the definition of the new panel
        * @example ```ts
        * 
        * const customPanelId = "custom-panel"
-       * // will add the new panel, here en empty panel just for the example
+       * // will add the new panel, here an empty panel just for the example
        * JMap.Application.Panel.add({
        *   id: customPanelId,
        *   icon: "http://url-to-my-image/custom-icon.png", // could be an image encoded as a base64 url
        *   tooltip: "My custom panel tooltip display when mouse is hover the icon",
        *   title: "Custon panel"
        * })
-       * // The panel has been created but not displayed, if you want to display it :
+       * // The panel has been created but not displayed, if you want to display it:
        * JMap.Applcation.activate(customPanelId)
        * ```
        */
@@ -412,9 +412,9 @@ declare namespace JMap {
       /**
        * **JMap.Application.Panel.removeById**
        * 
-       * Remove a panel for a given panel id from JMap NG App.
+       * Removes a panel for a given panel id from JMap NG App.
        * 
-       * If the panel was active will activate the first panel the application found.
+       * If the panel was active, will activate the first panel the application finds.
        * 
        * @throws if panel is not found or if this is the last panel
        * @param panelId The application panel id to remove
@@ -437,13 +437,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Feature.openEditMenuById**
        * 
-       * Open the feature edit menu for single edition.
+       * Opens the feature edit menu for a single feature.
        * 
        * @param layerId the JMap layer id
        * @param featureId the feature id
        * @example ```ts
        * 
-       * // open edit menu (single edition) for layer id=5, and feature id=234
+       * // opens edit menu (single feature) for layer id=5, and feature id=234
        * JMap.Application.Feature.openEditMenuById(5, 234)
        * ```
        */
@@ -452,13 +452,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Feature.openEditMenuByIds**
        * 
-       * Open the feature edit menu for multiple edition.
+       * Opens the feature edit menu for multiple features.
        * 
        * @param layerId the JMap layer id
        * @param featureIds an array of features ids
        * @example ```ts
        * 
-       * // open edit menu (multiple edition) for layer id=5, and features id=234, 452 and 176
+       * // opens edit menu (multiple edition) for layer id=5, and features id=234, 452 and 176
        * JMap.Application.Feature.openEditMenuByIds(5, [234, 452, 176])
        * ```
        */
@@ -467,15 +467,15 @@ declare namespace JMap {
       /**
        * **JMap.Application.Feature.closeEditMenu**
        * 
-       * Close the feature edit menu if visible.
+       * Closes the feature edit menu if visible.
        * 
-       * If not visible do nothing.
+       * If not visible, does nothing.
        * 
        * @param layerId the JMap layer id
        * @param featureIds an array of features ids
        * @example ```ts
        * 
-       * // close the edit menu if visible
+       * // closes the edit menu if visible
        * JMap.Application.Feature.closeEditMenu()
        * ```
        */
@@ -484,13 +484,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Feature.deleteByIds**
        * 
-       * Delete features (on the server), refresh the layer on the map and display a success or error message when done.
+       * Deletes features (on the server), refreshes the layer on the map and displays a success or error message when done.
        * 
        * @param layerId the JMap layer id
        * @param featureIds an array of features ids
        * @example ```ts
        * 
-       * // delete 2 features on layer id=4
+       * // deletes 2 features on layer id=4
        * JMap.Application.Feature.deleteByIds(4, [23, 76]).then(result => console.log("Delete result", result))
        * ```
        */
@@ -507,7 +507,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Geometry.openPanelForCreation**
        * 
-       * Open the geometry panel in order to create a new feature.
+       * Opens the geometry panel in order to create a new feature.
        * 
        * @throws if no layer is editable
        * @example ```ts
@@ -521,7 +521,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Geometry.openPanelForUpdate**
        * 
-       * Open the geometry panel in order to update a feature geometry.
+       * Opens the geometry panel in order to update a feature geometry.
        * 
        * @throws if the given layer or feature are not editable
        * @param JAppGeometryUpdateParams function parameters
@@ -536,7 +536,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Geometry.selectLayer**
        * 
-       * Select the layer that will be used to create the geometry then the feature.
+       * Selects the layer that will be used to create the geometry and the feature.
        * 
        * @throws if layer not found
        * @param layerId The JMap layer id
@@ -551,12 +551,12 @@ declare namespace JMap {
       /**
        * **JMap.Application.Geometry.startCreationDrawing**
        * 
-       * Enable drawing the geometry on the map.
+       * Enables drawing of the geometry on the map.
        * 
        * @throws if no layer is selected
        * @example ```ts
        * 
-       * // enable drawing the geometry on the map
+       * // enables drawing of the geometry on the map
        * JMap.Application.Geometry.startCreationDrawing()
        * ```
        */
@@ -565,11 +565,11 @@ declare namespace JMap {
       /**
        * **JMap.Application.Geometry.stopCreationDrawing**
        * 
-       * Stop the geometry creation, when drawing on the map, and display the layer selection panel.
+       * Stops the geometry creation, when drawing on the map, and displays the layer selection panel.
        * 
        * @example ```ts
        * 
-       * // stop drawing the geometry on the map
+       * // stops drawing the geometry on the map
        * JMap.Application.Geometry.stopCreationDrawing()
        * ```
        */
@@ -578,12 +578,12 @@ declare namespace JMap {
       /**
        * **JMap.Application.Geometry.finishCreate**
        * 
-       * Finish geometry creation.
+       * Finishes geometry creation.
        *  
        * @throws if panel is not in creation mode, or if geometry has not yet been created.
        * @example ```ts
        * 
-       * // finish creating or updating the geometry
+       * // finishes creating or updating the geometry
        * JMap.Application.Geometry.finishCreate()
        * ```
        */
@@ -592,12 +592,12 @@ declare namespace JMap {
       /**
        * **JMap.Application.Geometry.finishUpdate**
        * 
-       * Finish geometry update.
+       * Finishes geometry update.
        * 
        * @throws if panel is not in update mode
        * @example ```ts
        * 
-       * // finish updating the geometry
+       * // finishes updating the geometry
        * JMap.Application.Geometry.finishUpdate()
        * ```
        */
@@ -606,11 +606,11 @@ declare namespace JMap {
       /**
        * **JMap.Application.Geometry.closePanel**
        * 
-       * Close the geometry creation or update panel without confirmation message.
+       * Closes the geometry creation or update panel without confirmation message.
        * 
        * @example ```ts
        * 
-       * // close the geometry panel
+       * // closes the geometry panel
        * JMap.Application.Geometry.closePanel()
        * ```
        */

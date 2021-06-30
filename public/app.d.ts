@@ -2131,7 +2131,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.UI.Theme.setDark**
          * 
-         * Change the UI color theme in dark or light.
+         * Changes the UI color theme in dark or light.
          * 
          * @param isDark if true make the theme dark, else light
          * @example ```ts
@@ -2160,7 +2160,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.refreshScaleForCurrentZoom**
        *
-       * Refresh the scale depending on the current zoom.
+       * Refreshes the scale depending on the current zoom.
        * 
        * This is a technical function, you shouldn't use it.
        * 
@@ -2176,7 +2176,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.setScaleControlVisibility**
        *
-       * Display or hide the scale control widget.
+       * Displays or hides the scale control widget.
        * 
        * @param isVisible true to display, false to hide
        * @example ```ts
@@ -2193,7 +2193,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.isScaleControlVisible**
        *
-       * Return true if the scale control widget is visible, else false.
+       * Returns true if the scale control widget is visible, else false.
        * 
        * @example ```ts
        * 
@@ -2206,9 +2206,9 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.setPageTitle**
        *
-       * Set the title displayed in the bottom of the print layout.
+       * Sets the title displayed in the bottom of the print layout.
        * 
-       * If empty string will display no title.
+       * If empty string, will display no title.
        * 
        * @throws if title is not a string
        * @param title The title displayed in the bottom of the print layout
@@ -2236,7 +2236,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.setPageSubTitle**
        *
-       * Set the subtitle displayed in the bottom of the print layout.
+       * Sets the subtitle displayed in the bottom of the print layout.
        * 
        * @throws if subTitle is not a string
        * @param subTitle The subtitle displayed in the bottom of the print layout
@@ -2277,7 +2277,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.setDateVisibility**
        *
-       * Set the date visible or hidden in the bottom of the print layout.
+       * Sets the date visible or hidden in the bottom of the print layout.
        * 
        * @param isVisible true to display, false to hide
        * @example ```ts
@@ -2307,7 +2307,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.setNorthArrowVisibility**
        *
-       * Set the north arrow visible or hidden in the bottom of the print layout.
+       * Sets the north arrow visible or hidden in the bottom of the print layout.
        * 
        * @param isVisible true to display, false to hide
        * @example ```ts
@@ -2324,7 +2324,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.getAllPaperFormats**
        *
-       * Returns all available paper format.
+       * Returns all available paper formats.
        * 
        * Different sizes are available: "letter" | "legal" | "a3" | "a4".
        * 
@@ -2340,7 +2340,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.setPaperFormat**
        *
-       * Set the paper format of the print layout.
+       * Sets the paper format of the print layout.
        * 
        * Technical method, you should not use it.
        * 
@@ -2385,7 +2385,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.setOrientation**
        *
-       * Set the print layout orientation as portrait or landscape.
+       * Sets the print layout orientation as portrait or landscape.
        * 
        * @throws if isPortrait is not a boolean
        * @param isPortrait true to display as portrait, false as landscape
@@ -2418,7 +2418,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.setFileType**
        *
-       * Set the type of file used when downloading the print.
+       * Sets the type of file used when downloading the print.
        * 
        * @throws if fileType is not correct
        * @param fileType "png", "jpeg", or "pdf" 
@@ -2446,7 +2446,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.setZoomFromScale**
        *
-       * Set the zoom from a given map scale.
+       * Sets the zoom from a given map scale.
        * 
        * @param scale the map scale
        * @example ```ts
@@ -2460,7 +2460,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Print.takeCapture**
        *
-       * Build print image and launch downwnload of the file
+       * Builds print image and launches downwnload of the file
        * 
        * @example ```ts
        * 
@@ -2481,9 +2481,9 @@ declare namespace JMap {
       /**
        * **JMap.Application.Query.activateQuery**
        *
-       * Activate a query by id and group id.
+       * Activates a query by id and group id.
        * 
-       * It display the query form instead of the list of query in the query panel.
+       * It displays the query form (replacing the list of queries) in the query panel.
        * 
        * @param groupId the query group id
        * @param queryId the query id
@@ -2498,13 +2498,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Query.deactivateQuery**
        *
-       * Deactivate the current query. If no query active do nothing.
+       * Deactivatea the current query. If no query is active, does nothing.
        * 
-       * If a query form is active (= its form is displayed), hide it and returns to the query list.
+       * If a query form is active (= its form is displayed), hidea it and returns to the query list.
        * 
        * @example ```ts
        * 
-       * // if a query form is displayed, hide it and returns to the query list.
+       * // if a query form is displayed, hide it and return to the query list.
        * JMap.Application.Print.deactivateQuery()
        * ```
        */
@@ -2515,7 +2515,7 @@ declare namespace JMap {
        *
        * Returns the current query form data.
        * 
-       * If there is no active form, warn in the console and return an empty object {}.
+       * If there is no active form, warns in the console and returns an empty object {}.
        * 
        * @example ```ts
        * 
@@ -2528,7 +2528,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Query.setDefaultData**
        *
-       * Set active query form data. If there is no active form, this function throws.
+       * Sets active query form data. If there is no active form, this function throws.
        * 
        * @throws if no query is active
        * @param values the form data, depends on the form
@@ -2546,9 +2546,9 @@ declare namespace JMap {
       /**
        * **JMap.Application.Query.clearDefaultData**
        *
-       * Reset the current query form data.
+       * Resets the current query form data.
        * 
-       * If there is no active form, do nothing.
+       * If there is no active form, does nothing.
        * 
        * @example ```ts
        * 
@@ -2561,9 +2561,9 @@ declare namespace JMap {
       /**
        * **JMap.Application.Query.displayInDialog**
        *
-       * By default the query form is displayed in the left panel with a simple layout, one field per line.
+       * By default, the query form is displayed in the left panel with a simple layout, one field per line.
        * 
-       * But it is possible to display it in a modal window, with the layout defined in the administration.
+       * But it is possible to display it in a modal window, with the layout defined in the project.
        * 
        * @throws if isVisibleInDialog is not a boolean
        * @param isVisibleInDialog true in modal window, false in left panel
@@ -2581,13 +2581,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Query.processQuery**
        *
-       * Process active query form with the given values.  
+       * Processes the active query form with the given values.  
        * 
        * Throws if no query is active.
        * 
-       * Resolve only if some features are found.
+       * Resolves only if some features are found.
        * 
-       * If features are found, we make the layer selectable and visible if needed, then select and zoom on found features.
+       * If features are found, makes the layer selectable and visible if needed, then selects and zooms on found features.
        * 
        * If no feature is found, the Promise rejects with a human readable error in the current user's locale.
        * 
@@ -2617,21 +2617,21 @@ declare namespace JMap {
      * 
      * From this section you can manage your own event listeners reacting to JMap NG App library events.
      * 
-     * For all your listener you need provide a listener id. We introduced this notion of listener ids in order
+     * For all your listeners, you need to provide a listener id. We introduced this notion of listener ids in order
      * to be able to know what's the problem if something goes wrong in a listener.
      * 
      * Like that we are able to identify more easily the problem in the javascript console.
      * 
      * Listener ids have to be unique for the namespace, regardless to the type of event you register your listener to.
      * 
-     * By example, for all Map COntext events, you can register only one listener named "***my-custom-listener***"".
+     * For example, for all Map Context events, you can register only one listener named "***my-custom-listener***"".
      * 
      * A good practice could be prefixing all your listener ids. For example if you work for the city of Montreal
      * they could all start with "***montreal-city-***"".
      * 
      * Listeners can be deactivated and reactivated.
      * 
-     * Deactivating a listener keep it in the JMap NG App library, but ignore it when an event is emitted.
+     * Deactivating a listener keeps it in the JMap NG App library, but ignores it when an event is triggered.
      */
     namespace Event {
 
@@ -2654,10 +2654,10 @@ declare namespace JMap {
           /**
            * ***JMap.Application.Event.Main.on.appReady***
            * 
-           * This event is triggered once: 
+           * This event is triggered once when: 
            * * all of the application services are loaded, 
-           * * the redux store and its reducers are also loaded
-           * * The initial session validation has been run. At thas point if the session has successfully been validated, the logged-in user will also be available
+           * * the redux store and its reducers are also loaded,
+           * * the initial session validation has been executed. At thas point, if the session has successfully been validated, the logged-in user will also be available.
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function
@@ -2682,9 +2682,9 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.Main.activate***
          * 
-         * Activate the listener.
+         * Activates the listener.
          * 
-         * If the listener is already active, do nothing.
+         * If the listener is already active, does nothing.
          * 
          * If the listener is inactive, it will be reactivated and will be called again ...
          * 
@@ -2700,9 +2700,9 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.Main.deactivate***
          * 
-         * Deactivate the listener.
+         * Deactivates the listener.
          * 
-         * If the listener id doesn't exists or if the listener is already inactive, do nothing.
+         * If the listener id doesn't exist or if the listener is already inactive, does nothing.
          * 
          * If the listener is active, it will be deactivated and will be ignored ...
          * 
@@ -2718,11 +2718,11 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.Main.remove***
          * 
-         * Remove the listener.
+         * Removes the listener.
          * 
-         * If the listener doesn't exist, do nothing.
+         * If the listener doesn't exist, does nothing.
          * 
-         * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * Removes the listener from JMap NG Core library. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts
@@ -2753,9 +2753,9 @@ declare namespace JMap {
           /**
            * ***JMap.Application.Event.Layer.on.doubleClick***
            * 
-           * This event is triggered when a user double clicks on a layer name in the hierarchical tree of the layers panel
+           * This event is triggered when a user double clicks on a layer name in the hierarchical tree of the layers panel.
            * 
-           * The layer is received as a param property of the event, you can then take any action that would be executed on double click for this layer
+           * The layer is received as a param property of the event, you can then take any action that would be executed on double click for this layer.
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function
@@ -2779,9 +2779,9 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.Layer.activate***
          * 
-         * Activate the listener.
+         * Activates the listener.
          * 
-         * If the listener is already active, do nothing.
+         * If the listener is already active, does nothing.
          * 
          * If the listener is inactive, it will be reactivated and will be called again ...
          * 
@@ -2797,9 +2797,9 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.Layer.deactivate***
          * 
-         * Deactivate the listener.
+         * Deactivates the listener.
          * 
-         * If the listener id doesn't exists or if the listener is already inactive, do nothing.
+         * If the listener id doesn't exist or if the listener is already inactive, does nothing.
          * 
          * If the listener is active, it will be deactivated and will be ignored ...
          * 
@@ -2815,11 +2815,11 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.Layer.remove***
          * 
-         * Remove the listener.
+         * Removes the listener.
          * 
-         * If the listener doesn't exist, do nothing.
+         * If the listener doesn't exist, does nothing.
          * 
-         * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * Removes the listener from JMap NG Core library. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts
@@ -2850,7 +2850,7 @@ declare namespace JMap {
           /**
            * ***JMap.Application.Event.MapContext.on.beforeMapDataChange***
            * 
-           * This event is triggered before a context's map data is created or updated.
+           * This event is triggered before a context map data is created or updated.
            * 
            * This event is not triggered when a context metadata is changed: title, description, default context, etc...
            * 
@@ -2881,11 +2881,11 @@ declare namespace JMap {
           /**
            * ***JMap.Application.Event.MapContext.on.afterMapDataChange***
            * 
-           * This event is triggered after a context's map data is created or updated.
+           * This event is triggered after a context map data is created or updated.
            * 
            * This event is not triggered when a context metadata is changed: title, description, default context, etc...
            * 
-           * You can access extension's data from this event, see example below.
+           * You can access extension data from this event, see example below.
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function
@@ -2960,9 +2960,9 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.MapContext.activate***
          * 
-         * Activate the listener.
+         * Activates the listener.
          * 
-         * If the listener is already active, do nothing.
+         * If the listener is already active, does nothing.
          * 
          * If the listener is inactive, it will be reactivated and will be called again ...
          * 
@@ -2978,9 +2978,9 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.MapContext.deactivate***
          * 
-         * Deactivate the listener.
+         * Deactivates the listener.
          * 
-         * If the listener id doesn't exists or if the listener is already inactive, do nothing.
+         * If the listener id doesn't exists or if the listener is already inactive, does nothing.
          * 
          * If the listener is active, it will be deactivated and will be ignored ...
          * 
@@ -2996,9 +2996,9 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.MapContext.remove***
          * 
-         * Remove the listener.
+         * Removes the listener.
          * 
-         * If the listener doesn't exist, do nothing.
+         * If the listener doesn't exist, does nothing.
          * 
          * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
          * 
@@ -3023,7 +3023,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.User.addPopupMenuAction**
        * 
-       * Add an action to the JMap User menu (visible in the project selection panel).
+       * Adds an action to the JMap User menu (visible in the project selection panel).
        * 
        * An action must set the "href" OR the "onCLick" parameters, but not both.
        * 
@@ -3065,7 +3065,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.User.removePopupMenuActionById***
        * 
-       * Remove an existing action menu
+       * Removes an existing action menu
        * 
        * @param actionId the action menu id
        * @throws if actionId is not valid, or not found
@@ -3088,7 +3088,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Extension.register***
        * 
-       * Register your own JMap NG App extension.
+       * Registers your own JMap NG App extension.
        * 
        * @throws Error if a parameter is not correct
        * @param extensionModel The extension model
@@ -3098,7 +3098,7 @@ declare namespace JMap {
        *  id: "MyExtension", // Unique id
        *  initFn: () => {
        *    // here you can start your UI component if needed
-       *    console.log("JMap is started and my extension has been successfuly started")
+       *    console.log("JMap NG is started and my extension has been successfuly started")
        *  },
        *  onPanelCreation: panelContainerId => {
        *    console.info("Create your component here")
@@ -3114,7 +3114,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Extension.isRegistered***
        * 
-       * Tell if an JMap NG App extension has been registered or not.
+       * Tells if an JMap NG App extension has been registered or not.
        * 
        * It can be usefull to know if a JMap NG App extension is in use or not.
        * 
@@ -3133,7 +3133,7 @@ declare namespace JMap {
        * 
        * Returns all JMap NG App registered extension ids.
        * 
-       * Don't list JMap NG Core extensions, only JMap NG App extensions.
+       * Desn't list JMap NG Core extensions, only JMap NG App extensions.
        * 
        * @example ```ts
        * 
@@ -3154,7 +3154,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Message.error***
        * 
-       * Adds an error message in the application's messages stack for the current session
+       * Adds an error message in the application message stack for the current session.
        * 
        * @param message the text of the message
        * @param options a JAppMessageOptions object
@@ -3169,7 +3169,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Message.warning***
        * 
-       * Adds an warning message in the application's messages stack for the current session
+       * Adds an warning message in the application message stack for the current session.
        * 
        * @param message the text of the message
        * @param options a JAppMessageOptions object
@@ -3184,7 +3184,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Message.info***
        * 
-       * Adds an info message in the application's messages stack for the current session
+       * Adds an info message in the application message stack for the current session.
        * 
        * @param message the text of the message
        * @param options a JAppMessageOptions object
@@ -3199,7 +3199,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Message.success***
        * 
-       * Adds an success message in the application's messages stack for the current session
+       * Adds an success message in the application message stack for the current session.
        * 
        * @param message the text of the message
        * @param options a JAppMessageOptions object
@@ -3214,7 +3214,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Message.confirmMessage***
        * 
-       * Prompt a dialog confirm message on the screen.
+       * Prompts a confirmation dialog message on the screen.
        * 
        * The onSuccess callback is called when the user clicked "confirm" button.
        *
@@ -3244,7 +3244,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Message.display***
        * 
-       * Adds an generic message in the application's messages stack for the current session
+       * Adds an generic message in the application message stack for the current session.
        * severity level should be passed (will default to "info")
        * 
        * @param message the text of the message

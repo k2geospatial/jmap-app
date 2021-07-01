@@ -2158,22 +2158,6 @@ declare namespace JMap {
     namespace Print {
 
       /**
-       * **JMap.Application.Print.refreshScaleForCurrentZoom**
-       *
-       * Refreshes the scale depending on the current zoom.
-       * 
-       * This is a technical function, you shouldn't use it.
-       * 
-       * @deprecated 
-       * @example ```ts
-       * 
-       * // refresh the scale
-       * JMap.Application.Print.refreshScaleForCurrentZoom()
-       * ```
-       */
-      function refreshScaleForCurrentZoom(): void
-
-      /**
        * **JMap.Application.Print.setScaleControlVisibility**
        *
        * Displays or hides the scale control widget.
@@ -2429,33 +2413,6 @@ declare namespace JMap {
        * ```
        */
       function setFileType(fileType: JAppPrintFileType): void
-
-      /**
-       * **JMap.Application.Print.getScale**
-       *
-       * Returns the current scale on the map.
-       * 
-       * @example ```ts
-       * 
-       * // returns the current scale on the map
-       * JMap.Application.Print.getScale()
-       * ```
-       */
-      function getScale(): number
-
-      /**
-       * **JMap.Application.Print.setZoomFromScale**
-       *
-       * Sets the zoom from a given map scale.
-       * 
-       * @param scale the map scale
-       * @example ```ts
-       * 
-       * // set the zoom from a given scale
-       * JMap.Application.Print.setZoomFromScale(1255)
-       * ```
-       */
-      function setZoomFromScale(scale: number): void
 
       /**
        * **JMap.Application.Print.takeCapture**

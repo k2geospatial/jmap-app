@@ -106,7 +106,6 @@ export interface JAppPrintState {
   isDateVisible: boolean
   isNorthArrowVisible: boolean
   isScaleVisible: boolean
-  scale: number
   isLegend: boolean
   legendTitle: string
   legendSubTitle: string
@@ -304,7 +303,6 @@ export interface JAppPanelService {
 }
 
 export interface JAppPrintService {
-  refreshScaleForCurrentZoom(): void
   setScaleControlVisibility(isVisible: boolean): void
   isScaleControlVisible(): boolean
   setPageTitle(title: string): void
@@ -322,8 +320,6 @@ export interface JAppPrintService {
   isOrientationPortrait(): boolean
   setFileType(fileType: JAppPrintFileType): void
   getFileType(): JAppPrintFileType
-  getScale(): number
-  setZoomFromScale(scale: number): void
   takeCapture(): void
 }
 

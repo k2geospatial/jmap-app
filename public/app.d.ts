@@ -302,8 +302,66 @@ declare namespace JMap {
        * ```
        */
       function setStyleByAnnotationIds(annotationIds: string[], style: JAppDrawStyle): void
-    }
 
+      /**
+       * **JMap.Application.Annotation.setPresetColors**
+       * 
+       *  Set the preset colors of color pickers using the given colors.
+       * 
+       * @example ```ts
+       * 
+       * const presetColors = [
+       *  "#29D1EA",
+       *  "#D2FDDF"
+       * ]
+       * 
+       * JMap.Application.Annotation.setPresetColors(presetColors)
+       * ```
+       */
+       function setPresetColors(presetColors: string[]): void
+
+      /**
+       * **JMap.Application.Annotation.addPresetColor**
+       * 
+       * Add the given color to the preset colors of color pickers.
+       * 
+       * @example ```ts
+       * 
+       * const presetColor = "#D2FDDF"
+       * 
+       * JMap.Application.Annotation.addPresetColor(presetColor)
+       * ```
+       */
+      function addPresetColor(presetColor: string): void
+
+      /**
+       * **JMap.Application.Annotation.deletePresetColor**
+       * 
+       * Delete the given color to the preset colors of color pickers.
+       * 
+       * @example ```ts
+       * 
+       * const presetColor = "#D2FDDF"
+       * 
+       * JMap.Application.Annotation.deletePresetColor(presetColor)
+       * ```
+       */
+       function deletePresetColor(presetColor: string): void
+
+      /**
+       * **JMap.Application.Annotation.getPresetColors**
+       * 
+       * Return the preset colors used by the application's color pickers.
+       * 
+       * @example ```ts
+       * 
+       * JMap.Application.Annotation.getPresetColors()
+       * ```
+       */
+       function getPresetColors(): string[]
+
+
+    }
     /**
      * **JMap.Application.Panel**
      * 

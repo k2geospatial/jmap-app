@@ -93,7 +93,8 @@ export interface JAppDrawState {
 
 export interface JAppAnnotationState {
   annotations: JAppAnnotation[]
-  draw: JAppDrawState
+  draw: JAppDrawState,
+  presetColors: string[]
 }
 
 export interface JAppPrintState {
@@ -196,6 +197,10 @@ export interface JAppAnnotationService {
   getStyle(): JAppDrawStyle
   updateStyle(style: JAppDrawStyle): void
   setStyleByAnnotationIds(annotationIds: string[], style: JAppDrawStyle): void
+  setPresetColors(presetColors: string[]): void,
+  getPresetColors(): string[]
+  addPresetColor(presetColor: string): void,
+  deletePresetColor(presetColor: string): void
 }
 
 export interface JAppQueryService {

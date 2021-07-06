@@ -306,10 +306,12 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.setPresetColors**
        * 
-       *  Set the preset colors of color pickers using the given colors.
-       * 
+       * Set the preset colors of color pickers using the given colors.
+       * @param presetColors A array of preset hex colors
+       * @throws if presetColors not an array, does not contain string or is too big
        * @example ```ts
        * 
+       * // Set the preset colors with 2 color 
        * const presetColors = [
        *  "#29D1EA",
        *  "#D2FDDF"
@@ -318,15 +320,18 @@ declare namespace JMap {
        * JMap.Application.Annotation.setPresetColors(presetColors)
        * ```
        */
-       function setPresetColors(presetColors: string[]): void
+      function setPresetColors(presetColors: string[]): void
 
       /**
        * **JMap.Application.Annotation.addPresetColor**
        * 
-       * Add the given color to the preset colors of color pickers.
+       * Add the given color to the preset colors of color pickers if not already present.
        * 
+       * @param presetColor A hex color
+       * @throws if presetColor not an string or is empty
        * @example ```ts
        * 
+       * // Add the color #D2FDDF to the preset colors
        * const presetColor = "#D2FDDF"
        * 
        * JMap.Application.Annotation.addPresetColor(presetColor)
@@ -337,16 +342,19 @@ declare namespace JMap {
       /**
        * **JMap.Application.Annotation.deletePresetColor**
        * 
-       * Delete the given color to the preset colors of color pickers.
+       * Delete the given color to the preset colors of color pickers if present.
        * 
+       * @param presetColor A hex color
+       * @throws if presetColor not an string or is empty
        * @example ```ts
        * 
+       * // Delete the color #D2FDDF from the preset colors
        * const presetColor = "#D2FDDF"
        * 
        * JMap.Application.Annotation.deletePresetColor(presetColor)
        * ```
        */
-       function deletePresetColor(presetColor: string): void
+      function deletePresetColor(presetColor: string): void
 
       /**
        * **JMap.Application.Annotation.getPresetColors**
@@ -355,12 +363,11 @@ declare namespace JMap {
        * 
        * @example ```ts
        * 
+       * // Get the current preset colors
        * JMap.Application.Annotation.getPresetColors()
        * ```
        */
-       function getPresetColors(): string[]
-
-
+      function getPresetColors(): string[]
     }
     /**
      * **JMap.Application.Panel**

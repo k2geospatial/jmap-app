@@ -13,6 +13,7 @@ export interface JAppState {
   annotation: JAppAnnotationState
   message: JAppMessageState
   user: JAppUserState
+  favorite : JAppFavoriteState
   feature: JAppFeatureState
   geometry: JAppGeometryState
 }
@@ -130,6 +131,12 @@ export interface JAppUserState {
   actions: JAppUserAction[]
 }
 
+export interface JAppFavoriteState {
+  favorites: JAppFavorite[]
+  isDeleting: boolean
+  isSaving: boolean
+}
+
 export interface JApplicationService extends JApplicationMainService {
   User: JApplicationUserService
   Panel: JAppPanelService
@@ -145,6 +152,7 @@ export interface JApplicationService extends JApplicationMainService {
   Extension: JAppExtensionService
   Message: JAppMessageService
   Project: JAppProjectService
+  Favorite: JAppFavoriteService
   Feature: JAppFeatureService
   Geometry: JAppGeometryService
 }
@@ -289,6 +297,15 @@ export interface JAppMeasureService {
   deleteAllLines(): number
   deleteAllPolygons(): number
   deleteAllCircles(): number
+}
+
+export interface JAppFavoriteService {
+  add(location: JLocation): Promise<JAppFavorite>
+  deleteById(id: number): Promise<void>
+  deleteAll(): Promise<void>
+  getById(id: number): JAppFavorite
+  getAll(): JAppFavorite[]
+  existById(id: number): boolean
 }
 
 export interface JAppExtensionService {

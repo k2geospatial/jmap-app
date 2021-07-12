@@ -3280,5 +3280,78 @@ declare namespace JMap {
        */
       function display(message: string, options?: JAppMessageOptions): void
     }
+
+    /**
+     * **JMap.Application.Favorite**
+     * 
+     * You can manage everything related to your favorites from here.
+     */
+    namespace Favorite {
+      /**
+       * **JMap.Application.Favorite.addFavorite**
+       * 
+       *  Add a favorite to your map and to the JMap Favorite User menu.
+       * 
+       * @param newLocation the location of the new favorite
+       * @example ```ts
+       * 
+       * const newLocation: JLocation = {
+       *  x: 50,
+       *  y: 50
+       * }
+       * JMap.Application.Favorite.add(newLocation)
+       * ```
+       */
+      function add(newLocation: JLocation): Promise<JAppFavorite>
+
+      /**
+       * **JMap.Application.Favorite.deleteById**
+       * 
+       * Delete the favorite of the given id from map and the JMap Favorite User menu.
+       *       
+       * @param favoriteId the favorite id
+       * @example ```ts
+       * 
+       * JMap.Application.Favorite.deleteById(3)
+       * ```
+       */
+       function deleteById(favoriteId: number): Promise<void>
+
+       /**
+        * **JMap.Application.Favorite.getAll**
+        * 
+        * Return all favorites.
+        * 
+        * @example ```ts
+        * 
+        * JMap.Application.Favorite.getAll()
+        * ```
+        */
+        function getAll(): JAppFavorite[] 
+
+        /**
+         * **JMap.Application.Favorite.getById**
+         * 
+         * Return the favorite for the given id if it exist.
+         * @param favoriteId the favorite id
+         * @example ```ts
+         * 
+         * JMap.Application.Favorite.getById(3)
+         * ```
+         */
+         function getById(favoriteId: number): JAppFavorite
+
+        /**
+         * **JMap.Application.Favorite.existById**
+         * 
+         * Return true if the favorite exists for a given id.
+         * @param favoriteId the favorite id
+         * @example ```ts
+         * 
+         * JMap.Application.Favorite.existById(3)
+         * ```
+         */
+        function existById(favoriteId: number): boolean
+     }
   }
 }

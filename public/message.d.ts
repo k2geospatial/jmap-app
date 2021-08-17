@@ -18,8 +18,8 @@ declare interface JAppConfirmMessage {
   confirmButtonLabel?: string
   cancelButtonLabel?: string
   locale?: JLocale
-  onSuccess: (input: string) => void
-  onCancel?: () => void
+  onSuccess: (input: string) => any
+  onCancel?: () => any
 }
 
 declare interface JAppMessageOptions{

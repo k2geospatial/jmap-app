@@ -27,8 +27,8 @@ declare interface JAppLayerTreeFilterState {
   isAddingFilter: boolean
   nameFilter: string
   filters: JAppAnyLayerFilter[]
-  exactlyMatchedTreeItemIds: number[]
-  expandedMatchedTreeItemIds: number[]
+  exactlyMatchedTreeItemIds: JId[]
+  expandedMatchedTreeItemIds: JId[]
   layerIdsByFilterId: JAppLayerIdByFilterId
 }
 
@@ -43,7 +43,7 @@ declare type JAppAnyLayerFilter = JAppNumberLayerFilter | JAppTextLayerFilter | 
 
 declare interface JAppBaseLayerFilter {
   id: number
-  metadataItemId: number
+  metadataItemId: JId
   type: JLayerMetadataType
 }
 

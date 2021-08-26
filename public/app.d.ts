@@ -963,7 +963,7 @@ declare namespace JMap {
        * JMap.Application.Selection.getDisplayedLayerId()
        * ```
        */
-      function getDisplayedLayerId(): number
+      function getDisplayedLayerId(): JId
 
       /**
        * **JMap.Application.Selection.setDisplayedLayerId**
@@ -979,7 +979,7 @@ declare namespace JMap {
        * JMap.Application.Selection.setDisplayedLayerId(2)
        * ```
        */
-      function setDisplayedLayerId(layerId: number): void
+      function setDisplayedLayerId(layerId: numJIdber): void
 
       /**
        * **JMap.Application.Selection.activateSelectionType**
@@ -1048,7 +1048,7 @@ declare namespace JMap {
        * JMap.Application.Selection.clearSelectionForLayer(2)
        * ```
        */
-      function clearSelectionForLayer(layerId: number): void
+      function clearSelectionForLayer(layerId: JId): void
 
       /**
        * **JMap.Application.Selection.clearSelection**
@@ -1128,7 +1128,7 @@ declare namespace JMap {
        * JMap.Application.Project.activateById(33)
        * ```
        */
-      function activateById(projectId: number): JProject
+      function activateById(projectId: JId): JProject
 
       /**
        * **JMap.Application.Project.setSelectionPanelVisibility**
@@ -1310,7 +1310,7 @@ declare namespace JMap {
            * JMap.Application.Layer.Tree.Filter.oneFilterExistForMetadataId(6)
            * ```
            */        
-          function oneFilterExistForMetadataId(metadataId: number): boolean
+          function oneFilterExistForMetadataId(metadataId: JId): boolean
 
           /**
            * **JMap.Application.Layer.Tree.Filter.getAll**
@@ -1436,7 +1436,7 @@ declare namespace JMap {
        * JMap.Application.Layer.startThematicEdition(3)
        * ```
        */
-      function startThematicEdition(layerId: number): void
+      function startThematicEdition(layerId: JId): void
 
       /**
        * **JMap.Application.Layer.stopThematicEdition**
@@ -1528,7 +1528,7 @@ declare namespace JMap {
        * JMap.Application.MapContext.getById(3)
        * ```
        */
-      function getById(contextId: number): JMapContext
+      function getById(contextId: JId): JMapContext
 
       /**
        * **JMap.Application.MapContext.applyContextById**
@@ -1543,7 +1543,7 @@ declare namespace JMap {
        * JMap.Application.MapContext.applyContextById(3)
        * ```
        */
-      function applyContextById(contextId: number): void
+      function applyContextById(contextId: JId): void
 
       /**
        * **JMap.Application.MapContext.applyContextById**
@@ -1571,7 +1571,7 @@ declare namespace JMap {
        *    .catch(error => console.error(error))
        * ```
        */
-      function deleteContextById(contextId: number | number[]): Promise<void>
+      function deleteContextById(contextId: JId | JId[]): Promise<void>
 
       /**
        * **JMap.Application.MapContext.create**
@@ -1623,7 +1623,7 @@ declare namespace JMap {
        *    .catch(error => console.error(error))
        * ```
        */
-      function update(contextId: number, params?: Partial<JMapContextMetaData>): Promise<JMapContext>
+      function update(contextId: JId, params?: Partial<JMapContextMetaData>): Promise<JMapContext>
 
       /**
        * **JMap.Application.MapContext.updateMetaData**
@@ -1652,7 +1652,7 @@ declare namespace JMap {
        *    .catch(error => console.error(error))
        * ```
        */
-      function updateMetaData(contextId: number, data: Partial<JMapContextMetaData>): Promise<void>
+      function updateMetaData(contextId: JId, data: Partial<JMapContextMetaData>): Promise<void>
 
       /**
        * **JMap.Application.MapContext.getContextTitle**
@@ -1667,7 +1667,7 @@ declare namespace JMap {
        * JMap.Application.MapContext.getContextTitle(3)
        * ```
        */
-      function getContextTitle(contextId: number): string
+      function getContextTitle(contextId: JId): string
 
       /**
        * **JMap.Application.MapContext.setContextTitle**
@@ -1688,7 +1688,7 @@ declare namespace JMap {
        *    .catch(error => console.error(error))
        * ```
        */
-      function setContextTitle(contextId: number, title: string): Promise<void>
+      function setContextTitle(contextId: JId, title: string): Promise<void>
 
       /**
        * **JMap.Application.MapContext.getContextDescription**
@@ -1703,7 +1703,7 @@ declare namespace JMap {
        * JMap.Application.MapContext.getContextDescription(3)
        * ```
        */
-      function getContextDescription(contextId: number): string
+      function getContextDescription(contextId: JId): string
 
       /**
        * **JMap.Application.MapContext.setContextDescription**
@@ -1724,7 +1724,7 @@ declare namespace JMap {
        *    .catch(error => console.error(error))
        * ```
        */
-      function setContextDescription(contextId: number, description: string): Promise<void>
+      function setContextDescription(contextId: JId, description: string): Promise<void>
 
       /**
        * **JMap.Application.MapContext.isLinkShared**
@@ -1739,7 +1739,7 @@ declare namespace JMap {
        * JMap.Application.MapContext.isLinkShared(3)
        * ```
        */
-      function isLinkShared(contextId: number): boolean
+      function isLinkShared(contextId: JId): boolean
 
       /**
        * **JMap.Application.MapContext.setLinkShare**
@@ -1760,7 +1760,7 @@ declare namespace JMap {
        *    .catch(error => console.error(error))
        * ```
        */
-      function setLinkShare(contextId: number, isShared: boolean): Promise<void>
+      function setLinkShare(contextId: JId, isShared: boolean): Promise<void>
 
       /**
        * **JMap.Application.MapContext.getDefaultContext**
@@ -1792,7 +1792,7 @@ declare namespace JMap {
        * JMap.Application.MapContext.isDefaultContext(3)
        * ```
        */
-      function isDefaultContext(contextId: number): boolean
+      function isDefaultContext(contextId: JId): boolean
 
       /**
        * **JMap.Application.MapContext.setDefaultContext**
@@ -1821,7 +1821,7 @@ declare namespace JMap {
        *    .catch(error => console.error(error))
        * ```
        */
-      function setDefaultContext(contextId?: number): Promise<void>
+      function setDefaultContext(contextId?: JId): Promise<void>
 
       /**
        * **JMap.Application.MapContext.sortListBy**
@@ -2515,7 +2515,7 @@ declare namespace JMap {
        * JMap.Application.Print.activateQuery(23, 43)
        * ```
        */
-      function activateQuery(groupId: number, queryId: string): void
+      function activateQuery(groupId: JId, queryId: string): void
       
       /**
        * **JMap.Application.Query.deactivateQuery**

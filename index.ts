@@ -53,7 +53,7 @@ export interface JAppPanelState {
 export interface JAppLayerState {
   treeFilter: JAppLayerTreeFilterState
   layerInEditionForThematic: JLayer | undefined
-  popupMenuLayerId: number | undefined
+  popupMenuLayerId: JId | undefined
 }
 
 export interface JAppUiState {
@@ -64,7 +64,7 @@ export interface JAppUiState {
 export interface JAppMapContextState {
   activeTab: JMapContextTab
   contexts: JMapContext[]
-  defaultContextId: number | undefined
+  defaultContextId: JId | undefined
   filter: string
   sortBy: JMapContextSortByOption
   sortByDirection: JMapContextSortByDirection
@@ -115,7 +115,7 @@ export interface JAppPrintState {
 }
 
 export interface JAppSelectionState {
-  displayedLayerId: number
+  displayedLayerId: JId
   isNewElement: boolean
   tableVisibility: boolean
   draw: JAppDrawState
@@ -168,7 +168,7 @@ export interface JAppFeatureService {
 }
 
 export interface JAppProjectService {
-  activateById(projectId: number): JProject
+  activateById(projectId: JId): JProject
   setSelectionPanelVisibility(isVisible: boolean): void
 }
 
@@ -204,7 +204,7 @@ export interface JAppAnnotationService {
 }
 
 export interface JAppQueryService {
-  activateQuery(groupId: number, queryId: string): void
+  activateQuery(groupId: JId, queryId: string): void
   deactivateQuery(): void
   setDefaultData(values: any): void
   getDefaultData(): { [id: string]: any }
@@ -258,13 +258,13 @@ export interface JAppEventService {
 }
 
 export interface JAppSelectionService {
-  getDisplayedLayerId(): number
-  setDisplayedLayerId(layerId: number): void
+  getDisplayedLayerId(): JId
+  setDisplayedLayerId(layerId: JId): void
   activateSelectionType(selectionType: JAppSelectionType): void
   getActiveSelectionType(): JAppSelectionType
   getTableVisibility(): boolean
   setTableVisibility(tableVisibility: boolean): void
-  clearSelectionForLayer(layerId: number): void
+  clearSelectionForLayer(layerId: JId): void
   clearSelection(): void
   selectFromFeature(feature: GeoJSON.Feature, selectionType?: JAppSelectionType): void
   exportAsExcelFile(): void
@@ -333,27 +333,27 @@ export interface JAppMapContextService {
   startCreation(): void
   cancelCreation(): void
   getAll(): JMapContext[]
-  getById(contextId: number): JMapContext
-  applyContextById(contextId: number): void
-  deleteContextById(contextId: number | number[]): Promise<void>
+  getById(contextId: JId): JMapContext
+  applyContextById(contextId: JId): void
+  deleteContextById(contextId: JId | JId[]): Promise<void>
   create(params?: JMapContextMetaData): Promise<JMapContext>
   update(
-    contextId: number,
+    contextId: JId,
     params?: Partial<JMapContextMetaData>
   ): Promise<JMapContext>
   updateMetaData(
-    contextId: number,
+    contextId: JId,
     params: Partial<JMapContextMetaData>
   ): Promise<void>
-  getContextTitle(contextId: number): string
-  setContextTitle(contextId: number, title: string): Promise<void>
-  getContextDescription(contextId: number): string
-  setContextDescription(contextId: number, description: string): Promise<void>
-  isLinkShared(contextId: number): boolean
-  setLinkShare(contextId: number, isShared: boolean): Promise<void>
+  getContextTitle(contextId: JId): string
+  setContextTitle(contextId: JId, title: string): Promise<void>
+  getContextDescription(contextId: JId): string
+  setContextDescription(contextId: JId, description: string): Promise<void>
+  isLinkShared(contextId: JId): boolean
+  setLinkShare(contextId: JId, isShared: boolean): Promise<void>
   getDefaultContext(): JMapContext | undefined
-  isDefaultContext(contextId: number): boolean
-  setDefaultContext(contextId?: number): Promise<void>
+  isDefaultContext(contextId: JId): boolean
+  setDefaultContext(contextId?: JId): Promise<void>
   sortListBy(sortBy: JMapContextSortByOption): void
   getListSortBy(): JMapContextSortByOption
   getAllListSortBy(): JMapContextSortByOption[]
@@ -367,7 +367,7 @@ export interface JAppMapContextService {
 
 export interface JAppLayerService {
   Tree: JAppLayerTreeService
-  startThematicEdition(layerId: number): void
+  startThematicEdition(layerId: JId): void
   stopThematicEdition(): void
 }
 
@@ -382,7 +382,7 @@ export interface JAppLayerTreeFilterService {
   setActive(active: boolean): void
   applyToMap(): void
   existById(filterId: number): boolean
-  oneFilterExistForMetadataId(metadataId: number): boolean
+  oneFilterExistForMetadataId(metadataId: JId): boolean
   getAll(): JAppGetAllFiltersResult
   getById(filterId: number): JAppAnyLayerFilter
   add(filter: JAppAnyLayerFilter): JAppAnyLayerFilter

@@ -3,7 +3,7 @@ declare type JMapContextSortByOption = "alphabetic" | "lastUpdate" //  | "lastUs
 declare type JMapContextSortByDirection = "asc" | "desc"
 
 declare interface JMapContextEditResponse {
-  id: number
+  id: JId
   uuid: string
   modificationDate: string
 }
@@ -30,7 +30,7 @@ declare interface JMapContextData {
 }
 
 declare interface JMapContextDataLayerElement {
-  id: number
+  id: JId
   isGroup: boolean
   isVisible: boolean
 }
@@ -41,12 +41,12 @@ declare interface JMapContextDataLayer extends JMapContextDataLayerElement{
 }
 
 declare interface JMapContextDataThematic {
-  id: number
+  id: JId
   isVisible: boolean
 }
 
 declare interface JMapContext {
-  id?: number,
+  id?: JId,
   title: string,
   description: string,
   shared: boolean,

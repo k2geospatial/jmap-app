@@ -979,7 +979,7 @@ declare namespace JMap {
        * JMap.Application.Selection.setDisplayedLayerId(2)
        * ```
        */
-      function setDisplayedLayerId(layerId: numJIdber): void
+      function setDisplayedLayerId(layerId: JId): void
 
       /**
        * **JMap.Application.Selection.activateSelectionType**

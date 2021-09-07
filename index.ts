@@ -4,7 +4,6 @@ export interface JAppState {
   panel: JAppPanelState
   measure: JAppMeasureState
   selection: JAppSelectionState
-  mapContext: JAppMapContextState
   layer: JAppLayerState
   ui: JAppUiState
   query: JAppQueryState
@@ -59,19 +58,6 @@ export interface JAppLayerState {
 export interface JAppUiState {
   sidePanelVisible: boolean
   theme: { [key: string]: any }
-}
-
-export interface JAppMapContextState {
-  activeTab: JMapContextTab
-  contexts: JMapContext[]
-  defaultContextId: JId | undefined
-  filter: string
-  sortBy: JMapContextSortByOption
-  sortByDirection: JMapContextSortByDirection
-  createTitle: string
-  createDescription: string
-  createTitleError: boolean
-  isAvailable: boolean
 }
 
 export interface JAppMeasureState {
@@ -138,7 +124,6 @@ export interface JApplicationService extends JApplicationMainService {
   Layer: JAppLayerService
   Print: JAppPrintService
   UI: JApplicationUIService
-  MapContext: JAppMapContextService
   Query: JAppQueryService
   Event: JAppEventService
   Annotation: JAppAnnotationService
@@ -254,7 +239,6 @@ export interface JApplicationUIService {
 export interface JAppEventService {
   Main: JAppAppEventModule
   Layer: JAppLayerEventModule
-  MapContext: JAppMapContextEventModule
 }
 
 export interface JAppSelectionService {
@@ -328,43 +312,6 @@ export interface JAppPrintService {
   takeCapture(): void
 }
 
-export interface JAppMapContextService {
-  isAvailable(): boolean
-  startCreation(): void
-  cancelCreation(): void
-  getAll(): JMapContext[]
-  getById(contextId: JId): JMapContext
-  applyContextById(contextId: JId): void
-  deleteContextById(contextId: JId | JId[]): Promise<void>
-  create(params?: JMapContextMetaData): Promise<JMapContext>
-  update(
-    contextId: JId,
-    params?: Partial<JMapContextMetaData>
-  ): Promise<JMapContext>
-  updateMetaData(
-    contextId: JId,
-    params: Partial<JMapContextMetaData>
-  ): Promise<void>
-  getContextTitle(contextId: JId): string
-  setContextTitle(contextId: JId, title: string): Promise<void>
-  getContextDescription(contextId: JId): string
-  setContextDescription(contextId: JId, description: string): Promise<void>
-  isLinkShared(contextId: JId): boolean
-  setLinkShare(contextId: JId, isShared: boolean): Promise<void>
-  getDefaultContext(): JMapContext | undefined
-  isDefaultContext(contextId: JId): boolean
-  setDefaultContext(contextId?: JId): Promise<void>
-  sortListBy(sortBy: JMapContextSortByOption): void
-  getListSortBy(): JMapContextSortByOption
-  getAllListSortBy(): JMapContextSortByOption[]
-  setListSortDirection(sortByDirection: JMapContextSortByDirection): void
-  getListSortDirection(): JMapContextSortByDirection
-  getAllListSortDirection(): JMapContextSortByDirection[]
-  filterList(filter: string): void
-  getListFilter(): string
-  clearListFilter(): void
-}
-
 export interface JAppLayerService {
   Tree: JAppLayerTreeService
   startThematicEdition(layerId: JId): void
@@ -400,14 +347,5 @@ export interface JAppAppEventModule extends JEventModule {
 export interface JAppLayerEventModule extends JEventModule {
   on: {
     doubleClick(listenerId: string, fn: (params: JAppLayerEventParams) => void): void
-  }
-}
-
-export interface JAppMapContextEventModule extends JEventModule {
-  on: {
-    beforeMapDataChange(listenerId: string, fn: (params: JAppMapContextBeforeMapDataChangeEventParams) => void): void
-    afterMapDataChange(listenerId: string, fn: (params: JAppMapContextAfterMapDataChangeEventParams) => void): void
-    beforeApply(listenerId: string, fn: (params: JAppMapContextBeforeApplyEventParams) => void): void
-    afterApply(listenerId: string, fn: (params: JAppMapContextAfterApplyEventParams) => void): void
   }
 }

@@ -1505,6 +1505,20 @@ declare namespace JMap {
          * ```
          */
         function getHeight(): number
+
+        /**
+         * **JMap.Application.UI.Container.getContainerCoordinates**
+         * 
+         * Returns the coordinates (five points) in pixel of the closing polygon representing the dom container. .
+         * 
+         * @example ```ts
+         * 
+         * // return the dom container coordinates, ex : [ [ -66.46, 50.16 ], [ -66.45, 50.16 ],
+         * // [ -66.45, 50.15], [ -66.46, 50.15 ], [ -66.46, 50.16] ]
+         * JMap.Application.UI.Container.getContainerCoordinates()
+         * ```
+         */
+        function getContainerCoordinates(): JPoint[]
       }
 
       /**

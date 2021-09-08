@@ -1507,18 +1507,20 @@ declare namespace JMap {
         function getHeight(): number
 
         /**
-         * **JMap.Application.UI.Container.getContainerCoordinates**
+         * **JMap.Application.UI.Container.getVisiblePolygonGeometry**
          * 
-         * Returns the coordinates (five points) in pixel of the closing polygon representing the dom container. .
+         * Returns a polygon geometry representing the visible coordinates on the map.
+         * Works fine even if the map is pitched or rotated.
          * 
          * @example ```ts
          * 
-         * // return the dom container coordinates, ex : [ [ -66.46, 50.16 ], [ -66.45, 50.16 ],
-         * // [ -66.45, 50.15], [ -66.46, 50.15 ], [ -66.46, 50.16] ]
-         * JMap.Application.UI.Container.getContainerCoordinates()
+         * // return the polygon geometry representing the visible coordinates on the map,
+         * // ex : { "type": "Polygon", "coordinates":[[[-57.30, 35.17],[-39.7265625, 23.241346102386135],
+         * [-36.5625, 36.03133177633187], [-52.734375, 45.336701909968134], [-57.30468749999999, 35.17380831799959]]]}
+         * JMap.Application.UI.Container.getVisiblePolygonGeometry()
          * ```
          */
-        function getContainerCoordinates(): JPoint[]
+        function getVisiblePolygonGeometry(): GeoJSON.Polygon
       }
 
       /**

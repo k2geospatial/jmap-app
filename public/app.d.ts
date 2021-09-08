@@ -1511,12 +1511,38 @@ declare namespace JMap {
          * 
          * Returns a polygon geometry representing the visible coordinates on the map.
          * Works fine even if the map is pitched or rotated.
-         * 
+         * @throws if map is not loaded
          * @example ```ts
          * 
-         * // return the polygon geometry representing the visible coordinates on the map,
-         * // ex : { "type": "Polygon", "coordinates":[[[-57.30, 35.17],[-39.7265625, 23.241346102386135],
-         * [-36.5625, 36.03133177633187], [-52.734375, 45.336701909968134], [-57.30468749999999, 35.17380831799959]]]}
+         * //  return the polygon geometry representing the visible coordinates on the map.
+         * // ex :
+         * // {
+         * //  "type": "Polygon",
+         * //  "coordinates": [
+         * //     [
+         * //       [
+         * //         -57, 
+         * //         35
+         * //       ],
+         * //       [
+         * //         -39,
+         * //         23
+         * //       ],
+         * //       [
+         * //         -36,
+         * //         36
+         * //       ],
+         * //       [
+         * //         -52.734375,
+         * //         45.336701909968134
+         * //       ],
+         * //       [
+         * //         -57.30468749999999,
+         * //         35.17380831799959
+         * //       ]
+         * //     ]
+         * //   ]
+         * // }
          * JMap.Application.UI.Container.getVisiblePolygonGeometry()
          * ```
          */

@@ -1514,32 +1514,13 @@ declare namespace JMap {
          * @throws if map is not loaded
          * @example ```ts
          * 
-         * //  return the polygon geometry representing the visible coordinates on the map.
+         * // returns the polygon geometry representing the visible coordinates on the map.
          * // ex :
          * // {
          * //  "type": "Polygon",
          * //  "coordinates": [
-         * //     [
-         * //       [
-         * //         -57, 
-         * //         35
-         * //       ],
-         * //       [
-         * //         -39,
-         * //         23
-         * //       ],
-         * //       [
-         * //         -36,
-         * //         36
-         * //       ],
-         * //       [
-         * //         -52.734375,
-         * //         45.336701909968134
-         * //       ],
-         * //       [
-         * //         -57.30468749999999,
-         * //         35.17380831799959
-         * //       ]
+         * //     [ 
+         * //       [ -57, 35],[-39, 23 ], [-36, 36 ], [-52, 45], [-57, 35 ]
          * //     ]
          * //   ]
          * // }

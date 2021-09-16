@@ -1505,6 +1505,29 @@ declare namespace JMap {
          * ```
          */
         function getHeight(): number
+
+        /**
+         * **JMap.Application.UI.Container.getVisiblePolygonGeometry**
+         * 
+         * Returns a polygon geometry representing the visible coordinates on the map.
+         * Works fine even if the map is pitched or rotated.
+         * @throws if map is not loaded
+         * @example ```ts
+         * 
+         * // returns the polygon geometry representing the visible coordinates on the map.
+         * // ex :
+         * // {
+         * //  "type": "Polygon",
+         * //  "coordinates": [
+         * //     [ 
+         * //       [ -57, 35],[-39, 23 ], [-36, 36 ], [-52, 45], [-57, 35 ]
+         * //     ]
+         * //   ]
+         * // }
+         * JMap.Application.UI.Container.getVisiblePolygonGeometry()
+         * ```
+         */
+        function getVisiblePolygonGeometry(): GeoJSON.Polygon
       }
 
       /**

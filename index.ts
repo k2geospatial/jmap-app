@@ -216,6 +216,7 @@ export interface JApplicationUIService {
     getId(): string
     getWidth(): number
     getHeight(): number
+    getVisiblePolygonGeometry(): GeoJSON.Polygon
   }
   SidePanel: {
     isVisible(): boolean

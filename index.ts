@@ -253,7 +253,7 @@ export interface JAppSelectionService {
   clearSelection(): void
   selectFromFeature(feature: GeoJSON.Feature, selectionType?: JAppSelectionType): void
   exportAsExcelFile(): void
-  fitMapToDisplayLayerSelection(): void
+  fitMapToDisplayLayerSelection(options?: JPanAndZoomOptions): void
 }
 
 export interface JAppMeasureService {

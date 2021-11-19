@@ -1095,12 +1095,13 @@ declare namespace JMap {
        * 
        * Pans and zooms the map to display the current selection.
        * 
+       * @param options optional options
        * @example ```ts
        * // fit the map to display selected features
        * JMap.Application.Selection.fitMapToDisplayLayerSelection()
        * ```
        */
-      function fitMapToDisplayLayerSelection(): void
+      function fitMapToDisplayLayerSelection(options?: JPanAndZoomOptions): void
     }
 
     /**

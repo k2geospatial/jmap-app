@@ -230,6 +230,8 @@ export interface JApplicationUIService {
     getMainPanelWidthInPixel(): number
     getHeaderMinHeightInRem(): string
     getHeaderMinHeightInPixel(): number
+    getTitleMinHeightInRem(): string
+    getTitleMinHeightInPixel(): number
   }
   Theme: {
     setDark(isDark: boolean): void

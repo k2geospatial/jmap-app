@@ -1666,7 +1666,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.UI.SidePanel.getHeaderMinHeightInRem**
          * 
-         * Returns the min height of the header (where title is included) in rem.
+         * Returns the min height of the Panel header section (where the project name is displayed) in rem.
          * 
          * @example ```ts
          * 
@@ -1679,7 +1679,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.UI.SidePanel.getHeaderMinHeightInPixel**
          * 
-         * Returns the min height of the header (where title is included) in rem.
+         * Returns the min height of the Panel header section (where the project name is displayed) in pixels.
          * 
          * @example ```ts
          * 
@@ -1688,6 +1688,32 @@ declare namespace JMap {
          * ```
          */
         function getHeaderMinHeightInPixel(): number
+
+        /**
+         * **JMap.Application.UI.SidePanel.getTitleMinHeightInRem**
+         * 
+         * Returns the min height of the Panel title section (where the panel name is displayed) in rem.
+         * 
+         * @example ```ts
+         * 
+         * // returns "4rem"
+         * JMap.Application.UI.SidePanel.getTitleMinHeightInRem()
+         * ```
+         */
+        function getTitleMinHeightInRem(): string
+
+        /**
+         * **JMap.Application.UI.SidePanel.getTitleMinHeightInPixel**
+         * 
+         * Returns the min height of the Panel title section (where the panel name is displayed) in pixels.
+         * 
+         * @example ```ts
+         * 
+         * // returns 64
+         * JMap.Application.UI.SidePanel.getTitleMinHeightInPixel()
+         * ```
+         */
+        function getTitleMinHeightInPixel(): number    
       }
 
       /**

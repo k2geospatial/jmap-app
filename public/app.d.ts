@@ -1426,9 +1426,9 @@ declare namespace JMap {
       }
 
       /**
-       * **JMap.Application.Layer.startThematicEdition**
+       * **JMap.Application.Layer.startEdition**
        * 
-       * If layer has no thematic, do nothing, just log a warning message in the console.
+       * Open the edition panel, thematics and dynamic filter or just dynamic filter if the layer has no thematics
        * 
        * @throws If layer is not found or layerId is correspond to a layer group
        * @example ```ts
@@ -1437,13 +1437,13 @@ declare namespace JMap {
        * JMap.Application.Layer.startThematicEdition(3)
        * ```
        */
-      function startThematicEdition(layerId: JId): void
+      function startEdition(layerId: JId, activeTab: JLayerEditionActiveTab): void
 
       /**
        * **JMap.Application.Layer.stopThematicEdition**
        * 
-       * If we are editing thematics of a layer, will stop edition and show the layer tree panel, 
-       * Else log a warning message to tell we are not editing thematics.
+       * If we are editing thematics or dynamic filters of a layer, will stop edition and show the layer tree panel, 
+       * Else log a warning message to tell we are not editing.
        * 
        * @example ```ts
        * 
@@ -1451,7 +1451,7 @@ declare namespace JMap {
        * JMap.Application.Layer.stopThematicEdition()
        * ```
        */
-      function stopThematicEdition(): void
+      function stopEdition(): void
     }
 
     /**

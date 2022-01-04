@@ -1426,32 +1426,71 @@ declare namespace JMap {
       }
 
       /**
-       * **JMap.Application.Layer.startEdition**
-       * 
-       * Open the edition panel, thematics and dynamic filter or just dynamic filter if the layer has no thematics
-       * 
-       * @throws If layer is not found or layerId is correspond to a layer group
-       * @example ```ts
-       * 
-       * // Will edit the layer's id="3" thematics
-       * JMap.Application.Layer.startThematicEdition(3)
-       * ```
-       */
-      function startEdition(layerId: JId, activeTab: JLayerEditionActiveTab): void
+      * **JMap.Application.Layer.Edition**
+      * 
+      * You can manage the layer edition panel here.
+      */
+      namespace Edition {
 
-      /**
-       * **JMap.Application.Layer.stopThematicEdition**
-       * 
-       * If we are editing thematics or dynamic filters of a layer, will stop edition and show the layer tree panel, 
-       * Else log a warning message to tell we are not editing.
-       * 
-       * @example ```ts
-       * 
-       * // will return to the layer tree panel
-       * JMap.Application.Layer.stopThematicEdition()
-       * ```
-       */
-      function stopEdition(): void
+        /**
+         * **JMap.Application.Layer.Edition.openPanel**
+         * 
+         * Open the layer edition panel.
+         * 
+         * This panel has two tabs:
+         *  - thematics: only available if some thematics are set on the layer, else is hidden
+         *  - dynamic filter: available for non raster layers
+         * 
+         * @throws If layer is not found or layerId is correspond to a layer group, if activeTab is incorrect
+         * @param layerId JMap layer id
+         * @param activeTab the tab to display: "thematics" or "dynamic-filter"
+         * @example ```ts
+         * 
+         * // edit the layer's id="3" thematics (if layer 3 has at least one thematic set)
+         * JMap.Application.Layer.Edition.openPanel(3, "thematics")
+         * 
+         * // edit the layer's id="3" dynamic filter, if layer is not raster
+         * JMap.Application.Layer.Edition.openPanel(2, "dynamic-filter")
+         * ```
+         */
+        function openPanel(layerId: JId, activeTab: JLayerEditionTab): void
+
+        /**
+         * **JMap.Application.Layer.Edition.closePanel**
+         * 
+         * If layer edition panel is opened, will close it. Will stop edition and show the layer tree panel.
+         * 
+         * @example ```ts
+         * 
+         * // close layer edition panel
+         * JMap.Application.Layer.Edition.closePanel()
+         * ```
+         */
+        function closePanel(): void
+
+        /**
+         * **JMap.Application.Layer.Edition.setDynamicFilterDialogVisibility**
+         * 
+         * Open or close the dynamic filter dialog visibility.
+         * 
+         * Do nothing if the dynamic panel is not visible.
+         * 
+         * @param isVisible true to open, false to close
+         * @example ```ts
+         * 
+         * // the dynamic filter panel must be open before if you want to open the dialog
+         * // here 2 is the layer id
+         * JMap.Application.Layer.Edition.openPanel(2, "dynamic-filter")
+         * 
+         * // open the dynamic filter dialog
+         * JMap.Application.Layer.Edition.setDynamicFilterDialogVisibility(true)
+         *
+         * // close the dynamic filter dialog
+         * JMap.Application.Layer.Edition.setDynamicFilterDialogVisibility(false)
+         * ```
+         */
+        function setDynamicFilterDialogVisibility(isVisible: boolean): void
+      }
     }
 
     /**

@@ -1426,11 +1426,91 @@ declare namespace JMap {
       }
 
       /**
-      * **JMap.Application.Layer.Edition**
-      * 
-      * You can manage the layer edition panel here.
-      */
+       * **JMap.Application.Layer.Edition**
+       * 
+       * You can manage the layer edition panel here.
+       */
       namespace Edition {
+
+        /**
+         * **JMap.Application.Layer.Edition.DynamicFilter**
+         * 
+         * You can manage layer dynamic filter panel and dialog here.
+         */
+        namespace DynamicFilter {
+
+          /**
+           * **JMap.Application.Layer.Edition.DynamicFilter.openPanel**
+           * 
+           * Open edition panel, with "dynamic-filter" tab activated, for the given layer
+           * 
+           * @throws if layer not found
+           * @param layerId the JMap layer id
+           * @example ```ts
+           * 
+           * // open the dynamic filter panel, with "dynamic-filter" tab activated, for layer id=3.
+           * JMap.Application.Layer.Edition.DynamicFilter.openPanel(3)
+           * ```
+           */
+          function openPanel(layerId: JId): void
+
+          /**
+           * **JMap.Application.Layer.Edition.DynamicFilter.closePanel**
+           * 
+           * If open, close the edition panel.
+           * 
+           * @example ```ts
+           * 
+           * // close the dynamic filter panel if open.
+           * JMap.Application.Layer.Edition.DynamicFilter.closePanel()
+           * ```
+           */
+          function closePanel(): void
+
+          /**
+           * **JMap.Application.Layer.Edition.DynamicFilter.openCreateDialog**
+           * 
+           * Open dynamic filter creation dialog for the given layer id.
+           * 
+           * @throws if layer not found
+           * @param layerId the JMap layer id 
+           * @example ```ts
+           * 
+           * // open the dynamic filter creation dialog for layer id=3
+           * JMap.Application.Layer.Edition.DynamicFilter.openCreateDialog(3)
+           * ```
+           */
+          function openCreateDialog(layerId: JId): void
+
+          /**
+           * **JMap.Application.Layer.Edition.DynamicFilter.openUpdateDialog**
+           * 
+           * Open dynamic filter update dialog for the given layer id.
+           * 
+           * @throws if layer or condition not found
+           * @param layerId the JMap layer id
+           * @param conditionId the JMap dynamic filter condition id
+           * @example ```ts
+           * 
+           * // open the dynamic filter condition creation dialog for layer id=3
+           * JMap.Application.Layer.Edition.DynamicFilter.openUpdateDialog(3)
+           * ```
+           */
+          function openUpdateDialog(layerId: JId, conditionId: number): void
+
+          /**
+           * **JMap.Application.Layer.Edition.DynamicFilter.closeDialog**
+           * 
+           * If open, close the dynamic filter dialog (as well for creation or update).
+           * 
+           * @example ```ts
+           * 
+           * // close the dynamic filter condition dialog if opened
+           * JMap.Application.Layer.Edition.DynamicFilter.closeDialog()
+           * ```
+           */
+          function closeDialog(): void
+        }
 
         /**
          * **JMap.Application.Layer.Edition.openPanel**
@@ -1467,29 +1547,6 @@ declare namespace JMap {
          * ```
          */
         function closePanel(): void
-
-        /**
-         * **JMap.Application.Layer.Edition.setDynamicFilterDialogVisibility**
-         * 
-         * Open or close the dynamic filter dialog visibility.
-         * 
-         * Do nothing if the dynamic panel is not visible.
-         * 
-         * @param isVisible true to open, false to close
-         * @example ```ts
-         * 
-         * // the dynamic filter panel must be open before if you want to open the dialog
-         * // here 2 is the layer id
-         * JMap.Application.Layer.Edition.openPanel(2, "dynamic-filter")
-         * 
-         * // open the dynamic filter dialog
-         * JMap.Application.Layer.Edition.setDynamicFilterDialogVisibility(true)
-         *
-         * // close the dynamic filter dialog
-         * JMap.Application.Layer.Edition.setDynamicFilterDialogVisibility(false)
-         * ```
-         */
-        function setDynamicFilterDialogVisibility(isVisible: boolean): void
       }
     }
 

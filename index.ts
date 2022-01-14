@@ -55,6 +55,7 @@ export interface JAppLayerState {
   editionActiveTab: JLayerEditionTab
   inEditionLayerId: JId | undefined
   isDynamicFilterDialogOpened: boolean
+  inEditionDynamicFilterConditionId: number | undefined
 }
 
 export interface JAppUiState {
@@ -322,10 +323,18 @@ export interface JAppLayerService {
   Edition: JAppLayerEditionService
 }
 
+export interface JAppDynamicFilterService {
+  openPanel(layerId: JId): void
+  closePanel(): void
+  openCreateDialog(layerId: JId): void
+  openUpdateDialog(layerId: JId, conditionId: number): void
+  closeDialog(): void
+}
+
 export interface JAppLayerEditionService {
+  DynamicFilter: JAppDynamicFilterService
   openPanel(layerId: JId, tab: JLayerEditionTab): void
   closePanel(): void
-  setDynamicFilterDialogVisibility(isVisible: boolean): void
 }
 
 export interface JAppLayerTreeService {

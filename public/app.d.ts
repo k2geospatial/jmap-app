@@ -2642,5 +2642,69 @@ declare namespace JMap {
        */
       function display(message: string, options?: JAppMessageOptions): void
     }
+
+    /**
+     * **JMap.Application.Form**
+     * 
+     * You can render forms using this.
+     */
+     namespace Form {
+
+      /**
+       * ***JMap.Application.Form.renderFormInContainer***
+       * 
+       * Renders a form with given params in a container.
+       * 
+       * @param containerId id of the container where the form will be rendered
+       * @param formParams a JFormParams object
+       * @example ```ts
+       * 
+       * const onSubmit = (values: any): Promise<void> => {
+       *  return new Promise<void>((resolve, reject) => {
+       *    ...
+       *  })
+       * }
+       * const validate = (values: any): { [key: string]: string } => {
+       *  ...
+       * }
+       * const formParams = {
+       *  defaultValueById: this.getDefaultData(),
+       *   formMetaData: selectedForm.formMetaData,
+       *   onSubmit,
+       *   validate,
+       *   viewId: JMap.Form.getNextViewId(),
+       *   buttonLabelCancel: "Cancel",
+       *   buttonLabelSubmit: "Submit",
+       *   formIsDestroyedAfterSubmit: true,
+       *   hideClearButton: true,
+       *   isSearch: true,
+       *   onReset: () => {
+       *     searchFormSVC.clearDefaultData()
+       *   },
+       *   onCancel: () => {
+       *     panelSVC.setActivePanel(JExtPanel.SEARCH)
+       *   }
+       * }
+       * 
+       * JMap.Application.Form.renderFormInContainer("new-form", formParams)
+       * ```
+       * 
+       */
+      function renderFormByContainerId(containerId: string, formParams: JFormParams): void | React.FunctionComponentElement<any>
+
+      /**
+       * 
+       * ***JMap.Application.Form.unmountFormByContainerId***
+       * 
+       * Unmounts form by using container Id where it was rendered
+       * 
+       * @param containerId id of the container to unmount
+       * @example ```ts
+       * 
+       * JMap.Application.Form.unmountFormByContainerId("new-form")
+       * ```
+       */
+      function unmountFormByContainerId(containerId: string): void
+    }
   }
 }

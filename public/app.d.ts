@@ -2651,7 +2651,7 @@ declare namespace JMap {
      namespace Form {
 
       /**
-       * ***JMap.Application.Form.renderFormInContainer***
+       * ***JMap.Application.Form.render***
        * 
        * Renders a form with given params in a container.
        * 
@@ -2686,25 +2686,25 @@ declare namespace JMap {
        *   }
        * }
        * 
-       * JMap.Application.Form.renderFormInContainer("new-form", formParams)
+       * JMap.Application.Form.render("new-form", formParams)
        * ```
        * 
        */
-      function renderFormByContainerId(containerId: string, formParams: JFormParams): void | React.FunctionComponentElement<any>
+      function render(containerId: string, formParams: JFormParams): void | React.FunctionComponentElement<any>
 
       /**
        * 
-       * ***JMap.Application.Form.unmountFormByContainerId***
+       * ***JMap.Application.Form.destroyByContainerId***
        * 
        * Unmounts form by using container Id where it was rendered
        * 
        * @param containerId id of the container to unmount
        * @example ```ts
        * 
-       * JMap.Application.Form.unmountFormByContainerId("new-form")
+       * JMap.Application.Form.destroy("new-form")
        * ```
        */
-      function unmountFormByContainerId(containerId: string): void
+      function destroyByContainerId(containerId: string): void
     }
   }
 }

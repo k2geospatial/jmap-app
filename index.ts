@@ -343,8 +343,8 @@ export interface JAppLayerTreeFilterService {
 }
 
 export interface JAppFormService {
-  renderFormByContainerId(containerId: string, formParams: JFormParams): void | React.FunctionComponentElement<any>
-  unmountFormByContainerId(containerId: string): void
+  render(containerId: string, formParams: JFormParams): void | React.FunctionComponentElement<any>
+  destroyByContainerId(containerId: string): void
 }
 
 export interface JAppAppEventModule extends JEventModule {

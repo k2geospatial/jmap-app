@@ -65,7 +65,7 @@ declare interface JApplicationOptions {
 
   /**
    * Set a custom application background login image, by default the JMap background is displayed.
-   * Background login image is used for login screen or when loading a project.
+   * Background login image is used for login screen.
    * 
    * ```html
    * <html>

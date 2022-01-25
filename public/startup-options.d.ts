@@ -64,8 +64,8 @@ declare interface JApplicationOptions {
   containerId?: string
 
   /**
-   * Set a custom application background image, by default the JMap background is displayed.
-   * Background image is used for login screen, project selection, or when loading a project.
+   * Set a custom application background login image, by default the JMap background is displayed.
+   * Background login image is used for login screen or when loading a project.
    * 
    * ```html
    * <html>
@@ -75,7 +75,7 @@ declare interface JApplicationOptions {
    *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
-   *           backgroundImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+   *           backgroundLoginImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
    *           ...
    *         }
    *       }
@@ -85,7 +85,32 @@ declare interface JApplicationOptions {
    * </html>
    * ```
    */
-  backgroundImageUrl?: string
+  backgroundLoginImageUrl?: string
+
+  /**
+   * Set a custom application background project image, by default the JMap background is displayed.
+   * Background project image is used for projects screen.
+   * 
+   * ```html
+   * <html>
+   *   ...
+   *   <body>
+   *     <script type="text/javascript">
+   *       window.JMAP_OPTIONS = {
+   *         ...
+   *         application: {
+   *           backgroundProjectImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+   *           ...
+   *         }
+   *       }
+   *     </script>
+   *     ...
+   *   </body>
+   * </html>
+   * ```
+   */
+  backgroundProjectImageUrl?: string
+
 
   /**
    * Set a custom application logo, by default the JMap logo is displayed.

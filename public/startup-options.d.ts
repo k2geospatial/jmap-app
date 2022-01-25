@@ -111,7 +111,6 @@ declare interface JApplicationOptions {
    */
   backgroundProjectImageUrl?: string
 
-
   /**
    * Set a custom application logo, by default the JMap logo is displayed.
    * 

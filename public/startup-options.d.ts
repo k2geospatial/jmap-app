@@ -75,7 +75,7 @@ declare interface JApplicationOptions {
    *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
-   *           backgroundLoginImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+   *           loginBackgroundImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
    *           ...
    *         }
    *       }
@@ -85,7 +85,7 @@ declare interface JApplicationOptions {
    * </html>
    * ```
    */
-  backgroundLoginImageUrl?: string
+   loginBackgroundImageUrl?: string
 
   /**
    * Set a custom application background project image, by default the JMap background is displayed.
@@ -99,7 +99,7 @@ declare interface JApplicationOptions {
    *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
-   *           backgroundProjectImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+   *           projectBackgroundImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
    *           ...
    *         }
    *       }
@@ -109,7 +109,7 @@ declare interface JApplicationOptions {
    * </html>
    * ```
    */
-  backgroundProjectImageUrl?: string
+   projectBackgroundImageUrl?: string
 
   /**
    * Set a custom application logo, by default the JMap logo is displayed.

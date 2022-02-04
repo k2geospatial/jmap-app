@@ -133,6 +133,7 @@ export interface JApplicationService extends JApplicationMainService {
   Project: JAppProjectService
   Feature: JAppFeatureService
   Geometry: JAppGeometryService
+  Form: JAppFormService
 }
 
 export interface JAppGeometryService {
@@ -342,6 +343,11 @@ export interface JAppLayerTreeFilterService {
   deleteById(filterId: number): JAppAnyLayerFilter
   openAddFilterDialog(): void
   closeAddFilterDialog(): void
+}
+
+export interface JAppFormService {
+  render(containerId: string, formParams: JFormParams): void | React.FunctionComponentElement<any>
+  destroyByContainerId(containerId: string): void
 }
 
 export interface JAppAppEventModule extends JEventModule {

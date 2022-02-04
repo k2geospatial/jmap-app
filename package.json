@@ -1,6 +1,6 @@
 {
   "name": "jmap-app",
-  "version": "2.3.4",
+  "version": "2.3.6",
   "description": "JMap Application",
   "main": "src/app.ts",
   "scripts": {
@@ -23,7 +23,7 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-typedoc": "^2.2.2",
-    "jmap-core": "2.3.4",
+    "jmap-core": "2.3.6",
     "typedoc": "^0.15.0"
   }
 }

@@ -109,6 +109,7 @@ export interface JAppSelectionState {
 
 export interface JAppMessageState {
   messages: JAppMessage[]
+  overlayMessages: JAppOverlayMessage[]
   confirmMessage: JAppConfirmMessage | undefined
 }
 
@@ -164,6 +165,8 @@ export interface JAppMessageService {
   success(message: string, options?: JAppMessageOptions): void
   confirmMessage(params: JAppConfirmMessage): void
   display(message: string, options?: JAppMessageOptions): void
+  displayWaitingOverlay(message: string): string
+  closeWaitingOverlay(messageId?: string): void
 }
 
 export interface JAppAnnotationService {

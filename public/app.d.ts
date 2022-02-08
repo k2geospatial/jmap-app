@@ -2641,6 +2641,81 @@ declare namespace JMap {
        * ```
        */
       function display(message: string, options?: JAppMessageOptions): void
+
+      /**
+       * ***JMap.Application.Message.displayWaitingOverlay***
+       * 
+       * Opens an overlay panel that displays your message and a loading bar.
+       * 
+       * User cannot hide or close this overlay, it aims to avoid user interactions while you are doing an async processing.
+       * 
+       * If overlay is already displaying a previous message, it will display only the new message and hide the previous message (until you close the new message).
+       * 
+       * Overlay is displayed all the time until you call the method [[JMap.Application.Message.closeWaitingOverlay]].
+       * 
+       * This method is used to close one or more messages:
+       *  - Called without params, it will close all messages
+       *  - Called with a messageId, it will close only the message for the given message id
+       * 
+       * @param message the message to display
+       * @throws if message is not a non empty string
+       * @returns the message id, usefull when you display multiple messages at the same time, but want to close only one.
+       * @example ```ts
+       * 
+       * // display a waiting overlay, making the app unavailable for user as long it is displayed
+       * const messageId = JMap.Application.Message.displayWaitingOverlay("Please wait, processing data")
+       * // NG app is now unavailable for the user
+       * // You can do some asynchronous processing
+       * myAsyncProcess()
+       *  .then(() => {
+       *    // close the waiting overlay
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
+       *    JMap.Application.Message.success("The process was successfully completed")
+       *  })
+       *  .catch(error => {
+       *    // close the waiting overlay
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
+       *    console.error(error)
+       *    JMap.Application.Message.error("An error has occurred while processing")
+       *  })
+       * ```
+       */
+      function displayWaitingOverlay(message: string): string
+
+      /**
+       * ***JMap.Application.Message.closeWaitingOverlay***
+       * 
+       * Close all overlay messages or just one.
+       * 
+       * If no overlay is displayed, do nothing.
+       * 
+       * @param messageId the message to close
+       * @throws if you pass a message id that is not found
+       * @example ```ts
+       * 
+       * // display a waiting overlay, making the app unavailable for user as long it is displayed
+       * const messageId = JMap.Application.Message.displayWaitingOverlay("Please wait, processing data")
+       * // NG app is now unavailable for the user
+       * // You can do some asynchronous processing
+       * myAsyncProcess()
+       *  .then(() => {
+       *    // close the waiting overlay
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
+       *    JMap.Application.Message.success("The process was successfully completed")
+       *  })
+       *  .catch(error => {
+       *    // close the waiting overlay
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
+       *    console.error(error)
+       *    JMap.Application.Message.error("An error has occurred while processing")
+       *  })
+       * ```
+       */
+      function closeWaitingOverlay(messageId?: string): void
     }
 
     /**

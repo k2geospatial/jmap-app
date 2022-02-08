@@ -122,7 +122,7 @@ declare interface JApplicationOptions {
    *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
-   *           backgroundImageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Atari_logo.svg/640px-Atari_logo.svg.png",
+   *           logoImageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Atari_logo.svg/640px-Atari_logo.svg.png",
    *           ...
    *         }
    *       }

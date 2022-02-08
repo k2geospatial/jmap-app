@@ -2645,7 +2645,7 @@ declare namespace JMap {
       /**
        * ***JMap.Application.Message.displayWaitingOverlay***
        * 
-       * Open an overlay panel that display your message and a loading bar.
+       * Opens an overlay panel that displays your message and a loading bar.
        * 
        * User cannot hide or close this overlay, it aims to avoid user interactions while you are doing an async processing.
        * 
@@ -2662,19 +2662,23 @@ declare namespace JMap {
        * @returns the message id, usefull when you display multiple messages at the same time, but want to close only one.
        * @example ```ts
        * 
-       * // display a waiting overlay, making the app not avalaible anymore
+       * // display a waiting overlay, making the app unavailable for user as long it is displayed
        * const messageId = JMap.Application.Message.displayWaitingOverlay("Please wait, processing data")
-       * // do some asynchronous processing
+       * // NG app is now unavailable for the user
+       * // You can do some asynchronous processing
        * myAsyncProcess()
        *  .then(() => {
        *    // close the waiting overlay
-       *    JMap.Application.Message.closeWaitingOverlay()
-       *    // do your stuf here...
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
+       *    JMap.Application.Message.success("The process was successfully completed")
        *  })
        *  .catch(error => {
        *    // close the waiting overlay
-       *    JMap.Application.Message.closeWaitingOverlay()
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
        *    console.error(error)
+       *    JMap.Application.Message.error("An error has occurred while processing")
        *  })
        * ```
        */
@@ -2691,19 +2695,23 @@ declare namespace JMap {
        * @throws if you pass a message id that is not found
        * @example ```ts
        * 
-       * // display a waiting overlay, making the app not avalaible anymore
+       * // display a waiting overlay, making the app unavailable for user as long it is displayed
        * const messageId = JMap.Application.Message.displayWaitingOverlay("Please wait, processing data")
-       * // do some asynchronous processing
+       * // NG app is now unavailable for the user
+       * // You can do some asynchronous processing
        * myAsyncProcess()
        *  .then(() => {
        *    // close the waiting overlay
        *    JMap.Application.Message.closeWaitingOverlay(messageId)
-       *    // do your stuf here...
+       *    // NG App is now available again
+       *    JMap.Application.Message.success("The process was successfully completed")
        *  })
        *  .catch(error => {
        *    // close the waiting overlay
        *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
        *    console.error(error)
+       *    JMap.Application.Message.error("An error has occurred while processing")
        *  })
        * ```
        */

@@ -343,7 +343,7 @@ export interface JAppLayerTreeFilterService {
 }
 
 export interface JAppFormService {
-  render(containerId: string, formParams: JFormParams): void | React.FunctionComponentElement<any>
+  render(containerId: string, formParams: JFormParams): JFormMetaData
   destroyByContainerId(containerId: string): void
 }
 

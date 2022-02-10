@@ -1,7 +1,12 @@
 declare interface JFormParams {
-  formMetaData: JFormMetaData
-  defaultValueById: { [id: string]: any }
-  viewId: number
+  id: JId
+  label: string
+  schema: JFormSchema
+  uiSchema: JFormUISchema
+  validationRules?: JFormValidationRules,
+  readOnly?: boolean
+  defaultValueById?: { [id: string]: any }
+  viewId?: number
   hideClearButton?: boolean
   buttonLabelSubmit?: string
   buttonLabelCancel?: string
@@ -11,8 +16,9 @@ declare interface JFormParams {
   smallScreenDisplay?: boolean
   disableSubmit?: boolean
   submitErrors?: string[]
-  validate: (values: any) => { [key: string]: string }
-  onSubmit: (values: any) => void | string | Promise<any>
+  messageToDisplay?: string
+  validate: (values: any, formMetada: JFormMetaData) => { [key: string]: string }
+  onSubmit: (values: any, formMetada: JFormMetaData) => void | string | Promise<any>
   onCancel?: () => void
   onReset?: () => void
 }

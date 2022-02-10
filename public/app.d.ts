@@ -2734,38 +2734,79 @@ declare namespace JMap {
        * @param formParams a JFormParams object
        * @example ```ts
        * 
-       * const onSubmit = (values: any): Promise<void> => {
-       *  return new Promise<void>((resolve, reject) => {
-       *    ...
-       *  })
-       * }
-       * const validate = (values: any): { [key: string]: string } => {
-       *  ...
-       * }
-       * const formParams = {
-       *  defaultValueById: this.getDefaultData(),
-       *   formMetaData: selectedForm.formMetaData,
-       *   onSubmit,
-       *   validate,
-       *   viewId: JMap.Form.getNextViewId(),
-       *   buttonLabelCancel: "Cancel",
-       *   buttonLabelSubmit: "Submit",
-       *   formIsDestroyedAfterSubmit: true,
-       *   hideClearButton: true,
-       *   isSearch: true,
-       *   onReset: () => {
-       *     searchFormSVC.clearDefaultData()
-       *   },
-       *   onCancel: () => {
-       *     panelSVC.setActivePanel(JExtPanel.SEARCH)
+       * // this example will show you how to create a custom form in an extension
+       * // it will render the form in the extension panel
+       * window.JMAP_OPTIONS = {
+       *   ...
+       *   application: {
+       *     extensions: [{
+       *       id: "test-form",
+       *       panelTitle: "Test of form component API",
+       *       initFn: () => {},
+       *       onPanelCreation: panelContainerId => {
+       *         document.getElementById(panelContainerId).style.padding = "1rem"
+       *         // create a custom form in the extension panel container
+       *         JMap.Application.Form.render(panelContainerId, {
+       *           id: "search-form",
+       *           schema: {
+       *             properties: {
+       *               name: {
+       *                 title: "Office Name",
+       *                 type: "string",
+       *                 isRequired: true,
+       *                 maxLength: 255
+       *               },
+       *               type: {
+       *                 title: "Office type",
+       *                 type: "number",
+       *                 // default: 2,
+       *                 enum: [1, 2, 3],
+       *                 enumNames: ["Local", "External", "Mixte"]
+       *               }
+       *             }
+       *           },
+       *           uiSchema: [
+       *            {
+       *              type: "Tab",
+       *              controls: [
+       *                {
+       *                  id: "name",
+       *                  label: "Office name",
+       *                  widget: "input",
+       *                  scope: "#/properties/name"
+       *                },
+       *                {
+       *                  id: "type",
+       *                  label: "Office type",
+       *                  widget: "select",
+       *                  scope: "#/properties/type"
+       *                 }
+       *               ]
+       *             }
+       *           ],
+       *           defaultValueById: { // defaultValueById is optional
+       *             name: "default value",
+       *             type: 2
+       *           },
+       *           validate: (values, formMetaData) => JMap.Form.validateData(formMetaData, JMap.Form.getPreparedData(formMetaData, values)),
+       *           onSubmit: values => {
+       *             // saving your data
+       *             // return a string if an error occurred
+       *             // return a promise, and the form will display a loading button until the promise resolved
+       *             JMap.Application.Message.info(`Submitted values: ${JSON.stringify(values)}`)
+       *           }
+       *         })
+       *       },
+       *       onPanelDestroy: panelContainerId => {
+       *         JMap.Application.Form.destroyByContainerId(panelContainerId)
+       *       }
+       *     }]
        *   }
        * }
-       * 
-       * JMap.Application.Form.render("new-form", formParams)
        * ```
        * 
        */
-      function render(containerId: string, formParams: JFormParams): void | React.FunctionComponentElement<any>
+      function render(containerId: string, formParams: JFormParams): JFormMetaData
 
       /**
        * 

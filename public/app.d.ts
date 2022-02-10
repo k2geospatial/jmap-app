@@ -464,9 +464,9 @@ declare namespace JMap {
        * // will add the new panel, here an empty panel just for the example
        * JMap.Application.Panel.add({
        *   id: customPanelId,
-       *   icon: "http://url-to-my-image/custom-icon.png", // could be an image encoded as a base64 url
-       *   tooltip: "My custom panel tooltip display when mouse is hover the icon",
-       *   title: "Custon panel"
+       *   icon: "http://url-to-my-image/custom-icon.png", // could be an image encoded as a base64 url or an svg tag (if no fill color is specified then the default theme will be used)
+       *   iconTooltip: "My custom panel tooltip display when mouse is hover the icon",
+       *   title: "Custom panel"
        * })
        * // The panel has been created but not displayed, if you want to display it:
        * JMap.Applcation.activate(customPanelId)

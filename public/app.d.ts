@@ -464,7 +464,9 @@ declare namespace JMap {
        * // will add the new panel, here an empty panel just for the example
        * JMap.Application.Panel.add({
        *   id: customPanelId,
-       *   icon: "http://url-to-my-image/custom-icon.png", // could be an image encoded as a base64 url or an svg tag (if no fill color is specified then the default theme will be used)
+       *   // Can be an image encoded as a base64 url or an svg tag as a string.
+       *   // For an svg string a viewbox need to be specified for the icon to appear and if no fill attribute is specified, the icon will follow the app theme.
+       *   icon: "http://url-to-my-image/custom-icon.png", 
        *   iconTooltip: "My custom panel tooltip display when mouse is hover the icon",
        *   title: "Custom panel"
        * })

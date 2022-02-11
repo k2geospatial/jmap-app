@@ -64,8 +64,8 @@ declare interface JApplicationOptions {
   containerId?: string
 
   /**
-   * Set a custom application background image, by default the JMap background is displayed.
-   * Background image is used for login screen, project selection, or when loading a project.
+   * Set a custom application background login image, by default the JMap background is displayed.
+   * Background login image is used for login screen.
    * 
    * ```html
    * <html>
@@ -75,7 +75,7 @@ declare interface JApplicationOptions {
    *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
-   *           backgroundImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+   *           loginBackgroundImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
    *           ...
    *         }
    *       }
@@ -85,7 +85,31 @@ declare interface JApplicationOptions {
    * </html>
    * ```
    */
-  backgroundImageUrl?: string
+   loginBackgroundImageUrl?: string
+
+  /**
+   * Set a custom application background project image, by default the JMap background is displayed.
+   * Background project image is used for projects screen.
+   * 
+   * ```html
+   * <html>
+   *   ...
+   *   <body>
+   *     <script type="text/javascript">
+   *       window.JMAP_OPTIONS = {
+   *         ...
+   *         application: {
+   *           projectBackgroundImageUrl: "https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+   *           ...
+   *         }
+   *       }
+   *     </script>
+   *     ...
+   *   </body>
+   * </html>
+   * ```
+   */
+   projectBackgroundImageUrl?: string
 
   /**
    * Set a custom application logo, by default the JMap logo is displayed.
@@ -98,7 +122,7 @@ declare interface JApplicationOptions {
    *       window.JMAP_OPTIONS = {
    *         ...
    *         application: {
-   *           backgroundImageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Atari_logo.svg/640px-Atari_logo.svg.png",
+   *           logoImageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Atari_logo.svg/640px-Atari_logo.svg.png",
    *           ...
    *         }
    *       }

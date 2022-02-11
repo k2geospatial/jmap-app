@@ -9,6 +9,11 @@ declare interface JAppMessage {
   duration: number | null
 }
 
+declare interface JAppOverlayMessage {
+  id: string
+  text: string
+}
+
 declare interface JAppConfirmMessage {
   message: string
   title: string

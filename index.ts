@@ -112,6 +112,7 @@ export interface JAppSelectionState {
 
 export interface JAppMessageState {
   messages: JAppMessage[]
+  overlayMessages: JAppOverlayMessage[]
   confirmMessage: JAppConfirmMessage | undefined
 }
 
@@ -135,6 +136,7 @@ export interface JApplicationService extends JApplicationMainService {
   Project: JAppProjectService
   Feature: JAppFeatureService
   Geometry: JAppGeometryService
+  Form: JAppFormService
 }
 
 export interface JAppGeometryService {
@@ -167,6 +169,8 @@ export interface JAppMessageService {
   success(message: string, options?: JAppMessageOptions): void
   confirmMessage(params: JAppConfirmMessage): void
   display(message: string, options?: JAppMessageOptions): void
+  displayWaitingOverlay(message: string): string
+  closeWaitingOverlay(messageId?: string): void
 }
 
 export interface JAppAnnotationService {
@@ -355,6 +359,11 @@ export interface JAppLayerTreeFilterService {
   deleteById(filterId: number): JAppAnyLayerFilter
   openAddFilterDialog(): void
   closeAddFilterDialog(): void
+}
+
+export interface JAppFormService {
+  render(containerId: string, formParams: JFormParams): JFormMetaData
+  destroyByContainerId(containerId: string): void
 }
 
 export interface JAppAppEventModule extends JEventModule {

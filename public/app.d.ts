@@ -464,9 +464,11 @@ declare namespace JMap {
        * // will add the new panel, here an empty panel just for the example
        * JMap.Application.Panel.add({
        *   id: customPanelId,
-       *   icon: "http://url-to-my-image/custom-icon.png", // could be an image encoded as a base64 url
-       *   tooltip: "My custom panel tooltip display when mouse is hover the icon",
-       *   title: "Custon panel"
+       *   // Can be an image encoded as a base64 url or an svg tag as a string.
+       *   // For an svg string a viewbox need to be specified for the icon to appear and if no fill attribute is specified, the icon will follow the app theme.
+       *   icon: "http://url-to-my-image/custom-icon.png", 
+       *   iconTooltip: "My custom panel tooltip display when mouse is hover the icon",
+       *   title: "Custom panel"
        * })
        * // The panel has been created but not displayed, if you want to display it:
        * JMap.Applcation.activate(customPanelId)
@@ -2737,6 +2739,186 @@ declare namespace JMap {
        * ```
        */
       function display(message: string, options?: JAppMessageOptions): void
+
+      /**
+       * ***JMap.Application.Message.displayWaitingOverlay***
+       * 
+       * Opens an overlay panel that displays your message and a loading bar.
+       * 
+       * User cannot hide or close this overlay, it aims to avoid user interactions while you are doing an async processing.
+       * 
+       * If overlay is already displaying a previous message, it will display only the new message and hide the previous message (until you close the new message).
+       * 
+       * Overlay is displayed all the time until you call the method [[JMap.Application.Message.closeWaitingOverlay]].
+       * 
+       * This method is used to close one or more messages:
+       *  - Called without params, it will close all messages
+       *  - Called with a messageId, it will close only the message for the given message id
+       * 
+       * @param message the message to display
+       * @throws if message is not a non empty string
+       * @returns the message id, usefull when you display multiple messages at the same time, but want to close only one.
+       * @example ```ts
+       * 
+       * // display a waiting overlay, making the app unavailable for user as long it is displayed
+       * const messageId = JMap.Application.Message.displayWaitingOverlay("Please wait, processing data")
+       * // NG app is now unavailable for the user
+       * // You can do some asynchronous processing
+       * myAsyncProcess()
+       *  .then(() => {
+       *    // close the waiting overlay
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
+       *    JMap.Application.Message.success("The process was successfully completed")
+       *  })
+       *  .catch(error => {
+       *    // close the waiting overlay
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
+       *    console.error(error)
+       *    JMap.Application.Message.error("An error has occurred while processing")
+       *  })
+       * ```
+       */
+      function displayWaitingOverlay(message: string): string
+
+      /**
+       * ***JMap.Application.Message.closeWaitingOverlay***
+       * 
+       * Close all overlay messages or just one.
+       * 
+       * If no overlay is displayed, do nothing.
+       * 
+       * @param messageId the message to close
+       * @throws if you pass a message id that is not found
+       * @example ```ts
+       * 
+       * // display a waiting overlay, making the app unavailable for user as long it is displayed
+       * const messageId = JMap.Application.Message.displayWaitingOverlay("Please wait, processing data")
+       * // NG app is now unavailable for the user
+       * // You can do some asynchronous processing
+       * myAsyncProcess()
+       *  .then(() => {
+       *    // close the waiting overlay
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
+       *    JMap.Application.Message.success("The process was successfully completed")
+       *  })
+       *  .catch(error => {
+       *    // close the waiting overlay
+       *    JMap.Application.Message.closeWaitingOverlay(messageId)
+       *    // NG App is now available again
+       *    console.error(error)
+       *    JMap.Application.Message.error("An error has occurred while processing")
+       *  })
+       * ```
+       */
+      function closeWaitingOverlay(messageId?: string): void
+    }
+
+    /**
+     * **JMap.Application.Form**
+     * 
+     * You can render forms using this.
+     */
+     namespace Form {
+
+      /**
+       * ***JMap.Application.Form.render***
+       * 
+       * Renders a form with given params in a container.
+       * 
+       * @param containerId id of the container where the form will be rendered
+       * @param formParams a JFormParams object
+       * @example ```ts
+       * 
+       * // this example will show you how to create a custom form in an extension
+       * // it will render the form in the extension panel
+       * window.JMAP_OPTIONS = {
+       *   ...
+       *   application: {
+       *     extensions: [{
+       *       id: "test-form",
+       *       panelTitle: "Test of form component API",
+       *       initFn: () => {},
+       *       onPanelCreation: panelContainerId => {
+       *         document.getElementById(panelContainerId).style.padding = "1rem"
+       *         // create a custom form in the extension panel container
+       *         JMap.Application.Form.render(panelContainerId, {
+       *           id: "search-form",
+       *           schema: {
+       *             properties: {
+       *               name: {
+       *                 title: "Office Name",
+       *                 type: "string",
+       *                 isRequired: true,
+       *                 maxLength: 255
+       *               },
+       *               type: {
+       *                 title: "Office type",
+       *                 type: "number",
+       *                 // default: 2,
+       *                 enum: [1, 2, 3],
+       *                 enumNames: ["Local", "External", "Mixte"]
+       *               }
+       *             }
+       *           },
+       *           uiSchema: [
+       *            {
+       *              type: "Tab",
+       *              controls: [
+       *                {
+       *                  id: "name",
+       *                  label: "Office name",
+       *                  widget: "input",
+       *                  scope: "#/properties/name"
+       *                },
+       *                {
+       *                  id: "type",
+       *                  label: "Office type",
+       *                  widget: "select",
+       *                  scope: "#/properties/type"
+       *                 }
+       *               ]
+       *             }
+       *           ],
+       *           defaultValueById: { // defaultValueById is optional
+       *             name: "default value",
+       *             type: 2
+       *           },
+       *           validate: (values, formMetaData) => JMap.Form.validateData(formMetaData, JMap.Form.getPreparedData(formMetaData, values)),
+       *           onSubmit: values => {
+       *             // saving your data
+       *             // return a string if an error occurred
+       *             // return a promise, and the form will display a loading button until the promise resolved
+       *             JMap.Application.Message.info(`Submitted values: ${JSON.stringify(values)}`)
+       *           }
+       *         })
+       *       },
+       *       onPanelDestroy: panelContainerId => {
+       *         JMap.Application.Form.destroyByContainerId(panelContainerId)
+       *       }
+       *     }]
+       *   }
+       * }
+       * ```
+       * 
+       */
+      function render(containerId: string, formParams: JFormParams): JFormMetaData
+
+      /**
+       * 
+       * ***JMap.Application.Form.destroyByContainerId***
+       * 
+       * Unmounts form by using container Id where it was rendered
+       * 
+       * @param containerId id of the container to unmount
+       * @example ```ts
+       * 
+       * JMap.Application.Form.destroy("new-form")
+       * ```
+       */
+      function destroyByContainerId(containerId: string): void
     }
   }
 }

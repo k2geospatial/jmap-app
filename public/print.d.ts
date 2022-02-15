@@ -8,3 +8,24 @@ declare interface JAppPaperFormat {
   height: number
   ratio: number
 }
+
+declare interface JAppPageMarginsAndBorders {
+  borderTop: number
+  borderLeft: number
+  borderBottom: number
+  borderRight: number
+  borderWidth: number
+  borderHeight: number
+  marginTop: number
+  marginLeft: number
+  marginBottom: number
+  marginRight: number
+  marginWidth: number
+  marginHeight: number
+  paddingTop: number
+  paddingLeft: number
+  paddingBottom: number
+  paddingRight: number
+  paddingWidth: number
+  paddingHeight: number
+}

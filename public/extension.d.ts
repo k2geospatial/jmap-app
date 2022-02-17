@@ -46,7 +46,6 @@ declare interface JAppExtension extends JCoreExtension {
   panelIcon?: string
   /**
    * The panel icon tooltip.
-   * 
    */
   panelTooltip?: string | JTranslationItem
   /**

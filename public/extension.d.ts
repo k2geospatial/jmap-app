@@ -39,7 +39,7 @@ declare interface JAppExtension extends JCoreExtension {
   /**
    * The panel icon.
    * 
-   * An url (png, jpeg, svg, etc ...), a base 64 string or an svg tag as a string as you like.
+   * An url (png, jpeg, svg, etc ...), a base 64 string or an svg tag as a string, as you like.
    * For an svg string a viewbox need to be specified for the icon to appear,
    * if no fill attribute is specified, the icon will follow the app theme.
    */

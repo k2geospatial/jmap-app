@@ -51,8 +51,11 @@ export interface JAppPanelState {
 
 export interface JAppLayerState {
   treeFilter: JAppLayerTreeFilterState
-  layerInEditionForThematic: JLayer | undefined
   popupMenuLayerId: JId | undefined
+  editionActiveTab: JLayerEditionTab
+  inEditionLayerId: JId | undefined
+  isDynamicFilterDialogOpened: boolean
+  inEditionDynamicFilterConditionId: number | undefined
 }
 
 export interface JAppUiState {
@@ -321,8 +324,21 @@ export interface JAppPrintService {
 
 export interface JAppLayerService {
   Tree: JAppLayerTreeService
-  startThematicEdition(layerId: JId): void
-  stopThematicEdition(): void
+  Edition: JAppLayerEditionService
+}
+
+export interface JAppDynamicFilterService {
+  openPanel(layerId: JId): void
+  closePanel(): void
+  openCreateDialog(layerId: JId): void
+  openUpdateDialog(layerId: JId, conditionId: number): void
+  closeDialog(): void
+}
+
+export interface JAppLayerEditionService {
+  DynamicFilter: JAppDynamicFilterService
+  openPanel(layerId: JId, tab: JLayerEditionTab): void
+  closePanel(): void
 }
 
 export interface JAppLayerTreeService {

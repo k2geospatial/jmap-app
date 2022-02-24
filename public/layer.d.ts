@@ -22,6 +22,8 @@ declare type JAppLayerAnyFilterOperatorType = JAppLayerDateFilterOperatorType | 
 
 declare type JAppLayerFilterDatePeriodType = "day" | "week" | "month" | "year"
 
+declare type JLayerEditionTab = "thematics" | "dynamic-filter"
+
 declare interface JAppLayerTreeFilterState {
   active: boolean
   isAddingFilter: boolean

@@ -1450,7 +1450,7 @@ declare namespace JMap {
            * @param layerId the JMap layer id
            * @example ```ts
            * 
-           * // open the dynamic filter panel, with "dynamic-filter" tab activated, for layer id=3.
+           * // open the edition panel, with "dynamic-filter" tab activated, for layer id=3.
            * JMap.Application.Layer.Edition.DynamicFilter.openPanel(3)
            * ```
            */
@@ -1507,11 +1507,83 @@ declare namespace JMap {
            * 
            * @example ```ts
            * 
-           * // close the dynamic filter condition dialog if opened
+           * // close the edition (any tab) panel if open.
            * JMap.Application.Layer.Edition.DynamicFilter.closeDialog()
            * ```
            */
           function closeDialog(): void
+        }
+
+        /**
+         * **JMap.Application.Layer.Edition.Info**
+         * 
+         * You can manage layer info panel here.
+         */
+        namespace Info {
+
+          /**
+           * **JMap.Application.Layer.Edition.Info.openPanel**
+           * 
+           * Open the edition panel, with "info" tab activated, for the given layer
+           * 
+           * @throws if layer not found
+           * @param layerId the JMap layer id
+           * @example ```ts
+           * 
+           * // open the edition panel, with "info" tab activated, for layer id=3.
+           * JMap.Application.Layer.Edition.Info.openPanel(3)
+           * ```
+           */
+          function openPanel(layerId: JId): void
+
+          /**
+           * **JMap.Application.Layer.Edition.Info.closePanel**
+           * 
+           * If open, close the edition panel.
+           * 
+           * @example ```ts
+           * 
+           * // close the edition (any tab) panel if open.
+           * JMap.Application.Layer.Edition.DynamicFilter.closePanel()
+           * ```
+           */
+          function closePanel(): void
+        }
+
+        /**
+         * **JMap.Application.Layer.Edition.Thematic**
+         * 
+         * You can manage layer thematic panel here.
+         */
+         namespace Thematic {
+
+          /**
+           * **JMap.Application.Layer.Edition.Thematic.openPanel**
+           * 
+           * Open edition panel, with "thematics" tab activated, for the given layer
+           * 
+           * @throws if layer not found
+           * @param layerId the JMap layer id
+           * @example ```ts
+           * 
+           * // open the edition panel, with "thematics" tab activated, for layer id=3.
+           * JMap.Application.Layer.Edition.Thematic.openPanel(3)
+           * ```
+           */
+          function openPanel(layerId: JId): void
+
+          /**
+           * **JMap.Application.Layer.Edition.Thematic.closePanel**
+           * 
+           * If open, close the edition panel.
+           * 
+           * @example ```ts
+           * 
+           * // close the edition (any tab) panel if open.
+           * JMap.Application.Layer.Edition.DynamicFilter.closePanel()
+           * ```
+           */
+          function closePanel(): void
         }
 
         /**

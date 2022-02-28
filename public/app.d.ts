@@ -1444,13 +1444,13 @@ declare namespace JMap {
           /**
            * **JMap.Application.Layer.Edition.DynamicFilter.openPanel**
            * 
-           * Open edition panel, with "dynamic-filter" tab activated, for the given layer
+           * Opens the edition panel, with the "dynamic-filter" tab activated, for the given layer
            * 
            * @throws if layer not found
            * @param layerId the JMap layer id
            * @example ```ts
            * 
-           * // open the edition panel, with "dynamic-filter" tab activated, for layer id=3.
+           * // opens the edition panel, with the "dynamic-filter" tab activated, for layer id=3.
            * JMap.Application.Layer.Edition.DynamicFilter.openPanel(3)
            * ```
            */
@@ -1459,11 +1459,11 @@ declare namespace JMap {
           /**
            * **JMap.Application.Layer.Edition.DynamicFilter.closePanel**
            * 
-           * If open, close the edition panel.
+           * If open, closes the edition panel.
            * 
            * @example ```ts
            * 
-           * // close the dynamic filter panel if open.
+           * // closes the dynamic filter panel if open.
            * JMap.Application.Layer.Edition.DynamicFilter.closePanel()
            * ```
            */
@@ -1472,13 +1472,13 @@ declare namespace JMap {
           /**
            * **JMap.Application.Layer.Edition.DynamicFilter.openCreateDialog**
            * 
-           * Open dynamic filter creation dialog for the given layer id.
+           * Opens the dynamic filter creation dialog for the given layer id.
            * 
            * @throws if layer not found
            * @param layerId the JMap layer id 
            * @example ```ts
            * 
-           * // open the dynamic filter creation dialog for layer id=3
+           * // opens the dynamic filter creation dialog for layer id=3
            * JMap.Application.Layer.Edition.DynamicFilter.openCreateDialog(3)
            * ```
            */
@@ -1487,14 +1487,14 @@ declare namespace JMap {
           /**
            * **JMap.Application.Layer.Edition.DynamicFilter.openUpdateDialog**
            * 
-           * Open dynamic filter update dialog for the given layer id.
+           * Opens the dynamic filter update dialog for the given layer id.
            * 
            * @throws if layer or condition not found
            * @param layerId the JMap layer id
            * @param conditionId the JMap dynamic filter condition id
            * @example ```ts
            * 
-           * // open the dynamic filter condition creation dialog for layer id=3
+           * // opens the dynamic filter condition creation dialog for layer id=3
            * JMap.Application.Layer.Edition.DynamicFilter.openUpdateDialog(3)
            * ```
            */
@@ -1507,7 +1507,7 @@ declare namespace JMap {
            * 
            * @example ```ts
            * 
-           * // close the edition (any tab) panel if open.
+           * // closes the edition (any tab) panel if open.
            * JMap.Application.Layer.Edition.DynamicFilter.closeDialog()
            * ```
            */
@@ -1539,11 +1539,11 @@ declare namespace JMap {
           /**
            * **JMap.Application.Layer.Edition.Info.closePanel**
            * 
-           * If open, close the edition panel.
+           * If open, closes the edition panel.
            * 
            * @example ```ts
            * 
-           * // close the edition (any tab) panel if open.
+           * // closes the edition (any tab) panel if open.
            * JMap.Application.Layer.Edition.DynamicFilter.closePanel()
            * ```
            */
@@ -1560,13 +1560,13 @@ declare namespace JMap {
           /**
            * **JMap.Application.Layer.Edition.Thematic.openPanel**
            * 
-           * Open edition panel, with "thematics" tab activated, for the given layer
+           * Opens the edition panel, with "thematics" tab activated, for the given layer
            * 
            * @throws if layer not found
            * @param layerId the JMap layer id
            * @example ```ts
            * 
-           * // open the edition panel, with "thematics" tab activated, for layer id=3.
+           * // opens the edition panel, with "thematics" tab activated, for layer id=3.
            * JMap.Application.Layer.Edition.Thematic.openPanel(3)
            * ```
            */
@@ -1575,11 +1575,11 @@ declare namespace JMap {
           /**
            * **JMap.Application.Layer.Edition.Thematic.closePanel**
            * 
-           * If open, close the edition panel.
+           * If open, closes the edition panel.
            * 
            * @example ```ts
            * 
-           * // close the edition (any tab) panel if open.
+           * // closes the edition (any tab) panel if open.
            * JMap.Application.Layer.Edition.DynamicFilter.closePanel()
            * ```
            */
@@ -1589,7 +1589,7 @@ declare namespace JMap {
         /**
          * **JMap.Application.Layer.Edition.openPanel**
          * 
-         * Open the layer edition panel.
+         * Opens the layer edition panel.
          * 
          * This panel has two tabs:
          *  - thematics: only available if some thematics are set on the layer, else is hidden
@@ -1600,10 +1600,10 @@ declare namespace JMap {
          * @param activeTab the tab to display: "thematics" or "dynamic-filter"
          * @example ```ts
          * 
-         * // edit the layer's id="3" thematics (if layer 3 has at least one thematic set)
+         * // edits the layer's id="3" thematics (if layer 3 has at least one thematic set)
          * JMap.Application.Layer.Edition.openPanel(3, "thematics")
          * 
-         * // edit the layer's id="3" dynamic filter, if layer is not raster
+         * // edits the layer's id="3" dynamic filter, if layer is not raster
          * JMap.Application.Layer.Edition.openPanel(2, "dynamic-filter")
          * ```
          */
@@ -1616,7 +1616,7 @@ declare namespace JMap {
          * 
          * @example ```ts
          * 
-         * // close layer edition panel
+         * // closes the layer edition panel
          * JMap.Application.Layer.Edition.closePanel()
          * ```
          */

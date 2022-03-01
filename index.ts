@@ -335,8 +335,20 @@ export interface JAppDynamicFilterService {
   closeDialog(): void
 }
 
+export interface JAppLayerEditionInfoService {
+  openPanel(layerId: JId): void
+  closePanel(): void
+}
+
+export interface JAppLayerEditionThematicService {
+  openPanel(layerId: JId): void
+  closePanel(): void
+}
+
 export interface JAppLayerEditionService {
   DynamicFilter: JAppDynamicFilterService
+  Info: JAppLayerEditionInfoService
+  Thematic: JAppLayerEditionThematicService
   openPanel(layerId: JId, tab: JLayerEditionTab): void
   closePanel(): void
 }

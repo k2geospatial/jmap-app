@@ -46,7 +46,7 @@ declare type JAppAnyLayerFilter = JAppNumberLayerFilter | JAppTextLayerFilter | 
 declare interface JAppBaseLayerFilter {
   id: number
   metadataItemId: JId
-  type: JLayerMetadataType
+  type: METADATA_TYPES
 }
 
 declare interface JAppNumberLayerFilter extends JAppBaseLayerFilter{

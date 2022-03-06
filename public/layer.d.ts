@@ -22,7 +22,7 @@ declare type JAppLayerAnyFilterOperatorType = JAppLayerDateFilterOperatorType | 
 
 declare type JAppLayerFilterDatePeriodType = "day" | "week" | "month" | "year"
 
-declare type JLayerEditionTab = "thematics" | "dynamic-filter"
+declare type JLayerEditionTab = "thematics" | "dynamic-filter" | "info"
 
 declare interface JAppLayerTreeFilterState {
   active: boolean
@@ -46,7 +46,7 @@ declare type JAppAnyLayerFilter = JAppNumberLayerFilter | JAppTextLayerFilter | 
 declare interface JAppBaseLayerFilter {
   id: number
   metadataItemId: JId
-  type: JLayerMetadataType
+  type: METADATA_TYPES
 }
 
 declare interface JAppNumberLayerFilter extends JAppBaseLayerFilter{

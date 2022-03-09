@@ -2488,7 +2488,7 @@ declare namespace JMap {
          * 
          * If the listener doesn't exist, does nothing.
          * 
-         * Removes the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * Removes the listener from JMap NG App. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts
@@ -2585,7 +2585,7 @@ declare namespace JMap {
          * 
          * If the listener doesn't exist, does nothing.
          * 
-         * Removes the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * Removes the listener from JMap NG App. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts
@@ -2622,10 +2622,10 @@ declare namespace JMap {
            * @param fn Your listener function
            * @example ```ts
            * 
-           * // log a message in the console once the application is loaded
+           * // log a message in the console when the side panel is closed or opened
            * JMap.Application.Event.UI.on.sidePanelVisibilityChanged(
            *   "custom-side-panel-visibility-changed", 
-           *   params => console.log(`New panel is visible: ${params.isVisible}"`)
+           *   params => console.log(`New panel visibility: ${params.isVisible}"`)
            * )
            * ```
            */
@@ -2634,13 +2634,13 @@ declare namespace JMap {
           /**
            * ***JMap.Application.Event.UI.on.sidePanelWidthChanged***
            * 
-           * This event is triggered when the side panel width changed.
+           * This event is triggered when the side panel width changes.
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function
            * @example ```ts
            * 
-           * // log a message in the console when the side panel width changed
+           * // log a message in the console when the side panel width changes
            * JMap.Application.Event.UI.on.sidePanelWidthChanged(
            *   "custom-side-panel-width-changed", 
            *   params => console.log(`New panel width ${params.width}"`)
@@ -2693,7 +2693,7 @@ declare namespace JMap {
          * 
          * If the listener doesn't exist, does nothing.
          * 
-         * Removes the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * Removes the listener from JMap NG App. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts

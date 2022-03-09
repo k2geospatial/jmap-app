@@ -60,6 +60,7 @@ export interface JAppLayerState {
 
 export interface JAppUiState {
   sidePanelVisible: boolean
+  mainPanelWidthInPixel: number
   theme: { [key: string]: any }
 }
 
@@ -232,6 +233,8 @@ export interface JApplicationUIService {
     setVisible(isVisible: boolean): void
     getWidthOpenInRem(): string
     getWidthOpenInPixel(): number
+    getMinimumWidthOpenInPixel(): number
+    setWidthOpenInPixel(width: number): void
     getWidthCloseInRem(): string
     getWidthCloseInPixel(): number
     getMainPanelWidthInRem(): string
@@ -250,6 +253,7 @@ export interface JApplicationUIService {
 export interface JAppEventService {
   Main: JAppAppEventModule
   Layer: JAppLayerEventModule
+  UI: JAppUIEventModule
 }
 
 export interface JAppSelectionService {
@@ -391,5 +395,12 @@ export interface JAppAppEventModule extends JEventModule {
 export interface JAppLayerEventModule extends JEventModule {
   on: {
     doubleClick(listenerId: string, fn: (params: JAppLayerEventParams) => void): void
+  }
+}
+
+export interface JAppUIEventModule extends JEventModule {
+  on: {
+    sidePanelVisibilityChanged(listenerId: string, fn: (params: JAppUISidePanelVisibilityChangedEventParams) => void): void
+    sidePanelWidthChanged(listenerId: string, fn: (params: JAppUISidePanelWidthChangedEventParams) => void): void
   }
 }

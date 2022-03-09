@@ -1827,6 +1827,37 @@ declare namespace JMap {
         function getWidthOpenInPixel(): number
 
         /**
+         * **JMap.Application.UI.SidePanel.getMinimumWidthOpenInPixel**
+         * 
+         * Returns the minimum side panel width.
+         * 
+         * @example ```ts
+         * 
+         * // returns the minimum side panel width
+         * JMap.Application.UI.SidePanel.getMinimumWidthOpenInPixel()
+         * ```
+         */
+        function getMinimumWidthOpenInPixel(): number
+
+        /**
+         * **JMap.Application.UI.SidePanel.setWidthOpenInPixel**
+         * 
+         * Returns the minimum side panel width.
+         * 
+         * @throws if new width is not a number, or lower than minimum width
+         * @param width: new panel width in pixel
+         * @example ```ts
+         * 
+         * const newWidth = 500
+         * if (JMap.Application.UI.SidePanel.getMinimumWidthOpenInPixel() <= newWidth) {
+         *  // returns the minimum side panel width
+         *  JMap.Application.UI.SidePanel.setWidthOpenInPixel(newWidth)
+         * }
+         * ```
+         */
+        function setWidthOpenInPixel(width: number): void
+
+        /**
          * **JMap.Application.UI.SidePanel.getWidthCloseInRem**
          * 
          * Returns the width of the closed side panel in rem.
@@ -2502,7 +2533,7 @@ declare namespace JMap {
          * 
          * If the listener doesn't exist, does nothing.
          * 
-         * Removes the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * Removes the listener from JMap NG App. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts
@@ -2599,13 +2630,121 @@ declare namespace JMap {
          * 
          * If the listener doesn't exist, does nothing.
          * 
-         * Removes the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * Removes the listener from JMap NG App. The listener is deleted and never called again after that.
          * 
          * @param listenerId The listener id
          * @example ```ts
          * 
          * // remove the listener "my-layer-listener"
          * JMap.Application.Event.Layer.remove("my-layer-listener")
+         * ```
+         */
+        function remove(listenerId: string): void
+      }
+      
+      /**
+       * ***JMap.Application.Event.UI***
+       * 
+       * Here you can manage all JMap NG App high level event listeners.
+       * 
+       * Click to see all events available: ***[[JMap.Application.Event.Main.on]]***. 
+       */
+      namespace UI {
+
+        /**
+         * ***JMap.Application.Event.UI.on***
+         * 
+         * Here you have all JMap NG App high level available events on which you can attach a listener.
+         */
+        namespace on {
+
+          /**
+           * ***JMap.Application.Event.UI.on.sidePanelVisibilityChanged***
+           * 
+           * This event is triggered when the side panel is closed or opened.
+           * 
+           * @param listenerId Your listener id (must be unique)
+           * @param fn Your listener function
+           * @example ```ts
+           * 
+           * // log a message in the console when the side panel is closed or opened
+           * JMap.Application.Event.UI.on.sidePanelVisibilityChanged(
+           *   "custom-side-panel-visibility-changed", 
+           *   params => console.log(`New panel visibility: ${params.isVisible}"`)
+           * )
+           * ```
+           */
+          function sidePanelVisibilityChanged(listenerId: string, fn: (params: JAppUISidePanelVisibilityChangedEventParams) => void): void
+
+          /**
+           * ***JMap.Application.Event.UI.on.sidePanelWidthChanged***
+           * 
+           * This event is triggered when the side panel width changes.
+           * 
+           * @param listenerId Your listener id (must be unique)
+           * @param fn Your listener function
+           * @example ```ts
+           * 
+           * // log a message in the console when the side panel width changes
+           * JMap.Application.Event.UI.on.sidePanelWidthChanged(
+           *   "custom-side-panel-width-changed", 
+           *   params => console.log(`New panel width ${params.width}"`)
+           * )
+           * ```
+           */
+          function sidePanelWidthChanged(listenerId: string, fn: (params: JAppUISidePanelResizeEventParams) => void): void
+        }
+
+        /**
+         * ***JMap.Application.Event.UI.activate***
+         * 
+         * Activates the listener.
+         * 
+         * If the listener is already active, does nothing.
+         * 
+         * If the listener is inactive, it will be reactivated and will be called again ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // activate the listener "my-ui-listener"
+         * JMap.Application.Event.UI.activate("my-ui-listener")
+         * ```
+         */
+        function activate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.UI.deactivate***
+         * 
+         * Deactivates the listener.
+         * 
+         * If the listener id doesn't exist or if the listener is already inactive, does nothing.
+         * 
+         * If the listener is active, it will be deactivated and will be ignored ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // deactivate the listener "my-ui-listener"
+         * JMap.Application.Event.UI.deactivate("my-ui-listener")
+         * ```
+         */
+        function deactivate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.UI.remove***
+         * 
+         * Removes the listener.
+         * 
+         * If the listener doesn't exist, does nothing.
+         * 
+         * Removes the listener from JMap NG App. The listener is deleted and never called again after that.
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // remove the listener "my-ui-listener"
+         * JMap.Application.Event.UI.remove("my-ui-listener")
          * ```
          */
         function remove(listenerId: string): void

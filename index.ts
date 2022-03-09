@@ -107,6 +107,7 @@ export interface JAppSelectionState {
   displayedLayerId: JId
   isNewElement: boolean
   tableVisibility: boolean
+  isTabOpened: boolean
   draw: JAppDrawState
 }
 
@@ -258,6 +259,9 @@ export interface JAppSelectionService {
   getActiveSelectionType(): JAppSelectionType
   getTableVisibility(): boolean
   setTableVisibility(tableVisibility: boolean): void
+  isTableDisplayedInTab(): boolean
+  openTableInTab(): void
+  closeTableTab(): void
   clearSelectionForLayer(layerId: JId): void
   clearSelection(): void
   selectFromFeature(feature: GeoJSON.Feature, selectionType?: JAppSelectionType): void

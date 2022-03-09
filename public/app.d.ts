@@ -1039,6 +1039,51 @@ declare namespace JMap {
       function setTableVisibility(tableVisibility: boolean): void
       
       /**
+       * **JMap.Application.Selection.isTableDisplayedInTab**
+       * 
+       * Returns true if the selection table is displayed in an external browser tab.
+       * 
+       * @example ```ts
+       * 
+       * // returns true if the selection table is displayed in an external browser tab.
+       * JMap.Application.Selection.isTableDisplayedInTab()
+       * ```
+       */
+      function isTableDisplayedInTab(): boolean
+      
+      /**
+       * **JMap.Application.Selection.openTableInTab**
+       * 
+       * Displays the selection table in another tab.
+       * 
+       * If the table is not visible, make it visible.
+       * 
+       * @example ```ts
+       * 
+       * // displays the selection table in another tab.
+       * JMap.Application.Selection.openTableInTab()
+       * ```
+       */
+      function openTableInTab(): void
+
+      /**
+       * **JMap.Application.Selection.closeTableTab**
+       * 
+       * Closes the selection table tab.
+       * 
+       * If the table is not visible, or not opened in another tab, do nothing.
+       * 
+       * If the table is opened in another tab, close the tab and display the table over the map.
+       * 
+       * @example ```ts
+       * 
+       * // closes the selection table tab.
+       * JMap.Application.Selection.closeTableTab()
+       * ```
+       */
+      function closeTableTab(): void
+
+      /**
        * **JMap.Application.Selection.clearSelectionForLayer**
        * 
        * Unselects all features for a given layer id.

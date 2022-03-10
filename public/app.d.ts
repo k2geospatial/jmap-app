@@ -2692,7 +2692,7 @@ declare namespace JMap {
            * )
            * ```
            */
-          function sidePanelWidthChanged(listenerId: string, fn: (params: JAppUISidePanelResizeEventParams) => void): void
+          function sidePanelWidthChanged(listenerId: string, fn: (params: JAppUISidePanelWidthChangedEventParams) => void): void
         }
 
         /**

@@ -61,4 +61,13 @@ declare interface JAppExtension extends JCoreExtension {
    * See [[JMap.Service.Map.Interaction]] for more details.
    */
   interactor?: JMapInteractor
+  /**
+   * The panel registration method.
+   * 
+   * This method is called each time the app extension is :
+   *  - Registered, after the panel and interactors have been created
+   * 
+   * Here you can perform actions after the registering of the extension.
+   */
+  onAppRegistrationDone?: ()=> void
 }

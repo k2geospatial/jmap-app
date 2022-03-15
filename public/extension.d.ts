@@ -69,5 +69,5 @@ declare interface JAppExtension extends JCoreExtension {
    * 
    * Here you can perform actions after the registering of the extension.
    */
-  onAppRegistrationDone?: ()=> void
+  onAppRegistrationDone?: () => void
 }

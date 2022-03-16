@@ -71,3 +71,7 @@ declare interface JAppExtension extends JCoreExtension {
    */
   onAppRegistrationDone?: () => void
 }
+
+declare interface JAppExtensionEventParams {
+  extensionId: string
+}

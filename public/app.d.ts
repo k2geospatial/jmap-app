@@ -2641,6 +2641,97 @@ declare namespace JMap {
          */
         function remove(listenerId: string): void
       }
+
+      /**
+       * ***JMap.Application.Event.Extension***
+       * 
+       * Here you can manage all JMap NG App extension event listeners.
+       * 
+       * Click to see all events available: ***[[JMap.Application.Event.Extension.on]]***. 
+       */
+      namespace Extension {
+
+        /**
+         * ***JMap.Application.Event.Extension.on***
+         * 
+         * Here you have all JMap NG App available extension events on which you can attach a listener.
+         */
+         namespace on {
+
+          /**
+           * ***JMap.Application.Event.Extension.on.registration***
+           * 
+           * This event is triggered after a user registers his own JMap NG App extension.
+           * 
+           * The extension id is received as a param property of the event.
+           * 
+           * @param listenerId Your listener id (must be unique)
+           * @param fn Your listener function
+           * @example ```ts
+           * 
+           * // Triggered when a user register a new extension 
+           * JMap.Application.Event.Extension.on.registration("my-extension-listener", params => {
+           *   const extensionId = params.extensionId
+           *   console.info(`The following extension has been registered by the current user: "${extensionId}".`)
+           * })
+           * ```
+           */
+          function registration (listenerId: string, fn: (params: JAppExtensionEventParams) => void): void
+        }
+        /**
+         * ***JMap.Application.Event.Extension.activate***
+         * 
+         * Activates the listener.
+         * 
+         * If the listener is already active, does nothing.
+         * 
+         * If the listener is inactive, it will be reactivated and will be called again ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // activate the listener "my-extension-listener"
+         * JMap.Application.Event.Extension.activate("my-extension-listener")
+         * ```
+         */
+        function activate(listenerId: string): void
+
+        /**
+        * ***JMap.Application.Event.Extension.deactivate***
+        * 
+        * Deactivates the listener.
+        * 
+        * If the listener id doesn't exist or if the listener is already inactive, does nothing.
+        * 
+        * If the listener is active, it will be deactivated and will be ignored ...
+        * 
+        * @param listenerId The listener id
+        * @example ```ts
+        * 
+        * // deactivate the listener "my-extension-listener"
+        * JMap.Application.Event.Extension.deactivate("my-extension-listener")
+        * ```
+        */
+        function deactivate(listenerId: string): void
+
+        /**
+        * ***JMap.Application.Event.Extension.remove***
+        * 
+        * Removes the listener.
+        * 
+        * If the listener doesn't exist, does nothing.
+        * 
+        * Removes the listener from JMap NG App. The listener is deleted and never called again after that.
+        * 
+        * @param listenerId The listener id
+        * @example ```ts
+        * 
+        * // remove the listener "my-extension-listener"
+        * JMap.Application.Event.Extension.remove("my-extension-listener")
+        * ```
+        */
+        function remove(listenerId: string): void
+      }
       
       /**
        * ***JMap.Application.Event.UI***
@@ -2942,6 +3033,9 @@ declare namespace JMap {
        *  },
        *  onPanelDestroy: panelContainerId => {
        *    console.info("Destroy your component here")
+       *  },
+       *  onRegistrationDone: () => {
+       *    console.info("My extension has been successfully registered")
        *  }
        * })
        * ```

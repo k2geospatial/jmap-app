@@ -2769,7 +2769,9 @@ declare namespace JMap {
           /**
            * ***JMap.Application.Event.MapContext.on.afterApply***
            * 
-           * This event is triggered after the map context is applied.
+           * This event is triggered after:
+           *  - The NG Core event JMap.Event.MapContext.on.afterApply has been triggered
+           *  - NG App map-context related things has been applied or processed
            * 
            * You can access extension's data from this event, see example below.
            * 

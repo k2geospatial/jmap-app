@@ -2936,7 +2936,7 @@ declare namespace JMap {
        *    console.info("Destroy your component here")
        *  },
        *  onRegistrationDone: () => {
-       *    console.info("Extension has been successfully registered")
+       *    console.info("My extension has been successfully registered")
        *  }
        * })
        * ```

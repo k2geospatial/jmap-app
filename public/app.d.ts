@@ -2778,7 +2778,7 @@ declare namespace JMap {
            * @example ```ts
            * 
            * // Triggered after a map-context is applied
-           * JMap.Event.MapContext.on.afterApply("my-after-apply-listener", params => {
+           * JMap.Application.Event.MapContext.on.afterApply("my-after-apply-listener", params => {
            *   console.info(`After apply map context id="${params.context.title}"`, params.context)
            *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
            *   if (!isExtensionDataSet) {

@@ -2654,16 +2654,16 @@ declare namespace JMap {
         /**
          * ***JMap.Application.Event.Extension.on***
          * 
-         * Here you have all JMap NG App available layer events on which you can attach a listener.
+         * Here you have all JMap NG App available extension events on which you can attach a listener.
          */
          namespace on {
 
           /**
-           * ***JMap.Application.Event.Layer.on.registration***
+           * ***JMap.Application.Event.Extension.on.registration***
            * 
            * This event is triggered after a user registers his own JMap NG App extension.
            * 
-           * The extension id is received as a param property of the event, you can then take any action that would be executed on double click for this layer.
+           * The extension id is received as a param property of the event.
            * 
            * @param listenerId Your listener id (must be unique)
            * @param fn Your listener function

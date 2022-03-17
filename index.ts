@@ -254,7 +254,11 @@ export interface JAppEventService {
   Main: JAppAppEventModule
   Layer: JAppLayerEventModule
   UI: JAppUIEventModule
+<<<<<<< HEAD
   Extension: JAppExtensionEventModule
+=======
+  MapContext: JAppMapContextEventModule
+>>>>>>> master
 }
 
 export interface JAppSelectionService {
@@ -409,5 +413,11 @@ export interface JAppUIEventModule extends JEventModule {
   on: {
     sidePanelVisibilityChanged(listenerId: string, fn: (params: JAppUISidePanelVisibilityChangedEventParams) => void): void
     sidePanelWidthChanged(listenerId: string, fn: (params: JAppUISidePanelWidthChangedEventParams) => void): void
+  }
+}
+
+export interface JAppMapContextEventModule extends JEventModule {
+  on: {
+    afterApply(listenerId: string, fn: (params: JMapContextAfterApplyEventParams) => void): void
   }
 }

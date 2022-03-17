@@ -254,11 +254,8 @@ export interface JAppEventService {
   Main: JAppAppEventModule
   Layer: JAppLayerEventModule
   UI: JAppUIEventModule
-<<<<<<< HEAD
   Extension: JAppExtensionEventModule
-=======
   MapContext: JAppMapContextEventModule
->>>>>>> master
 }
 
 export interface JAppSelectionService {

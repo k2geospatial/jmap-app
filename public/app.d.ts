@@ -2749,6 +2749,105 @@ declare namespace JMap {
          */
         function remove(listenerId: string): void
       }
+
+      /**
+       * ***JMap.Application.Event.MapContext***
+       * 
+       * Here you can manage all JMap App NG map context event listeners.
+       * 
+       * Click to see all events available: ***[[JMap.Application.Event.MapContext.on]]***. 
+       */
+      namespace MapContext {
+
+        /**
+         * ***JMap.Application.Event.MapContext.on***
+         * 
+         * Here you have all JMap NG App available map context events on which you can attach a listener.
+         */
+        namespace on {
+
+          /**
+           * ***JMap.Application.Event.MapContext.on.afterApply***
+           * 
+           * This event is triggered after:
+           *  - The NG Core event JMap.Event.MapContext.on.afterApply has been triggered
+           *  - NG App map-context related things has been applied or processed
+           * 
+           * You can access extension's data from this event, see example below.
+           * 
+           * @param listenerId Your listener id (must be unique)
+           * @param fn Your listener function
+           * @example ```ts
+           * 
+           * // Triggered after a map-context is applied
+           * JMap.Application.Event.MapContext.on.afterApply("my-after-apply-listener", params => {
+           *   console.info(`After apply map context id="${params.context.title}"`, params.context)
+           *   const isExtensionDataSet = params.isExtensionDataSetById("my-extension")
+           *   if (!isExtensionDataSet) {
+           *     console.info("No extension data in map-context")
+           *   } else {
+           *     console.info("Extension map context data = ", params.getExtensionDataById("my-extension"))
+           *   }
+           * })
+           * ```
+           */
+          function afterApply(listenerId: string, fn: (params: JMapContextAfterApplyEventParams) => void): void
+        }
+
+        /**
+         * ***JMap.Application.Event.MapContext.activate***
+         * 
+         * Activates the listener.
+         * 
+         * If the listener is already active, does nothing.
+         * 
+         * If the listener is inactive, it will be reactivated and will be called again ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // activate the listener "my-mapcontext-listener"
+         * JMap.Application.Event.MapContext.activate("my-mapcontext-listener")
+         * ```
+         */
+        function activate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.MapContext.deactivate***
+         * 
+         * Deactivates the listener.
+         * 
+         * If the listener id doesn't exists or if the listener is already inactive, does nothing.
+         * 
+         * If the listener is active, it will be deactivated and will be ignored ...
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // deactivate the listener "my-mapcontext-listener"
+         * JMap.Application.Event.MapContext.deactivate("my-mapcontext-listener")
+         * ```
+         */
+        function deactivate(listenerId: string): void
+
+        /**
+         * ***JMap.Application.Event.MapContext.remove***
+         * 
+         * Removes the listener.
+         * 
+         * If the listener doesn't exist, does nothing.
+         * 
+         * Remove the listener from JMap NG Core library. The listener is deleted and never called again after that.
+         * 
+         * @param listenerId The listener id
+         * @example ```ts
+         * 
+         * // remove the listener "my-mapcontext-listener"
+         * JMap.Application.Event.MapContext.remove("my-mapcontext-listener")
+         * ```
+         */
+        function remove(listenerId: string): void
+      }
     }
 
     /**

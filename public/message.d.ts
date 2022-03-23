@@ -1,10 +1,15 @@
-
-declare type JAppMessageSeverity = "success" | "info" | "warning" | "error"
+// ALL_APP_MESSAGE_SEVERITIES in all-enum.ts
+declare const enum JAPP_MESSAGE_SEVERITIES {
+  SUCCESS = "success",
+  INFO = "info",
+  WARNING = "warning",
+  ERROR = "error"
+}
 
 declare interface JAppMessage {
   id: string
   text: string
-  severity: JAppMessageSeverity
+  severity: JAPP_MESSAGE_SEVERITIES
   expired: boolean
   duration: number | null
 }
@@ -27,7 +32,7 @@ declare interface JAppConfirmMessage {
   onCancel?: () => any
 }
 
-declare interface JAppMessageOptions{
-  severity?: JAppMessageSeverity
+declare interface JAppMessageOptions {
+  severity?: JAPP_MESSAGE_SEVERITIES
   duration?: number | null
 }

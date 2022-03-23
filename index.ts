@@ -22,7 +22,7 @@ export interface JAppGeometryState {
   hasChanged: boolean
   feature: GeoJSON.Feature | undefined
   isUpdate: boolean
-  wizardStep: JAppGeometryWizardStep
+  wizardStep: JAPP_GEOMETRY_WIZARD_STEPS
   draw: JAppDrawState
 }
 
@@ -52,7 +52,7 @@ export interface JAppPanelState {
 export interface JAppLayerState {
   treeFilter: JAppLayerTreeFilterState
   popupMenuLayerId: JId | undefined
-  editionActiveTab: JLayerEditionTab
+  editionActiveTab: JAPP_LAYER_EDITION_TABS
   inEditionLayerId: JId | undefined
   isDynamicFilterDialogOpened: boolean
   inEditionDynamicFilterConditionId: number | undefined
@@ -72,8 +72,8 @@ export interface JAppMeasureState {
 }
 
 export interface JAppDrawState {
-  type: JAppDrawType
-  mode: JAppDrawMode
+  type: JAPP_DRAW_TYPES
+  mode: JAPP_DRAW_MODES
   featuresSelected: JAppDrawFeature[]
   isDeleting: boolean
   isNewElement: boolean
@@ -83,13 +83,13 @@ export interface JAppDrawState {
 
 export interface JAppAnnotationState {
   annotations: JAppAnnotation[]
-  draw: JAppDrawState,
+  draw: JAppDrawState
   presetColors: string[]
 }
 
 export interface JAppPrintState {
   paperFormat: JAppPaperFormat
-  fileType: JAppPrintFileType
+  fileType: JAPP_PRINT_FILE_TYPES
   isOrientationPortrait: boolean
   base64Image: string
   pageTitle: string
@@ -100,7 +100,7 @@ export interface JAppPrintState {
   isLegend: boolean
   legendTitle: string
   legendSubTitle: string
-  legendPosition: JAppPrintLegendPosition
+  legendPosition: JAPP_PRINT_LEGEND_POSITION
   filterList: any[]
 }
 
@@ -176,24 +176,24 @@ export interface JAppMessageService {
 }
 
 export interface JAppAnnotationService {
-  getDrawMode(): JAppDrawMode
-  setDrawMode(drawMode: JAppDrawMode): void
-  getDrawType(): JAppDrawType
-  setDrawType(drawType: JAppDrawType): void
+  getDrawMode(): JAPP_DRAW_MODES
+  setDrawMode(drawMode: JAPP_DRAW_MODES): void
+  getDrawType(): JAPP_DRAW_TYPES
+  setDrawType(drawType: JAPP_DRAW_TYPES): void
   existsById(annotationId: string): boolean
   getById(annotationId: string): JAppAnnotation
   getAll(): JAppAnnotation[]
   getSelectedIds(): string[]
   deleteAll(): void
-  deleteByType(annotationType: JAppDrawType): void
+  deleteByType(annotationType: JAPP_DRAW_TYPES): void
   deleteByIds(annotationIds: string[]): void
   deleteSelected(): void
   getStyle(): JAppDrawStyle
   updateStyle(style: JAppDrawStyle): void
   setStyleByAnnotationIds(annotationIds: string[], style: JAppDrawStyle): void
-  setPresetColors(presetColors: string[]): void,
+  setPresetColors(presetColors: string[]): void
   getPresetColors(): string[]
-  addPresetColor(presetColor: string): void,
+  addPresetColor(presetColor: string): void
   deletePresetColor(presetColor: string): void
 }
 
@@ -261,8 +261,8 @@ export interface JAppEventService {
 export interface JAppSelectionService {
   getDisplayedLayerId(): JId
   setDisplayedLayerId(layerId: JId): void
-  activateSelectionType(selectionType: JAppSelectionType): void
-  getActiveSelectionType(): JAppSelectionType
+  activateSelectionType(selectionType: JAPP_SELECTION_TYPES): void
+  getActiveSelectionType(): JAPP_SELECTION_TYPES
   getTableVisibility(): boolean
   setTableVisibility(tableVisibility: boolean): void
   isTableDisplayedInTab(): boolean
@@ -270,7 +270,7 @@ export interface JAppSelectionService {
   closeTableTab(): void
   clearSelectionForLayer(layerId: JId): void
   clearSelection(): void
-  selectFromFeature(feature: GeoJSON.Feature, selectionType?: JAppSelectionType): void
+  selectFromFeature(feature: GeoJSON.Feature, selectionType?: JAPP_SELECTION_TYPES): void
   exportAsExcelFile(): void
   fitMapToDisplayLayerSelection(options?: JPanAndZoomOptions): void
 }
@@ -283,8 +283,8 @@ export interface JAppMeasureService {
   getAllPolygonMeasures(): JAppMeasure[]
   getAllCircleMeasures(): JAppMeasure[]
   setAllMeasures(measures: JAppMeasure[]): void
-  activateMeasureType(measureType: JAppMeasureType): void
-  getActiveMeasureType(): JAppMeasureType
+  activateMeasureType(measureType: JAPP_MEASURE_TYPES): void
+  getActiveMeasureType(): JAPP_MEASURE_TYPES
   getSelectedIds(): string[]
   setSelectionActive(isSelectionActive: boolean): void
   deleteAll(): number
@@ -327,8 +327,8 @@ export interface JAppPrintService {
   getPaperFormat(): JAppPaperFormat
   setOrientation(isPortrait: boolean): void
   isOrientationPortrait(): boolean
-  setFileType(fileType: JAppPrintFileType): void
-  getFileType(): JAppPrintFileType
+  setFileType(fileType: JAPP_PRINT_FILE_TYPES): void
+  getFileType(): JAPP_PRINT_FILE_TYPES
   takeCapture(): void
 }
 
@@ -359,7 +359,7 @@ export interface JAppLayerEditionService {
   DynamicFilter: JAppDynamicFilterService
   Info: JAppLayerEditionInfoService
   Thematic: JAppLayerEditionThematicService
-  openPanel(layerId: JId, tab: JLayerEditionTab): void
+  openPanel(layerId: JId, tab: JAPP_LAYER_EDITION_TABS): void
   closePanel(): void
 }
 
@@ -408,7 +408,10 @@ export interface JAppExtensionEventModule extends JEventModule {
 
 export interface JAppUIEventModule extends JEventModule {
   on: {
-    sidePanelVisibilityChanged(listenerId: string, fn: (params: JAppUISidePanelVisibilityChangedEventParams) => void): void
+    sidePanelVisibilityChanged(
+      listenerId: string,
+      fn: (params: JAppUISidePanelVisibilityChangedEventParams) => void
+    ): void
     sidePanelWidthChanged(listenerId: string, fn: (params: JAppUISidePanelWidthChangedEventParams) => void): void
   }
 }

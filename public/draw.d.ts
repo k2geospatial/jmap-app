@@ -1,5 +1,19 @@
-declare type JAppDrawType = "point" | "polygon" | "line_string" | "rectangle" | "circle" | "text"
-declare type JAppDrawMode = "draw" | "select" | "delete"
+// ALL_APP_DRAW_TYPES in all-enum.ts
+declare const enum JAPP_DRAW_TYPES {
+  POINT = "point",
+  POLYGON = "polygon",
+  LINE_STRING = "line_string",
+  RECTANGLE = "rectangle",
+  CIRCLE = "circle",
+  TEXT = "text"
+}
+
+// ALL_APP_DRAW_MODES in all-enum.ts
+declare const enum JAPP_DRAW_MODES {
+  DRAW = "draw",
+  SELECT = "select",
+  DELETE = "delete"
+}
 
 declare type JAppDrawFeaturesFn = (features: JAppDrawFeature[]) => void
 

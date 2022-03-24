@@ -1,1 +1,6 @@
-declare type JAppSelectionType = "point" | "line_string" | "rectangle" | "circle" | "polygon"
+declare type JAPP_SELECTION_TYPES =
+  | JAPP_DRAW_TYPES.POINT
+  | JAPP_DRAW_TYPES.LINE_STRING
+  | JAPP_DRAW_TYPES.RECTANGLE
+  | JAPP_DRAW_TYPES.CIRCLE
+  | JAPP_DRAW_TYPES.POLYGON

@@ -1,6 +1,6 @@
 declare interface JAppAnnotation {
   id: string
-  type: JAppDrawType
+  type: JAPP_DRAW_TYPES
   feature: any
 }
 

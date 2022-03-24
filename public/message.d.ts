@@ -27,7 +27,7 @@ declare interface JAppConfirmMessage {
   inputPlaceholder?: string
   confirmButtonLabel?: string
   cancelButtonLabel?: string
-  locale?: JLocale
+  locale?: JLOCALES
   onSuccess: (input: string) => any
   onCancel?: () => any
 }

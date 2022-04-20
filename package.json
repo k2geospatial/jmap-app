@@ -23,7 +23,7 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-typedoc": "^2.2.2",
-    "jmap-core": "2.5.5",
+    "jmap-core": "2.5.6",
     "typedoc": "^0.15.0"
   }
 }

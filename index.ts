@@ -169,6 +169,7 @@ export interface JAppMessageService {
   warning(message: string, options?: JAppMessageOptions): void
   info(message: string, options?: JAppMessageOptions): void
   success(message: string, options?: JAppMessageOptions): void
+  closeAllMessages(): void
   confirmMessage(params: JAppConfirmMessage): void
   display(message: string, options?: JAppMessageOptions): void
   displayWaitingOverlay(message: string): string

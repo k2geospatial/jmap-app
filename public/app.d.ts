@@ -3143,21 +3143,6 @@ declare namespace JMap {
       function confirmMessage(params: JAppConfirmMessage): void
 
       /**
-       * ***JMap.Application.Message.closeAllMessages***
-       *
-       * Close all open messages windows.
-       *
-       * @example ```ts
-       *
-       * // Close both messages programmatically
-       * JMap.Application.Message.info(message1, { duration: null })
-       * JMap.Application.Message.success(message2, { duration: null })
-       * JMap.Application.Message.closeAllMessages()
-       * ```
-       */
-      function closeAllMessages(): void
-
-      /**
        * ***JMap.Application.Message.display***
        *
        * Adds an generic message in the application message stack for the current session.

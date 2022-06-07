@@ -34,7 +34,7 @@ declare const enum JAPP_LAYER_FILTER_DATE_PERIOD_TYPES {
 declare const enum JAPP_LAYER_EDITION_TABS {
   THEMATICS = "thematics",
   DYNAMIC_FILTER = "dynamic-filter",
-  INFO = "info"
+  GENERAL = "general"
 }
 
 declare type JAppLayerAnyFilterOperatorType =

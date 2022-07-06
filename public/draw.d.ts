@@ -42,7 +42,7 @@ declare interface JAppDrawStyle extends Partial<JAppDrawTextStyle> {
   pointRadiusStrokeActive?: number
   pointRadiusInactive?: number
   center?: number[]
-  isDrawnPointIcon?: boolean
+  useLocationIcon?: boolean
 }
 
 declare interface JAppDrawTextStyle {

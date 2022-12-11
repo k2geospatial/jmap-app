@@ -965,6 +965,11 @@ declare namespace JMap {
        * Be warned that lengths or areas in planar context are not representative of the real dimensions on the earth's surface. The only supported planar projection for measures is EPSG:3857.
        * 
        * @param measurementSystem "geodetic" (default) or "planar" 
+       * @example ```ts
+       *
+       * // set the current measurement system to "geodetic"
+       * JMap.Application.Measure.setMeasurementSystem("geodetic")
+       * ```
        */
       function setMeasurementSystem(measurementSystem: JAPP_MEASUREMENT_SYSTEMS): void      
     }

@@ -954,13 +954,13 @@ declare namespace JMap {
       /**
        * **JMap.Application.Measure.setMeasurementSystem**
        * 
-       * Sets the measurement system used by the Measurements Panel. **This setting is only taken into account when you draw measures using the Measurements Panel. It does not affect jmap-core-js methods like [[JMap.Geometry.getDistance]], which always return geodetic values.**
+       * Sets the measurement system used by the Measurements Panel. **This setting is only taken into account when you draw measurements using the Measurements Panel. It does not affect jmap-core-js methods like [[JMap.Geometry.getDistance]], which always return geodetic values.**
        * 
        * **This method should not be called in regular situations.** 
        * 
        * Default measurement system is "geodetic", meaning that all measures are representative of the length or area of features on the surface of the Earth. This is what is normally desired.
        * 
-       * In some rare situations, someone may want to get the length or area of drawn features in the map's projection plan (EPSG:3857 - WGS 84 / Pseudo-Mercator). in this case, they can set the measurement system to "planar". 
+       * In some rare situations, someone may want to get the length or area of measurements in the map's projection plan (EPSG:3857 - WGS 84 / Pseudo-Mercator). in this case, they can set the measurement system to "planar". 
        * 
        * Be warned that lengths or areas in planar context are not representative of the real dimensions on the earth's surface. The only supported planar projection for measures is EPSG:3857.
        * 

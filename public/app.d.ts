@@ -940,7 +940,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Measure.getMeasurementSystem**
        * 
-       * Returns the current measurement system used by the Measure Panel
+       * Returns the current measurement system used by the Measurements Panel
        * 
        * @example ```ts
        *
@@ -954,7 +954,7 @@ declare namespace JMap {
       /**
        * **JMap.Application.Measure.setMeasurementSystem**
        * 
-       * Sets the measurement system used by the Measure Panel. **This setting is only taken into account when you draw measures using the Measure Panel. It does not affect jmap-core-js methods like [[JMap.Geometry.getDistance]], which always return geodetic values.**
+       * Sets the measurement system used by the Measurements Panel. **This setting is only taken into account when you draw measures using the Measurements Panel. It does not affect jmap-core-js methods like [[JMap.Geometry.getDistance]], which always return geodetic values.**
        * 
        * **This method should not be called in regular situations.** 
        * 

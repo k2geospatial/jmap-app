@@ -938,35 +938,35 @@ declare namespace JMap {
       function deleteAllCircles(): number
 
       /**
-       * **JMap.Application.Measure.getMeasureSystem**
+       * **JMap.Application.Measure.getMeasurementSystem**
        * 
-       * Returns the current measure system used by the Measure Panel
+       * Returns the current measurement system used by the Measure Panel
        * 
        * @example ```ts
        *
-       * // get the current measure system
-       * console.log(JMap.Application.Measure.getMeasureSystem())
+       * // get the current measurement system
+       * console.log(JMap.Application.Measure.getMeasurementSystem())
        * // "geodetic"
        * ```
        */
-      function getMeasureSystem(): JAPP_MEASURE_SYSTEMS    
+      function getMeasurementSystem(): JAPP_MEASUREMENT_SYSTEMS    
 
       /**
-       * **JMap.Application.Measure.setMeasureSystem**
+       * **JMap.Application.Measure.setMeasurementSystem**
        * 
-       * Sets the measure systems used by the Measure Panel. 
+       * Sets the measurement system used by the Measure Panel. **This setting is only taken into account when you draw measures using the Measure Panel. It does not affect jmap-core-js methods like [[JMap.Geometry.getDistance]], which always return geodetic values.**
        * 
        * **This method should not be called in regular situations.** 
        * 
        * Default measurement system is "geodetic", meaning that all measures are representative of the length or area of features on the surface of the Earth. This is what is normally desired.
        * 
-       * In some rare situations, someone may want to get the length or area of drawn feature in the map's projection plan (EPSG:3857 - WGS 84 / Pseudo-Mercator). in this case, they can set the measure system to "planar". 
+       * In some rare situations, someone may want to get the length or area of drawn feature in the map's projection plan (EPSG:3857 - WGS 84 / Pseudo-Mercator). in this case, they can set the measurement system to "planar". 
        * 
        * Be warned that lengths or areas in planar context are not representative of the real dimensions on the earth's surface. The only supported planar projection for measures is EPSG:3857.
        * 
-       * @param measureSystem "geodetic" (default) or "planar" 
+       * @param measurementSystem "geodetic" (default) or "planar" 
        */
-      function setMeasureSystem(measureSystem: JAPP_MEASURE_SYSTEMS): void      
+      function setMeasurementSystem(measurementSystem: JAPP_MEASUREMENT_SYSTEMS): void      
     }
 
     /**

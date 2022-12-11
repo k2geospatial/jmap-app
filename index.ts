@@ -293,6 +293,8 @@ export interface JAppMeasureService {
   deleteAllLines(): number
   deleteAllPolygons(): number
   deleteAllCircles(): number
+  setMeasureSystem(measureSystem: JAPP_MEASURE_SYSTEMS): void
+  getMeasureSystem(): JAPP_MEASURE_SYSTEMS
 }
 
 export interface JAppExtensionService {

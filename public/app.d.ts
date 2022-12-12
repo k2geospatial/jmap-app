@@ -960,7 +960,7 @@ declare namespace JMap {
        * 
        * Default measurement system is "geodetic", meaning that all measurements are representative of the length or area of features on the surface of the Earth. This is what is normally desired.
        * 
-       * In some rare situations, someone may want to get the length or area of measurements in the map's projection plan (EPSG:3857 - WGS 84 / Pseudo-Mercator). in this case, they can set the measurement system to "planar". 
+       * In some rare situations, someone may want to get the length or area of measurements in the map's projection plan (EPSG:3857 - WGS 84 / Pseudo-Mercator). In this case, they can set the measurement system to "planar". 
        * 
        * Be warned that lengths or areas in planar context are not representative of the real dimensions on the earth's surface. The only supported planar projection for measurements is EPSG:3857.
        * 

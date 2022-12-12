@@ -936,6 +936,42 @@ declare namespace JMap {
        * ```
        */
       function deleteAllCircles(): number
+
+      /**
+       * **JMap.Application.Measure.getMeasurementSystem**
+       * 
+       * Returns the current measurement system used by the Measurements Panel
+       * 
+       * @example ```ts
+       *
+       * // get the current measurement system
+       * console.log(JMap.Application.Measure.getMeasurementSystem())
+       * // "geodetic"
+       * ```
+       */
+      function getMeasurementSystem(): JAPP_MEASUREMENT_SYSTEMS    
+
+      /**
+       * **JMap.Application.Measure.setMeasurementSystem**
+       * 
+       * Sets the measurement system used by the Measurements Panel. **This setting is only taken into account when you draw measurements using the Measurements Panel. It does not affect jmap-core-js methods like [[JMap.Geometry.getDistance]], which always return geodetic values.**
+       * 
+       * **This method should not be called in regular situations.** 
+       * 
+       * Default measurement system is "geodetic", meaning that all measurements are representative of the length or area of features on the surface of the Earth. This is what is normally desired.
+       * 
+       * In some rare situations, someone may want to get the length or area of measurements in the map's projection plane (EPSG:3857 - WGS 84 / Pseudo-Mercator). In this case, they can set the measurement system to "planar". 
+       * 
+       * Be warned that lengths or areas in planar context are not representative of the real dimensions on the earth's surface. The only supported planar projection for measurements is EPSG:3857.
+       * 
+       * @param measurementSystem "geodetic" (default) or "planar" 
+       * @example ```ts
+       *
+       * // set the current measurement system to "geodetic"
+       * JMap.Application.Measure.setMeasurementSystem("geodetic")
+       * ```
+       */
+      function setMeasurementSystem(measurementSystem: JAPP_MEASUREMENT_SYSTEMS): void      
     }
 
     /**

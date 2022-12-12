@@ -65,6 +65,7 @@ export interface JAppUiState {
 }
 
 export interface JAppMeasureState {
+  measurementSystem: JAPP_MEASUREMENT_SYSTEMS
   measures: JAppMeasure[]
   isSelectionActive: boolean
   isNewElement: boolean
@@ -293,6 +294,8 @@ export interface JAppMeasureService {
   deleteAllLines(): number
   deleteAllPolygons(): number
   deleteAllCircles(): number
+  setMeasurementSystem(measurementSystem: JAPP_MEASUREMENT_SYSTEMS): void
+  getMeasurementSystem(): JAPP_MEASUREMENT_SYSTEMS
 }
 
 export interface JAppExtensionService {

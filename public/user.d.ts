@@ -5,5 +5,5 @@ declare interface JAppUserAction {
   isHelp?: boolean
   href?: string
   disabled?: boolean
-  onClick?: () => void
+  onClick?: React.MouseEventHandler<HTMLLIElement>
 }

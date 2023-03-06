@@ -3,6 +3,7 @@ import { JEventModule } from "jmap-core"
 export interface JAppState {
   panel: JAppPanelState
   measure: JAppMeasureState
+  form: JAppFormState
   selection: JAppSelectionState
   layer: JAppLayerState
   ui: JAppUiState
@@ -62,6 +63,10 @@ export interface JAppUiState {
   sidePanelVisible: boolean
   mainPanelWidthInPixel: number
   theme: { [key: string]: any }
+}
+
+export interface JAppFormState {
+  expandedSections: { [id: string]: boolean }
 }
 
 export interface JAppMeasureState {

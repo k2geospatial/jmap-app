@@ -104,6 +104,7 @@ export interface JAppPrintState {
   isNorthArrowVisible: boolean
   isScaleVisible: boolean
   isLegend: boolean
+  isHiResolution: boolean
   legendTitle: string
   legendSubTitle: string
   legendPosition: JAPP_PRINT_LEGEND_POSITION
@@ -337,6 +338,8 @@ export interface JAppPrintService {
   isOrientationPortrait(): boolean
   setFileType(fileType: JAPP_PRINT_FILE_TYPES): void
   getFileType(): JAPP_PRINT_FILE_TYPES
+  setHiResolution(isHiResolution: boolean): void
+  getHiResolution():boolean
   takeCapture(): void
 }
 

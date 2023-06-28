@@ -2284,6 +2284,35 @@ declare namespace JMap {
       function setFileType(fileType: JAPP_PRINT_FILE_TYPES): void
 
       /**
+       * **JMap.Application.Print.setHiResolution**
+       *
+       * Sets the parameter determining if the map will be exported in hi resolution or not.
+       *
+       * @throws if isHiResolution is not a boolean
+       * @param isHiResolution true or false
+       * @example ```ts
+       *
+       * // set export mode to hi resolution
+       * JMap.Application.Print.setHiResolution(true)
+       * ```
+       */
+      function setHiResolution(isHiResolution: boolean): void
+    
+      /**
+       * **JMap.Application.Print.getHiResolution**
+       *
+       * Returns true if the map export is set to hi resolution, false otherwise.
+       *
+       * @example ```ts
+       *
+       * // get export resolution
+       * JMap.Application.Print.getHiResolution()
+       * // true
+       * ```
+       */
+      function getHiResolution():boolean
+    
+      /**
        * **JMap.Application.Print.takeCapture**
        *
        * Builds print image and launches downwnload of the file

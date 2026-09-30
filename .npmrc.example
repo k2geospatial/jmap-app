@@ -1,0 +1,5 @@
+# replace <FONT-AWSOME-TOKEN> and <NPM-K2-PUBLISH-TOKEN> with valid tokens
+@fortawesome:registry=https://npm.fontawesome.com/
+//npm.fontawesome.com/:_authToken=<FONT-AWSOME-TOKEN>
+prefer-offline=true
+//registry.npmjs.org/:_authToken=<NPM-K2-PUBLISH-TOKEN>

@@ -1,0 +1,555 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JCoreExtension | jmap-app</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">jmap-app</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="jcoreextension.html">JCoreExtension</a>
+				</li>
+			</ul>
+			<h1>Interface JCoreExtension</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>We introduce the notion of extension in order to let you adding you own JMap plugin.</p>
+					</div>
+					<p>Your plugin is an object that has to implement this interface.</p>
+					<p>Then you have to register your extension like that :</p>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><pre><code class="language-ts"><span class="hljs-comment">// This a minimal model</span>
+<span class="hljs-comment">// You need to provide an id and an initFn function at least</span>
+<span class="hljs-comment">// This model is useless, but just for the example</span>
+JMap.Extension.register({
+ id: <span class="hljs-string">"MyExtension"</span>, <span class="hljs-comment">// Unique id</span>
+ initFn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+   <span class="hljs-comment">// here you can start your UI component if needed</span>
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"JMap is started and my extension has been successfuly started"</span>)
+ }
+})</code></pre>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">JCoreExtension</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="jappextension.html" class="tsd-signature-type">JAppExtension</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#destroyfn" class="tsd-kind-icon">destroy<wbr>Fn</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#initfn" class="tsd-kind-icon">init<wbr>Fn</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#injectmaprequestparameters" class="tsd-kind-icon">inject<wbr>Map<wbr>Request<wbr>Parameters</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#isprojectextension" class="tsd-kind-icon">is<wbr>Project<wbr>Extension</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#jmapcloudextensionurn" class="tsd-kind-icon">jmap<wbr>Cloud<wbr>Extension<wbr>Urn</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#onregistrationdone" class="tsd-kind-icon">on<wbr>Registration<wbr>Done</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#rendermouseover" class="tsd-kind-icon">render<wbr>Mouse<wbr>Over</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#serverextensionid" class="tsd-kind-icon">server<wbr>Extension<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#servicetoexpose" class="tsd-kind-icon">service<wbr>ToExpose</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#startbeforemapisready" class="tsd-kind-icon">start<wbr>Before<wbr>Map<wbr>IsReady</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#storereducer" class="tsd-kind-icon">store<wbr>Reducer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jcoreextension.html#translationbundle" class="tsd-kind-icon">translation<wbr>Bundle</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="destroyfn" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> destroy<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">destroy<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:144</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The destroy function.</p>
+						</div>
+						<p>Only used for &quot;project&quot; scoped extensions (useless for &quot;application&quot; scoped extension).</p>
+						<p>For &quot;project&quot; scoped extensions, when a project will be deactivated, all project&#39;s extensions are unregistered.</p>
+						<p>Before unregister those extensions, this function is called.</p>
+						<p>For example, when this function is called you should clean all your event listeners.</p>
+						<p>Don&#39;t mind about cleaning the redux state, because it will be destroyed by the register function.</p>
+						<p>Then the redux state will be created again when the next project will be loaded,
+						and the extension will be registered again.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:61</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The unique extension identifier</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="initfn" class="tsd-anchor"></a>
+					<h3>init<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">init<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:127</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The init function of your extension.</p>
+						</div>
+						<p>Here you can start initialize your extension.</p>
+						<p>By default param is an empty object, but for project server extensions only, a parameter &quot;serverInfo&quot; is passed,
+						fetched from the project configuration that is defined in the admininistration.</p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="jcoreextensionparams.html" class="tsd-signature-type">JCoreExtensionParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>params: <a href="jcoreextensionparams.html" class="tsd-signature-type">JCoreExtensionParams</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="injectmaprequestparameters" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> inject<wbr>Map<wbr>Request<wbr>Parameters</h3>
+					<div class="tsd-signature tsd-kind-icon">inject<wbr>Map<wbr>Request<wbr>Parameters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">mapboxgl.TransformRequestFunction</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:210</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An optional handler that returns a Mapbox GL JS RequestParameters object</p>
+						</div>
+						<p>Provide this handler if your extentions needs to add something special in MapBox map requests,
+						like providing credentials, adding headers, etc.</p>
+						<p>Great care must be taken to not blindly modify every request passed to this handler. You should only modify requests known to your extension. This can usually
+						be determined by looking at the url received by the handler.</p>
+						<p>See Mapbox documentation for reference:</p>
+						<p><a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map-parameters">https://docs.mapbox.com/mapbox-gl-js/api/map/#map-parameters</a></p>
+						<p><a href="https://docs.mapbox.com/mapbox-gl-js/api/properties/#requestparameters">https://docs.mapbox.com/mapbox-gl-js/api/properties/#requestparameters</a></p>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-ts">JMap.Extension.register({
+ id: <span class="hljs-string">"MyExtension"</span>, <span class="hljs-comment">// Unique id</span>
+ initFn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+   <span class="hljs-comment">// here you can start your UI component if needed</span>
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"JMap is started and my extension has been successfuly started"</span>)
+ },
+ injectMapRequestParameters: <span class="hljs-function">(<span class="hljs-params">url, resourceType</span>) =&gt;</span> {
+   <span class="hljs-keyword">if</span> (resourceType === <span class="hljs-string">'Source'</span> &amp;&amp; url.indexOf(<span class="hljs-string">'http://myHost'</span>) &gt; <span class="hljs-number">-1</span>) {
+      <span class="hljs-keyword">return</span> {
+        url,
+        headers: {<span class="hljs-string">'my-custom-header'</span>: <span class="hljs-literal">true</span>},
+        credentials: <span class="hljs-string">'include'</span>  <span class="hljs-comment">// Include cookies for cross-origin requests</span>
+     }
+    }
+   <span class="hljs-keyword">return</span> { url }
+ }
+})</code></pre>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="isprojectextension" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> is<wbr>Project<wbr>Extension</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Project<wbr>Extension<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:72</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>By default an extension is &quot;application&quot; scoped. But you can set the extension as &quot;project&quot; scoped.</p>
+						</div>
+						<p>If an extension is application scoped, it will be loaded one time, and never destroyed.</p>
+						<p>If it&#39;s set as project scoped :</p>
+						<ul>
+							<li>The extension will be registered each time a project is activated (= initFn will be called).</li>
+							<li>When a project is deactivated, the extension function destroyFn is called (if defined), then the
+							extension is unregistered (redux store, service, etc... will be destroyed).</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="jmapcloudextensionurn" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> jmap<wbr>Cloud<wbr>Extension<wbr>Urn</h3>
+					<div class="tsd-signature tsd-kind-icon">jmap<wbr>Cloud<wbr>Extension<wbr>Urn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:94</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If your extensions is available for JMap Cloud, you have to set this parameter.</p>
+						</div>
+						<p>This parameter is used to uniquely identify your extension among all other JMap Cloud extensions.</p>
+						<p>This parameter can be set alongside <a href="jcoreextension.html#serverextensionid">JCoreExtension.serverExtensionId</a> if your extension is also available for JMap Server.</p>
+						<p>If set, this parameter <strong><em>must</em></strong> be a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)" class="external">UUID v4 string</a>. Each Jmap Cloud extension must have a unique identifier, so you have to make sure that each of your extensions defines a unique <code>jmapCloudExtensionUrn</code>.</p>
+						<p>JMap Cloud <strong><em>only</em></strong> supports <a href="jcoreextension.html#isprojectextension">Project extensions</a></p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="onregistrationdone" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> on<wbr>Registration<wbr>Done</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Registration<wbr>Done<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:172</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The registration function.</p>
+						</div>
+						<p>Triggered when this extension has been registered.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="rendermouseover" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> render<wbr>Mouse<wbr>Over</h3>
+					<div class="tsd-signature tsd-kind-icon">render<wbr>Mouse<wbr>Over<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:166</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>You can provide a renderMouseOver function.</p>
+						</div>
+						<p>If set, this function has to return a <a href="jextensionmouseover.html">JExtensionMouseOver</a>, and it will be displayed
+						at the end of the standard mouseover.</p>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>The JMap layer object</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>The mouseovered feature (having all its properties filled)</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="serverextensionid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> server<wbr>Extension<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">server<wbr>Extension<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:81</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If your extensions is depending on a server extension, you have to set this parameter.</p>
+						</div>
+						<p>This parameter is used to determine if an extension is a backend extension or not, and also used
+						in order to provide the parameter to the extension (initFn params).</p>
+						<p>It should be the same id as the JS extension id, it but could be different.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="servicetoexpose" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> service<wbr>ToExpose</h3>
+					<div class="tsd-signature tsd-kind-icon">service<wbr>ToExpose<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:103</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If you want you can expose a service.</p>
+						</div>
+						<p>If your extension id is &quot;MyExtension&quot;, your service will be accessible like that :</p>
+						<pre><code class="language-ts">JMap.Extension.MyExtension.doSomething()</code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="startbeforemapisready" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> start<wbr>Before<wbr>Map<wbr>IsReady</h3>
+					<div class="tsd-signature tsd-kind-icon">start<wbr>Before<wbr>Map<wbr>IsReady<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:113</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>By default :</p>
+							<ul>
+								<li>&quot;application&quot; scoped extensions are initialized (= initFn called) the first time the map is loaded</li>
+								<li>&quot;project&quot; scoped extensions are initialized after a project has changed and the new map is loaded</li>
+							</ul>
+						</div>
+						<p>If you set this parameter to true :</p>
+						<ul>
+							<li>&quot;application&quot; scoped extensions will be initialized as soon the extension is registered</li>
+							<li>&quot;project&quot; scoped extensions will be initialized as soon the project has changed</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="storereducer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> store<wbr>Reducer</h3>
+					<div class="tsd-signature tsd-kind-icon">store<wbr>Reducer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:156</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>You can provide your own Redux store reducer : <a href="https://redux.js.org/basics/reducers">https://redux.js.org/basics/reducers</a>.</p>
+						</div>
+						<p>Like that you can develop UI component that react to the redux state changes.</p>
+						<p>You can get the data store using this function : <a href="../modules/jmap.html#getdatastore">JMap.getDataStore</a>, and then dispatch
+						your own actions.</p>
+						<p>A redux reducer is a pure JS function that take the current reducer state (can be undefined first time)
+						and an action, and return the new state (the same if no changes has been made for the action).</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="translationbundle" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> translation<wbr>Bundle</h3>
+					<div class="tsd-signature tsd-kind-icon">translation<wbr>Bundle<span class="tsd-signature-symbol">:</span> <a href="jtranslationbundle.html" class="tsd-signature-type">JTranslationBundle</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/jmap-core/public/jmap/extension.d.ts:118</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>You can provide a translation bundle for your extesion. All translations will be handled by the JMap NG
+							translation engine. See <a href="../modules/jmap.language.html#addbundle">JMap.Language.addBundle</a> for more details on bundles</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-is-not-exported">
+						<a href="jcoreextension.html" class="tsd-kind-icon">JCore<wbr>Extension</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#destroyfn" class="tsd-kind-icon">destroy<wbr>Fn</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#initfn" class="tsd-kind-icon">init<wbr>Fn</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#injectmaprequestparameters" class="tsd-kind-icon">inject<wbr>Map<wbr>Request<wbr>Parameters</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#isprojectextension" class="tsd-kind-icon">is<wbr>Project<wbr>Extension</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#jmapcloudextensionurn" class="tsd-kind-icon">jmap<wbr>Cloud<wbr>Extension<wbr>Urn</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#onregistrationdone" class="tsd-kind-icon">on<wbr>Registration<wbr>Done</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#rendermouseover" class="tsd-kind-icon">render<wbr>Mouse<wbr>Over</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#serverextensionid" class="tsd-kind-icon">server<wbr>Extension<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#servicetoexpose" class="tsd-kind-icon">service<wbr>ToExpose</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#startbeforemapisready" class="tsd-kind-icon">start<wbr>Before<wbr>Map<wbr>IsReady</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#storereducer" class="tsd-kind-icon">store<wbr>Reducer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jcoreextension.html#translationbundle" class="tsd-kind-icon">translation<wbr>Bundle</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
